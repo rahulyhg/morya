@@ -1,0 +1,25 @@
+nav ul ,nav li{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+
+header h1 {
+font-family:Sans Serif;
+font-size:48px;
+margin:0;
+padding:0;
+}
+#center-content
+{
+min-height:600px;
+}
+aside {
+margin-top:20px;
+}
+sidebar{
+min-height:600px;
+}
+footer p {
+text-align:center;
+}
