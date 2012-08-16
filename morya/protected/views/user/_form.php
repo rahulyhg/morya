@@ -1,10 +1,8 @@
 <div class="form">
-
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'user-form',
 	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
-	'enableAjaxValidation'=>false,
-	
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -70,7 +68,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Create'); ?>
+		<?php echo CHtml::submitButton('Register'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

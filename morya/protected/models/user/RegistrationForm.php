@@ -12,13 +12,11 @@ class RegistrationForm extends CFormModel
 	public $password;
 	public $confirm_password;
 	public $contact;
-	public $ganpati_pic;
 	public $add_line_1;
 	public $add_line_2;
+	public $ganpati_pic;
 	public $taluka;
 	public $city;
-	public $created;
-	public $modified;
 	
 
 	/**
@@ -30,8 +28,9 @@ class RegistrationForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('name,email, password, confirmPassword', 'required'),
-			array('email','unique','caseSensitive'=>'false'),
+			array('name,email, password, confirm_password', 'required'),
+			array('email','filter','filter'=>'strtolower'),
+			array('email','unique','caseSensitive'=>'false','className'=>'User'),
 		);
 	}
 
@@ -42,13 +41,14 @@ class RegistrationForm extends CFormModel
 	{
 		return array(
 			'name'=>'Full Name',
+			'ganpati_pic'=>'Your Ganpati Photo'
 		);
 	}
 
 	/**
 	 * Authenticates the password.
 	 * This is the 'authenticate' validator as declared in rules().
-	 */
+	
 	public function uniqueEmail($email)
 	{
 		if(!$this->hasErrors())
@@ -57,5 +57,5 @@ class RegistrationForm extends CFormModel
 			if(!$this->_identity->authenticate())
 				$this->addError('password','Incorrect username or password.');
 		}
-	}
+	} */
 }

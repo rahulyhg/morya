@@ -3251,3 +3251,2199 @@ Stack trace:
 REQUEST_URI=/index.php?r=user/register
 HTTP_REFERER=http://morya/index.php?r=user/register
 ---
+2012/08/16 00:15:02 [error] [php] get_class() expects parameter 1 to be object, array given (C:\vhosts\morya\framework\web\helpers\CHtml.php:2009)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(560): activeLabelEx()
+#1 C:\vhosts\morya\morya\protected\views\user\_form.php(12): CActiveForm->labelEx()
+#2 C:\vhosts\morya\framework\web\CBaseController.php(127): require()
+#3 C:\vhosts\morya\framework\web\CBaseController.php(96): UserController->renderInternal()
+#4 C:\vhosts\morya\framework\web\CController.php(870): UserController->renderFile()
+#5 C:\vhosts\morya\morya\protected\views\user\register.php(8): UserController->renderPartial()
+#6 C:\vhosts\morya\framework\web\CBaseController.php(127): require()
+#7 C:\vhosts\morya\framework\web\CBaseController.php(96): UserController->renderInternal()
+#8 C:\vhosts\morya\framework\web\CController.php(870): UserController->renderFile()
+#9 C:\vhosts\morya\framework\web\CController.php(783): UserController->renderPartial()
+#10 C:\vhosts\morya\morya\protected\controllers\UserController.php(83): UserController->render()
+#11 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#12 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#13 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#14 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#16 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#17 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#18 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\vhosts\morya\framework\web\CController.php(266): UserController->runActionWithFilters()
+#20 C:\vhosts\morya\framework\web\CWebApplication.php(276): UserController->run()
+#21 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#22 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in C:\vhosts\morya\morya\protected\views\user\_form.php (12)
+in C:\vhosts\morya\morya\protected\views\user\register.php (8)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (83)
+2012/08/16 07:54:11 [error] [php] get_class() expects parameter 1 to be object, array given (C:\vhosts\morya\framework\web\helpers\CHtml.php:2009)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(560): activeLabelEx()
+#1 C:\vhosts\morya\morya\protected\views\user\_form.php(11): CActiveForm->labelEx()
+#2 C:\vhosts\morya\framework\web\CBaseController.php(127): require()
+#3 C:\vhosts\morya\framework\web\CBaseController.php(96): UserController->renderInternal()
+#4 C:\vhosts\morya\framework\web\CController.php(870): UserController->renderFile()
+#5 C:\vhosts\morya\morya\protected\views\user\register.php(8): UserController->renderPartial()
+#6 C:\vhosts\morya\framework\web\CBaseController.php(127): require()
+#7 C:\vhosts\morya\framework\web\CBaseController.php(96): UserController->renderInternal()
+#8 C:\vhosts\morya\framework\web\CController.php(870): UserController->renderFile()
+#9 C:\vhosts\morya\framework\web\CController.php(783): UserController->renderPartial()
+#10 C:\vhosts\morya\morya\protected\controllers\UserController.php(83): UserController->render()
+#11 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#12 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#13 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#14 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#16 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#17 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#18 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\vhosts\morya\framework\web\CController.php(266): UserController->runActionWithFilters()
+#20 C:\vhosts\morya\framework\web\CWebApplication.php(276): UserController->run()
+#21 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#22 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in C:\vhosts\morya\morya\protected\views\user\_form.php (11)
+in C:\vhosts\morya\morya\protected\views\user\register.php (8)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (83)
+2012/08/16 08:12:50 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:12:50 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:12:50 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:12:50 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:12:50 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:12:50 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:12:50 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:12 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:12 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:12 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:12 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:12 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:12 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:12 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:34 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:34 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:34 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:34 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:34 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:34 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:34 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:37 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:37 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:37 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:37 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:37 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:37 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:37 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:41 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:41 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:41 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:41 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:41 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:41 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:41 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:45 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:45 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:45 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:45 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:45 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:45 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:45 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:50 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:50 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:50 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:50 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:50 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:50 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:50 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:56 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:56 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:56 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:56 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:56 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:56 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:13:56 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:00 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:00 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:00 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:00 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:00 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:00 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:00 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:05 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:05 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:05 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:05 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:05 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:05 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:05 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:09 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:09 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:09 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:09 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:09 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:09 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:09 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:14 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:14 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:14 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:14 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:14 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:14 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:14 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:21 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:21 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:21 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:21 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:21 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:21 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:21 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:44 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:44 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:44 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:44 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:44 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:44 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:14:44 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:16:02 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:16:02 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:16:02 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:16:02 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:16:02 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:16:02 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:16:02 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:07 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:07 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:07 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:07 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:07 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:07 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:07 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:55 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:55 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:55 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:55 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:55 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:55 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:55 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:57 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:57 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:57 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:57 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:57 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:57 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:57 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:58 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:58 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:58 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:58 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:58 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:58 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:18:58 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:10 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:10 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:10 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:10 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:10 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:10 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:10 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:13 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:13 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:13 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:13 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:13 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:13 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:13 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:15 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:15 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:15 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:15 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:15 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:15 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:15 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:17 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:17 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:17 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:17 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:17 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:17 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:17 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:19 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:19 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:19 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:19 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:19 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:19 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:20:19 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:14 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:14 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:14 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:14 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:14 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:14 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:14 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "hello".' in C:\vhosts\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\vhosts\morya\framework\web\CController.php(271): CController->missingAction('hello')
+#1 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('hello')
+#2 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('site/hello')
+#3 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/hello
+HTTP_REFERER=http://morya/index.php
+---
+2012/08/16 08:23:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "hello".' in C:\vhosts\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\vhosts\morya\framework\web\CController.php(271): CController->missingAction('hello')
+#1 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('hello')
+#2 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('site/hello')
+#3 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/hello
+HTTP_REFERER=http://morya/index.php
+---
+2012/08/16 08:23:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "hello".' in C:\vhosts\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\vhosts\morya\framework\web\CController.php(271): CController->missingAction('hello')
+#1 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('hello')
+#2 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('site/hello')
+#3 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/hello
+HTTP_REFERER=http://morya/index.php
+---
+2012/08/16 08:23:34 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:34 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:34 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:34 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:34 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:34 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:34 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:35 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:35 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:35 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:35 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:35 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:35 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:35 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:38 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:38 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:38 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:38 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:38 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:38 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:38 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:39 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:39 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:39 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:39 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:39 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:39 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:39 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:48 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:48 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:48 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:48 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:48 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:48 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:48 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:54 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:54 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:54 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:54 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:54 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:54 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:23:54 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:08 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:08 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:08 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:08 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:08 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:08 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:08 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:10 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:10 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:10 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:10 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:10 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:10 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:10 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:24:42 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (76)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:26:43 [error] [php] Undefined index: RegistrationForm (C:\vhosts\morya\morya\protected\controllers\UserController.php:70)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): UserController->runActionWithFilters()
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): UserController->run()
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/register
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (70)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:18 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:18 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:18 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:18 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:18 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:18 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:18 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:18 [error] [exception.CException] exception 'CException' with message 'Property "RegistrationForm.confirmPassword" is not defined.' in C:\vhosts\morya\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\vhosts\morya\framework\validators\CRequiredValidator.php(52): CComponent->__get('confirmPassword')
+#1 C:\vhosts\morya\framework\validators\CValidator.php(197): CRequiredValidator->validateAttribute(Object(RegistrationForm), 'confirmPassword')
+#2 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#3 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#4 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#5 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#6 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#7 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#16 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#17 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:27:20 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:20 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:20 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:20 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:20 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:20 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:20 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:20 [error] [exception.CException] exception 'CException' with message 'Property "RegistrationForm.confirmPassword" is not defined.' in C:\vhosts\morya\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\vhosts\morya\framework\validators\CRequiredValidator.php(52): CComponent->__get('confirmPassword')
+#1 C:\vhosts\morya\framework\validators\CValidator.php(197): CRequiredValidator->validateAttribute(Object(RegistrationForm), 'confirmPassword')
+#2 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#3 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#4 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#5 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#6 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#7 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#16 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#17 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:27:22 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:22 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:22 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:22 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:22 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:22 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:22 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:22 [error] [exception.CException] exception 'CException' with message 'Property "RegistrationForm.confirmPassword" is not defined.' in C:\vhosts\morya\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\vhosts\morya\framework\validators\CRequiredValidator.php(52): CComponent->__get('confirmPassword')
+#1 C:\vhosts\morya\framework\validators\CValidator.php(197): CRequiredValidator->validateAttribute(Object(RegistrationForm), 'confirmPassword')
+#2 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#3 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#4 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#5 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#6 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#7 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#16 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#17 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:27:23 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:23 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:23 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:23 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:23 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:23 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:23 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:23 [error] [exception.CException] exception 'CException' with message 'Property "RegistrationForm.confirmPassword" is not defined.' in C:\vhosts\morya\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\vhosts\morya\framework\validators\CRequiredValidator.php(52): CComponent->__get('confirmPassword')
+#1 C:\vhosts\morya\framework\validators\CValidator.php(197): CRequiredValidator->validateAttribute(Object(RegistrationForm), 'confirmPassword')
+#2 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#3 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#4 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#5 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#6 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#7 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#16 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#17 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:27:26 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:26 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:26 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:26 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:26 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:26 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:26 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:27:26 [error] [exception.CException] exception 'CException' with message 'Property "RegistrationForm.confirmPassword" is not defined.' in C:\vhosts\morya\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\vhosts\morya\framework\validators\CRequiredValidator.php(52): CComponent->__get('confirmPassword')
+#1 C:\vhosts\morya\framework\validators\CValidator.php(197): CRequiredValidator->validateAttribute(Object(RegistrationForm), 'confirmPassword')
+#2 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#3 C:\vhosts\morya\morya\protected\controllers\UserController.php(75): CModel->validate()
+#4 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#5 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#14 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#15 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:36:10 [warning] [application] Failed to set unsafe attribute "confirm_password" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:10 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:10 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:10 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:10 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:10 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:10 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:10 [error] [exception.CException] exception 'CException' with message 'Property "RegistrationForm.confirmPassword" is not defined.' in C:\vhosts\morya\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\vhosts\morya\framework\validators\CRequiredValidator.php(52): CComponent->__get('confirmPassword')
+#1 C:\vhosts\morya\framework\validators\CValidator.php(197): CRequiredValidator->validateAttribute(Object(RegistrationForm), 'confirmPassword')
+#2 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#3 C:\vhosts\morya\morya\protected\controllers\UserController.php(75): CModel->validate()
+#4 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#5 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#14 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#15 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:36:41 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:41 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:41 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:41 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:41 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:36:41 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:07 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:07 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:07 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:07 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:07 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:07 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:14 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:14 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:14 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:14 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:14 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:14 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:25 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:25 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:25 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:25 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:25 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:25 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:29 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:29 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:29 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:29 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:29 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:29 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:29 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:37:31 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:31 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:31 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:31 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:31 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:31 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:31 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:37:36 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:36 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:36 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:36 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:36 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:36 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:36 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:37:39 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:39 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:39 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:39 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:39 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:39 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:39 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:37:45 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:45 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:45 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:45 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:45 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:45 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:48 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:48 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:48 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:48 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:48 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:48 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:48 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:37:52 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:52 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:52 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:52 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:52 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:52 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:52 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:37:53 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:53 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:53 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:53 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:53 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:53 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:53 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:37:55 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:55 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:55 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:55 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:55 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:55 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:55 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:37:56 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:56 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:56 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:56 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:56 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:56 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:56 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:37:59 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:59 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:59 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:59 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:59 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:59 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:37:59 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:38:01 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:01 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:01 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:01 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:01 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:01 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:01 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:38:07 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:07 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:07 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:07 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:07 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:07 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (178)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:07 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(178): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 08:38:12 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:12 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:12 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:12 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:12 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:12 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 08:38:12 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\morya\protected\controllers\UserController.php(75): CModel->validate()
+#7 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#8 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#17 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#18 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 09:22:36 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:36 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:36 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:36 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:36 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:36 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:36 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\morya\protected\controllers\UserController.php(75): CModel->validate()
+#7 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#8 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#17 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#18 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 09:22:48 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:48 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:48 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:48 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:48 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:48 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:55 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:55 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:55 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:55 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:55 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:55 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:57 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:57 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:57 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:57 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:57 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:22:57 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:05 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:05 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:05 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:05 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:05 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:05 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:08 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:08 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:08 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:08 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:08 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:08 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:08 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(177): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 09:23:12 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:12 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:12 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:12 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:12 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:12 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (177)
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (69)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:12 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\framework\web\widgets\CActiveForm.php(753): CModel->validate(NULL)
+#7 C:\vhosts\morya\morya\protected\controllers\UserController.php(177): CActiveForm::validate(Object(RegistrationForm))
+#8 C:\vhosts\morya\morya\protected\controllers\UserController.php(69): UserController->performAjaxValidation(Object(RegistrationForm))
+#9 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#10 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#19 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#20 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
+2012/08/16 09:23:16 [warning] [application] Failed to set unsafe attribute "contact" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:16 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:16 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:16 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:16 [warning] [application] Failed to set unsafe attribute "taluka" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:16 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\vhosts\morya\morya\protected\controllers\UserController.php (73)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/16 09:23:16 [error] [exception.CException] exception 'CException' with message 'RegistrationForm and its behaviors do not have a method or closure named "tableName".' in C:\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): CComponent->__call('tableName', Array)
+#1 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(2262): RegistrationForm->tableName()
+#2 C:\vhosts\morya\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(RegistrationForm))
+#3 C:\vhosts\morya\framework\validators\CUniqueValidator.php(87): CActiveRecord::model('RegistrationFor...')
+#4 C:\vhosts\morya\framework\validators\CValidator.php(197): CUniqueValidator->validateAttribute(Object(RegistrationForm), 'email')
+#5 C:\vhosts\morya\framework\base\CModel.php(158): CValidator->validate(Object(RegistrationForm), NULL)
+#6 C:\vhosts\morya\morya\protected\controllers\UserController.php(75): CModel->validate()
+#7 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionRegister()
+#8 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('register')
+#17 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/register')
+#18 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=user/register
+HTTP_REFERER=http://morya/index.php?r=user/register
+---
