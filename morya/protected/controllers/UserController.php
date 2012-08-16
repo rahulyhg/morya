@@ -2,10 +2,9 @@
 
 class UserController extends Controller
 {
-	public function init(){
-		Yii::import("application.models.user.*");
+	function init(){
+		Yii::import('application.models.user.*');
 	}
-
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -67,17 +66,17 @@ class UserController extends Controller
 	{
 		$model=new RegistrationForm;
 		$this->performAjaxValidation($model);
-		
 		if(isset($_POST['RegistrationForm']))
 		{
 			$model->attributes=$_POST['RegistrationForm'];
-			$user = new User;
-			if($model->validate())
-			{
+			if($model->validate()){
+				$user = new User ;
+				$user->attributes = $model->attributes ;
 				if($user->save())
 					$this->redirect(array('view','id'=>$model->id));
 			}
 		}
+
 		$this->render('register',array(
 			'model'=>$model,
 		));

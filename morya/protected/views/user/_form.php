@@ -1,8 +1,9 @@
 <div class="form">
+
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'user-form',
-	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	'enableAjaxValidation'=>true,
+	'htmlOptions'=>array('enctype'=>'multipart/form-data')
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -39,7 +40,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ganpati_pic'); ?>
-		<?php echo $form->fileField($model,'ganpati_pic'); ?>
+		<?php echo $form->fileField($model,'ganpati_pic',array('size'=>11,'maxlength'=>11)); ?>
 		<?php echo $form->error($model,'ganpati_pic'); ?>
 	</div>
 
