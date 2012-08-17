@@ -8734,3 +8734,372 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/hello
 HTTP_REFERER=http://morya/index.php
 ---
+2012/08/17 10:02:05 [error] [php] include(LoginForm.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\vhosts\morya\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\vhosts\morya\morya\protected\controllers\SiteController.php(75): spl_autoload_call()
+#1 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#2 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\vhosts\morya\framework\web\CController.php(287): SiteController->runAction()
+#4 C:\vhosts\morya\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#5 C:\vhosts\morya\framework\web\CWebApplication.php(276): SiteController->run()
+#6 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#7 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login
+in C:\vhosts\morya\morya\protected\controllers\SiteController.php (75)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:04:39 [error] [php] include(LoginForm.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\vhosts\morya\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\vhosts\morya\morya\protected\controllers\SiteController.php(75): spl_autoload_call()
+#1 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#2 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\vhosts\morya\framework\web\CController.php(287): SiteController->runAction()
+#4 C:\vhosts\morya\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#5 C:\vhosts\morya\framework\web\CWebApplication.php(276): SiteController->run()
+#6 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#7 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login
+in C:\vhosts\morya\morya\protected\controllers\SiteController.php (75)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:05:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('upload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/upload')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/upload
+---
+2012/08/17 10:14:41 [error] [php] Undefined index: filename (C:\vhosts\morya\morya\protected\controllers\PhotoController.php:58)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/upload
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (58)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:20:17 [error] [php] Undefined variable: model (C:\vhosts\morya\morya\protected\views\photo\view.php:4)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\CController.php(870): PhotoController->renderFile()
+#1 C:\vhosts\morya\framework\web\CController.php(783): PhotoController->renderPartial()
+#2 C:\vhosts\morya\morya\protected\controllers\PhotoController.php(64): PhotoController->render()
+#3 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): PhotoController->actionUpload()
+#4 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#6 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#9 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#12 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#13 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/upload
+in C:\vhosts\morya\morya\protected\views\photo\view.php (4)
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (64)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:20:54 [error] [php] Undefined index: image (C:\vhosts\morya\morya\protected\controllers\PhotoController.php:60)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/upload
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (60)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:22:32 [error] [php] Undefined index: image (C:\vhosts\morya\morya\protected\controllers\PhotoController.php:60)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/upload
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (60)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:26:41 [error] [php] Undefined index: filename (C:\vhosts\morya\morya\protected\controllers\PhotoController.php:60)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/upload
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (60)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:27:15 [error] [php] Undefined variable: model (C:\vhosts\morya\morya\protected\views\photo\view.php:4)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\CController.php(870): PhotoController->renderFile()
+#1 C:\vhosts\morya\framework\web\CController.php(783): PhotoController->renderPartial()
+#2 C:\vhosts\morya\morya\protected\controllers\PhotoController.php(65): PhotoController->render()
+#3 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): PhotoController->actionUpload()
+#4 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#6 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#9 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#12 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#13 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/upload
+in C:\vhosts\morya\morya\protected\views\photo\view.php (4)
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (65)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:31:24 [error] [php] Undefined index: filename (C:\vhosts\morya\morya\protected\controllers\PhotoController.php:60)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/upload
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (60)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:51:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=3888371.JPG
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 10:52:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=3888371.JPG
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 10:53:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=3888371.JPG
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 10:54:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=3888371.JPG
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 10:57:00 [error] [php] include(LoginForm.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\vhosts\morya\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\vhosts\morya\morya\protected\controllers\SiteController.php(75): spl_autoload_call()
+#1 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#2 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\vhosts\morya\framework\web\CController.php(287): SiteController->runAction()
+#4 C:\vhosts\morya\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#5 C:\vhosts\morya\framework\web\CWebApplication.php(276): SiteController->run()
+#6 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#7 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login
+in C:\vhosts\morya\morya\protected\controllers\SiteController.php (75)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/17 10:57:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=fudjhdj1n633c35k2qhpo7deu2&YII_CSRF_TOKEN=e28926d0db9d59d85ec4ec65621acf09eca55b69&qqfile=3888371.JPG
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 10:58:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=3888371.JPG
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 10:58:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=3888371.JPG
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 10:58:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=3888371.JPG
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 11:11:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=IMG_20120221_205722.jpg
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 11:13:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=IMG_20120221_205722.jpg
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
+2012/08/17 11:13:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\vhosts\morya\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('postUpload')
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('photo/postUploa...')
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=Image3836.jpg
+HTTP_REFERER=http://morya/index.php?r=photo/upload
+---
