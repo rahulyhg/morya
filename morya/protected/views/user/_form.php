@@ -57,12 +57,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'taluka'); ?>
-		<?php echo $form->textField($model,'taluka',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'taluka'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'city'); ?>
 		<?php echo $form->textField($model,'city',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'city'); ?>

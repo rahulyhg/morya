@@ -4,6 +4,7 @@ class UserController extends Controller
 {
 	function init(){
 		Yii::import('application.models.user.*');
+		Yii::app()->user->setReturnUrl(Yii::app()->createUrl('site/index'));
 	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -30,11 +31,11 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('register'),
+				'actions'=>array('register','login'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update'),
+				'actions'=>array('logout'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -64,6 +65,9 @@ class UserController extends Controller
 	 */
 	public function actionRegister()
 	{
+		if(!Yii::app()->user->isGuest){
+			$this->redirect(Yii::app()->user->returnUrl);
+		}
 		$model=new RegistrationForm;
 		$this->performAjaxValidation($model);
 		if(isset($_POST['RegistrationForm']))
@@ -71,9 +75,11 @@ class UserController extends Controller
 			$model->attributes=$_POST['RegistrationForm'];
 			if($model->validate()){
 				$user = new User ;
+				var_dump($model);
 				$user->attributes = $model->attributes ;
-				if($user->save())
-					$this->redirect(array('view','id'=>$model->id));
+				var_dump($user);
+				if($user->save());
+					//$this->redirect(array('site/index'));
 			}
 		}
 
@@ -81,7 +87,37 @@ class UserController extends Controller
 			'model'=>$model,
 		));
 	}
+	
+	public function actionLogin()
+	{
+		if(!Yii::app()->user->isGuest){
+			$this->redirect(Yii::app()->user->returnUrl);
+		}
+		$model=new LoginForm;
 
+		// if it is ajax validation request
+		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+
+		// collect user input data
+		if(isset($_POST['LoginForm']))
+		{
+			$model->attributes=$_POST['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->login())
+				$this->redirect(Yii::app()->user->returnUrl);
+		}
+		// display the login form
+		$this->render('login',array('model'=>$model));
+	}
+	public function actionLogout()
+	{
+		Yii::app()->user->logout();
+		$this->redirect(Yii::app()->homeUrl);
+	}
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

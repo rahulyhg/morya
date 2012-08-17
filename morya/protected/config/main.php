@@ -33,6 +33,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			'returnUrl'=>'site/index'
 		),
 		// uncomment the following to enable URLs in path-format
 		/*
@@ -58,6 +59,7 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
+			//'initSQLs'=>array("set time_zone='+00:00';"),
 		),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

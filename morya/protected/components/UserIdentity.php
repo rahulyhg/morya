@@ -7,6 +7,7 @@
  */
 class UserIdentity extends CUserIdentity
 {
+	private $_id;
 	/**
 	 * Authenticates a user.
 	 * @return boolean whether authentication succeeds.
@@ -20,22 +21,23 @@ class UserIdentity extends CUserIdentity
 		}
         else 
         {
-			if($user->password!==$user->encrypt($this->password))
+			if($user->password !== md5($this->password))
 			{
 				$this->errorCode=self::ERROR_PASSWORD_INVALID;
 			}
 			else
           {
 				$this->_id = $user->id;
-				if(null===$user->last_login_time)
-				{
-				$lastLogin = time();
-				}
-				else
-				{
-				$lastLogin = strtotime($user->last_login_time);
-				}
-				//$this->setState('lastLoginTime', $lastLogin); $this->errorCode=self::ERROR_NONE;
+				// if(null===$user->last_login_time)
+				// {
+				// $lastLogin = time();
+				// }
+				// else
+				// {
+				// $lastLogin = strtotime($user->last_login_time);
+				// }
+				//$this->setState('lastLoginTime', $lastLogin); 
+				$this->errorCode=self::ERROR_NONE;
       }
         }
         return !$this->errorCode;

@@ -8,11 +8,10 @@
  * @property string $email
  * @property string $password
  * @property string $name
- * @property integer $contact
+ * @property string $contact
  * @property string $ganpati_pic
  * @property string $add_line_1
  * @property string $add_line_2
- * @property string $taluka
  * @property string $city
  * @property string $created
  * @property string $modified
@@ -54,14 +53,13 @@ class User extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, password, name, contact, add_line_1, add_line_2, taluka, city, created, modified', 'required'),
-			array('contact', 'numerical', 'integerOnly'=>true),
+			array('email, password, name, created, modified', 'required'),
 			array('email, password, name, add_line_1, add_line_2', 'length', 'max'=>255),
-			array('ganpati_pic', 'length', 'max'=>11),
-			array('taluka, city', 'length', 'max'=>50),
+			array('contact, ganpati_pic', 'length', 'max'=>11),
+			array('city', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, email, password, name, contact, ganpati_pic, add_line_1, add_line_2, taluka, city, created, modified', 'safe', 'on'=>'search'),
+			array('id, email, password, name, contact, ganpati_pic, add_line_1, add_line_2, city, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -97,7 +95,6 @@ class User extends AppActiveRecord
 			'ganpati_pic' => 'Ganpati Pic',
 			'add_line_1' => 'Add Line 1',
 			'add_line_2' => 'Add Line 2',
-			'taluka' => 'Taluka',
 			'city' => 'City',
 			'created' => 'Created',
 			'modified' => 'Modified',
@@ -119,11 +116,10 @@ class User extends AppActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('contact',$this->contact);
+		$criteria->compare('contact',$this->contact,true);
 		$criteria->compare('ganpati_pic',$this->ganpati_pic,true);
 		$criteria->compare('add_line_1',$this->add_line_1,true);
 		$criteria->compare('add_line_2',$this->add_line_2,true);
-		$criteria->compare('taluka',$this->taluka,true);
 		$criteria->compare('city',$this->city,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
@@ -133,11 +129,11 @@ class User extends AppActiveRecord
 		));
 	}
 	
-	protected function beforeValidate()
+	protected function beforeSave()
 	{
-		if(isset($this->password)){
+		if(isset($this->password) && !empty($this->password)){
 			$this->password = md5($this->password);
 		}
-		return parent::beforeValidate();
+		return true;
 	}
 }
