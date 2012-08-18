@@ -1,8 +1,7 @@
 <?php
 
 // uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
-
+//Yii::setPathOfAlias('upload',Yii::getPathOfAlias('webroot').'/upload/');
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
@@ -15,7 +14,9 @@ return array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
+		'application.models.enums.*',
 		'application.components.*',
+		
 	),
 
 	'modules'=>array(
@@ -78,6 +79,10 @@ return array(
 				),
 				*/
 			),
+		),
+		'phpThumb'=>array(
+			'class'=>'ext.EPhpThumb.EPhpThumb',
+			'options'=>array('ar'=>'p')
 		),
 	),
 

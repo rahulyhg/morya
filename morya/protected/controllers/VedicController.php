@@ -1,6 +1,6 @@
 <?php
 
-class PhotoController extends Controller
+class VedicController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -31,7 +31,7 @@ class PhotoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('upload','postUpload'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -43,51 +43,7 @@ class PhotoController extends Controller
 			),
 		);
 	}
-	
-	public function actionUpload()
-	{
-		$this->render('upload');
-	}
-	public function actionPostUpload(){
-			Yii::import("ext.EAjaxUpload.qqFileUploader");
-			$folder = PhotoType::$folderName[PhotoType::Original];// folder for uploaded files
-			$allowedExtensions = array("jpg","jpeg","gif");//array("jpg","jpeg","gif","exe","mov" and etc...
-			$sizeLimit = 5 * 1024 * 1024;// maximum file size in bytes - 10mb
-			$uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
-			$result = $uploader->handleUpload($folder);
-			$return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
-			$fileSize=filesize($folder.$result['filename']);//GETTING FILE SIZE
-			$fileName=$result['filename'];//GETTING FILE NAME
-			$this->resize($folder.$fileName);
-			$this->updateDb($fileName);
-			echo $return;// it's array
-	}
-	
-	private function updateDb($fileName){
-		$photo = new Photo;
-		$photo->caption = $fileName;
-		$photo->original_name = 'not availaible';
-		$photo->file_name = $fileName;
-		$photo->file_type = 'image/jpeg';
-		$photo->file_size = 1000 ;
-		$photo->user_id = Yii::app()->user->id ;
-		if($photo->validate()){
-			$photo->save();
-		}
-	}
-	
-	private function resize($filePath){
-			$path_information = pathinfo($filePath);
-			list($width, $height, $type, $attr) = getimagesize($filePath);
 
-
-			$thumb=Yii::app()->phpThumb->create($filePath);
-			$thumb->resize(PhotoType::$dimension[PhotoType::Screen]['width']);
-			$thumb->save(PhotoType::$folderName[PhotoType::Screen].$path_information['basename']);
-			
-			$thumb->resize(100,100);
-			$thumb->save(PhotoType::$folderName[PhotoType::Thumb].$path_information['basename']);
-	}
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -105,14 +61,14 @@ class PhotoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Photo;
+		$model=new Vedic;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Photo']))
+		if(isset($_POST['Vedic']))
 		{
-			$model->attributes=$_POST['Photo'];
+			$model->attributes=$_POST['Vedic'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -134,9 +90,9 @@ class PhotoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Photo']))
+		if(isset($_POST['Vedic']))
 		{
-			$model->attributes=$_POST['Photo'];
+			$model->attributes=$_POST['Vedic'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -171,7 +127,7 @@ class PhotoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Photo');
+		$dataProvider=new CActiveDataProvider('Vedic');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -182,10 +138,10 @@ class PhotoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Photo('search');
+		$model=new Vedic('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Photo']))
-			$model->attributes=$_GET['Photo'];
+		if(isset($_GET['Vedic']))
+			$model->attributes=$_GET['Vedic'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -199,7 +155,7 @@ class PhotoController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Photo::model()->findByPk($id);
+		$model=Vedic::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -211,7 +167,7 @@ class PhotoController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='photo-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='vedic-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
