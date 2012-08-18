@@ -144,10 +144,10 @@ class qqFileUploader {
         }
 
         $pathinfo = pathinfo($this->file->getName());
-        $filename = $this->translitIt($pathinfo['filename']);//http://yiiframework.ru/forum/memberlist.php?mode=viewprofile&u=3311
+        //$filename = $this->translitIt($pathinfo['filename']); //http://yiiframework.ru/forum/memberlist.php?mode=viewprofile&u=3311
         //$filename = $pathinfo['filename'];
         
-        //$filename = md5(uniqid());
+        $filename = md5(uniqid(true));
         $ext = $pathinfo['extension'];
 
         if($this->allowedExtensions && !in_array(strtolower($ext), $this->allowedExtensions)){

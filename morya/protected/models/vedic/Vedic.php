@@ -1,34 +1,32 @@
 <?php
 
 /**
- * This is the model class for table "photoes".
+ * This is the model class for table "vedics".
  *
- * The followings are the available columns in table 'photoes':
+ * The followings are the available columns in table 'vedics':
  * @property string $id
- * @property string $caption
- * @property string $description
- * @property string $original_name
- * @property string $file_name
- * @property string $file_type
- * @property string $file_size
+ * @property integer $type
+ * @property string $name_of_god
+ * @property string $title
+ * @property string $slug
+ * @property string $text
+ * @property string $audio_path
+ * @property double $audio_length
+ * @property string $audio_size
  * @property string $user_id
  * @property string $created
  * @property string $modified
  *
  * The followings are the available model relations:
- * @property Durvas[] $durvases
- * @property Comments[] $comments
- * @property PhotoHits[] $photoHits
- * @property PhotoTag[] $photoTags
+ * @property VedicComment[] $vedicComments
  * @property Users $user
- * @property TemplePhoto[] $templePhotos
  */
-class Photo extends AppActiveRecord
+class Vedic extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Photo the static model class
+	 * @return Vedic the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -40,7 +38,7 @@ class Photo extends AppActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'photoes';
+		return 'vedics';
 	}
 
 	/**
@@ -51,13 +49,15 @@ class Photo extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('caption, description, original_name, file_name, file_type, file_size', 'required'),
-			array('caption, original_name, file_name, file_type', 'length', 'max'=>255),
-			array('file_size', 'length', 'max'=>20),
+			array('type, name_of_god, title, slug, text, created, modified', 'required'),
+			array('type', 'numerical', 'integerOnly'=>true),
+			array('audio_length', 'numerical'),
+			array('name_of_god, title, audio_path', 'length', 'max'=>255),
+			array('audio_size', 'length', 'max'=>20),
 			array('user_id', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, caption, description, original_name, file_name, file_type, file_size, user_id, created, modified', 'safe', 'on'=>'search'),
+			array('id, type, name_of_god, title, slug, text, audio_path, audio_length, audio_size, user_id, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,12 +69,8 @@ class Photo extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'durvases' => array(self::HAS_MANY, 'Durvas', 'photo_id'),
-			'comments' => array(self::MANY_MANY, 'Comments', 'photo_comment(photo_id, comment_id)'),
-			'photoHits' => array(self::HAS_MANY, 'PhotoHits', 'photo_id'),
-			'photoTags' => array(self::HAS_MANY, 'PhotoTag', 'photo_id'),
+			'vedicComments' => array(self::HAS_MANY, 'VedicComment', 'vedic_id'),
 			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
-			'templePhotos' => array(self::HAS_MANY, 'TemplePhoto', 'photo_id'),
 		);
 	}
 
@@ -85,12 +81,14 @@ class Photo extends AppActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'caption' => 'Caption',
-			'description' => 'Description',
-			'original_name' => 'Original Name',
-			'file_name' => 'File Name',
-			'file_type' => 'File Type',
-			'file_size' => 'File Size',
+			'type' => 'Type',
+			'name_of_god' => 'Name Of God',
+			'title' => 'Title',
+			'slug' => 'Slug',
+			'text' => 'Text',
+			'audio_path' => 'Audio Path',
+			'audio_length' => 'Audio Length',
+			'audio_size' => 'Audio Size',
 			'user_id' => 'User',
 			'created' => 'Created',
 			'modified' => 'Modified',
@@ -109,12 +107,14 @@ class Photo extends AppActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('caption',$this->caption,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('original_name',$this->original_name,true);
-		$criteria->compare('file_name',$this->file_name,true);
-		$criteria->compare('file_type',$this->file_type,true);
-		$criteria->compare('file_size',$this->file_size,true);
+		$criteria->compare('type',$this->type);
+		$criteria->compare('name_of_god',$this->name_of_god,true);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('slug',$this->slug,true);
+		$criteria->compare('text',$this->text,true);
+		$criteria->compare('audio_path',$this->audio_path,true);
+		$criteria->compare('audio_length',$this->audio_length);
+		$criteria->compare('audio_size',$this->audio_size,true);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);

@@ -2,7 +2,7 @@
 return array (
   'template' => 'default',
   'tablePrefix' => '',
-  'modelPath' => 'application.models.photo',
+  'modelPath' => 'application.models.vedic',
   'baseClass' => 'CActiveRecord',
   'buildRelations' => '1',
 );
