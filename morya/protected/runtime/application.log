@@ -9103,3 +9103,625 @@ Stack trace:
 REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=Image3836.jpg
 HTTP_REFERER=http://morya/index.php?r=photo/upload
 ---
+2012/08/17 07:41:42 [error] [php] include(LoginForm.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\swapnil\vhosts\morya\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\swapnil\vhosts\morya\morya\protected\controllers\SiteController.php(75): spl_autoload_call()
+#1 C:\swapnil\vhosts\morya\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#2 C:\swapnil\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\swapnil\vhosts\morya\framework\web\CController.php(287): SiteController->runAction()
+#4 C:\swapnil\vhosts\morya\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#5 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): SiteController->run()
+#6 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#7 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login
+in C:\swapnil\vhosts\morya\morya\protected\controllers\SiteController.php (75)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:52 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:52 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:52 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:52 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:56 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:56 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:56 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:56 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:58 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:58 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:58 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:44:58 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:01 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:01 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:01 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:01 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:04 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:04 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:04 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:04 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:56 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:56 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:56 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:45:56 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:00 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:00 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:00 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:00 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:01 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:01 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:01 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:01 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:03 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:03 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:03 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:03 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (212)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:05 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (75)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:05 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (75)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:05 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (75)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:05 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (75)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:46:05 [warning] [application] Failed to set unsafe attribute "confirm_password" of "User".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (79)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:22 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:22 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:22 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:22 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:25 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:25 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:25 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:25 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:34 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:34 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:34 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:34 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:41 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:41 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:41 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:41 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:45 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:45 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:45 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:45 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:46 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:46 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:46 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:46 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:49 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:49 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:49 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:49 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (217)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (72)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:50 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (75)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:50 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (75)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:50 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (75)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:50 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (75)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:51 [warning] [application] Failed to set unsafe attribute "confirm_password" of "User".
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (79)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 07:58:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "hello".' in C:\swapnil\vhosts\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\web\CController.php(271): CController->missingAction('hello')
+#1 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('hello')
+#2 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('site/hello')
+#3 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\swapnil\vhosts\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/hello
+HTTP_REFERER=http://morya:8080/index.php?r=site/index
+---
+2012/08/17 08:01:10 [error] [php] Undefined index: filename (C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php:59)
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\swapnil\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=ae0l8spbpltmpskriacktqmck7&YII_CSRF_TOKEN=c8bd23800c3ffc2f6ed80e6bd075bd1ee2bc9a0c&qqfile=536109_3496087853573_1974749627_n.jpg
+in C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php (59)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 08:01:17 [error] [php] Undefined index: filename (C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php:59)
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\swapnil\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=ae0l8spbpltmpskriacktqmck7&YII_CSRF_TOKEN=c8bd23800c3ffc2f6ed80e6bd075bd1ee2bc9a0c&qqfile=536109_3496087853573_1974749627_n.jpg
+in C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php (59)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 08:01:54 [error] [php] Undefined index: filename (C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php:59)
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\swapnil\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=ae0l8spbpltmpskriacktqmck7&YII_CSRF_TOKEN=c8bd23800c3ffc2f6ed80e6bd075bd1ee2bc9a0c&qqfile=536109_3496087853573_1974749627_n.jpg
+in C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php (59)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 08:02:10 [error] [php] Undefined index: filename (C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php:59)
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\swapnil\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=ae0l8spbpltmpskriacktqmck7&YII_CSRF_TOKEN=c8bd23800c3ffc2f6ed80e6bd075bd1ee2bc9a0c&qqfile=536109_3496087853573_1974749627_n.jpg
+in C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php (59)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 08:02:15 [error] [php] Undefined index: filename (C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php:59)
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\swapnil\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=ae0l8spbpltmpskriacktqmck7&YII_CSRF_TOKEN=c8bd23800c3ffc2f6ed80e6bd075bd1ee2bc9a0c&qqfile=536109_3496087853573_1974749627_n.jpg
+in C:\swapnil\vhosts\morya\morya\protected\controllers\PhotoController.php (59)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 08:46:06 [error] [exception.CException] exception 'CException' with message 'Alias "application.widgets.facebook.Facebook" is invalid. Make sure it points to an existing PHP file.' in C:\swapnil\vhosts\morya\framework\YiiBase.php:318
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\web\CWidgetFactory.php(147): YiiBase::import('application.wid...', true)
+#1 C:\swapnil\vhosts\morya\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(UserController), 'application.wid...', Array)
+#2 C:\swapnil\vhosts\morya\framework\web\CBaseController.php(173): CBaseController->createWidget('application.wid...', Array)
+#3 C:\swapnil\vhosts\morya\morya\protected\views\user\login.php(9): CBaseController->widget('application.wid...', Array)
+#4 C:\swapnil\vhosts\morya\framework\web\CBaseController.php(127): require('C:\swapnil\vhos...')
+#5 C:\swapnil\vhosts\morya\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\swapnil\vhos...', Array, true)
+#6 C:\swapnil\vhosts\morya\framework\web\CController.php(870): CBaseController->renderFile('C:\swapnil\vhos...', Array, true)
+#7 C:\swapnil\vhosts\morya\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#8 C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php(119): CController->render('login', Array)
+#9 C:\swapnil\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionLogin()
+#10 C:\swapnil\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\swapnil\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('login')
+#19 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/login')
+#20 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\swapnil\vhosts\morya\morya\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/login
+HTTP_REFERER=http://morya:8080/index.php
+---
+2012/08/17 09:30:41 [error] [php] include(AppController.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\swapnil\vhosts\morya\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(344): require()
+#2 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(270): CWebApplication->createController()
+#3 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (4)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 09:30:50 [error] [php] include(AppController.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\swapnil\vhosts\morya\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php(4): spl_autoload_call()
+#1 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(344): require()
+#2 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(270): CWebApplication->createController()
+#3 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#4 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (4)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 09:38:56 [error] [exception.CException] exception 'CException' with message 'Alias "ext.yii-facebook-opengraph.SFacebook" is invalid. Make sure it points to an existing PHP file.' in C:\swapnil\vhosts\morya\framework\YiiBase.php:318
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\YiiBase.php(198): YiiBase::import('ext.yii-faceboo...', true)
+#1 C:\swapnil\vhosts\morya\framework\base\CModule.php(387): YiiBase::createComponent(Array)
+#2 C:\swapnil\vhosts\morya\framework\base\CModule.php(104): CModule->getComponent('facebook')
+#3 C:\swapnil\vhosts\morya\morya\protected\controllers\AppController.php(38): CModule->__get('facebook')
+#4 C:\swapnil\vhosts\morya\framework\web\CController.php(787): AppController->afterRender('login', '<!DOCTYPE html>...')
+#5 C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php(106): CController->render('login', Array)
+#6 C:\swapnil\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionLogin()
+#7 C:\swapnil\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\swapnil\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('login')
+#16 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/login')
+#17 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\swapnil\vhosts\morya\morya\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 09:44:44 [error] [exception.Exception] exception 'Exception' with message 'Facebook needs the CURL PHP extension.' in C:\swapnil\vhosts\morya\morya\protected\extensions\yii-facebook-opengraph\php-sdk-3.1.1\base_facebook.php:19
+Stack trace:
+#0 C:\swapnil\vhosts\morya\morya\protected\extensions\yii-facebook-opengraph\SBaseFacebook.php(14): require_once()
+#1 C:\swapnil\vhosts\morya\framework\YiiBase.php(397): include('C:\swapnil\vhos...')
+#2 [internal function]: YiiBase::autoload('SBaseFacebook')
+#3 C:\swapnil\vhosts\morya\morya\protected\extensions\yii-facebook-opengraph\SFacebook.php(444): spl_autoload_call('SBaseFacebook')
+#4 C:\swapnil\vhosts\morya\morya\protected\extensions\yii-facebook-opengraph\SFacebook.php(511): SFacebook->_getFacebook()
+#5 C:\swapnil\vhosts\morya\morya\protected\views\user\login.php(9): SFacebook->getLoginUrl()
+#6 C:\swapnil\vhosts\morya\framework\web\CBaseController.php(127): require('C:\swapnil\vhos...')
+#7 C:\swapnil\vhosts\morya\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\swapnil\vhos...', Array, true)
+#8 C:\swapnil\vhosts\morya\framework\web\CController.php(870): CBaseController->renderFile('C:\swapnil\vhos...', Array, true)
+#9 C:\swapnil\vhosts\morya\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#10 C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php(106): CController->render('login', Array)
+#11 C:\swapnil\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionLogin()
+#12 C:\swapnil\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\swapnil\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('login')
+#21 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/login')
+#22 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\swapnil\vhosts\morya\morya\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 10:04:34 [error] [php] Undefined variable: size (C:\swapnil\vhosts\morya\morya\protected\views\user\login.php:10)
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\web\CController.php(870): UserController->renderFile()
+#1 C:\swapnil\vhosts\morya\framework\web\CController.php(783): UserController->renderPartial()
+#2 C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php(106): UserController->render()
+#3 C:\swapnil\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionLogin()
+#4 C:\swapnil\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#6 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#9 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\swapnil\vhosts\morya\framework\web\CController.php(266): UserController->runActionWithFilters()
+#12 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): UserController->run()
+#13 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in C:\swapnil\vhosts\morya\morya\protected\views\user\login.php (10)
+in C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php (106)
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 10:09:20 [error] [exception.FacebookApiException] OAuthException: This IP can't make requests for that application.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 10:30:01 [error] [exception.FacebookApiException] OAuthException: This IP can't make requests for that application.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 10:32:35 [error] [exception.FacebookApiException] OAuthException: An active access token must be used to query information about the current user.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 12:01:10 [error] [exception.FacebookApiException] OAuthException: Error validating access token: Session has expired at unix time 1345204800. The current unix time is 1345205259.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 12:05:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login2".' in C:\swapnil\vhosts\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\swapnil\vhosts\morya\framework\web\CController.php(271): CController->missingAction('login2')
+#1 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('login2')
+#2 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/login2')
+#3 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\swapnil\vhosts\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/login2
+---
+2012/08/17 12:36:54 [error] [exception.FacebookApiException] OAuthException: An active access token must be used to query information about the current user.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 12:37:06 [error] [exception.FacebookApiException] OAuthException: An active access token must be used to query information about the current user.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 12:37:14 [error] [exception.FacebookApiException] OAuthException: An active access token must be used to query information about the current user.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 12:54:57 [error] [exception.CException] exception 'CException' with message 'SFacebook and its behaviors do not have a method or closure named "getAppId".' in C:\swapnil\vhosts\morya\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\swapnil\vhosts\morya\morya\protected\views\user\login.php(10): CComponent->__call('getAppId', Array)
+#1 C:\swapnil\vhosts\morya\morya\protected\views\user\login.php(10): SFacebook->getAppId()
+#2 C:\swapnil\vhosts\morya\framework\web\CBaseController.php(127): require('C:\swapnil\vhos...')
+#3 C:\swapnil\vhosts\morya\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\swapnil\vhos...', Array, true)
+#4 C:\swapnil\vhosts\morya\framework\web\CController.php(870): CBaseController->renderFile('C:\swapnil\vhos...', Array, true)
+#5 C:\swapnil\vhosts\morya\framework\web\CController.php(783): CController->renderPartial('login', Array, true)
+#6 C:\swapnil\vhosts\morya\morya\protected\controllers\UserController.php(106): CController->render('login', Array)
+#7 C:\swapnil\vhosts\morya\framework\web\actions\CInlineAction.php(50): UserController->actionLogin()
+#8 C:\swapnil\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\swapnil\vhosts\morya\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('login')
+#17 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('user/login')
+#18 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\swapnil\vhosts\morya\morya\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 13:19:49 [error] [php] include(AuthType.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\swapnil\vhosts\morya\framework\YiiBase.php:418)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 C:\swapnil\vhosts\morya\framework\web\actions\CAction.php(103): ReflectionParameter->getDefaultValue()
+#2 C:\swapnil\vhosts\morya\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 C:\swapnil\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#5 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#7 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#8 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#9 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\swapnil\vhosts\morya\framework\web\CController.php(266): UserController->runActionWithFilters()
+#11 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): UserController->run()
+#12 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#13 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 13:24:35 [error] [php] include(AuthType.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\swapnil\vhosts\morya\framework\YiiBase.php:418)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 C:\swapnil\vhosts\morya\framework\web\actions\CAction.php(103): ReflectionParameter->getDefaultValue()
+#2 C:\swapnil\vhosts\morya\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 C:\swapnil\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#5 C:\swapnil\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\swapnil\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#7 C:\swapnil\vhosts\morya\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#8 C:\swapnil\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#9 C:\swapnil\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\swapnil\vhosts\morya\framework\web\CController.php(266): UserController->runActionWithFilters()
+#11 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(276): UserController->run()
+#12 C:\swapnil\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#13 C:\swapnil\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\swapnil\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/login
+in C:\swapnil\vhosts\morya\morya\index.php (13)
+2012/08/17 13:44:18 [error] [exception.FacebookApiException] OAuthException: An active access token must be used to query information about the current user.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 13:44:30 [error] [exception.FacebookApiException] OAuthException: An active access token must be used to query information about the current user.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 13:45:09 [error] [exception.FacebookApiException] OAuthException: An active access token must be used to query information about the current user.
+REQUEST_URI=/index.php?r=user/login
+---
+2012/08/17 13:45:43 [error] [exception.FacebookApiException] OAuthException: An active access token must be used to query information about the current user.
+REQUEST_URI=/index.php?r=user/login
+---

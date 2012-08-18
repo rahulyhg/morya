@@ -15,6 +15,7 @@ return array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
+		'application.controllers.*',
 		'application.components.*',
 	),
 
@@ -30,8 +31,11 @@ return array(
 
 	// application components
 	'components'=>array(
+		'session' => array(
+			   'autoStart'=>true,  
+		),
 		'user'=>array(
-			// enable cookie-based authentication
+			'loginUrl' => array('user/login'),
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
@@ -79,6 +83,27 @@ return array(
 				*/
 			),
 		),
+		/********* Facebook Component **********/
+		'facebook'=>array(
+			'class' => 'ext.yii-facebook-opengraph.SFacebook',
+			'appId'=>'493477977331627', // needed for JS SDK, Social Plugins and PHP SDK
+			'secret'=>'2688f157da5115c3e2ce580ed238a08c', // needed for the PHP SDK 
+			'locale'=>'en_US', // override locale setting (defaults to en_US)
+			'jsSdk'=>true, // don't include JS SDK
+			'async'=>true, // load JS SDK asynchronously
+			'jsCallback'=>false, // declare if you are going to be inserting any JS callbacks to the async JS SDK loader
+			'status'=>true, // JS SDK - check login status
+			'cookie'=>true, // JS SDK - enable cookies to allow the server to access the session
+			'oauth'=>true,  // JS SDK - enable OAuth 2.0
+			'xfbml'=>true,  // JS SDK - parse XFBML / html5 Social Plugins
+			'frictionlessRequests'=>true, // JS SDK - enable frictionless requests for request dialogs
+			'html5'=>true,  // use html5 Social Plugins instead of XFBML
+			// 'ogTags'=>array(  // set default OG tags
+				// 'title'=>'Global Ganesh Festival',
+				// 'description'=>'MY_WEBSITE_DESCRIPTION',
+				// 'image'=>'URL_TO_WEBSITE_LOGO',
+			// ),
+	  ),
 	),
 
 	// application-level parameters that can be accessed

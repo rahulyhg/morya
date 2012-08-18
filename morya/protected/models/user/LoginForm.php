@@ -12,7 +12,6 @@ class LoginForm extends CFormModel
 	public $rememberMe;
 
 	private $_identity;
-
 	/**
 	 * Declares the validation rules.
 	 * The rules state that email and password are required,

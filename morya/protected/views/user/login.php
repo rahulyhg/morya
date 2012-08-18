@@ -4,11 +4,22 @@ $this->breadcrumbs=array(
 	'Login',
 );
 ?>
-
+<script type="text/javascript">
+$('document').ready(function(){
+    $('#fblogina').click(function() {
+            FB.login(function (response) {
+				if (response.authResponse) {
+					window.location = "<?php echo $this->createAbsoluteUrl('user/login',array('authType'=>1)) ?>?code=" +response.authResponse.accessToken;
+				} else {
+					// user clicked Cancel
+				}
+            }, {scope:'email,user_photos,user_location'});
+        }//fblogin
+    );
+});
+</script>
 <h1>Login</h1>
-
-<p>Please fill out the following form with your login credentials:</p>
-
+<a id="fblogina" href="#">Login With FB</a>
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',

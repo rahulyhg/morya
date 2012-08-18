@@ -1,32 +1,19 @@
 <?php
 
-class UserController extends Controller
+class UserController extends AppController
 {
 	function init(){
 		Yii::import('application.models.user.*');
 		Yii::app()->user->setReturnUrl(Yii::app()->createUrl('site/index'));
 	}
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
 
-	/**
-	 * @return array action filters
-	 */
 	public function filters()
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
 		);
 	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
+	
 	public function accessRules()
 	{
 		return array(
@@ -78,8 +65,13 @@ class UserController extends Controller
 				var_dump($model);
 				$user->attributes = $model->attributes ;
 				var_dump($user);
-				if($user->save());
-					//$this->redirect(array('site/index'));
+				if($user->save()){
+					//log-in the user
+					$identity=new UserIdentity($model->email,$model->password);
+					$identity->authenticate();
+					Yii::app()->user->login($identity);
+					$this->redirect(array('site/index'));
+				}
 			}
 		}
 
@@ -88,7 +80,7 @@ class UserController extends Controller
 		));
 	}
 	
-	public function actionLogin()
+	public function actionLogin($authenticationType = 0 )
 	{
 		if(!Yii::app()->user->isGuest){
 			$this->redirect(Yii::app()->user->returnUrl);
