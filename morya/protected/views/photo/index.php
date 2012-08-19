@@ -1,17 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Photos',
-);
-
-$this->menu=array(
-	array('label'=>'Create Photo', 'url'=>array('create')),
-	array('label'=>'Manage Photo', 'url'=>array('admin')),
-);
+	'Ganesh Photos',
+);?>
+<div class="single-photo">
+<?php
+foreach($elementsList as $photo){
+$this->renderPartial('_single',array('photo'=>$photo));
+}
 ?>
-
-<h1>Photos</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+</div>

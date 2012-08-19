@@ -4,5 +4,4 @@ class AuthType {
 	const Facebook = 1;
 	const OpenId = 2;
 }
-
 ?>

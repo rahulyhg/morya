@@ -56,12 +56,15 @@ class qqUploadedFileForm {
     function getSize() {
         return $_FILES['qqfile']['size'];
     }
+	function getType() {
+        return $_FILES['qqfile']['type'];
+    }
 }
 
 class qqFileUploader {
     private $allowedExtensions = array();
     private $sizeLimit = 10485760;
-    private $file;
+    public $file;
 
     //http://yiiframework.ru/forum/memberlist.php?mode=viewprofile&u=3311
     function translitIt($str) {

@@ -5,7 +5,7 @@
  * It contains the authentication method that checks if the provided
  * data can identity the user.
  */
-class UserIdentity extends CUserIdentity
+class FacebookIdentity extends CUserIdentity
 {
 	private $_id;
 	/**
@@ -14,29 +14,22 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$user=User::model()->findByAttributes(array('authentication_type'=>AuthType::Normal,'email'=>$this->username));
+			$user = User::model()->findByAttributes(
+						array( 'authentication_type' => AuthType::Facebook,'open_id'=> $this->username )
+					);
 			if($user===null)
 			{
 				$this->errorCode=self::ERROR_USERNAME_INVALID;
+			}else{
+				$this->_id = $user->id;
+				$this->username = $user->email;
+				$this->errorCode=self::ERROR_NONE;
 			}
-			else 
-			{
-				if($user->password !== md5($this->password))
-				{
-					$this->errorCode=self::ERROR_PASSWORD_INVALID;
-				}
-				else
-				{
-					$this->_id = $user->id;
-					//update the login table
-					$this->errorCode=self::ERROR_NONE;
-				}
-			}
+		}
 		$login = new Login;
 		$login->loginUser($this->_id,$this->errorCode,Yii::app()->request->getUserHostAddress(),Yii::app()->request->getUserAgent());
         return !$this->errorCode;
 	}
-	
 	public function getId()
     {
         return $this->_id;

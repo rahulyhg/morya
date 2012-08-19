@@ -1,5 +1,9 @@
-<?php $this->pageTitle='Swapnil'; ?>
+<?php $this->pageTitle='Ganesha Photo | Ganpati Photo | Ganeshotsav'; ?>
 
-<h1>Today is <?php echo $time; ?></h1>
-
-<p><?php echo CHtml::link("Hello World",array('site/hello')) ?>
+<div id="collection">
+<?php
+//foreach($model['photo_collection'] as $photo){
+//	echo $this->renderPartial('_singlephoto', array('model'=>$photo));
+//}
+?>
+</div>

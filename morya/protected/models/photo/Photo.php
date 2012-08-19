@@ -51,13 +51,13 @@ class Photo extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('caption, description, original_name, file_name, file_type, file_size', 'required'),
+			array('caption, original_name, file_name, file_type, file_size', 'required'),
 			array('caption, original_name, file_name, file_type', 'length', 'max'=>255),
 			array('file_size', 'length', 'max'=>20),
 			array('user_id', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, caption, description, original_name, file_name, file_type, file_size, user_id, created, modified', 'safe', 'on'=>'search'),
+			array('caption, description, original_name, file_type, file_size, user_id, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 

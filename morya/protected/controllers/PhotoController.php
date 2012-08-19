@@ -2,6 +2,10 @@
 
 class PhotoController extends AppController
 {
+	function init(){
+		Yii::import('application.models.photo.*');
+	}
+
 	public function filters()
 	{
 		return array(
@@ -29,6 +33,21 @@ class PhotoController extends AppController
 			),
 		);
 	}
+	public function actionIndex(){
+		$criteria=new CDbCriteria;
+		$criteria->limit = 10;
+
+	   $pages=new CPagination(Photo::model()->count($criteria));          
+	   $pages->applyLimit($criteria);
+	   $pages->pageSize=10;
+
+	   $elementsList=Photo::model()->findAll($criteria);//->with('comments')
+	   $this->render('index',array(
+		  'elementsList'=>$elementsList,
+		  'pages'=>$pages,
+	   ));
+	}
+	
 	
 	public function actionUpload()
 	{
@@ -41,25 +60,27 @@ class PhotoController extends AppController
 			$sizeLimit = 5 * 1024 * 1024;// maximum file size in bytes - 10mb
 			$uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
 			$result = $uploader->handleUpload($folder);
-			$return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+			
 			$fileSize=filesize($folder.$result['filename']);//GETTING FILE SIZE
 			$fileName=$result['filename'];//GETTING FILE NAME
 			$this->resize($folder.$fileName);
-			$this->updateDb($fileName);
+			$lastId =$this->updateDb($fileName,$uploader->file->getName(),$uploader->file->getSize());
+			array_push($result,$lastId);
+			$return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
 			echo $return;// it's array
 	}
 	
-	private function updateDb($fileName){
+	private function updateDb($fileName,$ogName,$size){
 		$photo = new Photo;
 		$photo->caption = $fileName;
-		$photo->original_name = 'not availaible';
+		$photo->original_name = $ogName;
 		$photo->file_name = $fileName;
 		$photo->file_type = 'image/jpeg';
-		$photo->file_size = 1000 ;
-		$photo->user_id = Yii::app()->user->id ;
+		$photo->file_size = $size ;
 		if($photo->validate()){
 			$photo->save();
 		}
+		return $photo->id;
 	}
 	
 	private function resize($filePath){
@@ -81,30 +102,7 @@ class PhotoController extends AppController
 	public function actionView($id)
 	{
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
-
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$model=new Photo;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Photo']))
-		{
-			$model->attributes=$_POST['Photo'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
+			'photo'=>$this->loadModel($id),
 		));
 	}
 
@@ -151,18 +149,7 @@ class PhotoController extends AppController
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Photo');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
+	
 	/**
 	 * Manages all models.
 	 */

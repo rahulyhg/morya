@@ -1,32 +1,11 @@
 <?php
 $this->breadcrumbs=array(
 	'Photos'=>array('index'),
-	$model->id,
-);
-
-$this->menu=array(
-	array('label'=>'List Photo', 'url'=>array('index')),
-	array('label'=>'Create Photo', 'url'=>array('create')),
-	array('label'=>'Update Photo', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Photo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Photo', 'url'=>array('admin')),
+	$photo->caption,
 );
 ?>
 
-<h1>View Photo #<?php echo $model->id; ?></h1>
+<img style="width:400;height:" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name?>" />
+<?php
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'caption',
-		'description',
-		'original_name',
-		'file_name',
-		'file_type',
-		'file_size',
-		'user_id',
-		'created',
-		'modified',
-	),
-)); ?>
+?>
