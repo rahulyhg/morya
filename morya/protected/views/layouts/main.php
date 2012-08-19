@@ -33,9 +33,9 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Vedic','items'=>array(
 					array('label'=>'Aarti','url'=>array('/vedic/aarti')),
-					array('label'=>'Mantra Pushpanjali','url'=>array('/vedic/aarti')),
-					array('label'=>'Atharva Shirsh','url'=>array('/vedic/aarti')),
-					array('label'=>'Uttar Puja','url'=>array('/vedic/aarti')),
+					array('label'=>'Mantra Pushpanjali','url'=>array('/vedic/mantra')),
+					array('label'=>'Atharva Shirsh','url'=>array('/vedic/atharva')),
+					array('label'=>'Uttar Puja','url'=>array('/vedic/pooja')),
 					)),
 				array('label'=>'Ganesh Temples'),
 				array('label'=>'Ganesh Gaatha'),

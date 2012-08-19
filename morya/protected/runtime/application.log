@@ -10862,3 +10862,307 @@ Stack trace:
 REQUEST_URI=/index.php?r=vedic/aarti
 HTTP_REFERER=http://localhost/index.php
 ---
+<<<<<<< Updated upstream
+=======
+2012/08/18 09:40:16 [error] [php] Use of undefined constant ORIGINAL_DIR - assumed 'ORIGINAL_DIR' (C:\vhosts\morya\morya\protected\controllers\PhotoController.php:53)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#1 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#4 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#7 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=IMG_0013.JPG
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (53)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/18 10:05:43 [error] [php] Undefined variable: filePath (C:\vhosts\morya\morya\protected\controllers\PhotoController.php:67)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#2 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#5 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#8 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#9 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=IMG_0029.JPG
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (67)
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (62)
+in C:\vhosts\morya\morya\index.php (13)
+2012/08/18 10:23:39 [error] [php] Missing argument 2 for EThumbnail::adaptiveResize(), called in C:\vhosts\morya\morya\protected\controllers\PhotoController.php on line 85 and defined (C:\vhosts\morya\morya\protected\extensions\EPhpThumb\EThumbnail.php:28)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): PhotoController->actionPostUpload()
+#1 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#3 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#6 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#9 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#10 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#11 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=IMG_0001.JPG
+in C:\vhosts\morya\morya\protected\extensions\EPhpThumb\EThumbnail.php (28)
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (85)
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (61)
+2012/08/18 10:51:25 [error] [php] Missing argument 2 for EThumbnail::adaptiveResize(), called in C:\vhosts\morya\morya\protected\controllers\PhotoController.php on line 85 and defined (C:\vhosts\morya\morya\protected\extensions\EPhpThumb\EThumbnail.php:28)
+Stack trace:
+#0 C:\vhosts\morya\framework\web\actions\CInlineAction.php(50): PhotoController->actionPostUpload()
+#1 C:\vhosts\morya\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\vhosts\morya\framework\web\filters\CFilterChain.php(134): PhotoController->runAction()
+#3 C:\vhosts\morya\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\vhosts\morya\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\vhosts\morya\framework\web\filters\CInlineFilter.php(59): PhotoController->filterAccessControl()
+#6 C:\vhosts\morya\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\vhosts\morya\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\vhosts\morya\framework\web\CController.php(266): PhotoController->runActionWithFilters()
+#9 C:\vhosts\morya\framework\web\CWebApplication.php(276): PhotoController->run()
+#10 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#11 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\vhosts\morya\morya\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=photo/postUpload&PHPSESSID=0nn9vvshd9ce38o0j1ksrvg6s1&YII_CSRF_TOKEN=ecb525ea7c1ee0d82248d924227b375a9555366a&qqfile=IMG_0018.JPG
+in C:\vhosts\morya\morya\protected\extensions\EPhpThumb\EThumbnail.php (28)
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (85)
+in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (61)
+>>>>>>> d46c6e4e211af2ee46d00457f4c8aed67f120f8a
+2012/08/19 21:10:40 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (205)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (60)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:10:40 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (205)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (60)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:10:40 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (205)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (60)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:10:40 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (205)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (60)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:25 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:25 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:25 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:25 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:27 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:27 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:27 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:27 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:33 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:33 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:33 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:33 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:36 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:36 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:36 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:36 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:38 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:38 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:38 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:38 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:38 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:38 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:38 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:21:38 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:23:28 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (67)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:23:28 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (67)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:23:28 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (67)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:23:28 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (67)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:23:34 [warning] [application] Failed to set unsafe attribute "ganpati_pic" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:23:34 [warning] [application] Failed to set unsafe attribute "add_line_1" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:23:34 [warning] [application] Failed to set unsafe attribute "add_line_2" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/19 21:23:34 [warning] [application] Failed to set unsafe attribute "city" of "RegistrationForm".
+in C:\wamp\morya\morya\protected\controllers\UserController.php (209)
+in C:\wamp\morya\morya\protected\controllers\UserController.php (64)
+in C:\wamp\morya\morya\index.php (13)
+2012/08/20 00:40:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "aarti".' in C:\wamp\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\morya\framework\web\CController.php(271): CController->missingAction('aarti')
+#1 C:\wamp\morya\framework\web\CWebApplication.php(276): CController->run('aarti')
+#2 C:\wamp\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('vedic/aarti')
+#3 C:\wamp\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/morya/index.php?r=vedic/aarti
+HTTP_REFERER=http://localhost/morya/
+---
+2012/08/20 05:10:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "aarti".' in C:\wamp\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\morya\framework\web\CController.php(271): CController->missingAction('aarti')
+#1 C:\wamp\morya\framework\web\CWebApplication.php(276): CController->run('aarti')
+#2 C:\wamp\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('vedic/aarti')
+#3 C:\wamp\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/morya/index.php?r=vedic/aarti
+HTTP_REFERER=http://localhost/morya/
+---
+2012/08/20 05:11:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "aarti".' in C:\wamp\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\morya\framework\web\CController.php(271): CController->missingAction('aarti')
+#1 C:\wamp\morya\framework\web\CWebApplication.php(276): CController->run('aarti')
+#2 C:\wamp\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('vedic/aarti')
+#3 C:\wamp\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/morya/index.php?r=vedic/aarti
+HTTP_REFERER=http://localhost/morya/
+---
+2012/08/20 05:19:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "aarti".' in C:\wamp\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\morya\framework\web\CController.php(271): CController->missingAction('aarti')
+#1 C:\wamp\morya\framework\web\CWebApplication.php(276): CController->run('aarti')
+#2 C:\wamp\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('vedic/aarti')
+#3 C:\wamp\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/morya/index.php?r=vedic/aarti
+HTTP_REFERER=http://localhost/morya/index.php?r=site/index
+---
+2012/08/20 05:23:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "mantra".' in C:\wamp\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\morya\framework\web\CController.php(271): CController->missingAction('mantra')
+#1 C:\wamp\morya\framework\web\CWebApplication.php(276): CController->run('mantra')
+#2 C:\wamp\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('vedic/mantra')
+#3 C:\wamp\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/morya/index.php?r=vedic/mantra
+HTTP_REFERER=http://localhost/morya/index.php?r=user/login
+---
+2012/08/20 05:36:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "atharva_shirsha".' in C:\wamp\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\morya\framework\web\CController.php(271): CController->missingAction('atharva_shirsha')
+#1 C:\wamp\morya\framework\web\CWebApplication.php(276): CController->run('atharva_shirsha')
+#2 C:\wamp\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('vedic/atharva_s...')
+#3 C:\wamp\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/morya/index.php?r=vedic/atharva_shirsha
+HTTP_REFERER=http://localhost/morya/index.php?r=vedic/mantra
+---
+2012/08/20 05:36:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uttar_pooja".' in C:\wamp\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\morya\framework\web\CController.php(271): CController->missingAction('uttar_pooja')
+#1 C:\wamp\morya\framework\web\CWebApplication.php(276): CController->run('uttar_pooja')
+#2 C:\wamp\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('vedic/uttar_poo...')
+#3 C:\wamp\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/morya/index.php?r=vedic/uttar_pooja
+HTTP_REFERER=http://localhost/morya/index.php?r=vedic/atharva_shirsha
+---
+2012/08/20 05:37:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uttar_pooja".' in C:\wamp\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\morya\framework\web\CController.php(271): CController->missingAction('uttar_pooja')
+#1 C:\wamp\morya\framework\web\CWebApplication.php(276): CController->run('uttar_pooja')
+#2 C:\wamp\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('vedic/uttar_poo...')
+#3 C:\wamp\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/morya/index.php?r=vedic/uttar_pooja
+HTTP_REFERER=http://localhost/morya/index.php?r=vedic/atharva_shirsha
+---
+>>>>>>> Stashed changes

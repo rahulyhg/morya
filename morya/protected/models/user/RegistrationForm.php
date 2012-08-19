@@ -11,7 +11,13 @@ class RegistrationForm extends CFormModel
 	public $add_line_2;
 	public $ganpati_pic;
 	public $city;
-	
+	//fields are exactly same as we need in the form
+	//the rules are also defined here
+	//if rules are defined in the user class it will be validated when persisting to db
+	//RegistrationForm is binded to view .
+	//notice we do not have other properties of user class like created modified
+	//when this form is filled by the user we have a post operation
+	// 
 	public function rules()
 	{
 		return array(

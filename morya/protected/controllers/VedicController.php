@@ -1,7 +1,10 @@
 <?php
 
-class VedicController extends Controller
+class VedicController extends AppController
 {
+		function init(){
+		Yii::import('application.models.vedic.*');
+	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -27,11 +30,11 @@ class VedicController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','aarti','mantra','atharva','pooja'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','addvedic'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -148,6 +151,65 @@ class VedicController extends Controller
 		));
 	}
 
+	public function actionAarti()
+	{
+		$dataProvider=new CActiveDataProvider('Vedic');
+		$this->render('aarti',array(
+			'dataProvider'=>$dataProvider,
+		));
+	
+	
+	}
+	
+	public function actionMantra()
+	{
+		$dataProvider=new CActiveDataProvider('Vedic');
+		$this->render('mantra',array(
+			'dataProvider'=>$dataProvider,
+		));
+	
+	
+	}
+	
+	public function actionAtharva()
+	{
+		$dataProvider=new CActiveDataProvider('Vedic');
+		$this->render('atharva',array(
+			'dataProvider'=>$dataProvider,
+		));
+	
+	
+	}
+	
+	public function actionPooja()
+	{
+		$dataProvider=new CActiveDataProvider('Vedic');
+		$this->render('pooja',array(
+			'dataProvider'=>$dataProvider,
+		));
+	
+	
+	}
+	
+	public function actionAddvedic()
+	{
+		$model=new Vedic;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Vedic']))
+		{
+			$model->attributes=$_POST['Vedic'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('addvedic',array(
+			'model'=>$model,
+		));
+	}
+	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
