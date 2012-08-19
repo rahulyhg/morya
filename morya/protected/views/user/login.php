@@ -9,11 +9,11 @@ $('document').ready(function(){
     $('#fblogina').click(function() {
             FB.login(function (response) {
 				if (response.authResponse) {
-					window.location = "<?php echo $this->createAbsoluteUrl('user/login',array('authType'=>1)) ?>?code=" +response.authResponse.accessToken;
+					window.location = "<?php echo $this->createAbsoluteUrl('user/login',array('authType'=>AuthType::Facebook)) ?>?code=" +response.authResponse.accessToken;
 				} else {
 					// user clicked Cancel
 				}
-            }, {scope:'email,user_photos,user_location'});
+            }, {scope:'email,user_photos,user_location,publish_actions'});
         }//fblogin
     );
 });

@@ -62,9 +62,8 @@ class UserController extends AppController
 			$model->attributes=$_POST['RegistrationForm'];
 			if($model->validate()){
 				$user = new User ;
-				var_dump($model);
+				//RegistrationForm Model variables bulk assigned to User
 				$user->attributes = $model->attributes ;
-				var_dump($user);
 				if($user->save()){
 					//log-in the user
 					$identity=new UserIdentity($model->email,$model->password);
@@ -80,10 +79,50 @@ class UserController extends AppController
 		));
 	}
 	
-	public function actionLogin($authenticationType = 0 )
+	public function actionLogin($authType = AuthType::Normal )
 	{
+		//redirect loggedIn users
 		if(!Yii::app()->user->isGuest){
 			$this->redirect(Yii::app()->user->returnUrl);
+		}
+		if($authType == AuthType::Facebook){
+			$userId = Yii::app()->facebook->getUser();
+			if($userId){
+				$userInfo = Yii::app()->facebook->api('/me');
+				$userModel = User::getUserByOpenIdentifier($userInfo['id']);
+				if($userModel){
+					//user is already registered with us
+					$identity=new UserIdentity($userModel->open_id,'');
+					$identity->authenticate(AuthType::Facebook);
+					Yii::app()->user->login($identity);
+					$this->redirect(array('site/index'));
+				}else{
+					//register the user and log him in
+					$user = new User ;
+					$user->authentication_type = AuthType::Facebook;
+					$user->email = $userInfo['email'];
+					$user->name = $userInfo['name'];
+					$user->city = $userInfo['hometown']['name'];
+					$user->open_id = $userInfo['id'];
+					$user->profile_pic = Yii::app()->facebook->api('/me/picture','GET',array('size'=>'large'));
+					if($user->save()){
+						//log-in the user
+						$identity=new UserIdentity($user->open_id,'');
+						$identity->authenticate(AuthType::Facebook);
+						Yii::app()->user->login($identity);
+						$postObj   = Yii::app()->facebook->api('/me/feed', 'POST',
+									array(
+									  'link' => 'www.ganeshpic.com',
+									  'message' => 'Swapnil has Signed Up for Ganesh Pics to share his Ganesh Festival Experience !'
+								 ));
+						$this->redirect(array('site/index'));
+					}else{
+						print_r($user->getErrors());
+					}
+				}
+			}else{
+				$this->redirect(array('user/login','authType'=>AuthType::Normal));
+			}
 		}
 		$model=new LoginForm;
 

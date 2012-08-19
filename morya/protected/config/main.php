@@ -87,8 +87,8 @@ return array(
 		/********* Facebook Component **********/
 		'facebook'=>array(
 			'class' => 'ext.yii-facebook-opengraph.SFacebook',
-			'appId'=>'493477977331627', // needed for JS SDK, Social Plugins and PHP SDK
-			'secret'=>'2688f157da5115c3e2ce580ed238a08c', // needed for the PHP SDK 
+			'appId'=>'231642110292386', // needed for JS SDK, Social Plugins and PHP SDK
+			'secret'=>'e3e791c5e4c02a3931138506a49f2a61', // needed for the PHP SDK 
 			'locale'=>'en_US', // override locale setting (defaults to en_US)
 			'jsSdk'=>true, // don't include JS SDK
 			'async'=>true, // load JS SDK asynchronously

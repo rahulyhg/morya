@@ -5,9 +5,12 @@
  *
  * The followings are the available columns in table 'users':
  * @property string $id
+ * @property integer $authentication_type
+ * @property string $open_id
  * @property string $email
  * @property string $password
  * @property string $name
+ * @property string $profile_pic
  * @property string $contact
  * @property string $ganpati_pic
  * @property string $add_line_1
@@ -53,13 +56,13 @@ class User extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, password, name, created, modified', 'required'),
-			array('email, password, name, add_line_1, add_line_2', 'length', 'max'=>255),
+			array('email, name, created, modified', 'required'),
+			array('email, name, add_line_1, add_line_2', 'length', 'max'=>255),
 			array('contact, ganpati_pic', 'length', 'max'=>11),
 			array('city', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, email, password, name, contact, ganpati_pic, add_line_1, add_line_2, city, created, modified', 'safe', 'on'=>'search'),
+			array('email,name, contact,city,', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -113,9 +116,12 @@ class User extends AppActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('name',$this->name,true);
+		$criteria->compare('authentication_type',$this->authentication_type);
+        $criteria->compare('open_id',$this->open_id,true);
+        $criteria->compare('email',$this->email,true);
+        $criteria->compare('password',$this->password,true);
+        $criteria->compare('name',$this->name,true);
+        $criteria->compare('profile_pic',$this->profile_pic,true);
 		$criteria->compare('contact',$this->contact,true);
 		$criteria->compare('ganpati_pic',$this->ganpati_pic,true);
 		$criteria->compare('add_line_1',$this->add_line_1,true);
@@ -128,7 +134,9 @@ class User extends AppActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-	
+	public static function getUserByOpenIdentifier($openId){
+		return self::model()->find('open_id=:openId',array(':openId'=>$openId));
+	}
 	protected function beforeSave()
 	{
 		if(isset($this->password) && !empty($this->password)){

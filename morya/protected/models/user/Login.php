@@ -14,7 +14,7 @@
  * The followings are the available model relations:
  * @property Users $user
  */
-class Login extends CActiveRecord
+class Login extends AppActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -79,6 +79,14 @@ class Login extends CActiveRecord
 		);
 	}
 
+	public function loginUser($id,$status,$ip,$userAgent){
+		$this->user_id = $id;
+		$this->login_time = new CDbExpression('NOW()');
+		$this->is_loggedin = $status ;
+		$this->ip_address = $ip;
+		$this->browser_info = $userAgent ;
+		$this->save();
+	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
