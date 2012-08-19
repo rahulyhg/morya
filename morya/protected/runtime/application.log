@@ -10851,3 +10851,14 @@ REQUEST_URI=/index.php?r=photo/view&id=1
 in C:\vhosts\morya\morya\protected\views\photo\view.php (8)
 in C:\vhosts\morya\morya\protected\controllers\PhotoController.php (106)
 in C:\vhosts\morya\morya\index.php (13)
+2012/08/19 19:34:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "aarti".' in C:\vhosts\morya\framework\web\CController.php:484
+Stack trace:
+#0 C:\vhosts\morya\framework\web\CController.php(271): CController->missingAction('aarti')
+#1 C:\vhosts\morya\framework\web\CWebApplication.php(276): CController->run('aarti')
+#2 C:\vhosts\morya\framework\web\CWebApplication.php(135): CWebApplication->runController('vedic/aarti')
+#3 C:\vhosts\morya\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\vhosts\morya\morya\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=vedic/aarti
+HTTP_REFERER=http://localhost/index.php
+---

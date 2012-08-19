@@ -9,7 +9,12 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/text.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
+	<link type="text/css" href="css/sunny/jquery-ui-1.8.23.custom.css" rel="Stylesheet" />	
+	<script type="text/javascript" src="/js/jquery-1.8.0.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui-1.8.23.custom.min.js"></script>
+	<script type="text/javascript">
+	$("#accordion").accordion();
+	</script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -22,7 +27,7 @@
 <div class="clear"></div>
 <div id="center-content" class="container_12">
 <aside class="grid_2">
-	<nav>
+	<nav id="accordion">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
