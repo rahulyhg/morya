@@ -69,7 +69,12 @@ class PhotoController extends AppController
 			$return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
 			echo $return;// it's array
 	}
-	
+	public function actionPostUpdate(){
+		$photo = Photo::model()->findByPk((int)$_POST['photo_id']);
+		$photo->caption = $_POST['caption'];
+		$photo->caption = $_POST['description'];
+		$photo->save();
+	}
 	private function updateDb($fileName,$ogName,$size){
 		$photo = new Photo;
 		$photo->caption = $fileName;
