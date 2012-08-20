@@ -15,7 +15,7 @@ class FacebookIdentity extends CUserIdentity
 	public function authenticate()
 	{
 			$user = User::model()->findByAttributes(
-						array( 'authentication_type' => AuthType::Facebook,'open_id'=> $this->username )
+						array('authentication_type' => AuthType::Facebook,'open_id'=> $this->username)
 					);
 			if($user===null)
 			{
@@ -25,11 +25,10 @@ class FacebookIdentity extends CUserIdentity
 				$this->username = $user->email;
 				$this->errorCode=self::ERROR_NONE;
 			}
-		}
 		$login = new Login;
 		$login->loginUser($this->_id,$this->errorCode,Yii::app()->request->getUserHostAddress(),Yii::app()->request->getUserAgent());
         return !$this->errorCode;
-	}
+	}	
 	public function getId()
     {
         return $this->_id;

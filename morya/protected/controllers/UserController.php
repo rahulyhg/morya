@@ -92,8 +92,8 @@ class UserController extends AppController
 				$userModel = User::getUserByOpenIdentifier($userInfo['id']);
 				if($userModel){
 					//user is already registered with us
-					$identity=new UserIdentity($userModel->open_id,'');
-					$identity->authenticate(AuthType::Facebook);
+					$identity=new FacebookIdentity($userModel->open_id,'');
+					$identity->authenticate();
 					Yii::app()->user->login($identity);
 					$this->redirect(array('site/index'));
 				}else{
@@ -107,7 +107,7 @@ class UserController extends AppController
 					$user->profile_pic = Yii::app()->facebook->api('/me/picture','GET',array('size'=>'large'));
 					if($user->save()){
 						//log-in the user
-						$identity=new UserIdentity($user->open_id,'');
+						$identity=new FacebookIdentity($user->open_id,'');
 						$identity->authenticate(AuthType::Facebook);
 						Yii::app()->user->login($identity);
 						$postObj   = Yii::app()->facebook->api('/me/feed', 'POST',

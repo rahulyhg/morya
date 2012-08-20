@@ -65,7 +65,7 @@ class PhotoController extends AppController
 			$fileName=$result['filename'];//GETTING FILE NAME
 			$this->resize($folder.$fileName);
 			$lastId =$this->updateDb($fileName,$uploader->file->getName(),$uploader->file->getSize());
-			array_push($result,$lastId);
+			$result['id']=$lastId;
 			$return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
 			echo $return;// it's array
 	}
@@ -79,6 +79,8 @@ class PhotoController extends AppController
 		$photo->file_size = $size ;
 		if($photo->validate()){
 			$photo->save();
+		}else{
+		print_r($photo->getErrors());
 		}
 		return $photo->id;
 	}

@@ -85,7 +85,11 @@ class Login extends AppActiveRecord
 		$this->is_loggedin = $status ;
 		$this->ip_address = $ip;
 		$this->browser_info = $userAgent ;
-		$this->save();
+		if($this->save()){
+			
+		}else{
+			print_r($this->getErrors());
+		}
 	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

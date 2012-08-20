@@ -4,10 +4,20 @@ $this->breadcrumbs=array(
 	'Upload',
 );
 ?>
+<script type="text/javascript">
+function uploadComplete(id, fileName, responseJSON){
+//id is the number of the file which is uploaded,fileName name of file on client
+//responseJSON json object returned by server contains id, filName on server, result of upload
 
+}
+$('document').ready(function(){
+$('input').change(function(){
+alert(0);
+});
+});
+</script>
 <h1>Upload Photo</h1>
 
-	
 <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
 array(
         'id'=>'uploadFile',
@@ -16,7 +26,7 @@ array(
                'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
                'sizeLimit'=>10*1024*1024,// maximum file size in bytes
                'minSizeLimit'=>10,// minimum file size in bytes
-               'onComplete'=>"js:function(id, fileName, responseJSON){  }",
+               'onComplete'=>"js:uploadComplete",
                'messages'=>array(
                                 'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
                                 'sizeError'=>"{file} is too large, maximum file size is {sizeLimit}.",
