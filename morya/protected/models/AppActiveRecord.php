@@ -1,5 +1,9 @@
 <?php
-
+/*
+* AppActiveRecord is the base class from which all the models derive
+* The models which derives from AppActiveRecord are saved in the DB
+* like User Photo Vedic etc
+*/
 abstract class AppActiveRecord extends CActiveRecord {
 /**
 * Prepares create_time, create_user_id, update_time and update_user_

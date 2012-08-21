@@ -4,6 +4,19 @@
  * This is the model class for table "users".
  *
  * The followings are the available columns in table 'users':
+ * These are all cloumns in morya >> users
+ * u can access them in model as $this->id
+ * from controller as $user = new User;
+ * $user->id
+ * ok like wise save it as $user->save()
+ * before save validate is called internally to check if the model is valid
+ * you can also explicitely call validate with $this->validate() which return boolean
+ * validation are set of rules like this field is required this filed should be of max 30 characters long etc complete list at : www.yiiframework.com/doc/guide/1.1/en/form.model#declaring-validation-rules
+ look at all these rules later and modify the rules method.
+Now based on the same rules validation happens on the client side
+this is what MVC architecture is for validate on single level.
+we validate only on the model in controller $user->validate() ne validate hota
+then on client side ajaxValidation takes place.
  * @property string $id
  * @property integer $authentication_type
  * @property string $open_id
@@ -62,7 +75,11 @@ class User extends AppActiveRecord
 			array('city', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
+<<<<<<< Updated upstream
 			array('email,name, contact,city,', 'safe', 'on'=>'search'),
+=======
+			array('email, password, name, contact, ganpati_pic, add_line_1, add_line_2, city, created, modified', 'safe', 'on'=>'search'),
+>>>>>>> Stashed changes
 		);
 	}
 

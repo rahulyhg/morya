@@ -49,7 +49,7 @@ class Vedic extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('type, name_of_god, title, slug, text, created, modified', 'required'),
+			array('type, name_of_god, title, slug, text', 'required'),
 			array('type', 'numerical', 'integerOnly'=>true),
 			array('audio_length', 'numerical'),
 			array('name_of_god, title, audio_path', 'length', 'max'=>255),
