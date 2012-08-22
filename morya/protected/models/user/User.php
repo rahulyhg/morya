@@ -75,11 +75,7 @@ class User extends AppActiveRecord
 			array('city', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-<<<<<<< Updated upstream
-			array('email,name, contact,city,', 'safe', 'on'=>'search'),
-=======
-			array('email, password, name, contact, ganpati_pic, add_line_1, add_line_2, city, created, modified', 'safe', 'on'=>'search'),
->>>>>>> Stashed changes
+			array('email,name, contact,city,', 'safe', 'on'=>'search')
 		);
 	}
 
