@@ -8,4 +8,4 @@ $this->breadcrumbs=array(
 
 <h1>Add Your Vedic here</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model ,'vedicType'=>$vedicType)); ?>

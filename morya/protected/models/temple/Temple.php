@@ -1,32 +1,30 @@
 <?php
 
 /**
- * This is the model class for table "vedics".
+ * This is the model class for table "temples".
  *
- * The followings are the available columns in table 'vedics':
+ * The followings are the available columns in table 'temples':
  * @property string $id
- * @property integer $type
- * @property string $name_of_god
- * @property string $title
  * @property string $slug
- * @property string $text
- * @property string $audio_path
- * @property double $audio_length
- * @property string $audio_size
+ * @property string $name
+ * @property string $description
+ * @property string $established
+ * @property string $how_to_go
+ * @property string $history
  * @property string $user_id
  * @property string $created
  * @property string $modified
  *
  * The followings are the available model relations:
- * @property VedicComment[] $vedicComments
+ * @property TemplePhoto[] $templePhotos
  * @property Users $user
  */
-class Vedic extends AppActiveRecord
+class Temple extends AppActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Vedic the static model class
+	 * @return Temple the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -38,7 +36,7 @@ class Vedic extends AppActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'vedics';
+		return 'temples';
 	}
 
 	/**
@@ -49,15 +47,14 @@ class Vedic extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('type, name_of_god, title, text', 'required'),
-			array('type', 'numerical', 'integerOnly'=>true),
-			array('audio_length', 'numerical'),
-			array('name_of_god, title, audio_path', 'length', 'max'=>255),
-			array('audio_size', 'length', 'max'=>20),
+			array('slug, name, description, how_to_go, history, created, modified', 'required'),
+			array('slug', 'length', 'max'=>30),
+			array('name', 'length', 'max'=>255),
+			array('established', 'length', 'max'=>4),
 			array('user_id', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, name_of_god, title, slug, text, audio_path, audio_length, audio_size, user_id, created, modified', 'safe', 'on'=>'search'),
+			array('id, slug, name, description, established, how_to_go, history, user_id, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,7 +66,7 @@ class Vedic extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'vedicComments' => array(self::HAS_MANY, 'VedicComment', 'vedic_id'),
+			'templePhotos' => array(self::HAS_MANY, 'TemplePhoto', 'temple_id'),
 			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
 		);
 	}
@@ -81,14 +78,12 @@ class Vedic extends AppActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'type' => 'Type',
-			'name_of_god' => 'Name Of God',
-			'title' => 'Title',
 			'slug' => 'Slug',
-			'text' => 'Text',
-			'audio_path' => 'Audio Path',
-			'audio_length' => 'Audio Length',
-			'audio_size' => 'Audio Size',
+			'name' => 'Name',
+			'description' => 'Description',
+			'established' => 'Established',
+			'how_to_go' => 'How To Go',
+			'history' => 'History',
 			'user_id' => 'User',
 			'created' => 'Created',
 			'modified' => 'Modified',
@@ -107,14 +102,12 @@ class Vedic extends AppActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('type',$this->type);
-		$criteria->compare('name_of_god',$this->name_of_god,true);
-		$criteria->compare('title',$this->title,true);
 		$criteria->compare('slug',$this->slug,true);
-		$criteria->compare('text',$this->text,true);
-		$criteria->compare('audio_path',$this->audio_path,true);
-		$criteria->compare('audio_length',$this->audio_length);
-		$criteria->compare('audio_size',$this->audio_size,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('established',$this->established,true);
+		$criteria->compare('how_to_go',$this->how_to_go,true);
+		$criteria->compare('history',$this->history,true);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);

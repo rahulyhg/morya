@@ -26,11 +26,11 @@
 		<?php echo $form->textArea($model,'text',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'text'); ?>
 	</div>
-
+	<?php echo $form->hiddenField($model,'type',array('value'=>$vedicType)); ?>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save'); ?>
 	</div>
-
+	
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

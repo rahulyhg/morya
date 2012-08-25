@@ -1,9 +1,9 @@
 <?php
 
-class TempleController extends AppController
+class RecipeController extends AppController
 {
-	function init(){
-		Yii::import('application.models.temple.*');
+		function init(){
+		Yii::import('application.models.recipe.*');
 	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -64,16 +64,15 @@ class TempleController extends AppController
 	 */
 	public function actionCreate()
 	{
-		$model=new Temple;
-
+		$model=new recipe;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
-		if(isset($_POST['Temple']))
+		if(isset($_POST['recipe']))
 		{
-			$model->attributes=$_POST['Temple'];
+			$model->attributes=$_POST['recipe'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index'));
 		}
 
 		$this->render('create',array(
@@ -93,9 +92,9 @@ class TempleController extends AppController
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Temple']))
+		if(isset($_POST['recipe']))
 		{
-			$model->attributes=$_POST['Temple'];
+			$model->attributes=$_POST['recipe'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -128,12 +127,11 @@ class TempleController extends AppController
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex($templeType = TempleType::Historic)
+	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Temple');
+		$dataProvider=new CActiveDataProvider('recipe');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-			'templeType'=>$templeType,
 		));
 	}
 
@@ -142,10 +140,10 @@ class TempleController extends AppController
 	 */
 	public function actionAdmin()
 	{
-		$model=new Temple('search');
+		$model=new recipe('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Temple']))
-			$model->attributes=$_GET['Temple'];
+		if(isset($_GET['recipe']))
+			$model->attributes=$_GET['recipe'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -159,7 +157,7 @@ class TempleController extends AppController
 	 */
 	public function loadModel($id)
 	{
-		$model=Temple::model()->findByPk($id);
+		$model=recipe::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -171,7 +169,7 @@ class TempleController extends AppController
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='temple-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='recipe-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
