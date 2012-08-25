@@ -1,0 +1,121 @@
+.logo {
+background-image:url(../img/logo.png);
+background-repeat:no-repeat;
+width:124px;
+height:125px;
+}
+.logo:hover {
+-webkit-animation-name:spin;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-timing-function:linear;
+-webkit-animation-duration:20s;
+
+-moz-animation-name:spin;
+-moz-animation-iteration-count:infinite;
+-moz-animation-timing-function:linear;
+-moz-animation-duration:20s;
+
+}
+@-webkit-keyframes 
+spin { from { -webkit-transform:rotate(0 deg); } to {-webkit-transform:rotate(360deg); } }
+
+@-moz-keyframes 
+spin { from { -moz-transform:rotate(0 deg); } to {-moz-transform:rotate(360deg); } }
+
+.ganesh_logo {
+position:absolute;
+left:50px;
+top:30px;
+background-image:url(../img/ganesh_logo.png);
+background-repeat:no-repeat;
+width:67px;
+height:65px;
+}	
+
+.header_text
+{
+background-image:url(../img/bluefox/logo.png);
+background-repeat:no-repeat;
+width:197px;
+height:33px;
+}
+
+.subheader_text {
+position:absolute;
+right:-20px;
+font-family: Brush Script MT, cursive,Arial ;
+font-style: italic;
+font-size: 18px;
+font-weight: 300;
+}
+.social {
+position: relative;
+right: -221px;
+top: 30px;
+width: 107px;
+height: 28px;
+}
+.twitter {
+position:absolute;
+background-image:url(../img/bluefox/twitter.png);
+background-repeat:no-repeat;
+right: 50px;
+width: 37px;
+height: 27px;
+}
+.facebook {
+position:absolute;
+background-image:url(../img/bluefox/facebook.png);
+background-repeat:no-repeat;
+width: 37px;
+height: 27px;
+right: 0px;
+}
+.rss {
+position:absolute;
+background-image:url(../img/bluefox/rss.png);
+background-repeat:no-repeat;
+width: 37px;
+height: 27px;
+right: -35px;
+}
+
+.aarti_menu_logo {
+position:absolute;
+background-image:url(../img/aarti_menu.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+}
+
+.photo_menu_logo {
+position:absolute;
+background-image:url(../img/photo_menu.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+}
+
+.temple_menu_logo {
+position:absolute;
+background-image:url(../img/temple_menu.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+}
+
+.competition_menu_logo {
+position:absolute;
+background-image:url(../img/competitions_menu.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+}
+
+.my_ganesha_menu_logo {
+position:absolute;
+background-image:url(../img/my_ganesha.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+}
