@@ -32,12 +32,16 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Vedic','items'=>array(
-					array('label'=>'Aarti','url'=>$this->createAbsoluteUrl('/vedic/Aarti',array('VedicType'=>AuthType::Facebook))),
-					array('label'=>'Mantra Pushpanjali','url'=>array('/vedic/mantra')),
-					array('label'=>'Atharva Shirsh','url'=>array('/vedic/atharva')),
-					array('label'=>'Uttar Puja','url'=>array('/vedic/pooja')),
+					array('label'=>'Aarti','url'=>$this->createAbsoluteUrl('/vedic/vedic',array('vedicType'=>VedicType::Aarti))),
+					array('label'=>'Mantra Pushpanjali','url'=>$this->createAbsoluteUrl('/vedic/vedic',array('vedicType'=>VedicType::Mantra))),
+					array('label'=>'Atharva Shirsh','url'=>$this->createAbsoluteUrl('/vedic/vedic',array('vedicType'=>VedicType::Atharva))),
+					array('label'=>'Uttar Puja','url'=>$this->createAbsoluteUrl('/vedic/vedic',array('vedicType'=>VedicType::Pooja))),
 					)),
-				array('label'=>'Ganesh Temples'),
+				array('label'=>'Ganesh Temples','items'=>array(
+					array('label'=>'Historic Temples','url'=>$this->createAbsoluteUrl('/temple/index',array('templeType'=>TempleType::Historic))),
+					array('label'=>'Most Popular','url'=>$this->createAbsoluteUrl('/temple/index',array('templeType'=>TempleType::Popular))),
+				)),
+				array('label'=>'Recipies', 'url'=>array('/recipe/index')),
 				array('label'=>'Ganesh Gaatha'),
 				array('label'=>'My Ganesha','items'=>array(
 					array('label'=>'Recipies'),

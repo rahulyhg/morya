@@ -1,31 +1,15 @@
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
-	<?php echo CHtml::encode($data->type); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('name_of_god')); ?>:</b>
-	<?php echo CHtml::encode($data->name_of_god); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
-	<?php echo CHtml::encode($data->title); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('slug')); ?>:</b>
-	<?php echo CHtml::encode($data->slug); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('text')); ?>:</b>
+	<h2 style="text-align:center;"><?php echo CHtml::encode($data->name_of_god); ?></h2>
+	
+	
+	<p>
 	<?php echo CHtml::encode($data->text); ?>
-	<br />
+	</p>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('audio_path')); ?>:</b>
-	<?php echo CHtml::encode($data->audio_path); ?>
+
+
+	<?php //echo CHtml::encode($data->audio_path);  ?>
 	<br />
 
 	<?php /*

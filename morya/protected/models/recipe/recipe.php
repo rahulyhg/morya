@@ -1,32 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "vedics".
+ * This is the model class for table "recepies".
  *
- * The followings are the available columns in table 'vedics':
+ * The followings are the available columns in table 'recepies':
  * @property string $id
- * @property integer $type
- * @property string $name_of_god
- * @property string $title
  * @property string $slug
- * @property string $text
- * @property string $audio_path
- * @property double $audio_length
- * @property string $audio_size
- * @property string $user_id
+ * @property string $title
+ * @property string $cooking_time
+ * @property string $ingredients
+ * @property string $method
  * @property string $created
  * @property string $modified
- *
- * The followings are the available model relations:
- * @property VedicComment[] $vedicComments
- * @property Users $user
  */
-class Vedic extends AppActiveRecord
+class recipe extends AppActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Vedic the static model class
+	 * @return recipe the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -38,7 +30,7 @@ class Vedic extends AppActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'vedics';
+		return 'recepies';
 	}
 
 	/**
@@ -49,15 +41,13 @@ class Vedic extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('type, name_of_god, title, text', 'required'),
-			array('type', 'numerical', 'integerOnly'=>true),
-			array('audio_length', 'numerical'),
-			array('name_of_god, title, audio_path', 'length', 'max'=>255),
-			array('audio_size', 'length', 'max'=>20),
-			array('user_id', 'length', 'max'=>11),
+			array('title, method, created, modified', 'required'),
+			array('slug', 'length', 'max'=>30),
+			array('title', 'length', 'max'=>50),
+			array('cooking_time, ingredients', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, name_of_god, title, slug, text, audio_path, audio_length, audio_size, user_id, created, modified', 'safe', 'on'=>'search'),
+			array('id, slug, title, cooking_time, ingredients, method, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,8 +59,7 @@ class Vedic extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'vedicComments' => array(self::HAS_MANY, 'VedicComment', 'vedic_id'),
-			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+				'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
 		);
 	}
 
@@ -81,15 +70,11 @@ class Vedic extends AppActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'type' => 'Type',
-			'name_of_god' => 'Name Of God',
-			'title' => 'Title',
 			'slug' => 'Slug',
-			'text' => 'Text',
-			'audio_path' => 'Audio Path',
-			'audio_length' => 'Audio Length',
-			'audio_size' => 'Audio Size',
-			'user_id' => 'User',
+			'title' => 'Title',
+			'cooking_time' => 'Cooking Time',
+			'ingredients' => 'Ingredients',
+			'method' => 'Method',
 			'created' => 'Created',
 			'modified' => 'Modified',
 		);
@@ -107,15 +92,11 @@ class Vedic extends AppActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('type',$this->type);
-		$criteria->compare('name_of_god',$this->name_of_god,true);
-		$criteria->compare('title',$this->title,true);
 		$criteria->compare('slug',$this->slug,true);
-		$criteria->compare('text',$this->text,true);
-		$criteria->compare('audio_path',$this->audio_path,true);
-		$criteria->compare('audio_length',$this->audio_length);
-		$criteria->compare('audio_size',$this->audio_size,true);
-		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('cooking_time',$this->cooking_time,true);
+		$criteria->compare('ingredients',$this->ingredients,true);
+		$criteria->compare('method',$this->method,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
 

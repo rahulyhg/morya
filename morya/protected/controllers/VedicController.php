@@ -30,11 +30,11 @@ class VedicController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','aarti','mantra','atharva','pooja'),
+				'actions'=>array('index','view','vedic'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','addvedic'),
+				'actions'=>array('addvedic','create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -151,62 +151,47 @@ class VedicController extends AppController
 		));
 	}
 
-	public function actionAarti()
+	
+	
+	public function actionVedic($vedicType = VedicType::Aarti)
 	{
-		$dataProvider=new CActiveDataProvider('Vedic');
-		$this->render('aarti',array(
+		
+		//$dataProvider=new CActiveDataProvider('Vedic');
+		$dataProvider=new CActiveDataProvider('vedic', array(
+			'criteria'=>array(
+				'condition'=>'type='.$vedicType,
+				'order'=>'id ASC',
+			),
+			'pagination'=>array(
+				'pageSize'=>20,
+			),
+		));
+		$this->render('vedic',array(
 			'dataProvider'=>$dataProvider,
+			'vedicType'=>$vedicType,
 		));
 	
 	
 	}
 	
-	public function actionMantra()
-	{
-		$dataProvider=new CActiveDataProvider('Vedic');
-		$this->render('mantra',array(
-			'dataProvider'=>$dataProvider,
-		));
-	
-	
-	}
-	
-	public function actionAtharva()
-	{
-		$dataProvider=new CActiveDataProvider('Vedic');
-		$this->render('atharva',array(
-			'dataProvider'=>$dataProvider,
-		));
-	
-	
-	}
-	
-	public function actionPooja()
-	{
-		$dataProvider=new CActiveDataProvider('Vedic');
-		$this->render('pooja',array(
-			'dataProvider'=>$dataProvider,
-		));
-	
-	
-	}
-	
-	public function actionAddvedic()
+	public function actionAddvedic($vedicType)
 	{
 		$model=new Vedic;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['Vedic']))
 		{
 			$model->attributes=$_POST['Vedic'];
+			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect($this->createAbsoluteUrl('vedic',array('vedicType'=>$model->type)));
 		}
 
 		$this->render('addvedic',array(
 			'model'=>$model,
+			'vedicType'=>$vedicType,
 		));
 	}
 	
