@@ -1,3 +1,7 @@
+header {
+height:125px;
+margin-bottom:10px;
+}
 .logo {
 background-image:url(../img/logo.png);
 background-repeat:no-repeat;
@@ -118,4 +122,117 @@ background-image:url(../img/my_ganesha.png);
 background-repeat:no-repeat;
 width: 76px;
 height: 70px;
+}
+
+nav a {
+height:80px;
+}
+nav p{
+position:absolute;
+top:80px;
+font-family: Verdana ;
+font-size: 14px;
+font-weight: 300;
+}
+
+.news_wrapper{
+
+}
+
+.news_box{
+height:240px;
+border:1px solid cyan;
+}
+
+.search_wrapper {
+padding-top:10px;
+padding-bottom:10px;
+}
+
+.search_box {
+height:35px;
+border:1px solid;
+}
+
+.photo_gallery {
+height:600px;
+}
+
+.photo_thumb {
+position:relative;
+height:220px;
+margin-bottom:20px;
+}
+
+.photo_thumb h3{
+	color:white;
+	position:absolute;
+	font-size:16px;
+	overflow:hidden;
+	padding-left:5px;
+}
+.photo_thumb img{
+opacity:0.90;
+}
+.photo_thumb img:hover{
+opacity:1.0;
+}
+
+.white_mask_wrapper {
+position:absolute;
+width:auto;
+color:white;
+background-image:url(../img/whitebg.png);
+background-repeat:repeat-x;
+height:47px;
+width:100%;
+bottom:-1px;
+}
+
+.white_mask {
+position:relative;
+height:47px;
+}
+.white_mask .darshan {
+position:absolute;
+background-image:url(../img/darshan.png);
+background-repeat:repeat-x;
+left:11px;
+bottom:8px;
+width:23px;
+height:32px;
+}
+.white_mask p{
+position: absolute;
+right: -11px;
+font-size: 10px;
+top: -5px;
+}
+
+.white_mask .modak {
+position:absolute;
+background-image:url(../img/modak.png);
+background-repeat:repeat-x;
+left:45px;
+bottom:8px;
+width:27px;
+height:30px;
+}
+
+.white_mask .add_collection {
+position:absolute;
+background-image:url(../img/add_collection.png);
+background-repeat:repeat-x;
+right:13px;
+bottom:8px;
+width:26px;
+height:29px;
+}
+ul#photo_gallery{
+list-style-type:none;
+}
+#photo_gallery li {
+margin:0;
+padding:0;
+float:left;
 }

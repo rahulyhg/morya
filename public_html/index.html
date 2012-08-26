@@ -20,23 +20,25 @@
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/960/960_12_col.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/960/reset.css">
   <link rel="stylesheet" href="css/960/text.css">
   <link rel="stylesheet" href="css/main.css">
+  <link href="css/liteaccordion.css" rel="stylesheet" />
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  
 </head>
 <body class="container_12">
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header>
+  <header class="container_12">
   <span class="grid_2" style="position:relative;">
 	<span class="grid_2 logo"></span>
 	<span class="ganesh_logo"></span>
@@ -50,37 +52,347 @@
 	<a href="/rss.xml"><span class="rss"></span></a>
    </span>
   </div>
-  </header>
   <nav class="grid_7 push_1">
 	<a class="grid_1" href="">
 		<span class="aarti_menu_logo"></span>
-		<h4>Aarti</h4>
+		<p>Aarti</p>
 	</a>
 	
 	<a class="grid_1" href="">
 		<span class="photo_menu_logo"></span>
-		<h4>Photo</h4>
+		<p>Photo</p>
 	</a>
 	
 	<a class="grid_1" href="">
 		<span class="temple_menu_logo"></span>
-		<h4>Temples</h4>
+		<p>Temples</p>
 	</a>
 	
 	<a class="grid_1" href="">
 		<span class="competition_menu_logo"></span>
-		<h4>Competition</h4>
+		<p>Competition</p>
 	</a>
 	
 	<a class="grid_1" href="">
 		<span class="my_ganesha_menu_logo"></span>
-		<h4>My Ganesha</h4>
+		<p>My Ganesha</p>
 	</a>
 	
   </nav>
+  
+  </header>
   <div role="main container_12">
-	<section class="grid_12">
-	<div></div>
+	<section class="news_wrapper">
+	<div id="news_box">
+            <ol>
+                <li>
+                    <h2><span>Slide One</span></h2>
+                    <div>
+                        <figure>
+                            <img src="news-cover/1.jpg" alt="image" />
+                            <figcaption>Assassini!</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <h2><span>Slide Two</span></h2>
+                    <div>
+                        <figure>
+                            <img src="news-cover/2.jpg" alt="image" />
+                            <figcaption>Couldn't find an image of a Khajit thief! Fail!</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <h2><span>Slide Three</span></h2>
+                    <div>
+                        <figure>
+                            <img src="news-cover/3.jpg" alt="image" />
+                            <figcaption>That's one angry looking red dude.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <h2><span>Slide Four</span></h2>
+                    <div>
+                        <figure>
+                            <img src="news-cover/4.jpg" width="768" alt="image" />
+                            <figcaption>Was fun for a couple of hours or so...</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <h2><span>Slide Five</span></h2>
+                    <div>
+                        <figure>
+                            <img src="news-cover/5.jpg" alt="image" />
+                            <figcaption>Not as good as Hot Pursuit.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+            </ol>
+            <noscript>
+                <p>Please enable JavaScript to get the full experience.</p>
+            </noscript>
+	</div>
+	</section>
+	
+	
+	<section class="grid_12 search_wrapper ">
+		<div class="search_box">
+		<input type="file" />
+		
+		<form>
+			<input type="text" name="search" />
+			<input type="submit" value="search" />
+		</form>
+		
+		</div>
+	</section>
+	<section id="photo_container" style="position:relative;">
+	<div id="photo_wrapper" class="photo_wrapper" style="position:relative;width:100%;height:100%;">
+		<ul id="photo_gallery" class="photo_gallery">
+			
+			<li class="tj_row_1">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_1">
+				<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_1">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_1">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			<li class="tj_row_2">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_2">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_2">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_2">
+			<div class="grid_3 photo_thumb">
+			<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			<li class="tj_row_3">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_3">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_3">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_3">
+			<div class="grid_3 photo_thumb">
+			<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+				
+			</div>
+			</li>
+			
+			
+			
+			<li class="tj_row_4">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_4">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			
+			<li class="tj_row_4">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+			<li class="tj_row_4">
+			<div class="grid_3 photo_thumb">
+				<h3>vighnaharta</h3>
+				<img src="img/ganpati.jpg" style="width:220px;height:220px" />
+				<div class="white_mask_wrapper">
+				<div class="white_mask">
+					<span class="darshan"><p>789</p></span>
+					<span class="modak"><p>789</p></span>
+					<span class="add_collection"><p>789</p></span>
+				</div>
+				</div>
+			</div>
+			</li>
+			
+		</ul>
+		</div>
 	</section>
   </div>
   <footer>
@@ -92,12 +404,48 @@
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script-->
+<script src="js/libs/jquery-1.7.1.min.js"></script>
   <!-- scripts concatenated and minified via build script -->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <!-- end scripts -->
+<script type="text/javascript" src="js/libs/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/libs/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/libs/jquery.gridnav.js"></script>
+<script type="text/javascript" src="js/libs/liteaccordion.jquery.js"></script>
+
+		<script type="text/javascript">
+			$(function() {
+				$('#photo_container').gridnav({
+					rows	: 3,
+					type	: {
+						mode		: 'sequpdown', 		// use def | fade | seqfade | updown | sequpdown | showhide | disperse | rows
+						speed		: 500,				// for fade, seqfade, updown, sequpdown, showhide, disperse, rows
+						easing		: '',				// for fade, seqfade, updown, sequpdown, showhide, disperse, rows	
+						factor		: 50,				// for seqfade, sequpdown, rows
+						reverse		: false				// for sequpdown
+					}
+				});
+			});
+			    $('#news_box').liteAccordion({
+                        onTriggerSlide : function() {
+                            this.find('figcaption').fadeOut();
+                        },
+                        onSlideAnimComplete : function() {    
+                            this.find('figcaption').fadeIn();
+                        },
+						firstSlide : 1,
+                        autoPlay : true,
+                        pauseOnHover : true,
+                        theme : 'stitch',
+                        rounded : false,
+						linkable : true,
+                        enumerateSlides : true ,   
+						easing: 'easeInOutQuart',
+						activateOn: 'click'//mouseover
+                }).find('figcaption:first').show();
+		</script>
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
