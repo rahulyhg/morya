@@ -184,6 +184,7 @@ class VedicController extends AppController
 		if(isset($_POST['Vedic']))
 		{
 			$model->attributes=$_POST['Vedic'];
+			$model->slug = $this->behaviors();
 			
 			if($model->save())
 				$this->redirect($this->createAbsoluteUrl('vedic',array('vedicType'=>$model->type)));

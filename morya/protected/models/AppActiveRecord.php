@@ -19,4 +19,16 @@ id attributes before performing validation.
 			$this->user_id = Yii::app()->user->id;
 		return parent::beforeValidate();
 	}
+	
+	public function behaviors()
+	{
+		return array(
+		  'sluggable' => array(
+		  'class'=>'ext.behavior.SluggableBehavior.SluggableBehavior',
+		  'columns' => array('title'),
+		  'unique' => true,
+		  'update' => true,
+		),
+		);
+	}
 }

@@ -71,6 +71,7 @@ class RecipeController extends AppController
 		if(isset($_POST['recipe']))
 		{
 			$model->attributes=$_POST['recipe'];
+			$model->slug = $this->behaviors();
 			if($model->save())
 				$this->redirect(array('index'));
 		}
