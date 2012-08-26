@@ -3,12 +3,11 @@ height:125px;
 margin-bottom:10px;
 }
 .logo {
+display:inline-block;
 background-image:url(../img/logo.png);
 background-repeat:no-repeat;
 width:124px;
 height:125px;
-}
-.logo:hover {
 -webkit-animation-name:spin;
 -webkit-animation-iteration-count:infinite;
 -webkit-animation-timing-function:linear;
@@ -28,7 +27,7 @@ spin { from { -moz-transform:rotate(0 deg); } to {-moz-transform:rotate(360deg);
 
 .ganesh_logo {
 position:absolute;
-left:50px;
+left:31px;
 top:30px;
 background-image:url(../img/ganesh_logo.png);
 background-repeat:no-repeat;
@@ -42,6 +41,8 @@ background-image:url(../img/bluefox/logo.png);
 background-repeat:no-repeat;
 width:197px;
 height:33px;
+margin-top:15px;
+margin-bottom:10px;
 }
 
 .subheader_text {
