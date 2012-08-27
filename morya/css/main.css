@@ -1,33 +1,317 @@
-nav ul ,nav li{
-list-style-type:none;
-margin:0;
-padding:0;
+header {
+height:125px;
+margin-bottom:10px;
 }
-nav ul li {
-color: #FEEEBD ;
+.logo {
+display:inline-block;
+background-image:url(../images/logo.png);
+background-repeat:no-repeat;
+width:124px;
+height:125px;
+-webkit-animation-name:spin;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-timing-function:linear;
+-webkit-animation-duration:20s;
+
+-moz-animation-name:spin;
+-moz-animation-iteration-count:infinite;
+-moz-animation-timing-function:linear;
+-moz-animation-duration:20s;
+
 }
-nav ul li a:hover{
-color: grey ;
-}
-nav ul li ul li{
-font-size:8px;
-}
-header h1 {
-font-family:Sans Serif;
-font-size:48px;
-margin:0;
-padding:0;
-}
-#center-content
+@-webkit-keyframes 
+spin { from { -webkit-transform:rotate(0 deg); } to {-webkit-transform:rotate(360deg); } }
+
+@-moz-keyframes 
+spin { from { -moz-transform:rotate(0 deg); } to {-moz-transform:rotate(360deg); } }
+
+.ganesh_logo {
+position:absolute;
+left:31px;
+top:30px;
+background-image:url(../images/ganesh_logo.png);
+background-repeat:no-repeat;
+width:67px;
+height:65px;
+}	
+
+.header_text
 {
-min-height:600px;
+background-image:url(../images/bluefox/logo.png);
+background-repeat:no-repeat;
+width:197px;
+height:33px;
+margin-top:15px;
+margin-bottom:10px;
 }
-aside {
+
+.subheader_text {
+position:absolute;
+right:-20px;
+font-family: Brush Script MT, cursive,Arial ;
+font-style: italic;
+font-size: 18px;
+font-weight: 300;
+}
+.social {
+position: relative;
+right: -221px;
+top: 30px;
+width: 107px;
+height: 28px;
+}
+.twitter {
+position:absolute;
+background-image:url(../images/twitter.png);
+background-repeat:no-repeat;
+right: 50px;
+width: 37px;
+height: 27px;
+}
+.twitter:hover {
+position:absolute;
+background-image:url(../images/bluefox/twitter.png);
+}
+.facebook {
+position:absolute;
+background-image:url(../images/facebook.png);
+background-repeat:no-repeat;
+width: 37px;
+height: 27px;
+right: 0px;
+}
+.facebook:hover {
+background-image:url(../images/bluefox/facebook.png);
+}
+.rss {
+position:absolute;
+background-image:url(../images/rss.png);
+background-repeat:no-repeat;
+width: 37px;
+height: 27px;
+right: -35px;
+}
+.rss:hover {
+background-image:url(../images/bluefox/rss.png);
+}
+.aarti_menu_logo {
+position:absolute;
+background-image:url(../images/aarti_menu.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+left:-14px;
+}
+.aarti_menu_logo:hover {
+background-image:url(../images/aarti_menu_hover.png);
+}
+.photo_menu_logo {
+position:absolute;
+background-image:url(../images/photo_menu.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+left:78px;
+}
+.photo_menu_logo:hover{
+background-image:url(../images/photo_menu_hover.png);
+}
+.temple_menu_logo {
+position:absolute;
+background-image:url(../images/temple_menu.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+}
+.temple_menu_logo:hover {
+position:absolute;
+background-image:url(../images/temple_menu_hover.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+}
+.competition_menu_logo {
+position:absolute;
+background-image:url(../images/competitions2_menu2.png);
+background-repeat:no-repeat;
+width: 86px;
+height: 51px;
+top:12px;
+}
+.competition_menu_logo:hover {
+background-image:url(../images/competitions2_menu.png);
+}
+.recipies_menu_logo {
+position:absolute;
+background-image:url(../images/recipie_menu2.png);
+background-repeat:no-repeat;
+width: 86px;
+height: 51px;
+top:12px;
+left:340px;
+}
+.recipies_menu_logo:hover{
+background-image:url(../images/recipie_menu_hover2.png);
+}
+
+.my_ganesha_menu_logo {
+position:absolute;
+background-image:url(../images/my_ganesha_menu.png);
+background-repeat:no-repeat;
+width: 76px;
+height: 70px;
+left:425px;
+top:3px;
+}
+.my_ganesha_menu_logo:hover {
+background-image:url(../images/my_ganesha_menu_hover2.png);
+}
+
+nav a {
+height:80px;
+}
+nav p {
+position:absolute;
+top:80px;
+font-family: Verdana ;
+font-size: 14px;
+font-weight: 300;
+}
+nav p:hover {
+color:#0066EE;
+}
+
+#news_box {
+margin-bottom:10px;
+}
+.upload_instr
+{
+text-align:center;
+font-size:16px;
+}
+
+.upload_btn {
+position:absolute;
+right:17px;
+top:55px;
+height:25px;
+display: block;
+/*or inline-block*/
+width: 105px;
+padding: 7px 0;
+text-align: center;
+background: #254677;
+border-bottom: 1px solid #DDD;
+color: #FFF;
+font-weight:400px;
+font-size:16px;
+}
+.upload_photo {
+position: absolute;
+background-image: url(../images/add-photo.png);
+background-repeat: no-repeat;
+width: 100%;
+bottom: -1px;
+top: 14px;
+left:63px;
+}
+.upload_instr {
+position: absolute;right: 140px;
+color: #59ABB7;
 margin-top:20px;
 }
-sidebar{
-min-height:600px;
+
+.upload_instr  p{
+margin-bottom:10px;
 }
-footer p {
-text-align:center;
+
+.upload_wrapper {
+height:125px;
+margin-top:10px;
+margin-bottom:15px;
+}
+.uploader{
+height:100%;
+}
+.photo_gallery {
+height:600px;
+}
+
+.photo_thumb {
+position:relative;
+height:220px;
+margin-bottom:20px;
+}
+
+.photo_thumb h3{
+	color:white;
+	position:absolute;
+	font-size:16px;
+	overflow:hidden;
+	padding-left:5px;
+}
+.photo_thumb img{
+opacity:0.90;
+}
+.photo_thumb img:hover{
+opacity:1.0;
+}
+
+.white_mask_wrapper {
+position:absolute;
+width:auto;
+color:white;
+background-image:url(../images/whitebg.png);
+background-repeat:repeat-x;
+height:47px;
+width:100%;
+bottom:-1px;
+}
+
+.white_mask {
+position:relative;
+height:47px;
+}
+.white_mask .darshan {
+position:absolute;
+background-image:url(../images/darshan.png);
+background-repeat:repeat-x;
+left:11px;
+bottom:8px;
+width:23px;
+height:32px;
+}
+.white_mask p{
+position: absolute;
+right: -11px;
+font-size: 10px;
+top: -5px;
+}
+
+.white_mask .modak {
+position:absolute;
+background-image:url(../images/modak.png);
+background-repeat:repeat-x;
+left:45px;
+bottom:8px;
+width:27px;
+height:30px;
+}
+
+.white_mask .add_collection {
+position:absolute;
+background-image:url(../images/add_collection.png);
+background-repeat:repeat-x;
+right:13px;
+bottom:8px;
+width:26px;
+height:29px;
+}
+ul#photo_gallery{
+list-style-type:none;
+}
+#photo_gallery li {
+margin:0;
+padding:0;
+float:left;
 }
