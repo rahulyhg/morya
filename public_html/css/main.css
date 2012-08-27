@@ -62,45 +62,60 @@ height: 28px;
 }
 .twitter {
 position:absolute;
-background-image:url(../img/bluefox/twitter.png);
+background-image:url(../img/twitter.png);
 background-repeat:no-repeat;
 right: 50px;
 width: 37px;
 height: 27px;
 }
+.twitter:hover {
+position:absolute;
+background-image:url(../img/bluefox/twitter.png);
+}
 .facebook {
 position:absolute;
-background-image:url(../img/bluefox/facebook.png);
+background-image:url(../img/facebook.png);
 background-repeat:no-repeat;
 width: 37px;
 height: 27px;
 right: 0px;
 }
+.facebook:hover {
+background-image:url(../img/bluefox/facebook.png);
+}
 .rss {
 position:absolute;
-background-image:url(../img/bluefox/rss.png);
+background-image:url(../img/rss.png);
 background-repeat:no-repeat;
 width: 37px;
 height: 27px;
 right: -35px;
 }
-
+.rss:hover {
+background-image:url(../img/bluefox/rss.png);
+}
 .aarti_menu_logo {
 position:absolute;
 background-image:url(../img/aarti_menu.png);
 background-repeat:no-repeat;
 width: 76px;
 height: 70px;
+left:-14px;
 }
-
+.aarti_menu_logo:hover {
+background-image:url(../img/aarti_menu_hover.png);
+}
 .photo_menu_logo {
 position:absolute;
 background-image:url(../img/photo_menu.png);
 background-repeat:no-repeat;
 width: 76px;
 height: 70px;
+left:78px;
 }
-
+.photo_menu_logo:hover{
+background-image:url(../img/photo_menu_hover.png);
+}
 .temple_menu_logo {
 position:absolute;
 background-image:url(../img/temple_menu.png);
@@ -108,53 +123,116 @@ background-repeat:no-repeat;
 width: 76px;
 height: 70px;
 }
-
-.competition_menu_logo {
+.temple_menu_logo:hover {
 position:absolute;
-background-image:url(../img/competitions_menu.png);
+background-image:url(../img/temple_menu_hover.png);
 background-repeat:no-repeat;
 width: 76px;
 height: 70px;
 }
+.competition_menu_logo {
+position:absolute;
+background-image:url(../img/competitions2_menu2.png);
+background-repeat:no-repeat;
+width: 86px;
+height: 51px;
+top:12px;
+}
+.competition_menu_logo:hover {
+background-image:url(../img/competitions2_menu.png);
+}
+.recipies_menu_logo {
+position:absolute;
+background-image:url(../img/recipie_menu2.png);
+background-repeat:no-repeat;
+width: 86px;
+height: 51px;
+top:12px;
+left:340px;
+}
+.recipies_menu_logo:hover{
+background-image:url(../img/recipie_menu_hover2.png);
+}
 
 .my_ganesha_menu_logo {
 position:absolute;
-background-image:url(../img/my_ganesha.png);
+background-image:url(../img/my_ganesha_menu.png);
 background-repeat:no-repeat;
 width: 76px;
 height: 70px;
+left:425px;
+top:3px;
+}
+.my_ganesha_menu_logo:hover {
+background-image:url(../img/my_ganesha_menu_hover2.png);
 }
 
 nav a {
 height:80px;
 }
-nav p{
+nav p {
 position:absolute;
 top:80px;
 font-family: Verdana ;
 font-size: 14px;
 font-weight: 300;
 }
-
-.news_wrapper{
-
+nav p:hover {
+color:#0066EE;
 }
 
-.news_box{
-height:240px;
-border:1px solid cyan;
+#news_box {
+margin-bottom:10px;
+}
+.upload_instr
+{
+text-align:center;
+font-size:16px;
 }
 
-.search_wrapper {
-padding-top:10px;
-padding-bottom:10px;
+.upload_btn {
+position:absolute;
+right:17px;
+top:55px;
+height:25px;
+display: block;
+/*or inline-block*/
+width: 105px;
+padding: 7px 0;
+text-align: center;
+background: #254677;
+border-bottom: 1px solid #DDD;
+color: #FFF;
+font-weight:400px;
+font-size:16px;
+}
+.upload_photo {
+position: absolute;
+background-image: url(../img/add-photo.png);
+background-repeat: no-repeat;
+width: 100%;
+bottom: -1px;
+top: 14px;
+left:63px;
+}
+.upload_instr {
+position: absolute;right: 140px;
+color: #59ABB7;
+margin-top:20px;
 }
 
-.search_box {
-height:35px;
-border:1px solid;
+.upload_instr  p{
+margin-bottom:10px;
 }
 
+.upload_wrapper {
+height:125px;
+margin-top:10px;
+margin-bottom:15px;
+}
+.uploader{
+height:100%;
+}
 .photo_gallery {
 height:600px;
 }
