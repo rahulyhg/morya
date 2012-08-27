@@ -15,7 +15,9 @@ case VedicType::Pooja : $heading = "Uttar Pooja";$addhead = "Add Uttar Pooja vid
 }
 ?>
 <h1><?php echo $heading;?></h1>
+<?php if($vedicType == VedicType::Aarti || VedicType::Mantra){ ?>
 <p><?php echo CHtml::link($addhead,array('addvedic','vedicType'=>$vedicType));?></P>
+<?php } ?>
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
