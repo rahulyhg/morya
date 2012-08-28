@@ -47,7 +47,7 @@ class Temple extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('slug, name, description, how_to_go, history, created, modified', 'required'),
+			array('name, description, how_to_go, history', 'required'),
 			array('slug', 'length', 'max'=>30),
 			array('name', 'length', 'max'=>255),
 			array('established', 'length', 'max'=>4),
@@ -66,7 +66,7 @@ class Temple extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'templePhotos' => array(self::HAS_MANY, 'TemplePhoto', 'temple_id'),
+			'templePhotos' => array(self::HAS_MANY, 'Temple_Photo', 'temple_id'),
 			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
 		);
 	}

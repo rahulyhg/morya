@@ -62,7 +62,7 @@ class TempleController extends AppController
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($templeType)
 	{
 		$model=new Temple;
 
@@ -72,8 +72,14 @@ class TempleController extends AppController
 		if(isset($_POST['Temple']))
 		{
 			$model->attributes=$_POST['Temple'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->slug=$this->behavior();
+			if($model->save()){
+				$temple = new TemplePhoto;
+				$temple->temple_id = $model->temple_id;
+				$temple->photo_id = $_POST['photo_id'];
+				if($temple->save())
+					$this->redirect(array('index','templeType'=>$templeType));
+				}
 		}
 
 		$this->render('create',array(
