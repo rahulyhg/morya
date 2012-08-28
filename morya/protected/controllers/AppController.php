@@ -2,7 +2,7 @@
 
 class AppController extends Controller
 {
-	public $layout='//layouts/column2';
+	public $layout='//layouts/layout';
 	
 	public function filters()
 	{

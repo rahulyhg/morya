@@ -3,6 +3,10 @@
 class SiteController extends Controller
 {
 	public $layout='//layouts/layout';
+
+    function init(){
+        Yii::import('application.models.photo.*');
+    }
 	/**
 	 * Declares class-based actions.
 	 */
@@ -28,10 +32,19 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$theTime = date("D M j G:i:s T Y");
-		$this->render('index',array('time'=>$theTime));
+        $criteria=new CDbCriteria;
+        $criteria->order = 'created desc';
+        $criteria->limit = 20;
+
+        $pages=new CPagination(Photo::model()->count($criteria));
+        $pages->applyLimit($criteria);
+        $pages->pageSize=10;
+
+        $elementsList=Photo::model()->findAll($criteria);//->with('comments')
+        $this->render('index',array(
+            'elementsList'=>$elementsList,
+            'pages'=>$pages,
+        ));
 	}
 
 	/**

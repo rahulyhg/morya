@@ -55,7 +55,27 @@
 	<div class="push_2 upload_wrapper">
 	<div class="grid_6 uploader color_me" style="position:relative;">
 	<div class="upload_photo"></div>
-	<div class="upload_btn">Upload</div>
+	<div class="upload_btn">
+        <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
+        array(
+            'id'=>'uploadFile',
+            'config'=>array(
+                'action'=>Yii::app()->createUrl('photo/postUpload'),
+                'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
+                'sizeLimit'=>10*1024*1024,// maximum file size in bytes
+                'minSizeLimit'=>10,// minimum file size in bytes
+                'onComplete'=>"js:function(id,filename,response){}",
+                'messages'=>array(
+                    'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
+                    'sizeError'=>"{file} is too large, maximum file size is {sizeLimit}.",
+                    'minSizeError'=>"{file} is too small, minimum file size is {minSizeLimit}.",
+                    'emptyError'=>"{file} is empty, please select files again without it.",
+                    'onLeave'=>"The files are being uploaded, if you leave now the upload will be cancelled."
+                ),
+                'showMessage'=>"js:function(message){ alert(message); }"
+            )
+        )); ?>
+    </div>
 	<h3 class="upload_instr">
 	<p>Drop Here</p>
 	<p>Or</p>
@@ -65,302 +85,13 @@
 		<div class="grid_4">		
 		</div>
 	</div>
-	<section id="photo_container" style="position:relative;">
-	<div id="photo_wrapper" class="photo_wrapper" style="position:relative;width:100%;height:100%;">
-		<ul id="photo_gallery" class="photo_gallery">
-			
-			<li class="tj_row_1">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_1">
-				<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_1">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_1">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			<li class="tj_row_2">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_2">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_2">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_2">
-			<div class="grid_3 photo_thumb">
-			<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			<li class="tj_row_3">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_3">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_3">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_3">
-			<div class="grid_3 photo_thumb">
-			<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-				
-			</div>
-			</li>
-			
-			
-			
-			<li class="tj_row_4">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_4">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			
-			<li class="tj_row_4">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			
-			<li class="tj_row_4">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			<li class="tj_row_5">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			<li class="tj_row_5">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			<li class="tj_row_5">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-			<li class="tj_row_5">
-			<div class="grid_3 photo_thumb">
-				<h3>vighnaharta</h3>
-				<img src="images/ganpati.jpg" style="width:220px;height:220px" />
-				<div class="white_mask_wrapper">
-				<div class="white_mask">
-					<span class="darshan"><p>789</p></span>
-					<span class="modak"><p>789</p></span>
-					<span class="add_collection"><p>789</p></span>
-				</div>
-				</div>
-			</div>
-			</li>
-		</ul>
-		</div>
-	</section>
+
+<?php $this->renderPartial('//photo/index',array(
+        'elementsList'=>$elementsList,
+        'pages'=>$pages,
+    ));
+?>
+
 		<?php $this->beginClip('js-page-end'); ?>
 		<script type="text/javascript">
 			$(function() {
