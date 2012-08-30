@@ -72,10 +72,10 @@ class TempleController extends AppController
 		if(isset($_POST['Temple']))
 		{
 			$model->attributes=$_POST['Temple'];
-			$model->slug=$this->behavior();
+
 			if($model->save()){
 				$temple = new TemplePhoto;
-				$temple->temple_id = $model->temple_id;
+				$temple->temple_id = $model->id;
 				$temple->photo_id = $_POST['photo_id'];
 				if($temple->save())
 					$this->redirect(array('index','templeType'=>$templeType));
