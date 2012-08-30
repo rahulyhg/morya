@@ -1,4 +1,4 @@
-<?php $this->beginContent('//layouts/main'); ?>
+<?php $this->beginContent('//layouts/layout'); ?>
 <div id="content">
 	<?php echo $content; ?>
 </div><!-- content -->

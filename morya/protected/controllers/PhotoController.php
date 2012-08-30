@@ -21,7 +21,7 @@ class PhotoController extends AppController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('upload','postUpload'),
+				'actions'=>array('upload','postUpload','myganesha'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -48,6 +48,21 @@ class PhotoController extends AppController
 	   ));
 	}
 	
+	public function actionMyganesha(){
+		$criteria=new CDbCriteria;
+		$criteria->limit = 10;
+		$criteria->user_id = $this->user_id;
+
+	   $pages=new CPagination(Photo::model()->count($criteria));          
+	   $pages->applyLimit($criteria);
+	   $pages->pageSize=10;
+
+	   $elementsList=Photo::model()->findByAttributes($criteria);//->with('comments')
+	   $this->render('index',array(
+		  'elementsList'=>$elementsList,
+		  'pages'=>$pages,
+	   ));
+	}
 	
 	public function actionUpload()
 	{
