@@ -8,7 +8,7 @@
 
 <script type="text/javascript">
 function uploadComplete(id, fileName, responseJSON){
-$("photoid").val() = responseJSON["id"];
+$("#photoid").val() = responseJSON["id"];
 }
 </script>
 
@@ -47,7 +47,7 @@ $("photoid").val() = responseJSON["id"];
 	</div>
 	<div class="row">
 	<h1>Upload Temple's Photo</h1>
-<input type="hidden" name="photoid" />
+<input type="hidden" name="photo_id" />
 <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
 array(
         'id'=>'uploadFile',
