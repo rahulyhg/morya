@@ -24,6 +24,7 @@ case VedicType::Pooja : $heading = "Uttar Pooja";$addhead = "Add Uttar Pooja vid
 ));
 ?>
 
+
 <?php
 /*$this->menu=array(
 	array('label'=>'Add Arti', 'url'=>$this->createAbsoluteUrl('addvedic',array('vedicType'=>VedicType::Aarti))),
