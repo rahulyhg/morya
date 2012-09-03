@@ -18,9 +18,9 @@
 class Comment extends AppActiveRecord
 {
 	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return Comment the static model class
+     * Returns the static model of the specified AR class.
+     * @param string $className active record class name.
+     * @return Comment the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -43,11 +43,7 @@ class Comment extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('comment, created', 'required'),
-			array('user_id', 'length', 'max'=>11),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, comment, user_id, created', 'safe', 'on'=>'search'),
+			array('comment', 'required')
 		);
 	}
 
@@ -57,13 +53,13 @@ class Comment extends AppActiveRecord
 	public function relations()
 	{
 		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
-			'users' => array(self::MANY_MANY, 'Users', 'modaks(comment_id, user_id)'),
-			'photoes' => array(self::MANY_MANY, 'Photoes', 'photo_comment(comment_id, photo_id)'),
-			'vedicComments' => array(self::HAS_MANY, 'VedicComment', 'comment_id'),
-		);
+        // class name for the relations automatically generated below.
+        return array(
+            'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+            'users' => array(self::MANY_MANY, 'Users', 'modaks(comment_id, user_id)'),
+            'photoes' => array(self::MANY_MANY, 'Photoes', 'photo_comment(comment_id, photo_id)'),
+            'vedicComments' => array(self::HAS_MANY, 'VedicComment', 'comment_id'),
+        );
 	}
 
 	/**
@@ -72,31 +68,7 @@ class Comment extends AppActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
 			'comment' => 'Comment',
-			'user_id' => 'User',
-			'created' => 'Created',
 		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('comment',$this->comment,true);
-		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('created',$this->created,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
 	}
 }

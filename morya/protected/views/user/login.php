@@ -4,26 +4,13 @@ $this->breadcrumbs=array(
 	'Login',
 );
 ?>
-<script type="text/javascript">
-$('document').ready(function(){
-    $('#fblogina').click(function() {
-            FB.login(function (response) {
-				if (response.authResponse) {
-					window.location = "<?php echo $this->createAbsoluteUrl('user/login',array('authType'=>AuthType::Facebook)) ?>?code=" +response.authResponse.accessToken;
-				} else {
-					// user clicked Cancel
-				}
-            }, {scope:'email,user_photos,user_location,publish_actions'});
-        }//fblogin
-    );
-});
-</script>
-<h1>Login</h1>
+
 <a id="fblogina" href="#">Login With FB</a>
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
+    'action'=>Yii::app()->createUrl('user/login'),
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
 	),
@@ -43,12 +30,12 @@ $('document').ready(function(){
 
 	<div class="row rememberMe">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
+		<?php echo $form->label($model,'rememberMe',array('style'=>'display:inline')); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
+	<div class="row">
+        <?php echo CHtml::submitButton('Login',array('class'=>'button_1')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

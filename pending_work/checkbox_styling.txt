@@ -1,0 +1,11 @@
+Title : styling the checkbox
+
+Estimated Time : 2 hrs 30 min.
+
+Summary:
+Checkbox is displayed as it whatever css style you apply hence you should workaround.
+
+Method:
+a span tag behaves as a checkbox with two images which toggle like checkbox
+a hidden checkbox carries the state.
+you should use javascript and image state changes to show styled checkboxes.

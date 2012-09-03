@@ -1,3 +1,4 @@
 morya/assets/*
 morya/upload/*
 morya/protected/runtime/*
+.idea

@@ -28,12 +28,13 @@ class UserIdentity extends CUserIdentity
 				else
 				{
 					$this->_id = $user->id;
-					//update the login table
 					$this->errorCode=self::ERROR_NONE;
+                    //update the login table
+                    $login = new Login;
+                    $login->loginUser($this->_id,$this->errorCode,Yii::app()->request->getUserHostAddress(),Yii::app()->request->getUserAgent());
 				}
 			}
-		$login = new Login;
-		$login->loginUser($this->_id,$this->errorCode,Yii::app()->request->getUserHostAddress(),Yii::app()->request->getUserAgent());
+
         return !$this->errorCode;
 	}
 	

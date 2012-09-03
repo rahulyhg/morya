@@ -21,7 +21,7 @@ class PhotoController extends AppController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('upload','postUpload'),
+				'actions'=>array('upload','postUpload','userPhoto'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -33,27 +33,29 @@ class PhotoController extends AppController
 			),
 		);
 	}
-	public function actionIndex(){
+
+	public function actionIndex()
+    {
 		$criteria=new CDbCriteria;
-		$criteria->limit = 10;
+        $criteria->order = 'created desc';
+        $criteria->limit = 30;
 
-	   $pages=new CPagination(Photo::model()->count($criteria));          
-	   $pages->applyLimit($criteria);
-	   $pages->pageSize=10;
+        $pages=new CPagination(Photo::model()->count());
+        $pages->applyLimit($criteria);
+        $pages->pageSize=30;
 
-	   $elementsList=Photo::model()->findAll($criteria);//->with('comments')
-	   $this->render('index',array(
-		  'elementsList'=>$elementsList,
-		  'pages'=>$pages,
-	   ));
+        $elementsList=Photo::model()->findAll();//->with('comments')
+        $this->render('index',array(
+            'elementsList'=>$elementsList,
+            'pages'=>$pages,
+        ));
 	}
-	
-	
+
 	public function actionUpload()
 	{
 		$this->render('upload');
 	}
-	public function actionPostUpload(){
+	public function actionPostUpload($type = PhotoUploadCategory::Normal){
 			Yii::import("ext.EAjaxUpload.qqFileUploader");
 			$folder = PhotoType::$folderName[PhotoType::Original];// folder for uploaded files
 			$allowedExtensions = array("jpg","jpeg","gif");//array("jpg","jpeg","gif","exe","mov" and etc...
@@ -64,7 +66,7 @@ class PhotoController extends AppController
 			$fileSize=filesize($folder.$result['filename']);//GETTING FILE SIZE
 			$fileName=$result['filename'];//GETTING FILE NAME
 			$this->resize($folder.$fileName);
-			$lastId =$this->updateDb($fileName,$uploader->file->getName(),$uploader->file->getSize());
+			$lastId =$this->updateDb($type,$fileName,$uploader->file->getName(),$uploader->file->getSize());
 			$result['id']=$lastId;
 			$return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
 			echo $return;// it's array
@@ -75,8 +77,9 @@ class PhotoController extends AppController
 		$photo->caption = $_POST['description'];
 		$photo->save();
 	}
-	private function updateDb($fileName,$ogName,$size){
+	private function updateDb($type,$fileName,$ogName,$size){
 		$photo = new Photo;
+        $photo->type = $type ;
 		$photo->caption = $fileName;
 		$photo->original_name = $ogName;
 		$photo->file_name = $fileName;
@@ -94,12 +97,11 @@ class PhotoController extends AppController
 			$path_information = pathinfo($filePath);
 			list($width, $height, $type, $attr) = getimagesize($filePath);
 
-
 			$thumb=Yii::app()->phpThumb->create($filePath);
 			$thumb->resize(PhotoType::$dimension[PhotoType::Screen]['width']);
 			$thumb->save(PhotoType::$folderName[PhotoType::Screen].$path_information['basename']);
 			
-			$thumb->resize(100,100);
+			$thumb->resize(PhotoType::$dimension[PhotoType::Thumb]['width']);
 			$thumb->save(PhotoType::$folderName[PhotoType::Thumb].$path_information['basename']);
 	}
 	/**
@@ -197,4 +199,19 @@ class PhotoController extends AppController
 			Yii::app()->end();
 		}
 	}
+
+    /**
+     * @param null $userId
+     * if the userSlug is given then the particular user's uploaded photoes will be visible
+     * else the logged in user's photo will be shown
+     * if the user is not logged in then he will be redirected to loginpage
+     */
+    public function actionUserPhoto($userSlug = null){
+        if($userSlug === null){
+
+        }
+        elseif(!Yii::app()->user->isGuest){
+            //user is logged in show him his uploaded photoes
+        }
+    }
 }

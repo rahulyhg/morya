@@ -1,6 +1,6 @@
 <?php
 
-class ShortRegistration extends CFormModel
+class ShortRegistrationForm extends CFormModel
 {
     public $name;
     public $email;
@@ -9,8 +9,7 @@ class ShortRegistration extends CFormModel
     public function rules()
     {
         return array(
-            array('name,email, password', 'required'),
-            array('name,email','filter','filter'=>'strtolower'),
+            array('name,email,password', 'required'),
             array('email','unique','caseSensitive'=>'false','className'=>'User'),
             array('email','email'),
             array('password', 'safe'),
@@ -21,6 +20,7 @@ class ShortRegistration extends CFormModel
     {
         return array(
             'name'=>'Full Name',
+            'email'=>'Email Address'
         );
     }
 }

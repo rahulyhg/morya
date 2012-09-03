@@ -18,11 +18,11 @@ class UserController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('register','login'),
+				'actions'=>array('register','shortRegister','login'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('logout'),
+				'actions'=>array('edit','logout'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -78,14 +78,48 @@ class UserController extends AppController
 			'model'=>$model,
 		));
 	}
-	
+    public function actionShortRegister()
+    {
+        if(!Yii::app()->user->isGuest){
+            $this->redirect(Yii::app()->user->returnUrl);
+        }
+        $model=new ShortRegistrationForm();
+        $this->performAjaxValidation($model);
+        if(isset($_POST['ShortRegistrationForm']))
+        {
+            $model->attributes=$_POST['ShortRegistrationForm'];
+            if($model->validate()){
+                $user = new User ;
+                //RegistrationForm Model variables bulk assigned to User
+                $user->attributes = $model->attributes ;
+                if($user->save()){
+                    //log-in the user
+                    $identity=new UserIdentity($model->email,$model->password);
+                    $identity->authenticate();
+                    Yii::app()->user->login($identity);
+                    $this->redirect(array('site/index'));
+                }
+            }
+        }
+
+        $this->render('_short_register',array(
+            'model'=>$model,
+        ));
+    }
+
+    /***
+     * Edit the user profile
+     */
+    public function actionEdit(){
+
+    }
 	public function actionLogin($authType = AuthType::Normal )
 	{
 		//redirect loggedIn users
 		if(!Yii::app()->user->isGuest){
 			$this->redirect(Yii::app()->user->returnUrl);
 		}
-		if($authType == AuthType::Facebook){
+		if($authType === AuthType::Facebook){
 			$userId = Yii::app()->facebook->getUser();
 			if($userId){
 				$userInfo = Yii::app()->facebook->api('/me');

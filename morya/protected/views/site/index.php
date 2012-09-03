@@ -20,7 +20,7 @@
                     </div>
                 </li>
                 <li>
-                    <h2><span>Dagdusheth gets 30KG Gold</span></h2>
+                    <h2><span>30KG Gold</span></h2>
                     <div>
                         <figure>
                             <img src="news-cover/3.jpg" alt="image" />
@@ -60,7 +60,7 @@
         array(
             'id'=>'uploadFile',
             'config'=>array(
-                'action'=>Yii::app()->createUrl('photo/postUpload'),
+                'action'=>Yii::app()->createUrl('photo/postUpload',array('type'=>PhotoUploadCategory::Normal)),
                 'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
                 'sizeLimit'=>10*1024*1024,// maximum file size in bytes
                 'minSizeLimit'=>10,// minimum file size in bytes
@@ -85,27 +85,26 @@
 		<div class="grid_4">		
 		</div>
 	</div>
-
-<?php $this->renderPartial('//photo/index',array(
-        'elementsList'=>$elementsList,
-        'pages'=>$pages,
-    ));
-?>
-
+        <div id="authentication-wrapper">
+    <div id="authentication">
+        <div id="register">
+            <h1>Register</h1>
+            <?php $this->renderPartial('//user/short_register',array('model'=>$register)); ?>
+        </div>
+        <div id="login">
+            <h1>Login</h1>
+            <?php $this->renderPartial('//user/login',array('model'=>$login)); ?>
+        </div>
+    </div>
+    </div>
 		<?php $this->beginClip('js-page-end'); ?>
-		<script type="text/javascript">
-			$(function() {
-				$('#photo_container').gridnav({
-					rows	: 3,
-					type	: {
-						mode		: 'fade', 		// use def | fade | seqfade | updown | sequpdown | showhide | disperse | rows
-						speed		: 500,				// for fade, seqfade, updown, sequpdown, showhide, disperse, rows
-						easing		: '',				// for fade, seqfade, updown, sequpdown, showhide, disperse, rows	
-						factor		: 50,				// for seqfade, sequpdown, rows
-						reverse		: false				// for sequpdown
-					}
-				});
-			});
+            <script type="text/javascript">
+                var app = {
+                    user : {
+                        isAuthenticated : eval('<?php echo Yii::app()->user->isGuest ? 'false' : 'true' ?>'),
+                        name : ''
+                    }
+                }
 			    $('#news_box').liteAccordion({
                         onTriggerSlide : function() {
                             this.find('figcaption').fadeOut();
@@ -113,6 +112,8 @@
                         onSlideAnimComplete : function() {    
                             this.find('figcaption').fadeIn();
                         },
+                       // containerWidth:'960px',
+                       // containerHeight:'240px',
 						firstSlide : 1,
                         autoPlay : false,
                         pauseOnHover : true,
@@ -123,6 +124,23 @@
 						easing: 'easeInOutQuart',
 						activateOn: 'click'//mouseover
                 }).find('figcaption:first').show();
+                $('#signup').fancybox();
+                $('.upload_btn').click(function(){
+                    if(app.user.isAuthenticated === false){
+                        $("#signup").trigger('click');
+                        return false;
+                    }
+                });
+                $('#fblogina').click(function() {
+                        FB.login(function (response) {
+                            if (response.authResponse) {
+                                window.location = "<?php echo $this->createAbsoluteUrl('user/login',array('authType'=>AuthType::Facebook)) ?>?code=" +response.authResponse.accessToken;
+                            } else {
+                                // user clicked Cancel
+                            }
+                        }, {scope:'email,user_photos,user_location,publish_actions'});
+                    }//fblogin
+                );
 		</script>
 <?php $this->endClip(); ?>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

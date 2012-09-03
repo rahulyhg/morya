@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'photoes':
  * @property string $id
+ * @property string $type
  * @property string $caption
  * @property string $description
  * @property string $original_name
@@ -55,6 +56,7 @@ class Photo extends AppActiveRecord
 			array('caption, original_name, file_name, file_type', 'length', 'max'=>255),
 			array('file_size', 'length', 'max'=>20),
 			array('user_id', 'length', 'max'=>11),
+            array('type','default', 'setOnEmpty'=>true, 'value'=>0),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('caption, description, original_name, file_type, file_size, user_id, created, modified', 'safe', 'on'=>'search'),

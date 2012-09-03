@@ -25,7 +25,8 @@
   <link rel="stylesheet" href="css/960/reset.css">
   <link rel="stylesheet" href="css/960/text.css">
   <link rel="stylesheet" href="css/main.css">
-  <link href="css/liteaccordion.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/liteaccordion.css"/>
+  <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
@@ -39,18 +40,20 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header class="container_12">
+      <a href="/">
   <span class="grid_2" style="position:relative;">
 	<span class="logo"></span>
 	<span class="ganesh_logo"></span>
   </span>
+      </a>
   <div class="grid_3" style="position:relative;">
-   <h1 class="header_text"></h1>
+      <a href="/"><h1 class="header_text"></h1></a>
    <h4 class="subheader_text">Let World Know Our Ganesh...</h4>
-   <span class="social">
+   <h5 class="social">
 	<a href="https://twitter.com/GlobalGanesh" target="_blank"><span class="twitter"></span></a>
 	<a href="http://www.facebook.com/GlobalGanesh" target="_blank"><span class="facebook"></span>
 	<a href="/rss.xml"><span class="rss"></span></a>
-   </span>
+   </h5>
   </div>
   <nav class="grid_7 push_1">
 	<a class="grid_1" href="">
@@ -58,7 +61,7 @@
 		<p>Aarti</p>
 	</a>
 	
-	<a class="grid_1" href="">
+	<a class="grid_1" href="<?php echo Yii::app()->createUrl('photo/index') ?>">
 		<span class="photo_menu_logo"></span>
 		<p>Photo</p>
 	</a>
@@ -78,15 +81,28 @@
 	</a>
 	<a class="grid_1" href="">
 		<span class="my_ganesha_menu_logo"></span>
-		<p>My Ganesha</p>
+		<p>Today's Ganesha</p>
 	</a>
 	
   </nav>
   
   </header>
+  <?php
+    if(Yii::app()->user->isGuest){
+  ?>
+    <a id="signup" class="user_space" href="#authentication">
+      Login / Register
+  </a>
+  <?php
+    }else{
+        ?>
+    <?php $this->widget('UserInfo'); ?>
+        <?php
+    }
+    ?>
   <div role="main container_12">
 	<?php echo $content; ?>
-		</div>
+  </div>
 	</section>
   </div>
   <footer>
@@ -104,6 +120,11 @@
 <script type="text/javascript" src="js/libs/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="js/libs/jquery.gridnav.js"></script>
 <script type="text/javascript" src="js/libs/liteaccordion.jquery.js"></script>
+<script type="text/javascript" src="js/libs/jquery.fancybox.pack.js?v=2.1.0"></script>
+  <script type="text/javascript">
+      $('document').ready(function(){
+      });
+  </script>
 <?php $this->renderClip('js-page-end'); ?>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->

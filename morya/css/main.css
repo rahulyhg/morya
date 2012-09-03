@@ -55,9 +55,8 @@ font-weight: 300;
 }
 .social {
 position: relative;
-right: -221px;
+right: 0;
 top: 30px;
-width: 107px;
 height: 28px;
 }
 .twitter {
@@ -189,7 +188,15 @@ margin-bottom:10px;
 text-align:center;
 font-size:16px;
 }
-
+.buttons,.button_1 {
+    background-color: #0066EE;
+    width: 75px;
+    height: 30px;
+    margin:2px;
+    border: none;
+    font-size:16px;
+    color: white;
+}
 .upload_btn {
 position:absolute;
 right:17px;
@@ -200,7 +207,6 @@ display: block;
 width: 105px;
 padding: 7px 0;
 text-align: center;
-//background: #254677;
 border-bottom: 1px solid #DDD;
 color: #FFF;
 font-weight:400;
@@ -239,7 +245,6 @@ height:600px;
 
 .photo_thumb {
 position:relative;
-height:220px;
 margin-bottom:20px;
 }
 
@@ -314,4 +319,65 @@ list-style-type:none;
 margin:0;
 padding:0;
 float:left;
+}
+
+.errorMessage {
+    color: #f00;
+}
+
+#authentication-wrapper {
+    display:none;
+}
+
+#authentication h1{
+    color: #8bc9ee;
+    text-align: center;
+}
+
+#register {
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    float:left;
+    border-right:2px solid #808080;
+}
+
+#login {
+    padding: 10px 10px 10px 10px;
+    float:left;
+}
+#authentication label {
+    display: block;
+    color: #0090E6;
+}
+
+input[type="text"],#authentication input[type="password"] {
+    padding: 5px;
+    border: 1px solid #8BC9EE;
+    font-size: 18px;
+}
+input[type="checkbox"], input[type="radio"] {
+
+}
+.user_space {
+    position: fixed;
+    right: 5px;
+    background-color: #8BC9EE;
+    padding: 10px;
+    color: white;
+    z-index: 999;
+    top: 5px;
+}
+
+.user_space h2{
+    font-size:14px;
+    margin:0;
+    padding:0;
+}
+.user_space .us_details {
+    display: none;
+}
+
+.user_space .us_details a{
+    display:block;
+    text-align: right;
 }

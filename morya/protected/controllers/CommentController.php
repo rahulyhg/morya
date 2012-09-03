@@ -1,6 +1,6 @@
 <?php
 
-class PhotoController extends AppController
+class CommentController extends AppController
 {
 	function init(){
 		Yii::import('application.models.comment.*');
@@ -33,7 +33,7 @@ class PhotoController extends AppController
 		);
 	}
 	
-	public function actionCreate(){
+	public function actionCreate($photo_id){
 		$comment=new Comment;
 		if(isset($_POST['Comment']))
 		{
@@ -42,7 +42,7 @@ class PhotoController extends AppController
 				$this->redirect('photo/view',array('id'=>$model->photo_id));
 		}
 		$this->render('create',array(
-			'model'=>$model,
+			'model'=>$comment,
 		));
 	}
 }

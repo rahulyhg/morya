@@ -21,13 +21,12 @@ class RegistrationForm extends CFormModel
 	public function rules()
 	{
 		return array(
-			array('name,email, password, confirm_password,contact', 'required'),
+			array('name,email, password', 'required'),
 			array('email','filter','filter'=>'strtolower'),
 			array('email','unique','caseSensitive'=>'false','className'=>'User'),
 			array('email','email'),
-			array('confirm_password','compare','compareAttribute'=>'password'),
-			array('password', 'safe'),
-			array('confirm_password', 'safe'),
+			array('password, ganpati_pic, city,add_line_1, add_line_2','default', 'setOnEmpty'=>true, 'value'=>null),
+			array('password', 'safe')
 		);
 	}
 
@@ -36,7 +35,6 @@ class RegistrationForm extends CFormModel
 		return array(
 			'name'=>'Full Name',
 			'ganpati_pic'=>'Your Ganpati Photo',
-			'password_compare'=>'Password Confirm'
 		);
 	}
 }
