@@ -14,7 +14,7 @@
  * @property Like[] $likes
  * @property Photo $photo
  */
-class Comment extends AppActiveRecord
+class Like extends AppActiveRecord
 {
 	/**
      * Returns the static model of the specified AR class.
@@ -31,7 +31,7 @@ class Comment extends AppActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'comments';
+		return 'likes';
 	}
 
 	/**
@@ -42,7 +42,7 @@ class Comment extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('comment', 'required')
+			array('comment_id', 'required')
 		);
 	}
 
@@ -55,18 +55,7 @@ class Comment extends AppActiveRecord
         // class name for the relations automatically generated below.
         return array(
             'user' => array(self::BELONGS_TO, 'User', 'user_id'),
-            'photo' => array(self::BELONGS_TO, 'Photo', 'photo_id'),
-            'likes' => array(self::HAS_MANY, 'Like', 'comment_id')
+            'comment' => array(self::BELONGS_TO, 'Comment', 'comment_id')
         );
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'comment' => 'Comment',
-		);
 	}
 }

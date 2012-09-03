@@ -72,7 +72,7 @@ class Photo extends AppActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'durvases' => array(self::HAS_MANY, 'Durvas', 'photo_id'),
-			'comments' => array(self::MANY_MANY, 'Comments', 'photo_comment(photo_id, comment_id)'),
+			'comments' => array(self::HAS_MANY, 'Comment', 'photo_id'),
 			'photoHits' => array(self::HAS_MANY, 'PhotoHits', 'photo_id'),
 			'photoTags' => array(self::HAS_MANY, 'PhotoTag', 'photo_id'),
 			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),

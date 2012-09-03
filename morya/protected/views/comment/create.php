@@ -1,28 +1,16 @@
 <div class="form">
-
-<?php 
-$form=$this->beginWidget('CActiveForm', array(
-	'id'=>'comment-form',
-	'enableAjaxValidation'=>false,
+    <?php $form=$this->beginWidget('CActiveForm', array(
+    'id'=>'comment-form',
+    'action'=>Yii::app()->createUrl('comment/create',array('photo_id'=>$comment->photo_id)),
+    'method'=>'POST',
+    'enableAjaxValidation'=>true,
 ));
-?>
+    ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'photo_id'); ?>
-		<?php echo $form->hiddenField($model,'photo_id',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'photo_id'); ?>
-	</div>
-	
-	<div class="row">
-		<?php echo $form->labelEx($model,'comment'); ?>
-		<?php echo $form->textField($model,'comment',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'comment'); ?>
-	</div>
-		
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Comment'); ?>
-	</div>
+    <?php echo $form->textArea($comment,'comment',array('size'=>60,'maxlength'=>255)); ?>
+    <div class="row">
+        <?php echo CHtml::submitButton('Comment',array('class'=>'button_1')); ?>
+    </div>
 
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
+    <?php $this->endWidget(); ?>
+</div>

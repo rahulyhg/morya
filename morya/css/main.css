@@ -190,7 +190,6 @@ font-size:16px;
 }
 .buttons,.button_1 {
     background-color: #0066EE;
-    width: 75px;
     height: 30px;
     margin:2px;
     border: none;
@@ -245,7 +244,7 @@ height:600px;
 
 .photo_thumb {
 position:relative;
-margin-bottom:20px;
+margin:10px;
 }
 
 .photo_thumb h3{
@@ -281,8 +280,8 @@ height:47px;
 position:absolute;
 background-image:url(../images/darshan.png);
 background-repeat:repeat-x;
-left:11px;
-bottom:8px;
+left:5px;
+bottom:4px;
 width:23px;
 height:32px;
 }
@@ -298,7 +297,7 @@ position:absolute;
 background-image:url(../images/modak.png);
 background-repeat:repeat-x;
 left:45px;
-bottom:8px;
+bottom:4px;
 width:27px;
 height:30px;
 }
@@ -307,8 +306,8 @@ height:30px;
 position:absolute;
 background-image:url(../images/add_collection.png);
 background-repeat:repeat-x;
-right:13px;
-bottom:8px;
+right:4px;
+bottom:4px;
 width:26px;
 height:29px;
 }
@@ -345,18 +344,16 @@ float:left;
     padding: 10px 10px 10px 10px;
     float:left;
 }
-#authentication label {
+
+label {
     display: block;
     color: #0090E6;
 }
 
-input[type="text"],#authentication input[type="password"] {
+input[type="text"], input[type="password"] {
     padding: 5px;
     border: 1px solid #8BC9EE;
     font-size: 18px;
-}
-input[type="checkbox"], input[type="radio"] {
-
 }
 .user_space {
     position: fixed;
@@ -380,4 +377,31 @@ input[type="checkbox"], input[type="radio"] {
 .user_space .us_details a{
     display:block;
     text-align: right;
+}
+
+/************* Styling for comments ***********/
+#comments {
+    height:600px;
+    width:260px;
+    float:right;
+}
+#comments textarea{
+    width: 100%;
+}
+.single_comment{
+    margin-bottom:10px;
+    width:260px;
+}
+.single_comment h3{
+    display: inline;
+    font-size:14px;
+}
+.single_comment .comment_date{
+    color:#444444;
+    font-size:12px;
+    display: inline;
+}
+.single_comment p {
+    margin:0px;
+    width: 250px;
 }

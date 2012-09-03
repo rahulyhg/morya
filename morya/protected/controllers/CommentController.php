@@ -4,6 +4,7 @@ class CommentController extends AppController
 {
 	function init(){
 		Yii::import('application.models.comment.*');
+        Yii::import('application.models.photo.*');
 	}
 	public function filters()
 	{
@@ -37,11 +38,13 @@ class CommentController extends AppController
 		$comment=new Comment;
 		if(isset($_POST['Comment']))
 		{
-			$model->attributes=$_POST['Comment'];
-			if($model->save())
-				$this->redirect('photo/view',array('id'=>$model->photo_id));
+            $comment->attributes=$_POST['Comment'];
+            $comment->photo_id = $photo_id ;
+            print_r($comment,$photo_id);
+			if($comment->save())
+				$this->redirect(Yii::app()->createUrl('photo/view',array('id'=>$comment->photo_id)));
 		}
-		$this->render('create',array(
+		$this->renderPartial('create',array(
 			'model'=>$comment,
 		));
 	}

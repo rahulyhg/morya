@@ -11,9 +11,8 @@
  *
  * The followings are the available model relations:
  * @property Users $user
- * @property Users[] $users
- * @property Photoes[] $photoes
- * @property VedicComment[] $vedicComments
+ * @property Like[] $likes
+ * @property Photo $photo
  */
 class Comment extends AppActiveRecord
 {
@@ -55,10 +54,9 @@ class Comment extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
-            'users' => array(self::MANY_MANY, 'Users', 'modaks(comment_id, user_id)'),
-            'photoes' => array(self::MANY_MANY, 'Photoes', 'photo_comment(comment_id, photo_id)'),
-            'vedicComments' => array(self::HAS_MANY, 'VedicComment', 'comment_id'),
+            'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+            'photo' => array(self::BELONGS_TO, 'Photo', 'photo_id'),
+            'likes' => array(self::HAS_MANY, 'Like', 'comment_id')
         );
 	}
 

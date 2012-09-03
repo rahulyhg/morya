@@ -1,5 +1,5 @@
 <li class="tj_row_1">
-    <div class="grid_2 photo_thumb">
+    <div class="photo_thumb">
         <h3><?php $photo->caption ;?></h3>
         <?php
         $img = PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name;
@@ -12,7 +12,7 @@
             <div class="white_mask">
                 <span class="darshan"><p>789</p></span>
                 <span class="modak"><p>789</p></span>
-                <span class="add_collection"><p>789</p></span>
+                <span class="add_collection"></span>
             </div>
         </div>
     </div>

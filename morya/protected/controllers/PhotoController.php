@@ -4,6 +4,8 @@ class PhotoController extends AppController
 {
 	function init(){
 		Yii::import('application.models.photo.*');
+        Yii::import('application.models.comment.*');
+        Yii::import('application.models.user.*');
 	}
 
 	public function filters()
@@ -34,7 +36,7 @@ class PhotoController extends AppController
 		);
 	}
 
-	public function actionIndex()
+	public function actionIndex($userSlug = null)
     {
 		$criteria=new CDbCriteria;
         $criteria->order = 'created desc';
@@ -47,7 +49,7 @@ class PhotoController extends AppController
         $elementsList=Photo::model()->findAll();//->with('comments')
         $this->render('index',array(
             'elementsList'=>$elementsList,
-            'pages'=>$pages,
+            'pages'=>$pages
         ));
 	}
 
@@ -110,8 +112,11 @@ class PhotoController extends AppController
 	 */
 	public function actionView($id)
 	{
+        $newComment = new Comment() ;
+        $newComment->photo_id = $id ;
 		$this->render('view',array(
 			'photo'=>$this->loadModel($id),
+            'newComment'=>$newComment
 		));
 	}
 
@@ -208,10 +213,14 @@ class PhotoController extends AppController
      */
     public function actionUserPhoto($userSlug = null){
         if($userSlug === null){
-
+            if(($user = User::model()->findByAttribute(array('slug'=> $userSlug))) !== null )
+            {
+                $elementsList= $user->photoes ;
+            }
         }
         elseif(!Yii::app()->user->isGuest){
             //user is logged in show him his uploaded photoes
+
         }
     }
 }
