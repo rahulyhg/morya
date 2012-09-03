@@ -58,6 +58,18 @@ class TempleController extends AppController
 		));
 	}
 
+	public function actionTempleview()
+	{
+		if($_REQUEST['temple_name'] != '')
+		{
+			$model=vedic::model()->findByAttributes(array('slug'=>$_REQUEST['temple_name']));
+			$this->render('templeview',array(
+			'model'=>$model,
+			));
+		
+		}
+	
+	}
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

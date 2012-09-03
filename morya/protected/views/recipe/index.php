@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 
 ?>
 <div style="width:100%">
-<div style="float:left width:70%">
+<div style="float:left;width:70%">
 <h1>Recipes</h1>
 
 <?php foreach($elementsList as $recipe){?>
@@ -27,7 +27,7 @@ $this->breadcrumbs=array(
 </div>
 <?php }?>
 </div>
-<div style="float:right width:30%">
+<div style="float:right;width:30%">
 <h3>Go to more recipes<h3>
 <?php foreach($elementsList as $recipe){?>
 <div><?php echo CHtml::link($recipe->title,array('Recipeview','rec_title'=>$recipe->slug));?></div>
