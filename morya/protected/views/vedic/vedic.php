@@ -14,22 +14,25 @@ case VedicType::Pooja : $heading = "Uttar Pooja";$addhead = "Add Uttar Pooja vid
 
 }
 ?>
-<h1><?php echo $heading;?></h1>
+<div><h1><?php echo $heading;?></h1></div>
+<?php foreach($elementsList as $vedic){ ?>
+<div><span><h3><?php echo $vedic->title;?><h3></span>
 <?php if($vedicType == VedicType::Aarti || VedicType::Mantra){ ?>
-<p><?php echo CHtml::link($addhead,array('addvedic','vedicType'=>$vedicType));?></P>
+<span><?php echo CHtml::link($addhead,array('addvedic','vedicType'=>$vedicType));?><span></div>
 <?php } ?>
-<?php $this->widget('zii.widgets.CListView', array(
+<div><?php echo $vedic->name_of_god;?></div>
+<div><?php echo $vedic->text;?></div>
+<?php } ?>
+
+
+<?php/* $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
-));
+));*/
 ?>
-
-
-<?php
-/*$this->menu=array(
-	array('label'=>'Add Arti', 'url'=>$this->createAbsoluteUrl('addvedic',array('vedicType'=>VedicType::Aarti))),
-	array('label'=>'Add Mantra', 'url'=>$this->createAbsoluteUrl('addvedic',array('vedicType'=>VedicType::Mantra))),
-	array('label'=>'Add Atharva Shirsha', 'url'=>$this->createAbsoluteUrl('addvedic',array('vedicType'=>VedicType::Atharva))),
-	array('label'=>'Add Uttar Pooja vidhi', 'url'=>$this->createAbsoluteUrl('addvedic',array('vedicType'=>VedicType::Pooja))),
-);*/
-?>
+<div style="float:right width:30%">
+<h3>Find more <?php echo $heading ?> here<h3>
+<?php foreach($elementsList as $vedic){?>
+<div><?php echo CHtml::link($vedic->title,array('vedicview','ved_title'=>$vedic->slug));?></div>
+<?php } ?>
+</div>
