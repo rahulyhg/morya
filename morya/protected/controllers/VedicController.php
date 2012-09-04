@@ -30,7 +30,7 @@ class VedicController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','vedic','vedicview'),
+				'actions'=>array('vedic','vedicview'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -51,12 +51,12 @@ class VedicController extends AppController
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+/*	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
-	}
+	}  */
 
 	public function actionVedicview()
 	{
@@ -140,13 +140,13 @@ class VedicController extends AppController
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+/*	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Vedic');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-	}
+	}  */
 
 	/**
 	 * Manages all models.
@@ -191,10 +191,11 @@ class VedicController extends AppController
 	   $pages->applyLimit($criteria);
 	   $pages->pageSize=10;
 
-	   $elementsList=vedice::model()->findAll($criteria);//->with('comments')
-	   $this->render('index',array(
+	   $elementsList=vedic::model()->findAll($criteria);//->with('comments')
+	   $this->render('vedic',array(
 		  'elementsList'=>$elementsList,
 		  'pages'=>$pages,
+		  'vedicType'=>$vedicType,
 	   ));
 	}
 	
