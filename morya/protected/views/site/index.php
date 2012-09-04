@@ -53,7 +53,12 @@
 	</div>
 	</div>
     <div class="grid_3">
-
+        <table>
+            <tr><td><img src="images/ganesh_logo.png" /></td><td><img src="images/ganesh_logo.png" /></td><td><img src="images/ganesh_logo.png" /></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td colspan="3"></td></tr>
+        </table>
     </div>
 	<div class="push_2 upload_wrapper">
 	<div class="grid_6 uploader color_me" style="position:relative;">

@@ -2,6 +2,8 @@
 
 class PhotoController extends AppController
 {
+    public $layout = 'layout_1C' ;
+
 	function init(){
 		Yii::import('application.models.photo.*');
         Yii::import('application.models.comment.*');
