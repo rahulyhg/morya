@@ -45,7 +45,7 @@ class CommentController extends AppController
 				$this->redirect(Yii::app()->createUrl('photo/view',array('id'=>$comment->photo_id)));
 		}
 		$this->renderPartial('create',array(
-			'model'=>$comment,
+			'comment'=>$comment,
 		));
 	}
 }

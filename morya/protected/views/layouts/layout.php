@@ -90,7 +90,7 @@
   <?php
     if(Yii::app()->user->isGuest){
   ?>
-    <a id="signup" class="user_space" href="#authentication">
+ <a id="signup" class="user_space fancybox.ajax" href="<?php echo Yii::app()->createUrl('user/authPopup'); ?>">
       Login / Register
   </a>
   <?php
@@ -122,7 +122,30 @@
 <script type="text/javascript" src="js/libs/liteaccordion.jquery.js"></script>
 <script type="text/javascript" src="js/libs/jquery.fancybox.pack.js?v=2.1.0"></script>
   <script type="text/javascript">
+      var app = {
+          user : {
+              isAuthenticated : eval('<?php echo Yii::app()->user->isGuest ? 'false' : 'true' ?>'),
+              name : ''
+          }
+      }
       $('document').ready(function(){
+          $('a#signup').fancybox();
+          $('.upload_btn').click(function(){
+              if(app.user.isAuthenticated === false){
+                  $("#signup").trigger('click');
+                  return false;
+              }
+          });
+          $('#fblogina').click(function() {
+                  FB.login(function (response) {
+                      if (response.authResponse) {
+                          window.location = "<?php echo $this->createAbsoluteUrl('user/login',array('authType'=>AuthType::Facebook)) ?>?code=" +response.authResponse.accessToken;
+                      } else {
+                          // user clicked Cancel
+                      }
+                  }, {scope:'email,user_photos,user_location,publish_actions'});
+              }//fblogin
+          );
       });
   </script>
 <?php $this->renderClip('js-page-end'); ?>

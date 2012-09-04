@@ -1,4 +1,4 @@
-	<section class="news_wrapper">
+	<div class="grid_9">
 	<div id="news_box">
             <ol>
                 <li>
@@ -51,7 +51,10 @@
                 <p>Please enable JavaScript to get the full experience.</p>
             </noscript>
 	</div>
-	</section>
+	</div>
+    <div class="grid_3">
+
+    </div>
 	<div class="push_2 upload_wrapper">
 	<div class="grid_6 uploader color_me" style="position:relative;">
 	<div class="upload_photo"></div>
@@ -85,26 +88,8 @@
 		<div class="grid_4">		
 		</div>
 	</div>
-        <div id="authentication-wrapper">
-    <div id="authentication">
-        <div id="register">
-            <h1>Register</h1>
-            <?php $this->renderPartial('//user/short_register',array('model'=>$register)); ?>
-        </div>
-        <div id="login">
-            <h1>Login</h1>
-            <?php $this->renderPartial('//user/login',array('model'=>$login)); ?>
-        </div>
-    </div>
-    </div>
 		<?php $this->beginClip('js-page-end'); ?>
             <script type="text/javascript">
-                var app = {
-                    user : {
-                        isAuthenticated : eval('<?php echo Yii::app()->user->isGuest ? 'false' : 'true' ?>'),
-                        name : ''
-                    }
-                }
 			    $('#news_box').liteAccordion({
                         onTriggerSlide : function() {
                             this.find('figcaption').fadeOut();
@@ -112,35 +97,20 @@
                         onSlideAnimComplete : function() {    
                             this.find('figcaption').fadeIn();
                         },
-                       // containerWidth:'960px',
-                       // containerHeight:'240px',
+                        containerWidth:700,
+                        containerHeight:260,
+                        autoScaleImages : true,
+                        //responsive : true,
 						firstSlide : 1,
-                        autoPlay : false,
+                        autoPlay : true,
                         pauseOnHover : true,
-                        theme : 'stitch',
+                        theme : 'dark',//'dark','morya','stitch','light'
                         rounded : false,
-						linkable : true,
-                        enumerateSlides : true ,   
+						linkable : false,
+                        enumerateSlides : false,
 						easing: 'easeInOutQuart',
-						activateOn: 'click'//mouseover
+						activateOn: 'mouseover'//mouseover
                 }).find('figcaption:first').show();
-                $('#signup').fancybox();
-                $('.upload_btn').click(function(){
-                    if(app.user.isAuthenticated === false){
-                        $("#signup").trigger('click');
-                        return false;
-                    }
-                });
-                $('#fblogina').click(function() {
-                        FB.login(function (response) {
-                            if (response.authResponse) {
-                                window.location = "<?php echo $this->createAbsoluteUrl('user/login',array('authType'=>AuthType::Facebook)) ?>?code=" +response.authResponse.accessToken;
-                            } else {
-                                // user clicked Cancel
-                            }
-                        }, {scope:'email,user_photos,user_location,publish_actions'});
-                    }//fblogin
-                );
 		</script>
 <?php $this->endClip(); ?>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

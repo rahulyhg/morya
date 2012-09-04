@@ -2,6 +2,8 @@
 
 class SiteController extends AppController
 {
+    public $layout = 'layout';
+
     function init(){
         Yii::import('application.models.user.*');
         Yii::import('application.models.photo.*');

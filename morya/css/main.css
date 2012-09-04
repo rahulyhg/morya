@@ -325,7 +325,7 @@ float:left;
 }
 
 #authentication-wrapper {
-    display:none;
+    //display:none;
 }
 
 #authentication h1{
@@ -404,4 +404,13 @@ input[type="text"], input[type="password"] {
 .single_comment p {
     margin:0px;
     width: 250px;
+}
+
+/********************* Sidebars ************************/
+#lt_sidebar,#rt_sidebar {
+    min-height: 300px;
+    background-color: #f5f5f5;
+}
+#rt_sidebar {
+
 }

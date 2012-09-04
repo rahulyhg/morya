@@ -66,7 +66,7 @@
 
 /****************************************** Dark */
 .liteAccordion.dark { 
-    border: 9px solid #F0F0F0; 
+    //border: 9px solid #F0F0F0;
     border-bottom-width: 8px; 
     padding: 5px 5px 6px 0; 
     background: #030303; 
@@ -77,10 +77,10 @@
     box-shadow: 0 -1px 0 #5b5b5b inset, 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 .liteAccordion.dark .slide > h2 { background: #030303; text-shadow: 0 -1px 0 #030303; line-height: 265% }
-.liteAccordion.dark .slide > h2 span { background: #F0F0F0; color: white }
+.liteAccordion.dark .slide > h2 span { background: #404040; color: white }
 .liteAccordion.dark .slide > h2 b { background: #F0F0F0; color: #030303; text-shadow: -1px 1px 0 #5b5b5b }
 .liteAccordion.dark .slide > h2.selected span, .liteAccordion.dark .slide > h2.selected span:hover { 
-    background: #F0F0F0;
+        background: #383838;//#F0F0F0;
     background: -moz-linear-gradient(left,  #353535 0%, #555555 100%);
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,#353535), color-stop(100%,#555555));
     background: -webkit-linear-gradient(left,  #353535 0%,#555555 100%);
@@ -189,6 +189,50 @@
 .liteAccordion.stitch .slide > h2 b { top: 19%; color: white; text-shadow: 1px 1px 0 #5b5b5b }
 .liteAccordion.stitch .slide > div { margin-right: 6px }
 .liteAccordion.stitch.rounded > ol { -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; border-radius: 0 }
+/**************************************** morya */
+.liteAccordion.morya {
+//border: 9px solid #F0F0F0;
+border-bottom-width: 8px;
+padding: 5px 5px 6px 0;
+background: #030303;
+-webkit-box-shadow: 0 -1px 0 #5b5b5b inset, 0 5px 15px rgba(0, 0, 0, 0.4);
+-moz-box-shadow: 0 -1px 0 #5b5b5b inset, 0 5px 15px rgba(0, 0, 0, 0.4);
+-ms-box-shadow: 0 -1px 0 #5b5b5b inset, 0 5px 15px rgba(0, 0, 0, 0.4);
+-o-box-shadow: 0 -1px 0 #5b5b5b inset, 0 5px 15px rgba(0, 0, 0, 0.4);
+box-shadow: 0 -1px 0 #5b5b5b inset, 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+.liteAccordion.morya .slide > h2 { background: #030303; text-shadow: 0 -1px 0 #030303; line-height: 265% }
+.liteAccordion.morya .slide > h2 span { background: #404040; color: white }
+.liteAccordion.morya .slide > h2 b { background: #F0F0F0; color: #030303; text-shadow: -1px 1px 0 #5b5b5b }
+.liteAccordion.morya .slide > h2.selected span, .liteAccordion.dark .slide > h2.selected span:hover {
+    background: #383838;//#F0F0F0;
+background: -moz-linear-gradient(left,  #353535 0%, #555555 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#353535), color-stop(100%,#555555));
+background: -webkit-linear-gradient(left,  #353535 0%,#555555 100%);
+background: -o-linear-gradient(left,  #353535 0%,#555555 100%);
+background: -ms-linear-gradient(left,  #353535 0%,#555555 100%);
+background: linear-gradient(left,  #353535 0%,#555555 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353535', endColorstr='#555555',GradientType=1 );
+    }
+.liteAccordion.morya .slide > h2.selected b {
+    background: #383838;
+    background: -moz-linear-gradient(top,  #3a3a3a 0%, #363636 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3a3a3a), color-stop(100%,#363636));
+    background: -webkit-linear-gradient(top,  #3a3a3a 0%,#363636 100%);
+    background: -o-linear-gradient(top,  #3a3a3a 0%,#363636 100%);
+    background: -ms-linear-gradient(top,  #3a3a3a 0%,#363636 100%);
+    background: linear-gradient(top,  #3a3a3a 0%,#363636 100%);
+}
+.liteAccordion.morya .slide > div { background: #030303; margin-left: 5px }
+
+.liteAccordion.morya .slide:nth-child(1) > h2 span, .liteAccordion.stitch .slide:nth-child(1) > h2:after { background-color: #c25252 }
+.liteAccordion.morya .slide:nth-child(2) > h2 span, .liteAccordion.stitch .slide:nth-child(2) > h2:after { background-color: #ca9859 }
+.liteAccordion.morya .slide:nth-child(3) > h2 span, .liteAccordion.stitch .slide:nth-child(3) > h2:after { background-color: #96ba5f }
+.liteAccordion.morya .slide:nth-child(4) > h2 span, .liteAccordion.stitch .slide:nth-child(4) > h2:after { background-color: #59abb7 }
+.liteAccordion.morya .slide:nth-child(5) > h2 span, .liteAccordion.stitch .slide:nth-child(5) > h2:after { background-color: #bb6098 }
+.liteAccordion.morya .slide > h2 b { top: 19%; color: white; text-shadow: 1px 1px 0 #5b5b5b }
+.liteAccordion.morya .slide > div { margin-right: 6px }
+.liteAccordion.morya.rounded > ol { -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; border-radius: 0 }
 
 /*************************************** Rounded */
 .liteAccordion.rounded, .rounded > ol { -webkit-border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; border-radius: 6px }

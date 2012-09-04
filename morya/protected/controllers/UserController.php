@@ -18,7 +18,7 @@ class UserController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('register','shortRegister','login'),
+				'actions'=>array('authPopup','register','shortRegister','login'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -107,6 +107,12 @@ class UserController extends AppController
         ));
     }
 
+    public function actionAuthPopup(){
+        $this->renderPartial('_authentication_popup',array(
+            'register'  =>  new RegistrationForm,
+            'login'     =>  new LoginForm
+        ),false,false);
+    }
     /***
      * Edit the user profile
      */
