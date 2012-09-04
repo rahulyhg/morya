@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4956da9-9ec5-4fd7-bd31-9d0f99b1c058" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/morya.iml" afterPath="$PROJECT_DIR$/.idea/morya.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/morya/protected/controllers/PhotoController.php" afterPath="$PROJECT_DIR$/morya/protected/controllers/PhotoController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/morya/protected/views/site/index.php" afterPath="$PROJECT_DIR$/morya/protected/views/site/index.php" />
     </list>
     <ignored path="morya.iws" />
@@ -31,19 +28,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PhotoController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PhotoController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/morya/protected/controllers/PhotoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="30" selection-start="83" selection-end="83" vertical-scroll-proportion="0.123411976">
+            <state line="52" column="41" selection-start="1396" selection-end="1409" vertical-scroll-proportion="-8.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/morya/protected/views/site/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="130" selection-start="2429" selection-end="2429" vertical-scroll-proportion="0.5626134">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/morya/protected/views/site/index.php">
+        <entry file="file://$PROJECT_DIR$/morya/protected/views/photo/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="8" selection-start="2190" selection-end="2218" vertical-scroll-proportion="-4.576923">
+            <state line="29" column="32" selection-start="1473" selection-end="1486" vertical-scroll-proportion="-14.192307">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_single.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/morya/protected/views/photo/_single.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="40" selection-start="617" selection-end="617" vertical-scroll-proportion="-6.5384617">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SiteController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/morya/protected/controllers/SiteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="41" selection-start="1353" selection-end="1366" vertical-scroll-proportion="-18.961538">
               <folding />
             </state>
           </provider>
@@ -72,15 +96,15 @@
         <option value="$PROJECT_DIR$/morya/protected/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/morya/protected/controllers/CommentController.php" />
         <option value="$PROJECT_DIR$/morya/css/liteaccordion.css" />
-        <option value="$PROJECT_DIR$/morya/protected/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/morya/protected/views/layouts/column2.php" />
         <option value="$PROJECT_DIR$/morya/css/main.css" />
         <option value="$PROJECT_DIR$/morya/protected/views/layouts/layout_0C.php" />
         <option value="$PROJECT_DIR$/morya/protected/views/layouts/layout_2C.php" />
         <option value="$PROJECT_DIR$/morya/protected/views/layouts/layout_3C.php" />
         <option value="$PROJECT_DIR$/morya/protected/controllers/AppController.php" />
-        <option value="$PROJECT_DIR$/morya/protected/views/site/index.php" />
         <option value="$PROJECT_DIR$/morya/protected/controllers/PhotoController.php" />
+        <option value="$PROJECT_DIR$/morya/protected/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/morya/protected/views/site/index.php" />
       </list>
     </option>
   </component>
@@ -252,6 +276,80 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="morya" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="morya" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="morya" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="morya" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="morya" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="morya" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="morya" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="morya" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="morya" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -401,7 +499,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -479,21 +577,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/morya/protected/views/user/short_register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="33" selection-start="187" selection-end="187" vertical-scroll-proportion="0.15070923" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/morya/protected/views/user/_authentication_popup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="14" selection-start="0" selection-end="397" vertical-scroll-proportion="-3.2692308" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/morya/protected/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="688" selection-end="688" vertical-scroll-proportion="0.7191977" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/morya/protected/controllers/CommentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="9" selection-start="1226" selection-end="1226" vertical-scroll-proportion="0.6971609" />
@@ -507,11 +590,6 @@
     <entry file="file://$PROJECT_DIR$/morya/css/liteaccordion.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="227" column="50" selection-start="11601" selection-end="11601" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/morya/protected/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="22" selection-start="74" selection-end="74" vertical-scroll-proportion="-2.6153846" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/morya/css/main.css">
@@ -549,16 +627,44 @@
         <state line="29" column="0" selection-start="1359" selection-end="2833" vertical-scroll-proportion="0.13248639" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/morya/protected/views/site/index.php">
+    <entry file="file://$PROJECT_DIR$/morya/protected/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="8" selection-start="2190" selection-end="2218" vertical-scroll-proportion="-4.576923">
+        <state line="50" column="41" selection-start="1353" selection-end="1366" vertical-scroll-proportion="-18.961538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/morya/protected/models/photo/Photo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="20" selection-start="293" selection-end="303" vertical-scroll-proportion="0.33938295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/morya/protected/views/photo/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="32" selection-start="1473" selection-end="1486" vertical-scroll-proportion="-14.192307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/morya/protected/views/photo/_single.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="40" selection-start="617" selection-end="617" vertical-scroll-proportion="-6.5384617">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/morya/protected/controllers/PhotoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="30" selection-start="83" selection-end="83" vertical-scroll-proportion="0.123411976">
+        <state line="52" column="41" selection-start="1396" selection-end="1409" vertical-scroll-proportion="-8.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/morya/protected/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="130" selection-start="2429" selection-end="2429" vertical-scroll-proportion="0.5626134">
           <folding />
         </state>
       </provider>

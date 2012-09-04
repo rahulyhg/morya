@@ -54,7 +54,13 @@
 	</div>
     <div class="grid_3">
         <table>
-            <tr><td><img src="images/ganesh_logo.png" /></td><td><img src="images/ganesh_logo.png" /></td><td><img src="images/ganesh_logo.png" /></td></tr>
+            <?php for($i=0;$i<3;$i++){ ?>
+            <tr>
+            <?php for($j=0;$j<3;$j++){ ?>
+                <td><img src="upload/thumb/<?php echo next($elementsList)->file_name ?> " style="width:80px;height:80px;margin:2px"  /></td>
+            <?php } ?>
+            </tr>
+            <?php } ?>
             <tr><td></td><td></td><td></td></tr>
             <tr><td></td><td></td><td></td></tr>
             <tr><td colspan="3"></td></tr>
