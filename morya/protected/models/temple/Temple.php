@@ -116,4 +116,14 @@ class Temple extends AppActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+		public function behaviors(){
+		return array(
+        'SlugBehavior' => array(
+            'class' => 'application.models.behaviors.SlugBehavior',
+            'slug_col' => 'slug',
+            'title_col' => 'name',
+            'overwrite' => false
+        )
+    );
+}
 }

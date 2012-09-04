@@ -89,4 +89,8 @@ class TemplePhoto extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	
+//slug behaviors function
+
 }

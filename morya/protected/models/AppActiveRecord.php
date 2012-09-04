@@ -5,6 +5,8 @@
 * like User Photo Vedic etc
 */
 abstract class AppActiveRecord extends CActiveRecord {
+
+
 /**
 * Prepares create_time, create_user_id, update_time and update_user_
 id attributes before performing validation.
@@ -17,6 +19,7 @@ id attributes before performing validation.
 			$this->modified=new CDbExpression('NOW()');
 		if($this->hasAttribute('user_id'))
 			$this->user_id = Yii::app()->user->id;
+			
 		return parent::beforeValidate();
 	}
 }

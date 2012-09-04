@@ -1,4 +1,4 @@
-<div class="view">
+<div>
 
 	<h2 style="text-align:center;"><?php echo CHtml::encode($data->title); ?></h2>
 	<br />

@@ -56,7 +56,7 @@
    </h5>
   </div>
   <nav class="grid_7 push_1">
-	<a class="grid_1" href="">
+	<a class="grid_1" href="<?php echo $this->createUrl("/vedic/vedic");?>">
 		<span class="aarti_menu_logo"></span>
 		<p>Aarti</p>
 	</a>
@@ -66,7 +66,7 @@
 		<p>Photo</p>
 	</a>
 	
-	<a class="grid_1" href="">
+	<a class="grid_1" href="<?php echo $this->createUrl("/temple/index");?>">
 		<span class="temple_menu_logo"></span>
 		<p>Temples</p>
 	</a>
@@ -75,11 +75,11 @@
 		<span class="competition_menu_logo"></span>
 		<p>Competition</p>
 	</a>
-	<a class="grid_1" href="">
+	<a class="grid_1" href="<?php echo $this->createUrl("/recipe/index");?>">
 		<span class="recipies_menu_logo"></span>
 		<p style="left:348px;">Recipies</p>
 	</a>
-	<a class="grid_1" href="">
+	<a class="grid_1" href="<?php echo $this->createUrl("/photo/myganesha");?>">
 		<span class="my_ganesha_menu_logo"></span>
 		<p>Today's Ganesha</p>
 	</a>

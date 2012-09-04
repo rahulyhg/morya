@@ -30,7 +30,7 @@ class VedicController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','vedic'),
+				'actions'=>array('vedic','vedicview'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -51,13 +51,25 @@ class VedicController extends AppController
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+/*	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
-	}
+	}  */
 
+	public function actionVedicview()
+	{
+		if($_REQUEST['ved_title'] != '')
+		{
+			$model=vedic::model()->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
+			$this->render('vedicview',array(
+			'model'=>$model,
+			));
+		
+		}
+	
+	}
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -128,13 +140,13 @@ class VedicController extends AppController
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+/*	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Vedic');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-	}
+	}  */
 
 	/**
 	 * Manages all models.
@@ -157,7 +169,7 @@ class VedicController extends AppController
 	{
 		
 		//$dataProvider=new CActiveDataProvider('Vedic');
-		$dataProvider=new CActiveDataProvider('vedic', array(
+	/*	$dataProvider=new CActiveDataProvider('vedic', array(
 			'criteria'=>array(
 				'condition'=>'type='.$vedicType,
 				'order'=>'id ASC',
@@ -169,9 +181,22 @@ class VedicController extends AppController
 		$this->render('vedic',array(
 			'dataProvider'=>$dataProvider,
 			'vedicType'=>$vedicType,
-		));
+		));  */
 	
-	
+		$criteria=new CDbCriteria;
+		$criteria->limit = 10;
+		$criteria->compare('type',$vedicType); 
+
+	   $pages=new CPagination(vedic::model()->count($criteria));          
+	   $pages->applyLimit($criteria);
+	   $pages->pageSize=10;
+
+	   $elementsList=vedic::model()->findAll($criteria);//->with('comments')
+	   $this->render('vedic',array(
+		  'elementsList'=>$elementsList,
+		  'pages'=>$pages,
+		  'vedicType'=>$vedicType,
+	   ));
 	}
 	
 	public function actionAddvedic($vedicType)

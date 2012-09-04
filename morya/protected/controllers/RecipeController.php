@@ -30,7 +30,7 @@ class RecipeController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','recipeview'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -57,7 +57,20 @@ class RecipeController extends AppController
 			'model'=>$this->loadModel($id),
 		));
 	}
-
+	
+	public function actionRecipeview()
+	{
+		if($_REQUEST['rec_title'] != '')
+		{
+			$model=recipe::model()->findByAttributes(array('slug'=>$_REQUEST['rec_title']));
+			$this->render('recipeview',array(
+			'model'=>$model,
+		));
+		
+		}
+	
+	}
+	
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -80,7 +93,8 @@ class RecipeController extends AppController
 			'model'=>$model,
 		));
 	}
-
+	
+	
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -130,10 +144,24 @@ class RecipeController extends AppController
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('recipe');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		//$dataProvider=new CActiveDataProvider('recipe');
+		$criteria=new CDbCriteria;
+		$criteria->limit = 10;
+
+	   $pages=new CPagination(recipe::model()->count($criteria));          
+	   $pages->applyLimit($criteria);
+	   $pages->pageSize=10;
+
+	   $elementsList=recipe::model()->findAll($criteria);//->with('comments')
+	   $this->render('index',array(
+		  'elementsList'=>$elementsList,
+		  'pages'=>$pages,
+	   ));
+		
+		
+		//$this->render('index',array(
+		//	'dataProvider'=>$dataProvider,
+		//));
 	}
 
 	/**
