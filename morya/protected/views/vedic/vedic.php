@@ -13,8 +13,17 @@ case VedicType::Atharva : $heading = "Atharva shirsha";$addhead = "Add Atharva S
 case VedicType::Pooja : $heading = "Uttar Pooja";$addhead = "Add Uttar Pooja vidhi";break;
 
 }
+
+
+$this->menu=array(
+	array('label'=>'Aarti', 'url'=>array('vedic','vedicType'=>VedicType::Aarti)),
+	array('label'=>'Mantra Pushpanjali', 'url'=>array('vedic','vedicType'=>VedicType::Mantra)),
+	array('label'=>'Atharva shirsha', 'url'=>array('vedic','vedicType'=>VedicType::Atharva)),
+	array('label'=>'Uttar Pooja', 'url'=>array('vedic','vedicType'=>VedicType::Pooja)),
+);
 ?>
-<div><h1><?php echo $heading;?></h1></div>
+<div class="tab"><?php echo $heading;?></div>
+<div style="float:right;font:14px;"><?php echo CHtml::link($addhead,array('addvedic','vedicType'=>$vedicType));?></div>
 <?php foreach($elementsList as $vedic){ ?>
 <div><span><h3><?php echo $vedic->title;?><h3></span>
 <?php if($vedicType == VedicType::Aarti || VedicType::Mantra){ ?>
@@ -24,12 +33,6 @@ case VedicType::Pooja : $heading = "Uttar Pooja";$addhead = "Add Uttar Pooja vid
 <div><?php echo $vedic->text;?></div>
 <?php } ?>
 
-
-<?php/* $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-));*/
-?>
 <div style="float:right width:30%">
 <h3>Find more <?php echo $heading ?> here<h3>
 <?php foreach($elementsList as $vedic){?>
