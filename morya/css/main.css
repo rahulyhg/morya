@@ -421,3 +421,11 @@ font : bold;
 font-size:16px;
 border : 1px #000000;
 }
+
+.mid-region{
+
+}
+
+.cont-disp{
+border-bottom: 1px dotted #000000;
+}
