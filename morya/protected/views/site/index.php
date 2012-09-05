@@ -57,7 +57,7 @@
             <?php for($i=0;$i<3;$i++){ ?>
             <tr>
             <?php for($j=0;$j<3;$j++){ ?>
-                <td><img src="upload/thumb/<?php echo next($elementsList)->file_name ?> " style="width:80px;height:80px;margin:2px"  /></td>
+                <td><img src="upload/thumb/<?php //echo next($elementsList)->file_name ?> " style="width:80px;height:80px;margin:2px"  /></td>
             <?php } ?>
             </tr>
             <?php } ?>
@@ -115,7 +115,7 @@
 						firstSlide : 1,
                         autoPlay : true,
                         pauseOnHover : true,
-                        theme : 'dark',//'dark','morya','stitch','light'
+                        theme : 'morya',//'dark','morya','stitch','light'
                         rounded : false,
 						linkable : false,
                         enumerateSlides : false,
