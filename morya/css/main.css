@@ -405,3 +405,18 @@ input[type="text"], input[type="password"] {
 .qq-upload-button {
     width:100%;
 }
+
+.tab{
+background-color : #0066EE;
+font : bold;
+font-size:16px;
+border : 1px #000000;
+}
+
+.mid-region{
+
+}
+
+.cont-disp{
+border-bottom: 1px dotted #000000;
+}

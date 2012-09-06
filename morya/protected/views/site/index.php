@@ -116,7 +116,7 @@
 						firstSlide : 1,
                         autoPlay : true,
                         pauseOnHover : true,
-                        theme : 'dark',//'dark','morya','stitch','light'
+                        theme : 'morya',//'dark','morya','stitch','light'
                         rounded : false,
 						linkable : false,
                         enumerateSlides : false,
