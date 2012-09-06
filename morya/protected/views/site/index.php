@@ -54,52 +54,53 @@
 	</div>
     <div class="grid_3">
         <table>
+        <?php if(current($elementsList) !== null): ?>
             <?php for($i=0;$i<3;$i++){ ?>
             <tr>
             <?php for($j=0;$j<3;$j++){ ?>
-                <td><img src="upload/thumb/<?php echo next($elementsList)->file_name ?> " style="width:80px;height:80px;margin:2px"  /></td>
+                <td><img src="upload/thumb/<?php echo next($elementsList)->file_name ?> " style="width:80px;height:70px;margin:2px"  /></td>
             <?php } ?>
             </tr>
             <?php } ?>
-            <tr><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td></tr>
-            <tr><td colspan="3"></td></tr>
+        <?php endif ?>
+            <tr><td colspan="3"  style="height:48px;">
+                <div class="upload_btn">
+                    <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
+                    array(
+                        'id'=>'uploadFile',
+                        'config'=>array(
+                            'action'=>Yii::app()->createUrl('photo/postUpload',array('type'=>PhotoUploadCategory::Normal)),
+                            'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
+                            'sizeLimit'=>10*1024*1024,// maximum file size in bytes
+                            'minSizeLimit'=>10,// minimum file size in bytes
+                            'onComplete'=>"js:function(id,filename,response){}",
+                            'messages'=>array(
+                                'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
+                                'sizeError'=>"{file} is too large, maximum file size is {sizeLimit}.",
+                                'minSizeError'=>"{file} is too small, minimum file size is {minSizeLimit}.",
+                                'emptyError'=>"{file} is empty, please select files again without it.",
+                                'onLeave'=>"The files are being uploaded, if you leave now the upload will be cancelled."
+                            ),
+                            'showMessage'=>"js:function(message){ alert(message); }"
+                        )
+                    )); ?>
+                </div>
+            </td></tr>
         </table>
     </div>
-	<div class="push_2 upload_wrapper">
-	<div class="grid_6 uploader color_me" style="position:relative;">
-	<div class="upload_photo"></div>
-	<div class="upload_btn">
-        <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
-        array(
-            'id'=>'uploadFile',
-            'config'=>array(
-                'action'=>Yii::app()->createUrl('photo/postUpload',array('type'=>PhotoUploadCategory::Normal)),
-                'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
-                'sizeLimit'=>10*1024*1024,// maximum file size in bytes
-                'minSizeLimit'=>10,// minimum file size in bytes
-                'onComplete'=>"js:function(id,filename,response){}",
-                'messages'=>array(
-                    'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
-                    'sizeError'=>"{file} is too large, maximum file size is {sizeLimit}.",
-                    'minSizeError'=>"{file} is too small, minimum file size is {minSizeLimit}.",
-                    'emptyError'=>"{file} is empty, please select files again without it.",
-                    'onLeave'=>"The files are being uploaded, if you leave now the upload will be cancelled."
-                ),
-                'showMessage'=>"js:function(message){ alert(message); }"
-            )
-        )); ?>
+	<div class="mid_pane_wrapper">
+        <div class="grid_4 summary_box">
+
+        </div>
+        <div class="grid_4">
+
+        </div>
+        <div class="grid_4">
+
+        </div>
+
     </div>
-	<h3 class="upload_instr">
-	<p>Drop Here</p>
-	<p>Or</p>
-	<p>Click 2 Upload</p>
-	</h3>
-	</div>
-		<div class="grid_4">		
-		</div>
-	</div>
-		<?php $this->beginClip('js-page-end'); ?>
+	<?php $this->beginClip('js-page-end'); ?>
             <script type="text/javascript">
 			    $('#news_box').liteAccordion({
                         onTriggerSlide : function() {

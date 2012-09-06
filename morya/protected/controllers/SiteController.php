@@ -37,19 +37,14 @@ class SiteController extends AppController
         $login = new LoginForm();
 
         $criteria=new CDbCriteria;
-        $criteria->order = 'created asc';
+        $criteria->order = 'created desc';
         $criteria->limit = 20;
 
-        $pages=new CPagination(Photo::model()->count($criteria));
-        $pages->applyLimit($criteria);
-        $pages->pageSize=20;
-
-        $elementsList=Photo::model()->findAll();//->with('comments')
+        $elementsList=Photo::model()->findAll($criteria);//->with('comments')
         $this->render('index',array(
             'register'=>$register,
             'login'=>$login,
-            'elementsList'=>$elementsList,
-            'pages'=>$pages,
+            'elementsList'=>$elementsList
         ));
 	}
 

@@ -183,11 +183,6 @@ color:#0066EE;
 #news_box {
 margin-bottom:10px;
 }
-.upload_instr
-{
-text-align:center;
-font-size:16px;
-}
 .buttons,.button_1 {
     background-color: #0066EE;
     height: 30px;
@@ -196,13 +191,12 @@ font-size:16px;
     font-size:16px;
     color: white;
 }
+/*
 .upload_btn {
 position:absolute;
 right:17px;
 top:40px;
-height:25px;
 display: block;
-/*or inline-block*/
 width: 105px;
 padding: 7px 0;
 text-align: center;
@@ -211,33 +205,19 @@ color: #FFF;
 font-weight:400;
 font-size:16px;
 }
-.upload_photo {
-position: absolute;
-background-image: url(../images/add-photo.png);
-background-repeat: no-repeat;
-width: 100%;
-bottom: -1px;
-top: 14px;
-left:63px;
-}
-.upload_instr {
-position: absolute;right: 140px;
-color: #59ABB7;
-margin-top:20px;
+*/
+.upload_btn {
+
+    display: block;
+    /*or inline-block*/
+    width: 100%;
+    padding: 7px 0;
+    text-align: center;
+    color: #FFF;
+    font-weight:400;
+    font-size:16px;
 }
 
-.upload_instr  p{
-margin-bottom:10px;
-}
-
-.upload_wrapper {
-height:125px;
-margin-top:10px;
-margin-bottom:15px;
-}
-.uploader{
-height:100%;
-}
 .photo_gallery {
 height:600px;
 }
@@ -413,4 +393,15 @@ input[type="text"], input[type="password"] {
 }
 #rt_sidebar {
 
+}
+
+/********************** Summary Boxes ********************/
+
+.summary_box {
+    height: 182px;
+}
+
+/********************** Upload Button *********************/
+.qq-upload-button {
+    width:100%;
 }

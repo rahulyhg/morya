@@ -33,7 +33,14 @@ class CommentController extends AppController
 			),
 		);
 	}
-	
+
+    public function actionLike(){
+        $like = new Like();
+        if(isset($_POST['Like'])){
+            $comment->attributes=$_POST['Like'];
+        }
+    }
+
 	public function actionCreate($photo_id){
 		$comment=new Comment;
 		if(isset($_POST['Comment']))
