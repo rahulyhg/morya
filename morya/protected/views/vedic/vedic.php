@@ -25,11 +25,10 @@ $this->menu=array(
 <div class="mid-region">
     <div class="tab"><?php echo $heading;?></div>
     <div style="float:right;font:14px;"><?php echo CHtml::link($addhead,array('addvedic','vedicType'=>$vedicType));?></div>
-    <div class="cont-disp"></div>
+    <div class="cont-disp">
         <?php foreach($elementsList as $vedic){ ?>
         <div><span><h3><?php echo $vedic->title;?><h3></span>
         <?php if($vedicType == VedicType::Aarti || VedicType::Mantra){ ?>
-        <span><?php echo CHtml::link($addhead,array('addvedic','vedicType'=>$vedicType));?><span>
         </div>
         <?php } ?>
         <div><?php echo $vedic->name_of_god;?></div>
