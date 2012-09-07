@@ -88,17 +88,30 @@
             </td></tr>
         </table>
     </div>
-	<div class="mid_pane_wrapper">
-        <div class="grid_4 summary_box">
+	<div id="mid_pane_wrapper">
+        <div class="grid_4">
+            <h3>जय गणेश, जय गणेश आरती</h3>
+            <p>
+            जय गणेश, जय गणेश, जय गणेश, देवा..<br/>
+            माता जाकी पारवती, पिता महादेवा ..<br/>
 
+            <img src="images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" /><br/>
+            एकदन्त, दयावन्त, चारभुजाधारी,<br/>
+            माथे पर तिलक सोहे, मूसे की सवारी .<br/>
+            पान चढ़े, फूल चढ़े और चढ़े मेवा,<br/>
+            लड्डुअन का भोग लगे, सन्त करें सेवा ..<br/><span class="clear"></span>
+
+            अंधे को आँख देत, कोढ़िन को काया,<br/>
+            बाँझन को पुत्र देत, निर्धन को माया .<br/>
+            'सूर' श्याम शरण आए, सफल कीजे सेवा, <br/>
+            जय गणेश जय गणेश जय गणेश देवा .. <br/>
+            </p>
+        </div>
+        <div class="grid_4">
         </div>
         <div class="grid_4">
 
         </div>
-        <div class="grid_4">
-
-        </div>
-
     </div>
 	<?php $this->beginClip('js-page-end'); ?>
             <script type="text/javascript">
@@ -106,7 +119,7 @@
                         onTriggerSlide : function() {
                             this.find('figcaption').fadeOut();
                         },
-                        onSlideAnimComplete : function() {    
+                        onSlideAnimComplete : function() {
                             this.find('figcaption').fadeIn();
                         },
                         containerWidth:700,
@@ -116,7 +129,7 @@
 						firstSlide : 1,
                         autoPlay : true,
                         pauseOnHover : true,
-                        theme : 'morya',//'dark','morya','stitch','light'
+                        theme : 'dark',//'dark','morya','stitch','light'
                         rounded : false,
 						linkable : false,
                         enumerateSlides : false,

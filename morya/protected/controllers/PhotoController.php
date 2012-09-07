@@ -131,10 +131,12 @@ class PhotoController extends AppController
 	 */
 	public function actionView($id)
 	{
+        //photoes with comments
+        $photo = Photo::model()->findByPk($id)->with('Comment');
         $newComment = new Comment() ;
         $newComment->photo_id = $id ;
 		$this->render('view',array(
-			'photo'=>$this->loadModel($id),
+			'photo'=>$photo,
             'newComment'=>$newComment
 		));
 	}

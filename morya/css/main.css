@@ -396,9 +396,10 @@ input[type="text"], input[type="password"] {
 }
 
 /********************** Summary Boxes ********************/
-
-.summary_box {
-    height: 182px;
+#mid_pane_wrapper{
+height:182px;
+}
+#mid_pane_wrapper div.grid_4 {
 }
 
 /********************** Upload Button *********************/
@@ -413,10 +414,14 @@ font-size:16px;
 border : 1px #000000;
 }
 
-.mid-region{
 
-}
 
 .cont-disp{
 border-bottom: 1px dotted #000000;
+}
+.like{
+    text-decoration: none;
+}
+.like:hover{
+    text-decoration: underline;
 }

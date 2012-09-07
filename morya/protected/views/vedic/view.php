@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Vedics'=>array('index'),
+	'Vedics'=>array('vedic'),
 	$model->title,
 );
 

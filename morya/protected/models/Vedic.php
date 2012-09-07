@@ -123,4 +123,8 @@ class Vedic extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    protected function beforeSave(){
+       $this->text = nl2br($this->text);
+    }
 }

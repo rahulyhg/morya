@@ -1,0 +1,10 @@
+Title : Line Break Problem in Vedics
+
+Estimated Time : 1 hrs 00 min.
+
+Summary: New line are not stored and displayed in Vedics which are very important for aarti's and songs.
+
+
+Method (optional): nl2br() is a very good option to consider in the beforeSave() method.
+
+

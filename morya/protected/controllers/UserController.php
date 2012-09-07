@@ -117,7 +117,17 @@ class UserController extends AppController
      * Edit the user profile
      */
     public function actionEdit(){
-
+        $user = User::model()->findByPk(Yii::app()->user->id);
+        if(isset($_POST['User'])){
+            $user->attributes = $_POST['User'];
+            if($user->save()){
+                //Yii::app()->user->setFlash('Successfully Updated the profile');
+                //$this->redirect(Yii::app()->createUrl('user/profile'));
+            }
+        }
+        $this->render('edit',array(
+            'model' => $user,
+        ));
     }
 	public function actionLogin($authType = AuthType::Normal )
 	{
