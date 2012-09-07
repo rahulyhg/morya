@@ -3,6 +3,11 @@ $this->breadcrumbs=array(
 	'Temples',
 );
 
+$this->menu=array(
+	array('label'=>'Historic', 'url'=>array('index','templeType'=>TempleType::Historic)),
+	array('label'=>'Most Popular', 'url'=>array('index','templeType'=>TempleType::Popular)),
+);
+
 switch($templeType){
 case TempleType::Historic : $heading = "Historic Temples of Ganeshji";$addhead = "Add historic Temple";break;
 case TempleType::Popular : $heading = "Most Popular Temples of Ganeshji";$addhead = "Add Most popular Temple";break;

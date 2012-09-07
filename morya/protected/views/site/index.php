@@ -58,7 +58,7 @@
             <?php for($i=0;$i<3;$i++){ ?>
             <tr>
             <?php for($j=0;$j<3;$j++){ ?>
-                <td><img src="upload/thumb/<?php echo next($elementsList)->file_name ?> " style="width:80px;height:70px;margin:2px"  /></td>
+                <td><img src="upload/thumb/<?php //echo next($elementsList)->file_name ?> " style="width:80px;height:70px;margin:2px"  /></td>
             <?php } ?>
             </tr>
             <?php } ?>

@@ -4,14 +4,14 @@ $this->breadcrumbs=array(
 );
 
 ?>
-<div style="width:100%">
-<div style="float:left;width:70%">
-<h1>Recipes</h1>
 
+<div class="mid-region">
+<div class="tab">Recipe's</div>
+<div><?php echo CHtml::link('Add your Recipe Here',array('create'));?></div>
 <?php foreach($elementsList as $recipe){?>
 <div>
-<div><?php echo CHtml::link('Add your Recipe Here',array('create'));?></div>
-<div><?php echo $recipe->title; ?></div>
+
+<div class="title_bar"><?php echo $recipe->title; ?></div>
 <div>Ingradients : <?php echo $recipe->ingredients; ?></div>
 <div>Method : <?php echo $recipe->method; ?></div>
 
@@ -27,10 +27,10 @@ $this->breadcrumbs=array(
 </div>
 <?php }?>
 </div>
-<div style="float:right;width:30%">
+<div>
 <h3>Go to more recipes<h3>
 <?php foreach($elementsList as $recipe){?>
 <div><?php echo CHtml::link($recipe->title,array('Recipeview','rec_title'=>$recipe->slug));?></div>
 <?php } ?>
 </div>
-</div>
+
