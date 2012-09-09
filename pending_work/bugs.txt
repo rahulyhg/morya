@@ -1,0 +1,1 @@
+screen shifting to right side when reg popup open
