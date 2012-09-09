@@ -4,11 +4,31 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'temple-form',
 	'enableAjaxValidation'=>false,
+    'htmlOptions'=>array('enctype'=>'multipart/form-data')
 )); ?>
 
 <script type="text/javascript">
-function uploadComplete(id, fileName, responseJSON){
-$("#photoid").val() = responseJSON["id"];
+    var uploaded = 0;
+function templeUploadComplete(id, fileName, responseJSON){
+    if(responseJSON.id){
+        switch(uploaded){
+            case 0 : $("#photo_id").append('<input type="hidden" name="Temple[primary_pic]" value="' + responseJSON.id + '" />');
+                uploaded = uploaded + 1;
+                break;
+            case  1 : $("#photo_id").append('<input type="hidden" name="Temple[secondary_pic1]" value="' + responseJSON.id + '" />');
+                uploaded = uploaded + 1;
+                break;
+            case  2 : $("#photo_id").append('<input type="hidden" name="Temple[secondary_pic2]" value="' + responseJSON.id + '" />');
+                uploaded = uploaded + 1;
+                break;
+            case  3 : $("#photo_id").append('<input type="hidden" name="Temple[secondary_pic3]" value="' + responseJSON.id + '" />');
+                uploaded = uploaded + 1;
+                break;
+            case  4 : $("#photo_id").append('<input type="hidden" name="Temple[secondary_pic4]" value="' + responseJSON.id + '" />');
+                uploaded = uploaded + 1;
+                break;
+        }
+    }
 }
 </script>
 
@@ -45,10 +65,9 @@ $("#photoid").val() = responseJSON["id"];
 		<?php echo $form->textArea($model,'history',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'history'); ?>
 	</div>
-	<div class="row">
-	<h1>Upload Temple's Photo</h1>
-<input type="hidden" name="photo_id" />
-<?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
+	<div id="photo_id"></div>
+<?php
+$this->widget('ext.EAjaxUpload.EAjaxUpload',
 array(
         'id'=>'uploadFile',
         'config'=>array(
@@ -56,7 +75,7 @@ array(
                'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
                'sizeLimit'=>10*1024*1024,// maximum file size in bytes
                'minSizeLimit'=>10,// minimum file size in bytes
-               'onComplete'=>"js:uploadComplete",
+               'onComplete'=>"js:templeUploadComplete",
                'messages'=>array(
                                 'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
                                 'sizeError'=>"{file} is too large, maximum file size is {sizeLimit}.",
@@ -66,11 +85,11 @@ array(
                                ),
                'showMessage'=>"js:function(message){ alert(message); }"
               )
-)); ?>
-	</div>
+));
+?>
 	
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save'); ?>
+	<div class="row ">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'buttons')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

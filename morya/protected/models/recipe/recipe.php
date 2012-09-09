@@ -45,6 +45,7 @@ class recipe extends AppActiveRecord
 			array('slug', 'length', 'max'=>30),
 			array('title', 'length', 'max'=>50),
 			array('cooking_time, ingredients', 'safe'),
+            array('primary_pic','default', 'setOnEmpty'=>true, 'value'=>null),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, slug, title, cooking_time, ingredients, method, created, modified', 'safe', 'on'=>'search'),
@@ -59,6 +60,7 @@ class recipe extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                'primary_pic' => array(self::BELONGS_TO, 'Photo', 'primary_pic'),
 				'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
 		);
 	}

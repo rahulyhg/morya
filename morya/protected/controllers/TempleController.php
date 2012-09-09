@@ -4,6 +4,7 @@ class TempleController extends AppController
 {
 	function init(){
 		Yii::import('application.models.temple.*');
+        Yii::import('application.models.photo.*');
 	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -84,15 +85,10 @@ class TempleController extends AppController
 		if(isset($_POST['Temple']))
 		{
 			$model->attributes=$_POST['Temple'];
-			$model->slug = $this->behaviors();
-
-			if($model->save()){
-				$temple = new TemplePhoto;
-				$temple->temple_id = $model->id;
-				$temple->photo_id = $_POST['photo_id'];
-				if($temple->save())
+			if($model->validate()){
+				if($model->save())
 					$this->redirect(array('index','templeType'=>$templeType));
-				}
+			}
 		}
 
 		$this->render('create',array(

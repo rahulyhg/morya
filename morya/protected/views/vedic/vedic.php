@@ -1,18 +1,8 @@
 <?php
 $this->breadcrumbs=array(
-	'Vedics',
+    VedicType::$heading[$vedicType] => array('vedic/view',array('vedicType'=>$vedicType))
 );
-?>
 
-<?php  
-
-switch($vedicType){
-case VedicType::Aarti : $heading = "Aarti";$addhead = "Add Arti";break;
-case VedicType::Mantra : $heading = "Mantra Pushpanjali";$addhead = "Add Mantra";break;
-case VedicType::Atharva : $heading = "Atharva shirsha";$addhead = "Add Atharva Shirsha";break;
-case VedicType::Pooja : $heading = "Uttar Pooja";$addhead = "Add Uttar Pooja vidhi";break;
-
-}
 
 
 $this->menu=array(
@@ -23,8 +13,8 @@ $this->menu=array(
 );
 ?>
 <div class="mid-region">
-    <div class="tab"><?php echo $heading;?></div>
-    <div style="float:right;font:14px;"><?php echo CHtml::link($addhead,array('addvedic','vedicType'=>$vedicType));?></div>
+    <div class="tab"><?php echo VedicType::$heading[$vedicType];?></div>
+    <div style="float:right;font:14px;"><?php echo CHtml::link("Add ".VedicType::$heading[$vedicType],array('addvedic','vedicType'=>$vedicType));?></div>
     <div class="cont-disp">
         <?php foreach($elementsList as $vedic){ ?>
         <div><span><h3><?php echo $vedic->title;?><h3></span>
@@ -38,7 +28,7 @@ $this->menu=array(
 </div>
 
 <div style="float:right width:30%">
-<h3>Find more <?php echo $heading ?> here<h3>
+<h3>Find more <?php echo VedicType::$heading[$vedicType] ?> here<h3>
 <?php foreach($elementsList as $vedic){?>
 <div><?php echo CHtml::link($vedic->title,array('vedicview','ved_title'=>$vedic->slug));?></div>
 <?php } ?>

@@ -1,6 +1,7 @@
 <?php
+
 $this->breadcrumbs=array(
-	'Vedics'=>array('index'),
+    VedicType::$heading[$model->type]=>array('vedic',array('vedicType'=>$model->type)),
 	$model->title,
 );
 

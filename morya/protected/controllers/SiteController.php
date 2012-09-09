@@ -7,6 +7,9 @@ class SiteController extends AppController
     function init(){
         Yii::import('application.models.user.*');
         Yii::import('application.models.photo.*');
+        Yii::import('application.models.vedic.*');
+        Yii::import('application.models.recipe.*');
+        Yii::import('application.models.temple.*');
     }
 	/**
 	 * Declares class-based actions.
@@ -36,16 +39,18 @@ class SiteController extends AppController
         $register = new RegistrationForm();
         $login = new LoginForm();
 
+
+
         $criteria=new CDbCriteria;
         $criteria->order = 'created desc';
         $criteria->limit = 20;
-
+        $aartis = Vedic::model()->findAllByAttributes(array('type'=>VedicType::Aarti));
         $elementsList=Photo::model()->findAll($criteria);//->with('comments')
-
         $this->render('index',array(
             'register'=>$register,
             'login'=>$login,
-            'elementsList'=>$elementsList
+            'elementsList'=>$elementsList,
+            'aartis'=>$aartis
         ));
 	}
 

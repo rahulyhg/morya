@@ -47,11 +47,12 @@ class Temple extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, description, how_to_go, history', 'required'),
+			array('name, description, how_to_go, history,primary_pic', 'required'),
 			array('slug', 'length', 'max'=>30),
 			array('name', 'length', 'max'=>255),
 			array('established', 'length', 'max'=>4),
 			array('user_id', 'length', 'max'=>11),
+            array('secondary_pic1, secondary_pic2,secondary_pic3, secondary_pic4','default', 'setOnEmpty'=>true, 'value'=>null),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, slug, name, description, established, how_to_go, history, user_id, created, modified', 'safe', 'on'=>'search'),
@@ -66,8 +67,14 @@ class Temple extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'templePhotos' => array(self::HAS_MANY, 'Temple_Photo', 'temple_id'),
-			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+			'primary_pic' => array(self::BELONGS_TO, 'Photo', 'primary_pic'),
+            //Secondary Pics
+            'secondary_pic1' => array(self::BELONGS_TO, 'Photo', 'secondary_pic1'),
+            'secondary_pic2' => array(self::BELONGS_TO, 'Photo', 'secondary_pic2'),
+            'secondary_pic3' => array(self::BELONGS_TO, 'Photo', 'secondary_pic3'),
+            'secondary_pic4' => array(self::BELONGS_TO, 'Photo', 'secondary_pic4'),
+
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -84,9 +91,11 @@ class Temple extends AppActiveRecord
 			'established' => 'Established',
 			'how_to_go' => 'How To Go',
 			'history' => 'History',
-			'user_id' => 'User',
+            'primary_pic' =>'Primary Ganesh Picture',
+            'user_id' => 'User',
 			'created' => 'Created',
 			'modified' => 'Modified',
+
 		);
 	}
 
