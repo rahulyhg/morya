@@ -54,15 +54,18 @@
 	</div>
     <div class="grid_3">
         <table>
-        <?php if(current($elementsList) !== null): ?>
             <?php for($i=0;$i<3;$i++){ ?>
             <tr>
-            <?php for($j=0;$j<3;$j++){ ?>
-                <td><img src="upload/thumb/<?php //echo next($elementsList)->file_name ?> " style="width:80px;height:70px;margin:2px"  /></td>
-            <?php } ?>
+            <?php for($j=0;$j<3;$j++){
+                ?>
+                <td>
+                <?php  if($elementsList[($i+$j)] !== null) { ?>
+                <img src="upload/thumb/<?php echo  $elementsList[$i+$j]->file_name; ?> " style="width:80px;height:70px;margin:2px"  />
+                    <?php } ?>
+                </td>
+                <?php } ?>
             </tr>
             <?php } ?>
-        <?php endif ?>
             <tr><td colspan="3"  style="height:48px;">
                 <div class="upload_btn">
                     <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',

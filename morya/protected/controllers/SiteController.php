@@ -41,6 +41,7 @@ class SiteController extends AppController
         $criteria->limit = 20;
 
         $elementsList=Photo::model()->findAll($criteria);//->with('comments')
+
         $this->render('index',array(
             'register'=>$register,
             'login'=>$login,

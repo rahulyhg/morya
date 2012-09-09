@@ -40,14 +40,14 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header class="container_12">
-      <a href="/">
+      <a href="<?php echo Yii::app()->createUrl('site/index'); ?>">
   <span class="grid_2" style="position:relative;">
 	<span class="logo"></span>
 	<span class="ganesh_logo"></span>
   </span>
       </a>
   <div class="grid_3" style="position:relative;">
-      <a href="/"><h1 class="header_text"></h1></a>
+      <a href="<?php echo Yii::app()->createUrl('site/index'); ?>"><h1 class="header_text"></h1></a>
    <h4 class="subheader_text">Let World Know Our Ganesh...</h4>
    <h5 class="social">
 	<a href="https://twitter.com/GlobalGanesh" target="_blank"><span class="twitter"></span></a>

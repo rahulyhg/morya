@@ -2,11 +2,11 @@
     <div class="photo_thumb">
         <h3><?php $photo->caption ;?></h3>
         <?php
-        $img = PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name;
+        $img = PhotoType::$folderName[PhotoType::Thumb] . $photo->file_name;
         list($width, $height, $type, $attr) = getimagesize($img);
         ?>
         <a href="<?php echo Yii::app()->createUrl('photo/view',array('id'=>$photo->id)) ?>">
-            <img src="<?php echo $img ;?>" style="width:<?php echo PhotoType::$dimension[PhotoType::Thumb]['width'] ?>px;height:<?php echo  PhotoType::$dimension[PhotoType::Thumb]['height'] ?>px;" />
+            <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" style="width:<?php echo PhotoType::$dimension[PhotoType::Thumb]['width'] ?>px;height:<?php echo  PhotoType::$dimension[PhotoType::Thumb]['height'] ?>px;" />
         </a>
         <div class="white_mask_wrapper">
             <div class="white_mask">

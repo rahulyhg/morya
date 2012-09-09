@@ -6,12 +6,12 @@ $this->breadcrumbs=array(
 ?>
 
 <div class="mid-region">
-<div class="tab">Recipe's</div>
+<div class="tab">&nbsp;Recipe's</div>
 <div><?php echo CHtml::link('Add your Recipe Here',array('create'));?></div>
 <?php foreach($elementsList as $recipe){?>
-<div>
+<div class="cont-disp">
 
-<div class="title_bar"><?php echo $recipe->title; ?></div>
+<div class="title_head"><?php echo $recipe->title; ?></div>
 <div>Ingradients : <?php echo $recipe->ingredients; ?></div>
 <div>Method : <?php echo $recipe->method; ?></div>
 
