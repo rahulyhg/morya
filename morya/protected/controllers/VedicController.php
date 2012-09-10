@@ -21,6 +21,17 @@ class VedicController extends AppController
 		);
 	}
 
+	public function actions()
+	{
+		return array(
+
+			// page action renders "static" pages stored under 'protected/views/site/pages'
+			// They can be accessed via: index.php?r=site/page&view=FileName
+			'page'=>array(
+				'class'=>'CViewAction',
+			),
+		);
+	}
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -30,7 +41,7 @@ class VedicController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('vedic','vedicview'),
+				'actions'=>array('vedic','vedicview','page'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -57,7 +68,9 @@ class VedicController extends AppController
 			'model'=>$this->loadModel($id),
 		));
 	}  */
+	
 
+	
 	public function actionVedicview()
 	{
 		if($_REQUEST['ved_title'] != '')

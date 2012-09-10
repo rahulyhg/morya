@@ -8,8 +8,9 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Aarti', 'url'=>array('vedic','vedicType'=>VedicType::Aarti)),
 	array('label'=>'Mantra Pushpanjali', 'url'=>array('vedic','vedicType'=>VedicType::Mantra)),
-	array('label'=>'Atharva shirsha', 'url'=>array('vedic','vedicType'=>VedicType::Atharva)),
-	array('label'=>'Uttar Pooja', 'url'=>array('vedic','vedicType'=>VedicType::Pooja)),
+	array('label'=>'Atharva shirsha', 'url'=>array('/vedic/page', 'view'=>'atharva')),
+	array('label'=>'Uttar Pooja', 'url'=>array('/vedic/page', 'view'=>'pooja')),
+	array('label'=>'All Ganesh Names', 'url'=>array('/vedic/page', 'view'=>'ganesh_names')),
 );
 ?>
 <div class="mid-region">
@@ -26,10 +27,11 @@ $this->menu=array(
         <?php } ?>
     </div>
 </div>
-
-<div style="float:right width:30%">
-<h3>Find more <?php echo VedicType::$heading[$vedicType] ?> here<h3>
-<?php foreach($elementsList as $vedic){?>
-<div><?php echo CHtml::link($vedic->title,array('vedicview','ved_title'=>$vedic->slug));?></div>
-<?php } ?>
+<!--
+<div>
+<h3>Find more <?php //echo VedicType::$heading[$vedicType] ?> here<h3>
+<?php //foreach($elementsList as $vedic){?>
+<div><?php //echo CHtml::link($vedic->title,array('vedicview','ved_title'=>$vedic->slug));?></div>
+<?php //} ?>
 </div>
+-->
