@@ -1,0 +1,9 @@
+TASK                        STATUS
+
+bug--in bug text file
+competition
+photo pagination
+photo labeling
+upload popup meassge
+my ganesha
+menu css

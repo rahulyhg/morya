@@ -45,12 +45,16 @@ class SiteController extends AppController
         $criteria->order = 'created desc';
         $criteria->limit = 20;
         $aartis = Vedic::model()->findAllByAttributes(array('type'=>VedicType::Aarti));
+        $recipes = Recipe::model()->findAll();
+        $temples = Temple::model()->findAll();
         $elementsList=Photo::model()->findAll($criteria);//->with('comments')
         $this->render('index',array(
             'register'=>$register,
             'login'=>$login,
             'elementsList'=>$elementsList,
-            'aartis'=>$aartis
+            'aartis'=>$aartis,
+            'recipes'=>$recipes,
+            'temples'=>$temples
         ));
 	}
 

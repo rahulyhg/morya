@@ -1,0 +1,9 @@
+Task                     status
+
+static pages for
+1.Atharva shirsha
+2.uttar pooja
+3.ganesh katha
+4.Ganesh's 108 names
+5.comptition page
+6.todays ganesha page
