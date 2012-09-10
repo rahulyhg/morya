@@ -416,7 +416,7 @@ border : 1px solid #000000;
 
 .title_head{
 font-weight : bold;
-font-size: : 14px;
+font-size: 14px;
 text-align : center;
 
 
@@ -430,4 +430,49 @@ border-bottom: 1px dotted #000000;
 }
 .like:hover{
     text-decoration: underline;
+}
+
+/**************** Menu Bar Styling **********/
+
+#lt_sidebar ul{
+    list-style-type: none;
+    margin: 0px;
+    display: block;
+    height: 468px;
+    overflow-y: hidden;
+}
+#lt_sidebar li{
+    margin: 0px;
+    height:80px;
+    border-bottom: 2px solid white;
+    background-color: #8BC9EE;
+}
+
+#lt_sidebar a{
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    color: white;
+    padding: 5px 0 0 5px;
+    font-size: 14px;
+    font-family: Verdana;
+    font-weight: 700;
+    text-shadow:  0px 0px 4px rgba(0, 255, 224, 1);
+}
+.selected_menu {
+    height:220px;
+}
+.atharvashirsha_menu {
+    background-image: url(../images/ganesh.png);
+}
+.mantrapushpanjali_menu {
+    background-image: url(../images/mantras_menu.png);
+}
+
+.uttarpooja_menu {
+    background-image: url(../images/uttarpooja_menu.png);
+}
+.aarti_sidemenu {
+    background-image: url(../images/aarti_sidemenu.png);
 }

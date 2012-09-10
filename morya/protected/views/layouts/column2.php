@@ -8,11 +8,11 @@
 	<div id="sidebar">
 	<?php
 		$this->beginWidget('zii.widgets.CPortlet', array(
-			'title'=>'Operations',
+			'title'=>'',
 		));
 		$this->widget('zii.widgets.CMenu', array(
 			'items'=>$this->menu,
-			'htmlOptions'=>array('class'=>'operations'),
+			'htmlOptions'=>array('class'=>''),
 		));
 		$this->endWidget();
 	?>

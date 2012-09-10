@@ -4,7 +4,7 @@
 <div id="lt_sidebar" class="grid_2">
     <?php
     $this->beginWidget('zii.widgets.CPortlet', array(
-        'title'=>'Operations',
+        'title'=>'',
     ));
     $this->widget('zii.widgets.CMenu', array(
         'items'=>$this->menu,

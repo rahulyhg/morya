@@ -59,7 +59,7 @@
             <?php for($j=0;$j<3;$j++){
                 ?>
                 <td>
-                <?php  if($elementsList[($i+$j)] !== null) { ?>
+                <?php  if(isset($elementsList[($i+$j)])) { ?>
                 <img src="upload/thumb/<?php echo  $elementsList[$i+$j]->file_name; ?> " style="width:80px;height:70px;margin:2px"  />
                     <?php } ?>
                 </td>

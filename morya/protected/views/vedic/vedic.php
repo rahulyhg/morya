@@ -6,10 +6,27 @@ $this->breadcrumbs=array(
 
 
 $this->menu=array(
-	array('label'=>'Aarti', 'url'=>array('vedic','vedicType'=>VedicType::Aarti)),
-	array('label'=>'Mantra Pushpanjali', 'url'=>array('vedic','vedicType'=>VedicType::Mantra)),
-	array('label'=>'Atharva shirsha', 'url'=>array('vedic','vedicType'=>VedicType::Atharva)),
-	array('label'=>'Uttar Pooja', 'url'=>array('vedic','vedicType'=>VedicType::Pooja)),
+	array(
+        'label'=>'Aarti',
+        'url'=>array('vedic','vedicType'=>VedicType::Aarti),
+        'itemOptions'=>array(
+            'class'=>'aarti_sidemenu selected_menu',
+            'style'=>'height:220px;'
+        ),
+    ),
+	array(
+        'label'=>'Mantra Pushpanjali',
+        'url'=>array('vedic','vedicType'=>VedicType::Mantra),
+        'itemOptions'=>array('class'=>'mantrapushpanjali_menu'),
+    ),
+	array(
+        'label'=>'Atharva shirsha',
+        'url'=>array('vedic','vedicType'=>VedicType::Atharva),
+        'itemOptions'=>array('class'=>'atharvashirsha_menu'),
+    ),
+	array('label'=>'Uttar Pooja', 'url'=>array('vedic','vedicType'=>VedicType::Pooja),
+        'itemOptions'=>array('class'=>'uttarpooja_menu')
+        )
 );
 ?>
 <div class="mid-region">

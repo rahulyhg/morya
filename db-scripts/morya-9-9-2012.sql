@@ -1,13 +1,18 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
 -- Generation Time: Sep 09, 2012 at 02:37 PM
 -- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- PHP Version: 5.4.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+05:30";
+
+DROP DATABASE IF EXISTS morya ;
+CREATE DATABASE IF NOT EXISTS morya CHARSET utf8 COLLATE utf8_general_ci;
+USE morya;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -34,14 +39,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `photo_id` (`photo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `comments`
---
-
-INSERT INTO `comments` (`id`, `comment`, `user_id`, `photo_id`, `created`) VALUES
-(1, 'ganpati bappa morya', 37, 119, '2012-09-09 00:29:50');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -56,11 +54,6 @@ CREATE TABLE IF NOT EXISTS `durvas` (
   KEY `photo_id` (`photo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `durvas`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -74,11 +67,6 @@ CREATE TABLE IF NOT EXISTS `likes` (
   PRIMARY KEY (`comment_id`,`user_id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `likes`
---
-
 
 -- --------------------------------------------------------
 
@@ -95,10 +83,6 @@ CREATE TABLE IF NOT EXISTS `logins` (
   `browser_info` text CHARACTER SET ascii NOT NULL,
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `logins`
---
 
 
 -- --------------------------------------------------------
@@ -122,37 +106,7 @@ CREATE TABLE IF NOT EXISTS `photoes` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=142 ;
-
---
--- Dumping data for table `photoes`
---
-
-INSERT INTO `photoes` (`id`, `type`, `caption`, `description`, `original_name`, `file_name`, `file_type`, `file_size`, `user_id`, `created`, `modified`) VALUES
-(119, 0, '7404d6562b5559500df2ba232d76639c.jpg', NULL, 'Image1544.jpg', '7404d6562b5559500df2ba232d76639c.jpg', 'image/jpeg', 00000000000000309303, 36, '2012-09-05 00:14:00', '2012-09-05 00:14:00'),
-(120, 0, '4fd945f32cacf9d311935396b2bc4275.jpg', NULL, 'Image1540.jpg', '4fd945f32cacf9d311935396b2bc4275.jpg', 'image/jpeg', 00000000000000251993, 37, '2012-09-08 23:53:37', '2012-09-08 23:53:37'),
-(121, 0, '32c463a8238249d2ca3d5063935b3477.jpg', NULL, 'Image1545.jpg', '32c463a8238249d2ca3d5063935b3477.jpg', 'image/jpeg', 00000000000000336619, 37, '2012-09-08 23:53:38', '2012-09-08 23:53:38'),
-(122, 0, 'd8bf96cffbefb9c8b595aabd8fe3a4c7.jpg', NULL, 'Image1544.jpg', 'd8bf96cffbefb9c8b595aabd8fe3a4c7.jpg', 'image/jpeg', 00000000000000309303, 37, '2012-09-09 02:17:17', '2012-09-09 02:17:17'),
-(123, 0, '2aadc7a2162528c14a4fdc5670e0e39a.jpg', NULL, 'Image1547.jpg', '2aadc7a2162528c14a4fdc5670e0e39a.jpg', 'image/jpeg', 00000000000000250119, 37, '2012-09-09 02:17:38', '2012-09-09 02:17:38'),
-(124, 0, 'ebd097434fe9d7a771e8941dc21d4dac.jpg', NULL, 'Winter.jpg', 'ebd097434fe9d7a771e8941dc21d4dac.jpg', 'image/jpeg', 00000000000000105542, 38, '2012-09-09 02:27:08', '2012-09-09 02:27:08'),
-(125, 0, '94d43397fc2eafcef0bedcfa0814b07a.jpg', NULL, 'Water lilies.jpg', '94d43397fc2eafcef0bedcfa0814b07a.jpg', 'image/jpeg', 00000000000000083794, 38, '2012-09-09 03:16:42', '2012-09-09 03:16:42'),
-(126, 0, 'a46ec506831b2b53536575dcf8257725.jpg', NULL, 'Winter.jpg', 'a46ec506831b2b53536575dcf8257725.jpg', 'image/jpeg', 00000000000000105542, 38, '2012-09-09 03:16:49', '2012-09-09 03:16:49'),
-(127, 0, '70fb7d3645e92bdd4851b6ee91082827.jpg', NULL, 'Blue hills.jpg', '70fb7d3645e92bdd4851b6ee91082827.jpg', 'image/jpeg', 00000000000000028521, 38, '2012-09-09 05:42:16', '2012-09-09 05:42:16'),
-(128, 0, '18ed25952fa125930cb202cedadd44c2.jpg', NULL, 'Blue hills.jpg', '18ed25952fa125930cb202cedadd44c2.jpg', 'image/jpeg', 00000000000000028521, 38, '2012-09-09 05:43:17', '2012-09-09 05:43:17'),
-(129, 0, '972a8b52fd7daf100bbdf7c9818ef636.jpg', NULL, 'Sunset.jpg', '972a8b52fd7daf100bbdf7c9818ef636.jpg', 'image/jpeg', 00000000000000071189, 38, '2012-09-09 05:46:27', '2012-09-09 05:46:27'),
-(130, 0, 'a7c2ee51bb429b9930144633facbbb4c.jpg', NULL, 'Water lilies.jpg', 'a7c2ee51bb429b9930144633facbbb4c.jpg', 'image/jpeg', 00000000000000083794, 38, '2012-09-09 05:46:35', '2012-09-09 05:46:35'),
-(131, 0, 'ef5daa57e13663ec2e615c4869b51656.jpg', NULL, 'Sunset.jpg', 'ef5daa57e13663ec2e615c4869b51656.jpg', 'image/jpeg', 00000000000000071189, 38, '2012-09-09 05:46:47', '2012-09-09 05:46:47'),
-(132, 0, 'feff3a74a6637c437f8a7f7f1388be7f.jpg', NULL, 'Blue hills.jpg', 'feff3a74a6637c437f8a7f7f1388be7f.jpg', 'image/jpeg', 00000000000000028521, 38, '2012-09-09 05:46:50', '2012-09-09 05:46:50'),
-(133, 0, '8876e67fb445ae413899d95d261798ec.jpg', NULL, 'Winter.jpg', '8876e67fb445ae413899d95d261798ec.jpg', 'image/jpeg', 00000000000000105542, 38, '2012-09-09 05:47:11', '2012-09-09 05:47:11'),
-(134, 0, '7c5614d106072afb83c3e4b701044d63.jpg', NULL, 'Water lilies.jpg', '7c5614d106072afb83c3e4b701044d63.jpg', 'image/jpeg', 00000000000000083794, 38, '2012-09-09 05:52:42', '2012-09-09 05:52:42'),
-(135, 0, '6cd3d81aab11eadb6444136d1c9de974.jpg', NULL, 'Sunset.jpg', '6cd3d81aab11eadb6444136d1c9de974.jpg', 'image/jpeg', 00000000000000071189, 38, '2012-09-09 05:52:47', '2012-09-09 05:52:47'),
-(136, 0, '556d74175a4f80ca06ace1861e2099a1.jpg', NULL, 'Winter.jpg', '556d74175a4f80ca06ace1861e2099a1.jpg', 'image/jpeg', 00000000000000105542, 38, '2012-09-09 05:53:04', '2012-09-09 05:53:04'),
-(137, 0, '1ff0c671540ed2c05b7f90cbb908b9eb.jpg', NULL, 'Sunset.jpg', '1ff0c671540ed2c05b7f90cbb908b9eb.jpg', 'image/jpeg', 00000000000000071189, 38, '2012-09-09 05:57:25', '2012-09-09 05:57:25'),
-(138, 0, '15a6700ecaae079056a2917e5256e33f.jpg', NULL, 'Blue hills.jpg', '15a6700ecaae079056a2917e5256e33f.jpg', 'image/jpeg', 00000000000000028521, 38, '2012-09-09 05:57:26', '2012-09-09 05:57:26'),
-(139, 0, '7669781130332e9fd2be8065a609790f.jpg', NULL, 'Winter.jpg', '7669781130332e9fd2be8065a609790f.jpg', 'image/jpeg', 00000000000000105542, 38, '2012-09-09 05:57:41', '2012-09-09 05:57:41'),
-(140, 0, '10166777b49756c4c63a0c7007117043.jpg', NULL, 'Image1539.jpg', '10166777b49756c4c63a0c7007117043.jpg', 'image/jpeg', 00000000000000249368, 38, '2012-09-09 07:06:00', '2012-09-09 07:06:00'),
-(141, 0, '21ebbf0b170bccec73851beef32740cf.jpg', NULL, 'Image1544.jpg', '21ebbf0b170bccec73851beef32740cf.jpg', 'image/jpeg', 00000000000000309303, 36, '2012-09-09 07:11:06', '2012-09-09 07:11:06');
-
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 -- --------------------------------------------------------
 
 --
@@ -165,11 +119,6 @@ CREATE TABLE IF NOT EXISTS `photo_comment` (
   PRIMARY KEY (`photo_id`,`comment_id`),
   KEY `comment_id` (`comment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `photo_comment`
---
-
 
 -- --------------------------------------------------------
 
@@ -184,11 +133,6 @@ CREATE TABLE IF NOT EXISTS `photo_hits` (
   KEY `user_id` (`user_id`),
   KEY `photo_id` (`photo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `photo_hits`
---
-
 
 -- --------------------------------------------------------
 
@@ -205,11 +149,6 @@ CREATE TABLE IF NOT EXISTS `photo_tag` (
   KEY `photo_id` (`photo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `photo_tag`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -222,11 +161,6 @@ CREATE TABLE IF NOT EXISTS `pic_of_day` (
   `category` tinyint(4) NOT NULL,
   `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `pic_of_day`
---
-
 
 -- --------------------------------------------------------
 
@@ -242,13 +176,6 @@ CREATE TABLE IF NOT EXISTS `prizes` (
   `description` text NOT NULL,
   `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `prizes`
---
-
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `recepies`
@@ -270,33 +197,12 @@ CREATE TABLE IF NOT EXISTS `recepies` (
   KEY `type` (`type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `recepies`
---
-
-INSERT INTO `recepies` (`id`, `slug`, `type`, `title`, `cooking_time`, `ingredients`, `method`, `primary_pic`, `created`, `modified`) VALUES
-(1, 'उकडीचे-मोदक', 000, 'उकडीचे मोदक', '00:00:30', '१/२ कप खिरापत\r\n१/२ कप मैदा\r\n१/२ कप बारीक रवा\r\n२ टेस्पून तेल\r\nचिमूटभर मिठ\r\nतळण्यासाठी तेल/ तूप\r\n१ टीस्पून दूध\r\nओल्या नारळाचे सारण भरायचे असेल तर ओल्या नारळाच्या करंज्यांचे सारण वापरावे.', '१) मैदा आणि रव एकत्र करून घ्यावा. २ चमचे तेल कडकडीत गरम करून मोहन घालावे. किंचीत मिठ घालून हाताने मिक्स करावे. थोडे थोडे पाणी घालून घट्ट मळून घ्यावे. साधारण अर्धा तास झाकून ठेवावे.\r\n२) अर्ध्या तासाने पिठ पुन्हा एकदा चांगले मळून घ्यावे. मळलेल्या पिठाचे साधारण दिड इंचाचे समान गोळे करून घ्यावे. तळण्यासाठी तेल गरम करण्यास ठेवावे. प्रत्येक गोळ्याची पुरी लाटून घ्यावी. पुरी एका हाताच्या तळव्यावर ठेवून दुसर्‍या हानाने मुखर्‍या पाडाव्यात. मध्यभागी जो खळगा झाला असेल त्यात १ चमचा सारण भरावे. सर्व मुखर्‍या एकत्र करून कळी बनवावी आणि १ थेंब दुधाचं बोट घेवून कळी निट बंद करावी. सर्व मोदक मंद आचेवर तळून घ्यावे.\r\n\r\nटीप:\r\n१) पिठ थोडे कोरडे असल्याने बंद केलेली कळी बर्‍याचदा तेलात उघडली जाते आणि सारण बाहेर येते, नाहीतर तेल आत जाऊन मोदक तेलकट होतो. म्हणून थोडे दुध लावल्यास कळी पक्की बंद होते. फक्त अगदी कणच दुध वापरावे.\r\n२) मोदक मंद आचेवरच तळावे. मोठ्या आचेवर तळल्यास तापलेल्या तेलामुळे बाहेरून तळलेले वाटतात पण आतून कच्चे राहतात आणि लगेच मऊ पडतात.\r\n', NULL, '2012-09-06 22:54:14', '2012-09-06 22:54:14'),
-(2, 'boondi-ka-ladoo', 000, 'Boondi ka Ladoo', '00:00:01', '1 cup Besan\r\n1 pinch Kesari\r\n1 pinch Cardamom powder\r\n1 tbsp Rice flour\r\n1 pinch Baking Powder\r\n1 tbsp Melon seeds\r\n1 tbsp Broken Cashew nut\r\n2 cups Oil Sugar\r\n1 cup Water ', '\r\n    Mix the flour, rice flour, baking powder and colour.\r\n    Make a smooth thick batter. Heat the oil. Take the batter and pour it over a sieve with round holes.\r\n    Tap it gently with a spoon so that small balls of dough fall into the oil. Make the balls and keep aside. Heat the sugar and water till reaches 1/2 thread consistency.\r\n    Mix in the kesari melon seed and cardamom powder and fried boondies. When the mixture is still warm make into balls. Bondi Ladoo are ready to be served\r\n    If the mixture cools balls cannot be made as the sugar crystallizes.\r\n', NULL, '2012-09-06 23:48:57', '2012-09-06 23:48:57');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tags`
---
-
 CREATE TABLE IF NOT EXISTS `tags` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `tags`
---
-
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `temples`
@@ -322,15 +228,6 @@ CREATE TABLE IF NOT EXISTS `temples` (
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
---
--- Dumping data for table `temples`
---
-
-INSERT INTO `temples` (`id`, `slug`, `name`, `description`, `established`, `how_to_go`, `history`, `primary_pic`, `secondary_pic1`, `secondary_pic2`, `secondary_pic3`, `secondary_pic4`, `user_id`, `created`, `modified`) VALUES
-(1, 'siddhivinayak-mandir', 'siddhivinayak mandir', 'siddhivinayak mandir is asnka nasnda nalksndkandk nasn', 1992, 'siddhivinayak mandir is asnka nasnda nalksndkandk nasn', 'siddhivinayak mandir is asnka nasnda nalksndkandk nasn', 128, NULL, NULL, NULL, NULL, 38, '2012-09-09 05:44:00', '2012-09-09 05:44:00'),
-(2, 'siddhivinayak-mandir-1', 'siddhivinayak mandir', '        case  1 : $("#photo_id").append(''<input type="hidden" name="Temple[secondary_pic1]" value="'' + responseJSON.id + ''" />'');\r\n            uploaded = uploaded + 1;\r\n            break;', 2000, '        case  1 : $("#photo_id").append(''<input type="hidden" name="Temple[secondary_pic1]" value="'' + responseJSON.id + ''" />'');\r\n            uploaded = uploaded + 1;\r\n            break;', '        case  1 : $("#photo_id").append(''<input type="hidden" name="Temple[secondary_pic1]" value="'' + responseJSON.id + ''" />'');\r\n            uploaded = uploaded + 1;\r\n            break;', 135, NULL, NULL, NULL, NULL, 38, '2012-09-09 05:53:31', '2012-09-09 05:53:31'),
-(3, 'lalbaug-cha-raja', 'lalbaug cha raja', 'lalbaug cha raja', 1999, 'lalbaug cha raja', 'lalbaug cha raja', 137, 138, NULL, NULL, NULL, 38, '2012-09-09 05:57:42', '2012-09-09 05:57:42');
-
 -- --------------------------------------------------------
 
 --
@@ -353,16 +250,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `authentication_type`, `open_id`, `email`, `password`, `name`, `profile_pic`, `contact`, `ganpati_pic`, `add_line_1`, `add_line_2`, `city`, `created`, `modified`) VALUES
-(36, 000, NULL, 'mayuresh.naik001@gmail.com', '6382d4ea6f269ab59ccf0942f2a523c7', 'mayuresh Yashwant Naik', NULL, NULL, NULL, NULL, NULL, NULL, '2012-09-05 00:08:18', '2012-09-05 00:08:18'),
-(37, 000, NULL, 'swapnil@gmail.com', 'e2798af12a7a0f4f70b4d69efbc25f4d', 'Swapnil SUnil Gondkar', NULL, NULL, NULL, NULL, NULL, NULL, '2012-09-08 23:53:17', '2012-09-08 23:53:17'),
-(38, 000, NULL, 'mayuresh.naik@gmail.com', '6974c42cd0c6aba9fd7c7360b4fcf2eb', 'mayuresh Yashwant Naik', NULL, '9870773759', NULL, NULL, NULL, NULL, '2012-09-09 02:25:44', '2012-09-09 07:00:02');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -386,14 +274,6 @@ CREATE TABLE IF NOT EXISTS `vedics` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `vedics`
---
-
-INSERT INTO `vedics` (`id`, `type`, `name_of_god`, `title`, `slug`, `text`, `audio_path`, `audio_length`, `audio_size`, `user_id`, `created`, `modified`) VALUES
-(1, 0, 'गणपतीची आरती', 'सुखकर्ता दुखहर्ता', 'सुखकर्ता-दुखहर्ता', 'सुखकर्ता दुखहर्ता', NULL, NULL, NULL, 36, '2012-09-06 00:10:52', '2012-09-06 00:10:52'),
-(2, 0, 'श्री शंकराची आरती', 'दुर्गे दुर्घट भारी', 'दुर्गे-दुर्घट-भारी', 'दुर्गे दुर्घट भारी', NULL, NULL, NULL, 38, '2012-09-09 06:44:32', '2012-09-09 06:44:32');
 
 -- --------------------------------------------------------
 

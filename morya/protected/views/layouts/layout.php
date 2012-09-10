@@ -146,6 +146,33 @@
                   }, {scope:'email,user_photos,user_location,publish_actions'});
               }//fblogin
           );
+          var selected_menu = $('.selected_menu');
+          $('#lt_sidebar ul').hover(function(){
+              //get the selected class
+              selected_menu.removeClass('selected_menu').stop().animate({height: "80px"}, {duration: 500, easing: "easeInOutQuad", complete: "callback"});
+          },function(){
+              //
+              selected_menu.addClass('selected_menu').stop().animate({height: "220px"}, {duration: 500, easing: "easeOutQuad", complete: "callback"});
+          })
+
+          // find the elements to be eased and hook the hover event
+          $('#lt_sidebar li').hover(function() {
+              // if the element is currently being animated
+              if ($(this).is(':animated')) {
+                  $(this).addClass("active").stop().animate({height: "220px"}, {duration: 500, easing: "easeOutQuad", complete: "callback"});
+              } else {
+                  // ease in quickly
+                  $(this).addClass("active").stop().animate({height: "220px"}, {duration: 400, easing: "easeOutQuad", complete: "callback"});
+              }
+          }, function () {
+              // on hovering out, ease the element out
+              if ($(this).is(':animated')) {
+                  $(this).removeClass("active").stop().animate({height: "80px"}, {duration: 400, easing: "easeInOutQuad", complete: "callback"})
+              } else {
+                  // ease out slowly
+                  $(this).removeClass("active").stop(':animated').animate({height: "80px"}, {duration: 500, easing: "easeInOutQuad", complete: "callback"});
+              }
+          });
       });
   </script>
 <?php $this->renderClip('js-page-end'); ?>
