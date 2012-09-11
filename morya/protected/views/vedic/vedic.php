@@ -21,12 +21,19 @@ $this->menu=array(
     ),
 	array(
         'label'=>'Atharva shirsha',
-        'url'=>array('vedic','vedicType'=>VedicType::Atharva),
+        //'url'=>array('vedic','vedicType'=>VedicType::Atharva),
+		'url'=>$this->createAbsoluteUrl('page', array('view' => 'atharva')),
         'itemOptions'=>array('class'=>'atharvashirsha_menu'),
     ),
 	array('label'=>'Uttar Pooja', 'url'=>array('vedic','vedicType'=>VedicType::Pooja),
         'itemOptions'=>array('class'=>'uttarpooja_menu')
-        )
+    ),
+	array(
+		'label'=>'Ganesh Names', 
+		'url'=>$this->createAbsoluteUrl('page', array('view' => 'ganesh_names')),
+		//'url'=>array('vedic','vedicType'=>VedicType::Pooja),
+        'itemOptions'=>array('class'=>'uttarpooja_menu')
+    )
 );
 ?>
 <div class="mid-region">
