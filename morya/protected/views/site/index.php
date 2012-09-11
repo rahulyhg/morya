@@ -76,7 +76,12 @@
                             'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
                             'sizeLimit'=>10*1024*1024,// maximum file size in bytes
                             'minSizeLimit'=>10,// minimum file size in bytes
-                            'onComplete'=>"js:function(id,filename,response){}",
+                            'onComplete'=>"js:function(id,filename,response){
+                                    fileUploadComplete(id,filename,response);
+                            }",
+                            'onUpload'=>"js:function(id,fileName){
+                                fileUploadBegin(id,fileName);
+                            }",
                             'messages'=>array(
                                 'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
                                 'sizeError'=>"{file} is too large, maximum file size is {sizeLimit}.",
@@ -84,9 +89,16 @@
                                 'emptyError'=>"{file} is empty, please select files again without it.",
                                 'onLeave'=>"The files are being uploaded, if you leave now the upload will be cancelled."
                             ),
-                            'showMessage'=>"js:function(message){ alert(message); }"
+                            'showMessage'=>"js:function(message){ alert(message); }",
+                            'listElement'=>"js:document.getElementById('upload-list')"
                         )
                     )); ?>
+                </div>
+                <div id="upload" style="display: none">
+                    <div id="upload-wrapper">
+                        <div id="upload-list">
+                        </div>
+                    </div>
                 </div>
             </td></tr>
         </table>
@@ -196,6 +208,28 @@
     </div>
 	<?php $this->beginClip('js-page-end'); ?>
             <script type="text/javascript">
+                function fileUploadBegin(id,fileName){
+                    $.fancybox($('#upload-wrapper'));
+                }
+                function fileUploadComplete(id,filename,response){
+                    $('#upload-list').html('<p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p>');
+                    $('#upload-wrapper').append('<img src="upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Description:</label><textarea cols="30" rows="3" id="photo-description"></textarea><br /><input type="submit" id="save-photo" class="button_1" />');
+                    $.fancybox.update();
+                    $('#save-photo').click(function(){
+                        updateFile(response.id);
+                        return false;
+                    });
+                }
+                function updateFile(photoId){
+                    $.ajax({
+                        url: "<?php echo Yii::app()->createUrl("photo/update"); ?>",
+                        type: 'POST',
+                        data: { 'id': photoId , 'caption':$('#photo-caption').val() ,'description': $('#photo-description').val() },
+                        success: function() {
+                            $.fancybox.close();
+                        }
+                    });
+                }
 			    $('#news_box').liteAccordion({
                         onTriggerSlide : function() {
                             this.find('figcaption').fadeOut();

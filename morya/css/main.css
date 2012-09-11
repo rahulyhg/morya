@@ -330,7 +330,7 @@ label {
     color: #0090E6;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"],textarea {
     padding: 5px;
     border: 1px solid #8BC9EE;
     font-size: 18px;

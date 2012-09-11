@@ -75,7 +75,7 @@ class VedicController extends AppController
 	{
 		if($_REQUEST['ved_title'] != '')
 		{
-			$model=vedic::model()->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
+			$model=Vedic::model()->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
 			$this->render('vedicview',array(
 			'model'=>$model,
 			));
@@ -200,11 +200,11 @@ class VedicController extends AppController
 		$criteria->limit = 10;
 		$criteria->compare('type',$vedicType); 
 
-	   $pages=new CPagination(vedic::model()->count($criteria));          
+	   $pages=new CPagination(Vedic::model()->count($criteria));
 	   $pages->applyLimit($criteria);
 	   $pages->pageSize=10;
 
-	   $elementsList=vedic::model()->findAll($criteria);//->with('comments')
+	   $elementsList=Vedic::model()->findAll($criteria);//->with('comments')
 	   $this->render('vedic',array(
 		  'elementsList'=>$elementsList,
 		  'pages'=>$pages,

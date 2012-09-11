@@ -25,7 +25,7 @@ class PhotoController extends AppController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('upload','postUpload','myganesha'),
+				'actions'=>array('upload','postUpload','update','myganesha'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -46,9 +46,9 @@ class PhotoController extends AppController
 
         $pages=new CPagination(Photo::model()->count());
         $pages->applyLimit($criteria);
-        $pages->pageSize=30;
+        $pages->pageSize=20;
 
-        $elementsList=Photo::model()->findAll();//->with('comments')
+        $elementsList=Photo::model()->findAll($criteria);//->with('comments')
         $this->render('index',array(
             'elementsList'=>$elementsList,
             'pages'=>$pages
@@ -92,11 +92,16 @@ class PhotoController extends AppController
 			$return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
 			echo $return;// it's array
 	}
-	public function actionPostUpdate(){
-		$photo = Photo::model()->findByPk((int)$_POST['photo_id']);
-		$photo->caption = $_POST['caption'];
-		$photo->caption = $_POST['description'];
-		$photo->save();
+	public function actionUpdate(){
+		$photo = Photo::model()->findByPk((int)$_POST['id']);
+        if($photo->user_id === Yii::app()->user->id){
+            $photo->caption = $_POST['caption'];
+            $photo->description = $_POST['description'];
+            if($photo->save()){
+             return true;
+            }
+        }
+        return false;
 	}
 	private function updateDb($type,$fileName,$ogName,$size){
 		$photo = new Photo;
@@ -131,6 +136,7 @@ class PhotoController extends AppController
 	 */
 	public function actionView($id)
 	{
+        $hit = new PhotoHit() ;
         //photoes with comments
         $photo = Photo::model()->findByPk($id)->with('Comment');
         $newComment = new Comment() ;
@@ -138,30 +144,6 @@ class PhotoController extends AppController
 		$this->render('view',array(
 			'photo'=>$photo,
             'newComment'=>$newComment
-		));
-	}
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Photo']))
-		{
-			$model->attributes=$_POST['Photo'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
 		));
 	}
 
