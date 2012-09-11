@@ -196,6 +196,7 @@
     </div>
 	<?php $this->beginClip('js-page-end'); ?>
             <script type="text/javascript">
+                $('.fancybox-thumb').attr('rel', 'gallery').fancybox();
                 function fileUploadBegin(id,fileName){
                     $.fancybox($('#upload-wrapper'));
                 }
