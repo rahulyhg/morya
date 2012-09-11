@@ -63,8 +63,10 @@ class RecipeController extends AppController
 		if($_REQUEST['rec_title'] != '')
 		{
 			$model=recipe::model()->findByAttributes(array('slug'=>$_REQUEST['rec_title']));
+            $elements=recipe::model()->findAll();
 			$this->render('recipeview',array(
 			'model'=>$model,
+             'elements'=>$elements
 		));
 		
 		}
@@ -84,6 +86,8 @@ class RecipeController extends AppController
 		if(isset($_POST['recipe']))
 		{
 			$model->attributes=$_POST['recipe'];
+            $model->ingredients = nl2br($model->ingredients);
+            $model->method = nl2br($model->method);
 			$model->slug = $this->behaviors();
 			if($model->save())
 				$this->redirect(array('index'));

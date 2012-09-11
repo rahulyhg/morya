@@ -114,7 +114,7 @@
         </div>
         <div class="grid_4">
             <div class="tab">&nbsp;Recipes</div>
-            <p><img src="images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" />
+            <p><img src="images/modak.jpg" style="margin:5px;float:left;width: 100px;height:100px;" />
                 Get all the recipes of ganesh festival.
                 Do try this all recipes and give it to you visitors.
             Also find the prasad and naivaidyas for ganpati for all days.

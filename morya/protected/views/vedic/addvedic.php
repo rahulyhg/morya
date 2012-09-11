@@ -1,9 +1,32 @@
 <?php
 $this->breadcrumbs=array(
-	'Vedics'=>array('index'),
-	'addvedic',
+    VedicType::$heading[$vedicType] => array('vedic/vedic',array('vedicType'=>$vedicType)),
+	'add',
 );
 
+$this->menu=array(
+	array(
+        'label'=>'Aarti',
+        'url'=>array('vedic','vedicType'=>VedicType::Aarti),
+        'itemOptions'=>array(
+            'class'=>'aarti_sidemenu selected_menu',
+            'style'=>'height:220px;'
+        ),
+    ),
+	array(
+        'label'=>'Mantra Pushpanjali',
+        'url'=>array('vedic','vedicType'=>VedicType::Mantra),
+        'itemOptions'=>array('class'=>'mantrapushpanjali_menu'),
+    ),
+	array(
+        'label'=>'Atharva shirsha',
+        'url'=>array('vedic','vedicType'=>VedicType::Atharva),
+        'itemOptions'=>array('class'=>'atharvashirsha_menu'),
+    ),
+	array('label'=>'Uttar Pooja', 'url'=>array('vedic','vedicType'=>VedicType::Pooja),
+        'itemOptions'=>array('class'=>'uttarpooja_menu')
+        )
+);
 ?>
 
 <h1>Add Your Vedic here</h1>

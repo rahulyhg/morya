@@ -222,6 +222,7 @@ class VedicController extends AppController
 		if(isset($_POST['Vedic']))
 		{
 			$model->attributes=$_POST['Vedic'];
+            $model->text = nl2br($model->text);
 			$model->slug = $this->behaviors();
 			
 			if($model->save())

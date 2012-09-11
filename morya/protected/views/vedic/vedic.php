@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-    VedicType::$heading[$vedicType] => array('vedic/view',array('vedicType'=>$vedicType))
+    VedicType::$heading[$vedicType] => array('vedic/vedic',array('vedicType'=>$vedicType))
 );
 
 
@@ -30,18 +30,17 @@ $this->menu=array(
 );
 ?>
 <div class="mid-region">
-    <div class="tab"><?php echo VedicType::$heading[$vedicType];?></div>
-    <div style="float:right;font:14px;"><?php echo CHtml::link("Add ".VedicType::$heading[$vedicType],array('addvedic','vedicType'=>$vedicType));?></div>
-    <div class="cont-disp">
+    <div class="tab">&nbsp;<?php echo VedicType::$heading[$vedicType];?></div>
+    <div><?php echo CHtml::link("Add ".VedicType::$heading[$vedicType],array('addvedic','vedicType'=>$vedicType));?></div>
+
         <?php foreach($elementsList as $vedic){ ?>
-        <div><span><h3><?php echo $vedic->title;?><h3></span>
-        <?php if($vedicType == VedicType::Aarti || VedicType::Mantra){ ?>
-        </div>
+        <div class="cont-disp">
+            <div class="title_head"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</div>
+
+            <div style="text-align: center;"><?php echo $vedic->text;?></div>
+            <div class="clear"></div>
+            </div>
         <?php } ?>
-        <div><?php echo $vedic->name_of_god;?></div>
-        <div><?php echo $vedic->text;?></div>
-        <?php } ?>
-    </div>
 </div>
 <!--
 <div>
