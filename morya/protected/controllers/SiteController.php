@@ -36,11 +36,6 @@ class SiteController extends AppController
 	 */
 	public function actionIndex()
 	{
-        $register = new RegistrationForm();
-        $login = new LoginForm();
-
-
-
         $criteria=new CDbCriteria;
         $criteria->order = 'created desc';
         $criteria->limit = 20;
@@ -49,8 +44,6 @@ class SiteController extends AppController
         $temples = Temple::model()->findAll();
         $elementsList=Photo::model()->findAll($criteria);//->with('comments')
         $this->render('index',array(
-            'register'=>$register,
-            'login'=>$login,
             'elementsList'=>$elementsList,
             'aartis'=>$aartis,
             'recipes'=>$recipes,

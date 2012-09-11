@@ -9,10 +9,9 @@ Yii::import('application.models.user.*');
 
 class UserInfo extends CPortlet
 {
-
     protected function renderContent(){
         $id = Yii::app()->user->id;
         $user = User::model()->findByPk($id);
-        $this->render('user_info',array('user'=>$user));
+        $this->render('user_info',array('user'=>$user,'register'=>new RegistrationForm,'login'=>new LoginForm));
     }
 }

@@ -13,12 +13,12 @@
  * @property string $created
  * @property string $modified
  */
-class recipe extends AppActiveRecord
+class Recipe extends AppActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return recipe the static model class
+	 * @return Recipe the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

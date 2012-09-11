@@ -87,19 +87,9 @@
   </nav>
   
   </header>
-  <?php
-    if(Yii::app()->user->isGuest){
-  ?>
- <a id="signup" class="user_space fancybox.ajax" href="<?php echo Yii::app()->createUrl('user/authPopup'); ?>">
-      Login / Register
-  </a>
-  <?php
-    }else{
-        ?>
-    <?php $this->widget('UserInfo'); ?>
-        <?php
-    }
-    ?>
+
+  <?php $this->widget('UserInfo'); ?>
+
   <div role="main container_12">
 	<?php echo $content; ?>
   </div>
@@ -129,10 +119,10 @@
           }
       }
       $('document').ready(function(){
-          $('a#signup').fancybox();
+          $('#signup').fancybox();
           $('.upload_btn').click(function(){
               if(app.user.isAuthenticated === false){
-                  $("#signup").trigger('click');
+                  $("a#signup").trigger('click');
                   return false;
               }
           });

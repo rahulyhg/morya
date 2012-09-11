@@ -62,8 +62,8 @@ class RecipeController extends AppController
 	{
 		if($_REQUEST['rec_title'] != '')
 		{
-			$model=recipe::model()->findByAttributes(array('slug'=>$_REQUEST['rec_title']));
-            $elements=recipe::model()->findAll();
+			$model=Recipe::model()->findByAttributes(array('slug'=>$_REQUEST['rec_title']));
+            $elements=Recipe::model()->findAll();
 			$this->render('recipeview',array(
 			'model'=>$model,
              'elements'=>$elements
@@ -79,13 +79,13 @@ class RecipeController extends AppController
 	 */
 	public function actionCreate()
 	{
-		$model=new recipe;
+		$model=new Recipe;
 		// Uncomment the following line if AJAX validation is needed
 		 $this->performAjaxValidation($model);
 
-		if(isset($_POST['recipe']))
+		if(isset($_POST['Recipe']))
 		{
-			$model->attributes=$_POST['recipe'];
+			$model->attributes=$_POST['Recipe'];
             $model->ingredients = nl2br($model->ingredients);
             $model->method = nl2br($model->method);
 			$model->slug = $this->behaviors();
@@ -111,9 +111,9 @@ class RecipeController extends AppController
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['recipe']))
+		if(isset($_POST['Recipe']))
 		{
-			$model->attributes=$_POST['recipe'];
+			$model->attributes=$_POST['Recipe'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -148,15 +148,15 @@ class RecipeController extends AppController
 	 */
 	public function actionIndex()
 	{
-		//$dataProvider=new CActiveDataProvider('recipe');
+		//$dataProvider=new CActiveDataProvider('Recipe');
 		$criteria=new CDbCriteria;
 		$criteria->limit = 10;
 
-	   $pages=new CPagination(recipe::model()->count($criteria));          
+	   $pages=new CPagination(Recipe::model()->count($criteria));
 	   $pages->applyLimit($criteria);
 	   $pages->pageSize=10;
 
-	   $elementsList=recipe::model()->findAll($criteria);//->with('comments')
+	   $elementsList=Recipe::model()->findAll($criteria);//->with('comments')
 	   $this->render('index',array(
 		  'elementsList'=>$elementsList,
 		  'pages'=>$pages,
@@ -173,10 +173,10 @@ class RecipeController extends AppController
 	 */
 	public function actionAdmin()
 	{
-		$model=new recipe('search');
+		$model=new Recipe('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['recipe']))
-			$model->attributes=$_GET['recipe'];
+		if(isset($_GET['Recipe']))
+			$model->attributes=$_GET['Recipe'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -190,7 +190,7 @@ class RecipeController extends AppController
 	 */
 	public function loadModel($id)
 	{
-		$model=recipe::model()->findByPk($id);
+		$model=Recipe::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -202,7 +202,7 @@ class RecipeController extends AppController
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='recipe-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='Recipe-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
