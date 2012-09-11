@@ -52,56 +52,44 @@
             </noscript>
 	</div>
 	</div>
-    <div class="grid_3">
-        <table>
-            <?php for($i=0;$i<3;$i++){ ?>
-            <tr>
-            <?php for($j=0;$j<3;$j++){
-                ?>
-                <td>
-                <?php  if(isset($elementsList[($i+$j)])) { ?>
-                <img src="upload/thumb/<?php echo  $elementsList[$i+$j]->file_name; ?> " style="width:80px;height:70px;margin:2px"  />
-                    <?php } ?>
-                </td>
-                <?php } ?>
-            </tr>
-            <?php } ?>
-            <tr><td colspan="3"  style="height:48px;">
-                <div class="upload_btn">
-                    <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
-                    array(
-                        'id'=>'uploadFile',
-                        'config'=>array(
-                            'action'=>Yii::app()->createUrl('photo/postUpload',array('type'=>PhotoUploadCategory::Normal)),
-                            'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
-                            'sizeLimit'=>10*1024*1024,// maximum file size in bytes
-                            'minSizeLimit'=>10,// minimum file size in bytes
-                            'onComplete'=>"js:function(id,filename,response){
+    <div  class="grid_3">
+        <div id="recent-uploads">
+            <?php $this->renderPartial('_recentUploads',array('elementsList'=>$elementsList)); ?>
+        </div>
+        <div class="upload_btn">
+            <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
+            array(
+                'id'=>'uploadFile',
+                'config'=>array(
+                    'action'=>Yii::app()->createUrl('photo/postUpload',array('type'=>PhotoUploadCategory::Normal)),
+                    'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
+                    'sizeLimit'=>10*1024*1024,// maximum file size in bytes
+                    'minSizeLimit'=>10,// minimum file size in bytes
+                    'onComplete'=>"js:function(id,filename,response){
                                     fileUploadComplete(id,filename,response);
                             }",
-                            'onUpload'=>"js:function(id,fileName){
+                    'onUpload'=>"js:function(id,fileName){
                                 fileUploadBegin(id,fileName);
                             }",
-                            'messages'=>array(
-                                'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
-                                'sizeError'=>"{file} is too large, maximum file size is {sizeLimit}.",
-                                'minSizeError'=>"{file} is too small, minimum file size is {minSizeLimit}.",
-                                'emptyError'=>"{file} is empty, please select files again without it.",
-                                'onLeave'=>"The files are being uploaded, if you leave now the upload will be cancelled."
-                            ),
-                            'showMessage'=>"js:function(message){ alert(message); }",
-                            'listElement'=>"js:document.getElementById('upload-list')"
-                        )
-                    )); ?>
+                    'messages'=>array(
+                        'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
+                        'sizeError'=>"{file} is too large, maximum file size is {sizeLimit}.",
+                        'minSizeError'=>"{file} is too small, minimum file size is {minSizeLimit}.",
+                        'emptyError'=>"{file} is empty, please select files again without it.",
+                        'onLeave'=>"The files are being uploaded, if you leave now the upload will be cancelled."
+                    ),
+                    'showMessage'=>"js:function(message){ alert(message); }",
+                    'listElement'=>"js:document.getElementById('upload-list')"
+                )
+            )); ?>
+        </div>
+        <div id="upload" style="display: none">
+            <div id="upload-wrapper">
+                <div id="upload-list">
                 </div>
-                <div id="upload" style="display: none">
-                    <div id="upload-wrapper">
-                        <div id="upload-list">
-                        </div>
-                    </div>
-                </div>
-            </td></tr>
-        </table>
+            </div>
+        </div>
+
     </div>
 	<div id="mid_pane_wrapper">
         <div class="grid_4">
@@ -212,8 +200,9 @@
                     $.fancybox($('#upload-wrapper'));
                 }
                 function fileUploadComplete(id,filename,response){
-                    $('#upload-list').html('<p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p>');
-                    $('#upload-wrapper').append('<img src="upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Description:</label><textarea cols="30" rows="3" id="photo-description"></textarea><br /><input type="submit" id="save-photo" class="button_1" />');
+                    $('#upload-list').html('');
+                    $('#upload-wrapper').append('<div id="upload-success"><p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p></div>');
+                    $('#upload-success').append('<img src="upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Description:</label><textarea cols="30" rows="3" id="photo-description"></textarea><br /><input type="submit" id="save-photo" class="button_1" />');
                     $.fancybox.update();
                     $('#save-photo').click(function(){
                         updateFile(response.id);
@@ -227,9 +216,12 @@
                         data: { 'id': photoId , 'caption':$('#photo-caption').val() ,'description': $('#photo-description').val() },
                         success: function() {
                             $.fancybox.close();
+                            $('#upload-success').remove();
+                            $('#recent-uploads').load('<?php echo Yii::app()->createUrl('site/recent'); ?>');
                         }
                     });
                 }
+
 			    $('#news_box').liteAccordion({
                         onTriggerSlide : function() {
                             this.find('figcaption').fadeOut();

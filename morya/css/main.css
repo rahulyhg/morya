@@ -479,3 +479,8 @@ border-bottom: 1px dotted #000000;
 .aarti_sidemenu {
     background-image: url(../images/aarti_sidemenu.png);
 }
+
+.photo_success {
+    color:#0090E6;
+    font-size:12px;
+}

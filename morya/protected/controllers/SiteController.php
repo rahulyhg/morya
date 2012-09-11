@@ -30,6 +30,16 @@ class SiteController extends AppController
 		);
 	}
 
+    public function actionRecent(){
+        $criteria=new CDbCriteria;
+        $criteria->order = 'created desc';
+        $criteria->limit = 9;
+        $elementsList=Photo::model()->findAll($criteria);
+        $this->renderPartial('_recentUploads',array(
+            'elementsList'=>$elementsList
+            ));
+    }
+
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -38,7 +48,7 @@ class SiteController extends AppController
 	{
         $criteria=new CDbCriteria;
         $criteria->order = 'created desc';
-        $criteria->limit = 20;
+        $criteria->limit = 9;
         $aartis = Vedic::model()->findAllByAttributes(array('type'=>VedicType::Aarti));
         $recipes = Recipe::model()->findAll();
         $temples = Temple::model()->findAll();
