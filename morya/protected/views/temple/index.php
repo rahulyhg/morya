@@ -9,8 +9,8 @@ $this->menu=array(
 );
 
 switch($templeType){
-case TempleType::Historic : $heading = "Historic Temples of Ganeshji";$addhead = "Add historic Temple";break;
-case TempleType::Popular : $heading = "Most Popular Temples of Ganeshji";$addhead = "Add Most popular Temple";break;
+case TempleType::Historic : $heading = "Historic Temples";$addhead = "Add historic Temple";break;
+case TempleType::Popular : $heading = "Most Popular Temples";$addhead = "Add Most popular Temple";break;
 }
 ?>
 <h1><?php echo $heading;?></h1>

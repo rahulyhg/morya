@@ -21,10 +21,10 @@ $this->menu=array(
     ),
 	array(
         'label'=>'Atharva shirsha',
-        'url'=>array('vedic','vedicType'=>VedicType::Atharva),
+        'url'=>array('vedic/page','view'=>'atharva'),
         'itemOptions'=>array('class'=>'atharvashirsha_menu'),
     ),
-	array('label'=>'Uttar Pooja', 'url'=>array('vedic','vedicType'=>VedicType::Pooja),
+	array('label'=>'Uttar Pooja', 'url'=>array('vedic/page','view'=>'pooja'),
         'itemOptions'=>array('class'=>'uttarpooja_menu')
         )
 );
@@ -35,7 +35,8 @@ $this->menu=array(
 
         <?php foreach($elementsList as $vedic){ ?>
         <div class="cont-disp">
-            <div class="title_head"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</div>
+            <div class="title_head"><span><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('ved_title'=>$vedic->slug))?>"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</a></span>
+                <span style="float: right">BY :<a href="#"> </a></span></div>
 
             <div style="text-align: center;"><?php echo $vedic->text;?></div>
             <div class="clear"></div>

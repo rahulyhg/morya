@@ -102,14 +102,14 @@
                 <?php
                  $i = 0;
                  foreach($aartis as $aarti){
-                     if($i > 3) break;
+                     if($i > 2) break;
                  ?>
                   <?php echo CHtml::link($aarti->title,array('vedic/vedicview','ved_title'=>$aarti->slug));?><br/>
                 <?php
                  $i++;
                 }?>
             <div class="clear"></div>
-                <p  style="margin-bottom: 0; margin-top: 30px;"><a href=""><b>Assure Success with god Ganeshji Mantras.</b></a></p>
+                <p  style="margin-bottom: 0; margin-top: 5px;"><a href=""><b>Assure Success with god Ganeshji Mantras.</b></a></p>
             </p>
         </div>
         <div class="grid_4">
@@ -123,14 +123,14 @@
             <?php
             $i = 0;
             foreach($recipes as $recipe){
-                if($i > 3) break;
+                if($i > 2) break;
                 ?>
                 <?php echo CHtml::link($recipe->title,array('recipe/recipeview','rec_title'=>$recipe->slug));?><br/>
                 <?php
                 $i++;
             }?>
             <div class="clear"></div>
-            <p  style="margin-bottom: 0; margin-top: 30px;"><a href=""><b>Assure Success with god Ganeshji Mantras.</b></a></p>
+            <p  style="margin-bottom: 0; margin-top: 5px;"><a href=""><b>Assure Success with god Ganeshji Mantras.</b></a></p>
             </p>
         </div>
         <div class="grid_4">
@@ -177,8 +177,9 @@
                         <?php
                         $i = 0;
                         foreach($temples as $temple){
-                            if($i > 3) break;
+                            if($i > 0) break;
                             ?>
+                            <div class="title_head"><a href="#"><?php echo ucfirst($temple->name); ?></a></div>
                             <?php echo $temple->description;?>
                             <?php
                             $i++;
