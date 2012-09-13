@@ -76,8 +76,10 @@ class VedicController extends AppController
 		if($_REQUEST['ved_title'] != '')
 		{
 			$model=Vedic::model()->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
+            $elements = Vedic::model()->findAll();
 			$this->render('vedicview',array(
 			'model'=>$model,
+             'elements'=>$elements,
 			));
 		
 		}

@@ -43,7 +43,7 @@ $this->menu=array(
         <?php foreach($elementsList as $vedic){ ?>
         <div class="cont-disp">
             <div class="title_head"><span><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('ved_title'=>$vedic->slug))?>"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</a></span>
-                <span style="float: right">BY :<a href="#"> </a></span></div>
+                <span style="float: right">BY : <?php ?><a href="#"> </a></span></div>
 
             <div style="text-align: center;"><?php echo $vedic->text;?></div>
             <div class="clear"></div>
