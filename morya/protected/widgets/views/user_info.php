@@ -36,7 +36,7 @@ if(Yii::app()->user->isGuest)
 <span class="us_logged user_space">
     <h2><?php $splitIndex = strpos($user->name,' '); echo($splitIndex > 0 ? substr($user->name,0,$splitIndex) : $user->name) ; ?></h2>
     <div class="us_details">
-        <?php echo CHtml::link('My Ganesha',Yii::app()->createUrl('photo/userPhoto')); ?>
+        <?php echo CHtml::link('My Ganesha',Yii::app()->createUrl('photo/myganesha')); ?>
         <?php echo CHtml::link('Edit Profile',Yii::app()->createUrl('user/edit')); ?>
         <?php echo CHtml::link('logout',Yii::app()->createUrl('user/logout')); ?>
     </div>

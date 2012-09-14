@@ -153,16 +153,17 @@ class TempleController extends AppController
         $criteria->limit = 10;
         //$criteria->compare('type',$templeType);
 
-        $pages=new CPagination(Vedic::model()->count($criteria));
+        $pages=new CPagination(Temple::model()->count($criteria));
         $pages->applyLimit($criteria);
         $pages->pageSize=10;
 
         $elementsList=Temple::model()->findAll($criteria);
-
+        $photo = new Photo();
 		$this->render('index',array(
 			'elementsList'=>$elementsList,
             'pages'=>$pages,
 			'templeType'=>$templeType,
+            'photo'=>$photo,
 		));
 	}
 

@@ -177,7 +177,12 @@
                         <?php
                         $i = 0;
                         foreach($temples as $temple){
+
                             if($i > 0) break;
+                            $filename1 = Photo::model()->findByPk($temple->secondary_pic1);
+                            $filename2 = Photo::model()->findByPk($temple->secondary_pic2);
+                            $filename3 = Photo::model()->findByPk($temple->secondary_pic3);
+                            $filename4 = Photo::model()->findByPk($temple->secondary_pic4);
                             ?>
                             <div class="title_head"><a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>"><?php echo ucfirst($temple->name); ?></a></div>
                             <?php echo $temple->description;?>
@@ -187,10 +192,18 @@
                     </p>
                  </div>
                 <div style="float: right;width: 220px;">
-                   <img src="images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" />
-                    <img src="images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" />
-                    <img src="images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" />
-                    <img src="images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" />
+                    <?php
+                    if(count($filename1)>0){
+                        ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename1->file_name; ?>" height="100px" width="100px" style="margin: 5px" border="1px #000000"/>
+                        <?php }
+                    if(count($filename2)>0){?>
+                        <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename2->file_name; ?>" height="100px" width="100px" style="margin: 5px" border="1px #000000"/>
+                        <?php } ?>
+                    <?php if(count($filename3)>0){?>
+                    <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename3->file_name; ?>" height="200px" width="200px" style="margin: 5px" border="1px #000000"/>
+                    <?php }
+                    if(count($filename4)>0){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename4->file_name; ?>" height="200px" width="200px" style="margin: 5px" border="1px #000000"/>
+                        <?php } ?>
                 </div>
 
         </div>
