@@ -179,7 +179,7 @@
                         foreach($temples as $temple){
                             if($i > 0) break;
                             ?>
-                            <div class="title_head"><a href="#"><?php echo ucfirst($temple->name); ?></a></div>
+                            <div class="title_head"><a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>"><?php echo ucfirst($temple->name); ?></a></div>
                             <?php echo $temple->description;?>
                             <?php
                             $i++;
