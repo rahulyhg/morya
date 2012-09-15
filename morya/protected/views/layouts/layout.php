@@ -139,7 +139,7 @@
           $('#fblogina').click(function() {
                   FB.login(function (response) {
                       if (response.authResponse) {
-                          window.location = "<?php echo $this->createAbsoluteUrl('user/login',array('authType'=>AuthType::Facebook)) ?>?code=" +response.authResponse.accessToken;
+                          window.location = "<?php echo $this->createAbsoluteUrl('user/fbLogin') ?>";
                       } else {
                           // user clicked Cancel
                       }

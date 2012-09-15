@@ -171,7 +171,7 @@
             </p>
         </div>
         <div class="grid_8">
-            <div class="tab">&nbsp;Navasache Ganpati (Wish fulfilling Ganesh mandals) </div>
+            <div class="tab">&nbsp;Navasache Ganpati (Wish fulfilling Ganesh Temples) </div>
                 <div style="float: left;width:400px">
                     <p>
                         <?php
@@ -179,30 +179,31 @@
                         foreach($temples as $temple){
 
                             if($i > 0) break;
-                            $filename1 = Photo::model()->findByPk($temple->secondary_pic1);
-                            $filename2 = Photo::model()->findByPk($temple->secondary_pic2);
-                            $filename3 = Photo::model()->findByPk($temple->secondary_pic3);
-                            $filename4 = Photo::model()->findByPk($temple->secondary_pic4);
+                            $filename1 = $temple->pic1;
+                            $filename2 = $temple->pic2;
+                            $filename3 = $temple->pic3;
+                            $filename4 = $temple->pic4;
                             ?>
                             <div class="title_head"><a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>"><?php echo ucfirst($temple->name); ?></a></div>
                             <?php echo $temple->description;?>
                             <?php
                             $i++;
-                        }?>
+                        }
+                        ?>
                     </p>
                  </div>
                 <div style="float: right;width: 220px;">
                     <?php
-                    if(count($filename1)>0){
+                    if(isset($filename1) && count($filename1)>0){
                         ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename1->file_name; ?>" height="100px" width="100px" style="margin: 5px" border="1px #000000"/>
                         <?php }
-                    if(count($filename2)>0){?>
+                    if(isset($filename2) && count($filename2)>0){?>
                         <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename2->file_name; ?>" height="100px" width="100px" style="margin: 5px" border="1px #000000"/>
                         <?php } ?>
-                    <?php if(count($filename3)>0){?>
+                    <?php if(isset($filename3) && count($filename3)>0){?>
                     <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename3->file_name; ?>" height="200px" width="200px" style="margin: 5px" border="1px #000000"/>
                     <?php }
-                    if(count($filename4)>0){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename4->file_name; ?>" height="200px" width="200px" style="margin: 5px" border="1px #000000"/>
+                    if(isset($filename4) && count($filename4)>0){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename4->file_name; ?>" height="200px" width="200px" style="margin: 5px" border="1px #000000"/>
                         <?php } ?>
                 </div>
 
