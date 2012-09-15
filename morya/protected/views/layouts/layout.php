@@ -49,11 +49,6 @@
   <div class="grid_3" style="position:relative;">
       <a href="<?php echo Yii::app()->createUrl('site/index'); ?>"><h1 class="header_text"></h1></a>
    <h4 class="subheader_text">Let World Know Our Ganesh...</h4>
-   <h5 class="social">
-	<a href="https://twitter.com/GlobalGanesh" target="_blank"><span class="twitter"></span></a>
-	<a href="http://www.facebook.com/GlobalGanesh" target="_blank"><span class="facebook"></span>
-	<a href="/rss.xml"><span class="rss"></span></a>
-   </h5>
   </div>
   <nav class="grid_7 push_1">
 	<a class="grid_1" href="<?php echo $this->createUrl("/vedic/vedic");?>">
@@ -90,14 +85,29 @@
 
   <?php $this->widget('UserInfo'); ?>
 
-  <div role="main container_12">
+  <div class="main container_12">
 	<?php echo $content; ?>
   </div>
 	</section>
   </div>
-  <footer>
+  <div class="footer">
+  <div class="grid_10">
+     <p> © Copyright 2012 A site decdicated to our Bappa developed by Mayuresh & Swapnil.</p>
 
-  </footer>
+      <blockquote><p>
+          <em>
+              कोटी कोटी रुपे तुझी, कोटी सूर्य चंद्र तारे कुठे कुठे शोधु तुला, तुझे अनंत देव्हारे...
+          </em>
+      </p>
+      </blockquote>
+  </div>
+      <div class="social grid_2">
+          <p><em>Let's Meet On...</em></p>
+          <a href="https://twitter.com/GlobalGanesh" target="_blank"><span class="twitter"></span></a>
+          <a href="http://www.facebook.com/GlobalGanesh" target="_blank"><span class="facebook"></span>
+          <a href="/rss.xml"><span class="rss"></span></a>
+      </div>
+  </div>
 
 
   <!-- JavaScript at the bottom for fast page loading -->

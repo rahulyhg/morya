@@ -22,7 +22,7 @@ class RegistrationForm extends CFormModel
 	{
 		return array(
 			array('name,email, password', 'required'),
-			array('email','filter','filter'=>'strtolower'),
+			array('name,email','filter','filter'=>'strtolower'),
 			array('email','unique','caseSensitive'=>'false','className'=>'User'),
 			array('email','email'),
 			array('password, ganpati_pic, city,add_line_1, add_line_2','default', 'setOnEmpty'=>true, 'value'=>null),
