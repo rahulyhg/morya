@@ -10,6 +10,7 @@
 <script type="text/javascript">
     var uploaded = 0;
 function templeUploadComplete(id, fileName, responseJSON){
+    echo responseJSON;
     if(responseJSON.id){
         switch(uploaded){
             case 0 : $("#photo_id").append('<input type="hidden" name="Temple[primary_pic]" value="' + responseJSON.id + '" />');
@@ -88,7 +89,7 @@ array(
 ));
 ?>
 	
-	<div class="row ">
+	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'buttons')); ?>
 	</div>
 

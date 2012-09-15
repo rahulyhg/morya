@@ -31,7 +31,7 @@ class TempleController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','templeview'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -63,9 +63,11 @@ class TempleController extends AppController
 	{
 		if($_REQUEST['temple_name'] != '')
 		{
-			$model=vedic::model()->findByAttributes(array('slug'=>$_REQUEST['temple_name']));
+			$model=Temple::model()->findByAttributes(array('slug'=>$_REQUEST['temple_name']));
+            $elements=Temple::model()->findAll();
 			$this->render('templeview',array(
 			'model'=>$model,
+            'elements'=>$elements,
 			));
 		
 		}
@@ -93,6 +95,7 @@ class TempleController extends AppController
 
 		$this->render('create',array(
 			'model'=>$model,
+
 		));
 	}
 
@@ -145,10 +148,22 @@ class TempleController extends AppController
 	 */
 	public function actionIndex($templeType = TempleType::Historic)
 	{
-		$dataProvider=new CActiveDataProvider('Temple');
+
+        $criteria=new CDbCriteria;
+        $criteria->limit = 10;
+        //$criteria->compare('type',$templeType);
+
+        $pages=new CPagination(Temple::model()->count($criteria));
+        $pages->applyLimit($criteria);
+        $pages->pageSize=10;
+
+        $elementsList=Temple::model()->findAll($criteria);
+        $photo = new Photo();
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'elementsList'=>$elementsList,
+            'pages'=>$pages,
 			'templeType'=>$templeType,
+            'photo'=>$photo,
 		));
 	}
 

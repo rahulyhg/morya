@@ -4,6 +4,7 @@ class VedicController extends AppController
 {
 		function init(){
 		Yii::import('application.models.vedic.*');
+            Yii::import('application.models.user.*');
 	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -76,8 +77,10 @@ class VedicController extends AppController
 		if($_REQUEST['ved_title'] != '')
 		{
 			$model=Vedic::model()->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
+            $elements = Vedic::model()->findAll();
 			$this->render('vedicview',array(
 			'model'=>$model,
+             'elements'=>$elements,
 			));
 		
 		}
