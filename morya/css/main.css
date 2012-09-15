@@ -89,9 +89,6 @@ width: 76px;
 height: 70px;
 left:-14px;
 }
-.aarti_menu_logo:hover {
-background-image:url(../images/aarti_menu_hover.png);
-}
 .photo_menu_logo {
 position:absolute;
 background-image:url(../images/photo_menu_hover.png);
@@ -100,17 +97,7 @@ width: 76px;
 height: 70px;
 left:78px;
 }
-.photo_menu_logo:hover{
-background-image:url(../images/photo_menu_hover.png);
-}
 .temple_menu_logo {
-position:absolute;
-background-image:url(../images/temple_menu_hover.png);
-background-repeat:no-repeat;
-width: 76px;
-height: 70px;
-}
-.temple_menu_logo:hover {
 position:absolute;
 background-image:url(../images/temple_menu_hover.png);
 background-repeat:no-repeat;
@@ -125,9 +112,6 @@ width: 86px;
 height: 51px;
 top:12px;
 }
-.competition_menu_logo:hover {
-background-image:url(../images/competitions2_menu.png);
-}
 .recipies_menu_logo {
 position:absolute;
 background-image:url(../images/recipie_menu_hover2.png);
@@ -137,10 +121,6 @@ height: 51px;
 top:12px;
 left:340px;
 }
-.recipies_menu_logo:hover{
-background-image:url(../images/recipie_menu_hover2.png);
-}
-
 .my_ganesha_menu_logo {
 position:absolute;
 background-image:url(../images/my_ganesha_menu_hover2.png);
@@ -149,9 +129,6 @@ width: 76px;
 height: 70px;
 left:425px;
 top:3px;
-}
-.my_ganesha_menu_logo:hover {
-background-image:url(../images/my_ganesha_menu_hover2.png);
 }
 
 nav a {

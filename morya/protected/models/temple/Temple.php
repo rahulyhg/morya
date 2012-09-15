@@ -67,12 +67,12 @@ class Temple extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'primary_pic' => array(self::BELONGS_TO, 'Photo', 'primary_pic'),
+			'main_pic' => array(self::BELONGS_TO, 'Photo', 'primary_pic'),
             //Secondary Pics
-            'secondary_pic1' => array(self::BELONGS_TO, 'Photo', 'secondary_pic1'),
-            'secondary_pic2' => array(self::BELONGS_TO, 'Photo', 'secondary_pic2'),
-            'secondary_pic3' => array(self::BELONGS_TO, 'Photo', 'secondary_pic3'),
-            'secondary_pic4' => array(self::BELONGS_TO, 'Photo', 'secondary_pic4'),
+            'pic1' => array(self::BELONGS_TO, 'Photo', 'secondary_pic1'),
+            'pic2' => array(self::BELONGS_TO, 'Photo', 'secondary_pic2'),
+            'pic3' => array(self::BELONGS_TO, 'Photo', 'secondary_pic3'),
+            'pic4' => array(self::BELONGS_TO, 'Photo', 'secondary_pic4'),
 
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
