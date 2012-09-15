@@ -33,7 +33,7 @@ class PhotoType {
 						
 	public static $dimension = array(
 						self::Original => array('width'=>1600,'height'=>900),
-						self::Screen => array('width'=>600,'height'=>450),
-						self::Thumb => array('width'=>150,'height'=>116),
+						self::Screen => array('width'=>400,'height'=>450),
+						self::Thumb => array('width'=>100,'height'=>116),
 						);
 }

@@ -560,67 +560,12 @@ blockquote {
 }
 blockquote p {
     margin: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.facebook_connect {
+    background-image: url(../images/facebook_connect.png);
+    display: block;
+    width: 203px;
+    height: 28px;
+    background-repeat: no-repeat;
 }
