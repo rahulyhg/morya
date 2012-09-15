@@ -39,14 +39,11 @@ $this->menu=array(
     <div class="cont-disp">
         <div class="title_head"><a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>"><?php echo $temple->name;?></a></div>
 
-        <div>
-            <span>
-                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename->file_name; ?>" height="200px" width="200px" style="padding: 5px" border="1px #000000"/>
-            </span>
-            <span>
-                 <?php echo $temple->description;?>
-            </span>
-        </div>
+        <p>
+             <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename->file_name; ?>" height="200px" width="200px" style="padding: 5px;float: left;"/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $temple->description;?>
+
+        </p>
         <div><b>Established In : </b>&nbsp;<?php echo $temple->established;?></div>
         <div><b>How to reach : </b>&nbsp;<?php echo $temple->how_to_go;?></div>
         <div><b>History : </b>&nbsp;<?php echo $temple->history;?></div>

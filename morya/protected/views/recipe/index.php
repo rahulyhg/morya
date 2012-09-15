@@ -15,7 +15,8 @@ $this->breadcrumbs=array(
         <div><strong>Ingradients :</strong> <?php echo $recipe->ingredients; ?></div>
         <div><strong> Method :</strong></div>
         <div><p><?php echo $recipe->method; ?></p></div>
-
+        <div style="float: right;text-decoration: none;">Posted By : <a href="#"><?php echo "ME";?></a></div>
+        <div class="clear"></div>
 
         <?php /*$this->widget('zii.widgets.CListView', array(
         'dataProvider'=>$dataProvider,

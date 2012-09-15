@@ -45,12 +45,16 @@ $this->menu=array(
 		'title',
 		'text',
 	),
-)); */?>
+)); */
+
+$uname = User::model()->findByPk($model->user_id);
+?>
 <div class="mid-region">
     <div class="tab">&nbsp;<?php echo $model->name_of_god;?>(<?php echo $model->title;?>)</div>
 
     <div class="cont-disp">
-        <div style="text-align: center;"><?php echo $model->text; ?></div>
+        <div style="text-align: center;"><?php echo $model->text; ?></div>\
+        <div style="float: right;text-decoration: none;">Posted By : <a href="#"><?php echo $uname->name;?></a></div>
     </div>
 
 </div>
