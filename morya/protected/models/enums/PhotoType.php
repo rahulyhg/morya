@@ -12,28 +12,28 @@ define('RELATIVE_THUMB_DIR',ROOT_UPLOAD_DIR.'/thumb/');
 define('RELATIVE_USER_PROFILE_PIC_DIR',ROOT_UPLOAD_DIR.'/user/');
 
 class PhotoType {
-	const Original = 0;
-	const Screen = 1;
-	const Thumb = 2 ;
-	const Profile = 3;
-	
-	public static $folderName = array(
-						self::Original => ORIGINAL_DIR,
-						self::Screen => SCREEN_DIR,
-						self::Thumb => THUMB_DIR,
-						self::Profile => USER_PROFILE_PIC_DIR,
-						);
-						
-	public static $relativeFolderName = array(
-						self::Original => RELATIVE_ORIGINAL_DIR,
-						self::Screen => RELATIVE_SCREEN_DIR,
-						self::Thumb => RELATIVE_THUMB_DIR,
-						self::Profile => RELATIVE_USER_PROFILE_PIC_DIR,
-						);
-						
-	public static $dimension = array(
-						self::Original => array('width'=>1600,'height'=>900),
-						self::Screen => array('width'=>400,'height'=>450),
-						self::Thumb => array('width'=>100,'height'=>116),
-						);
+    const Original = 0;
+    const Screen = 1;
+    const Thumb = 2 ;
+    const Profile = 3;
+
+    public static $folderName = array(
+        self::Original => ORIGINAL_DIR,
+        self::Screen => SCREEN_DIR,
+        self::Thumb => THUMB_DIR,
+        self::Profile => USER_PROFILE_PIC_DIR,
+    );
+
+    public static $relativeFolderName = array(
+        self::Original => RELATIVE_ORIGINAL_DIR,
+        self::Screen => RELATIVE_SCREEN_DIR,
+        self::Thumb => RELATIVE_THUMB_DIR,
+        self::Profile => RELATIVE_USER_PROFILE_PIC_DIR,
+    );
+
+    public static $dimension = array(
+        self::Original => array('width'=>1600,'height'=>900),
+        self::Screen => array('width'=>600,'height'=>450),
+        self::Thumb => array('width'=>150,'height'=>116),
+    );
 }

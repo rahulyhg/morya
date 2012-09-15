@@ -5,7 +5,7 @@
                     <h2><span>Modak Nevaidyam</span></h2>
                     <div>
                         <figure>
-                            <img src="news-cover/1.jpg" alt="image" />
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/news-cover/1.jpg" alt="image" />
                             <figcaption>Ganesh Likes Modak Learn how to prepare here...</figcaption>
                         </figure>
                     </div>
@@ -14,7 +14,7 @@
                     <h2><span>Drawing Competition</span></h2>
                     <div>
                         <figure>
-                            <img src="news-cover/2.jpg" alt="image" />
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/news-cover/2.jpg" alt="image" />
                             <figcaption>2D Pencil Sketch Of Shri Ganesha</figcaption>
                         </figure>
                     </div>
@@ -23,7 +23,7 @@
                     <h2><span>30KG Gold</span></h2>
                     <div>
                         <figure>
-                            <img src="news-cover/3.jpg" alt="image" />
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/news-cover/3.jpg" alt="image" />
                             <figcaption>This is not the only thing Devotees are donating everything.</figcaption>
                         </figure>
                     </div>
@@ -32,7 +32,7 @@
                     <h2><span>Submit Your Ganesh</span></h2>
                     <div>
                         <figure>
-                            <img src="news-cover/4.jpg" width="768" alt="image" />
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/news-cover/4.jpg" width="768" alt="image" />
                             <figcaption>Upload Pics to share experience</figcaption>
                         </figure>
                     </div>
@@ -41,7 +41,7 @@
                     <h2><span>Nataraj </span></h2>
                     <div>
                         <figure>
-                            <img src="news-cover/5.jpg" alt="image" />
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/news-cover/5.jpg" alt="image" />
                             <figcaption>Ganesh Shows Tandav like Big Daddy</figcaption>
                         </figure>
                     </div>
@@ -94,7 +94,7 @@
 	<div id="mid_pane_wrapper">
         <div class="grid_4">
             <div class="tab">&nbsp;Aarti Sangrah</div>
-             <p><img src="images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" />
+             <p><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" />
                  Get all the aartis of Lord Ganesha.
                  Do your own pooja according as per tradition.
         <div class="clear"></div>
@@ -114,7 +114,7 @@
         </div>
         <div class="grid_4">
             <div class="tab">&nbsp;Recipes</div>
-            <p><img src="images/modak.jpg" style="margin:5px;float:left;width: 100px;height:100px;" />
+            <p><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/modak.jpg" style="margin:5px;float:left;width: 100px;height:100px;" />
                 Get all the recipes of ganesh festival.
                 Do try this all recipes and give it to you visitors.
             Also find the prasad and naivaidyas for ganpati for all days.
@@ -133,43 +133,20 @@
             <p  style="margin-bottom: 0; margin-top: 5px;"><a href=""><b>Assure Success with god Ganeshji Mantras.</b></a></p>
             </p>
         </div>
-        <div class="grid_4">
-            <div class="tab">&nbsp;compititions</div>
-            <p>
-                जय गणेश, जय गणेश, जय गणेश, देवा..<br/>
-                माता जाकी पारवती, पिता महादेवा ..<br/>
 
-                <img src="images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" /><br/>
-                एकदन्त, दयावन्त, चारभुजाधारी,<br/>
-                माथे पर तिलक सोहे, मूसे की सवारी .<br/>
-                पान चढ़े, फूल चढ़े और चढ़े मेवा,<br/>
-                लड्डुअन का भोग लगे, सन्त करें सेवा ..<br/><span class="clear"></span>
 
-                अंधे को आँख देत, कोढ़िन को काया,<br/>
-                बाँझन को पुत्र देत, निर्धन को माया .<br/>
-                'सूर' श्याम शरण आए, सफल कीजे सेवा, <br/>
-                जय गणेश जय गणेश जय गणेश देवा .. <br/>
-            </p>
+        <div class="grid_4" style="height:300px;">
+            <div class="tab">&nbsp;Invite Your Friends</div>
+            <p>Invite all your friends by sending attrative greetings...</p>
         </div>
 
         <div class="grid_4">
-            <div class="tab">&nbsp;Invite Your Buddies</div>
-            <p>
-                जय गणेश, जय गणेश, जय गणेश, देवा..<br/>
-                माता जाकी पारवती, पिता महादेवा ..<br/>
-
-                <img src="images/siddhivinayak.png" style="margin:5px;float:left;width: 100px;height:100px;" /><br/>
-                एकदन्त, दयावन्त, चारभुजाधारी,<br/>
-                माथे पर तिलक सोहे, मूसे की सवारी .<br/>
-                पान चढ़े, फूल चढ़े और चढ़े मेवा,<br/>
-                लड्डुअन का भोग लगे, सन्त करें सेवा ..<br/><span class="clear"></span>
-
-                अंधे को आँख देत, कोढ़िन को काया,<br/>
-                बाँझन को पुत्र देत, निर्धन को माया .<br/>
-                'सूर' श्याम शरण आए, सफल कीजे सेवा, <br/>
-                जय गणेश जय गणेश जय गणेश देवा .. <br/>
-            </p>
+            <div class="tab">&nbsp;competitions</div>
+            <div class="fb-live-stream" data-event-app-id="493477977331627" data-width="290" data-height="350" data-always-post-to-friends="false"></div>
+            <div class="fb-facepile" data-href="http://developers.facebook.com" data-max-rows="2" data-width="290"></div>
         </div>
+
+
         <div class="grid_8">
             <div class="tab">&nbsp;Navasache Ganpati (Wish fulfilling Ganesh Temples) </div>
                 <div style="float: left;width:400px">

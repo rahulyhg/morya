@@ -20,19 +20,19 @@
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-  <link rel="stylesheet" href="css/960/960_12_col.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/960/reset.css">
-  <link rel="stylesheet" href="css/960/text.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/liteaccordion.css"/>
-  <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
+  <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/960/960_12_col.css">
+  <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css">
+  <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/960/reset.css">
+  <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/960/text.css">
+  <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
+  <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/liteaccordion.css"/>
+  <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/modernizr-2.5.3.min.js"></script>
   <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 <body class="container_12">
@@ -115,12 +115,12 @@
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script-->
-<script src="js/libs/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/libs/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/libs/jquery.mousewheel.js"></script>
-<script type="text/javascript" src="js/libs/jquery.gridnav.js"></script>
-<script type="text/javascript" src="js/libs/liteaccordion.jquery.js"></script>
-<script type="text/javascript" src="js/libs/jquery.fancybox.pack.js?v=2.1.0"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.gridnav.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/liteaccordion.jquery.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.fancybox.pack.js?v=2.1.0"></script>
   <script type="text/javascript">
       var app = {
           user : {
