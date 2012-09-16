@@ -334,21 +334,24 @@ input[type="text"], input[type="password"],textarea {
     width: 100%;
 }
 .single_comment{
+    padding: 5px;
     margin-bottom:10px;
     width:260px;
+    background-color: #f0f8ff;
 }
-.single_comment h3{
-    display: inline;
-    font-size:14px;
+.single_comment abbr {
+    font-size:11px;
 }
-.single_comment .comment_date{
-    color:#444444;
-    font-size:12px;
-    display: inline;
-}
-.single_comment p {
+.single_comment h4 {
     margin:0px;
-    width: 250px;
+    padding: 0px;
+    font-size:12px;
+    font-family: Verdana;
+    color:#6495ed;
+}
+.single_comment p{
+    font-family: cursive ;
+    margin-bottom: 5px;
 }
 
 /********************* Sidebars ************************/
