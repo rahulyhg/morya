@@ -6,7 +6,9 @@
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
+    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+    <meta charset="utf-8">
 
   <!-- Use the .htaccess and remove these lines to avoid edge case issues.
        More info: h5bp.com/i/378 -->
@@ -28,12 +30,13 @@
   <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/liteaccordion.css"/>
   <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/modernizr-2.5.3.min.js"></script>
-  <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    <script type="text/javascript">
+        var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
 </head>
 <body class="container_12">
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -136,7 +139,7 @@
                   return false;
               }
           });
-          $('#fblogina').click(function() {
+          $('.fblogina').click(function() {
                   FB.login(function (response) {
                       if (response.authResponse) {
                           window.location = "<?php echo $this->createAbsoluteUrl('user/fbLogin') ?>";
@@ -176,13 +179,5 @@
       });
   </script>
 <?php $this->renderClip('js-page-end'); ?>
-  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
-  <!--script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script-->
 </body>
 </html>

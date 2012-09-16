@@ -75,7 +75,7 @@ class Photo extends AppActiveRecord
 			'comments' => array(self::HAS_MANY, 'Comment', 'photo_id'),
 			'photoHits' => array(self::HAS_MANY, 'PhotoHits', 'photo_id'),
 			'photoTags' => array(self::HAS_MANY, 'PhotoTag', 'photo_id'),
-			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 			'templePhotos' => array(self::HAS_MANY, 'TemplePhoto', 'photo_id'),
 		);
 	}

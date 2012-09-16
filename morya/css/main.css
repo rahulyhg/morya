@@ -569,3 +569,17 @@ blockquote p {
     height: 28px;
     background-repeat: no-repeat;
 }
+
+.caption {
+    border-left:2px solid #a0a0a0;
+    padding-left: 5px;
+    margin-top:10px;
+    font-size: 16px;
+    color: #A0A0A0;
+    font-family: Verdana;
+}
+
+.photo_uploader_name
+{
+    color:#00a0F0;
+}

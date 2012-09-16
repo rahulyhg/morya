@@ -151,6 +151,17 @@ class User extends AppActiveRecord
 	public static function getUserByOpenIdentifier($openId){
 		return self::model()->find('open_id=:openId',array(':openId'=>$openId));
 	}
+
+    public static function randomPassword() {
+        $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+        $pass = array(); //remember to declare $pass as an array
+        for ($i = 0; $i < 8; $i++) {
+            $n = rand(0, strlen($alphabet)-1); //use strlen instead of count
+            $pass[$i] = $alphabet[$n];
+        }
+        return implode($pass); //turn the array into a string
+    }
+
 	protected function beforeSave()
 	{
 		if(isset($this->password) && !empty($this->password)){

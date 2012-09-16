@@ -142,8 +142,8 @@
 
         <div class="grid_4">
             <div class="tab">&nbsp;competitions</div>
-            <div class="fb-live-stream" data-event-app-id="493477977331627" data-width="290" data-height="350" data-always-post-to-friends="false"></div>
-            <div class="fb-facepile" data-href="http://developers.facebook.com" data-max-rows="2" data-width="290"></div>
+            <div class="fb-live-stream" data-event-app-id="493477977331627" data-width="290" data-height="300" data-always-post-to-friends="false"></div>
+            <div class="fb-facepile" data-href="http://www.ganeshpics.com" data-max-rows="2" data-width="290"></div>
         </div>
 
 
@@ -238,13 +238,5 @@
                 }).find('figcaption:first').show();
 		</script>
 <?php $this->endClip(); ?>
-  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
-  <!--script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script-->
 </body>
 </html>

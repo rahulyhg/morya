@@ -44,7 +44,7 @@ $this->menu=array(
     $uname = User::model()->findByPk($vedic->user_id);
     ?>
         <div class="cont-disp">
-            <div class="title_head"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('ved_title'=>$vedic->slug))?>"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</a>
+            <div class="title_head"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</a>
             </div>
 
             <div style="text-align: center;"><?php echo $vedic->text;?></div>

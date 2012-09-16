@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<a id="fblogina" href="#"><span class="facebook_connect"></span></a>
+<a class="fblogina" href="#"><span class="facebook_connect"></span></a>
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',

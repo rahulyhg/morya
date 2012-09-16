@@ -5,6 +5,7 @@ class CommentController extends AppController
 	function init(){
 		Yii::import('application.models.comment.*');
         Yii::import('application.models.photo.*');
+        Yii::import('application.models.user.*');
 	}
 	public function filters()
 	{
@@ -17,11 +18,11 @@ class CommentController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','create'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','like','unlike'),
+				'actions'=>array('like','unlike'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -57,6 +58,19 @@ class CommentController extends AppController
 		$comment=new Comment;
 		if(isset($_POST['Comment']))
 		{
+            if(Yii::app()->user->isGuest && isset($_POST['User']))
+            {
+                    $user = new User ;
+                    $user->attributes = $_POST['User'] ;
+                    $plain_password = User::randomPassword();
+                    $user->password = $plain_password;
+                    if($user->save()){
+                        //log-in the user
+                        $identity=new UserIdentity($user->email,$plain_password);
+                        $identity->authenticate();
+                        Yii::app()->user->login($identity);
+                    }
+            }
             $comment->attributes=$_POST['Comment'];
             $comment->photo_id = $photo_id ;
             print_r($comment,$photo_id);
