@@ -8,7 +8,7 @@
 
     <script type="text/javascript">
         function recipeUploadComplete(id, fileName, responseJSON){
-            echo responseJSON;
+            //echo responseJSON;
             if(responseJSON.id){
               $("#photo_id").append('<input type="hidden" name="Recipe[primary_pic]" value="' + responseJSON.id + '" />');
             }

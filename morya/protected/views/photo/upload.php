@@ -16,7 +16,7 @@ alert(0);
 });
 });
 </script>
-<h1>Upload Photo</h1>
+    <h1>Upload Photo</h1>
 
 <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
 array(

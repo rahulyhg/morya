@@ -13,8 +13,7 @@ case TempleType::Historic : $heading = "Historic Temples";$addhead = "Add histor
 case TempleType::Popular : $heading = "Most Popular Temples";$addhead = "Add Most popular Temple";break;
 }
 ?>
-<h1><?php echo $heading;?></h1>
-<p><?php echo CHtml::link($addhead,array('create','templeType'=>$templeType));?></P>
+
 <?php /*$this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
