@@ -60,8 +60,8 @@ class Recipe extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                'primary_pic' => array(self::BELONGS_TO, 'Photo', 'primary_pic'),
-				'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+                'rec_pic' => array(self::BELONGS_TO, 'Photo', 'primary_pic'),
+				'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 

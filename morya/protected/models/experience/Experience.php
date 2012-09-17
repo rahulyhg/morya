@@ -12,7 +12,7 @@
  * @property string $created
  * @property string $modified
  */
-class Experience extends CActiveRecord
+class Experience extends AppActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -40,10 +40,9 @@ class Experience extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, slug, text, user_id, created, modified', 'required'),
+			array('title, text, user_id, created, modified', 'required'),
 			array('user_id', 'numerical', 'integerOnly'=>true),
-			array('title, slug', 'length', 'max'=>30),
-			array('text', 'length', 'max'=>255),
+			array('title, slug', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, slug, text, user_id, created, modified', 'safe', 'on'=>'search'),
@@ -58,6 +57,7 @@ class Experience extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -100,4 +100,16 @@ class Experience extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    //slug behaviors function
+    public function behaviors(){
+        return array(
+            'SlugBehavior' => array(
+                'class' => 'application.models.behaviors.SlugBehavior',
+                'slug_col' => 'slug',
+                'title_col' => 'title',
+                'overwrite' => false
+            )
+        );
+    }
 }

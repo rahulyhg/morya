@@ -7,9 +7,11 @@
  */
 ?>
 <div class="single_comment">
-    <h3><?php echo $comment->user->name; ?></h3>
-    <em class="comment_date">said on : <?php echo $comment->created; ?></em>
-    <p><?php echo $comment->comment; ?></p>
+    <h4><b><?php echo $comment->user->name; ?></b></h4>
+        <abbr style="color:#A0A0A0" class="timeago" title="<?php echo date("c", strtotime($comment->created)); ?>">
+            <?php echo $comment->created; ?>
+        </abbr>
+        <p><?php echo($comment->comment) ?></p>
     <span class="like-wrapper">
         <?php $this->renderPartial('//comment/like',array('comment'=>$comment)) ?>
     </span>

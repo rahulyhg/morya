@@ -157,11 +157,12 @@ class RecipeController extends AppController
 	   $pages=new CPagination(Recipe::model()->count($criteria));
 	   $pages->applyLimit($criteria);
 	   $pages->pageSize=10;
-
+        $photo = new Photo();
 	   $elementsList=Recipe::model()->findAll($criteria);//->with('comments')
 	   $this->render('index',array(
 		  'elementsList'=>$elementsList,
 		  'pages'=>$pages,
+           'photo'=>$photo,
 	   ));
 		
 		

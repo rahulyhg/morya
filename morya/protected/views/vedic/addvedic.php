@@ -29,6 +29,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Add Your Vedic here</h1>
+<div class="tab">Add Your <?php echo VedicType::$heading[$vedicType];?> here</div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model ,'vedicType'=>$vedicType)); ?>

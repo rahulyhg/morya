@@ -124,6 +124,7 @@
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.gridnav.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/liteaccordion.jquery.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.fancybox.pack.js?v=2.1.0"></script>
+  <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.timeago.js"></script>
   <script type="text/javascript">
       var app = {
           user : {
@@ -176,6 +177,7 @@
                   $(this).removeClass("active").stop(':animated').animate({height: "80px"}, {duration: 500, easing: "easeInOutQuad", complete: "callback"});
               }
           });
+          $("abbr.timeago").timeago();
       });
   </script>
 <?php $this->renderClip('js-page-end'); ?>

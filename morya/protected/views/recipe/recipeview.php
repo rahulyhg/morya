@@ -3,7 +3,11 @@ $this->breadcrumbs=array(
 	'Recipes'=>array('index'),
 	$model->title,
 );
-
+$this->menu=array(
+    array('label'=>'Recipes', 'url'=>array('index')),
+    array('label'=>'Add Your Recipes', 'url'=>array('create')),
+    array('label'=>'Ganesh Mahima / Experience', 'url'=>array('/experience/index')),
+);
 ?>
 
 <div class="mid-region">
@@ -14,6 +18,8 @@ $this->breadcrumbs=array(
         <div><strong>Cooking Time :</strong> <?php echo $model->cooking_time ?></div>
         <div><strong> Method :</strong></div>
         <div><p><?php echo $model->method; ?></p></div>
+        <div style="float: right;text-decoration: none;">Posted By : <a href="#"><?php echo $model->user->name;?></a></div>
+        <div class="clear"></div>
     </div>
 
 </div>

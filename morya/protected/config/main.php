@@ -49,7 +49,7 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-            'showScriptName'=>false,
+            //'showScriptName'=>true,
 		),
 
 		/*
@@ -65,7 +65,7 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
-			//'initSQLs'=>array("set time_zone='+00:00';"),
+			'initSQLs'=>array("set time_zone='+05:30';"),
 		),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
