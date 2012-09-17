@@ -22,10 +22,10 @@ $this->menu=array(
 )); */
 
 //$filename = Photo::model()->findByPk($model->primary_pic);
-$filename1 = Photo::model()->findByPk($model->secondary_pic1);
-$filename2 = Photo::model()->findByPk($model->secondary_pic2);
-$filename3 = Photo::model()->findByPk($model->secondary_pic3);
-$filename4 = Photo::model()->findByPk($model->secondary_pic4);
+//$filename1 = Photo::model()->findByPk($model->secondary_pic1);
+//$filename2 = Photo::model()->findByPk($model->secondary_pic2);
+//$filename3 = Photo::model()->findByPk($model->secondary_pic3);
+//$filename4 = Photo::model()->findByPk($model->secondary_pic4);
 
 ?>
 
@@ -44,16 +44,16 @@ $filename4 = Photo::model()->findByPk($model->secondary_pic4);
         <div><p><strong>History :</strong><?php echo $model->history;?></p></div>
         <div><b>Other Pics : </b></div>
         <div><?php
-            if(count($filename1)>0){
-                ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename1->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
+            if(isset($temple->pic1->file_name)){
+                ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic1->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
                 <?php }
-            if(count($filename2)>0){?>
-                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename2->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
+            if(isset($temple->pic2->file_name)){?>
+                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic2->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
                 <?php } ?>
-            <?php if(count($filename3)>0){?>
-                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename3->file_name; ?>" height="200px" width="200px" style="padding: 5px" border="1px #000000"/>
+            <?php if(isset($temple->pic3->file_name)){?>
+                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic3->file_name; ?>" height="200px" width="200px" style="padding: 5px" border="1px #000000"/>
                 <?php }
-            if(count($filename4)>0){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename4->file_name; ?>" height="200px" width="200px" style="padding: 5px" border="1px #000000"/>
+            if(isset($temple->pic4->file_name)){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic4->file_name; ?>" height="200px" width="200px" style="padding: 5px" border="1px #000000"/>
                 <?php } ?></div>
         <div class="clear"></div>
     </div>
