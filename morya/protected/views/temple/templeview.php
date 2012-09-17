@@ -21,7 +21,7 @@ $this->menu=array(
 	),
 )); */
 
-$filename = Photo::model()->findByPk($model->primary_pic);
+//$filename = Photo::model()->findByPk($model->primary_pic);
 $filename1 = Photo::model()->findByPk($model->secondary_pic1);
 $filename2 = Photo::model()->findByPk($model->secondary_pic2);
 $filename3 = Photo::model()->findByPk($model->secondary_pic3);
@@ -35,7 +35,7 @@ $filename4 = Photo::model()->findByPk($model->secondary_pic4);
 
     <div class="cont-disp">
         <p>
-            <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename->file_name; ?>" height="200px" width="200px" style="padding: 5px;float: left;"/>
+            <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$model->main_pic->file_name; ?>" height="200px" width="200px" style="padding: 5px;float: left;"/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $model->description;?>
 
         </p>
