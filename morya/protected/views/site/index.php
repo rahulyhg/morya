@@ -140,6 +140,7 @@
             <p>Invite all your friends by sending attrative greetings...
             You can invite all your friends to your Ganpati by sending
             them invitation from here</p>
+            <p><a href="<?php echo Yii::app()->createUrl('user/sendemail') ?>"><b>Invite Your Friends</b></a></p>
             <div class="tab">&nbsp;Ganesh Mahima</div>
             <p  style="margin-bottom: 0; margin-top: 5px;"><a href="<?php echo Yii::app()->createUrl('experience/create') ?>"><b>Share Your Experiences About Ganesh Here.</b></a></p>
             <p  style="margin-bottom: 0; margin-top: 5px;"><a href="<?php echo Yii::app()->createUrl('experience/index') ?>"><b>See Others Experiences About Ganesh Here.</b></a></p>

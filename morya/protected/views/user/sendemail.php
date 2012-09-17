@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 	'Invite User',
 );?>
 
-<h1>Invite User</h1>
+<div class="tab">Invite User</div>
 
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
