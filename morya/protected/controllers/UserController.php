@@ -22,7 +22,7 @@ class UserController extends AppController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('edit','logout'),
+				'actions'=>array('edit','logout','sendEmail'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -295,5 +295,63 @@ class UserController extends AppController
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	
+	/**
+	 * This is the action to send emails.
+	 */
+	public function actionSendEmail()
+	{
+		$model=new SendEmailForm;
+		// TODO: retrieve user email from user id
+		//$user=User::model()->findByPk($id);
+		if(isset($_POST['SendEmailForm']))
+		{
+			$model->attributes=$_POST['SendEmailForm'];
+			if($model->validate())
+			{
+				$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
+				$mail->IsSMTP();
+				$mail->IsHTML(true);
+				$mail->SMTPAuth = true;
+				$mail->SMTPSecure = "ssl";
+				$mail->Host = "smtp.gmail.com";
+				$mail->Port = 465;
+				$mail->Username = "admin@gmail.com"; // Yii::app()->params['adminEmail']
+				$mail->Password = "****"; // adminEmail password
+				$mail->CharSet = 'utf-8';
+				$mail->From = "morepranit@gmail.com"; //$user->email;
+				$mail->FromName = $model->name;
+				$mail->Subject = $model->subject;
+				$template = $this->useTemplate($model->body);
+				$mail->MsgHTML($template); 
+				$email_arr = explode(",",$model->email);
+				foreach ($email_arr as $email) {
+					$mail->AddBCC($email); // "morepranit@gmail.com"
+					if($mail->Send()) {
+						//echo "Message sent successfully!";
+						Yii::app()->user->setFlash('contact',"Thank you for inviting your friends! Click <a href='sendemail'>here</a> to go back to the previous page.".Yii::app()->params['adminEmail']);
+					}
+					else {
+						//echo "Fail to send your message!";
+					}
+				}
+				$this->refresh();
+			}
+		}
+		$this->render('sendEmail',array('model'=>$model));
+	}
+	
+	/**
+	 * Generates template.
+	 * @param CModel the model to be rendered
+	 */
+	protected function useTemplate($body)
+	{
+		$body = "<p>$body</p>
+				<p>--<br>
+				www.ganeshpics.com</p>";
+		return $body;
 	}
 }
