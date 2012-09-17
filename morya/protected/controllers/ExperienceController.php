@@ -91,7 +91,7 @@ class ExperienceController extends AppController
 			$model->attributes=$_POST['Experience'];
             $model->slug = $this->behaviors();
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index'));
 		}
 
 		$this->render('create',array(
