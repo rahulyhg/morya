@@ -41,14 +41,14 @@ $this->menu=array(
     <div><?php echo CHtml::link("Add ".VedicType::$heading[$vedicType],array('addvedic','vedicType'=>$vedicType));?></div>
 
         <?php foreach($elementsList as $vedic){
-    $uname = User::model()->findByPk($vedic->user_id);
+    //$uname = User::model()->findByPk($vedic->user_id);
     ?>
         <div class="cont-disp">
             <div class="title_head"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</a>
             </div>
 
             <div style="text-align: center;"><?php echo $vedic->text;?></div>
-            <div style="float: right;text-decoration: none;">Posted By : <a href="#"><?php echo $uname->name;?></a></div>
+            <div style="float: right;text-decoration: none;">Posted By : <a href="#"><?php echo $vedic->user->name;?></a></div>
             <div class="clear"></div>
             </div>
         <?php } ?>

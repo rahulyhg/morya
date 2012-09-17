@@ -1,10 +1,11 @@
 <?php
 
-class ExperienceController extends Controller
+class ExperienceController extends AppController
 {
 
     function init(){
         Yii::import('application.models.experience.*');
+        Yii::import('application.models.user.*');
     }
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -31,7 +32,7 @@ class ExperienceController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','expview'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -59,6 +60,21 @@ class ExperienceController extends Controller
 		));
 	}
 
+    public function actionExpview()
+    {
+        if($_REQUEST['exp_title'] != '')
+        {
+            $model=Experience::model()->findByAttributes(array('slug'=>$_REQUEST['exp_title']));
+            $elements=Experience::model()->findAll();
+            $this->render('expview',array(
+                'model'=>$model,
+                'elements'=>$elements
+            ));
+
+        }
+
+    }
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -68,11 +84,12 @@ class ExperienceController extends Controller
 		$model=new Experience;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Experience']))
 		{
 			$model->attributes=$_POST['Experience'];
+            $model->slug = $this->behaviors();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -131,10 +148,21 @@ class ExperienceController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Experience');
+		/* $dataProvider=new CActiveDataProvider('Experience');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		)); */
+        $criteria=new CDbCriteria;
+        $criteria->limit = 20;
+
+        $pages=new CPagination(Experience::model()->count($criteria));
+        $pages->applyLimit($criteria);
+        $pages->pageSize=20;
+        $elementsList=Experience::model()->findAll($criteria);//->with('comments')
+        $this->render('index',array(
+            'elementsList'=>$elementsList,
+            'pages'=>$pages,
+        ));
 	}
 
 	/**

@@ -3,13 +3,13 @@ $this->breadcrumbs=array(
 	'Temples'=>array('index'),
 	'Create',
 );
-/*
+
 $this->menu=array(
-	array('label'=>'List Temple', 'url'=>array('index')),
-	array('label'=>'Manage Temple', 'url'=>array('admin')),
-); */
+    array('label'=>'Historic', 'url'=>array('index','templeType'=>TempleType::Historic)),
+    array('label'=>'Most Popular', 'url'=>array('index','templeType'=>TempleType::Popular)),
+);
 ?>
 
-<h1>Add Temple Information Here</h1>
+<div class="tab">Add Temple Information Here</div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

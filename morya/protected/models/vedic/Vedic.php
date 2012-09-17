@@ -70,7 +70,7 @@ class Vedic extends AppActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'vedicComments' => array(self::HAS_MANY, 'VedicComment', 'vedic_id'),
-			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 

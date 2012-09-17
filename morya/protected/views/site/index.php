@@ -109,7 +109,7 @@
                  $i++;
                 }?>
             <div class="clear"></div>
-                <p  style="margin-bottom: 0; margin-top: 5px;"><a href=""><b>Assure Success with god Ganeshji Mantras.</b></a></p>
+                <p  style="margin-bottom: 0; margin-top: 5px;"><a href="<?php echo Yii::app()->createUrl('vedic/addvedic',array('vedicType'=>VedicType::Mantra)) ?>"><b>Assure Success with god Ganeshji Mantras.</b></a></p>
             </p>
         </div>
         <div class="grid_4">
@@ -130,14 +130,20 @@
                 $i++;
             }?>
             <div class="clear"></div>
-            <p  style="margin-bottom: 0; margin-top: 5px;"><a href=""><b>Assure Success with god Ganeshji Mantras.</b></a></p>
+            <p  style="margin-bottom: 0; margin-top: 5px;"><a href="<?php echo Yii::app()->createUrl('recipe/create') ?>"><b>Add your Recipes Here.</b></a></p>
             </p>
         </div>
 
 
         <div class="grid_4" style="height:300px;">
             <div class="tab">&nbsp;Invite Your Friends</div>
-            <p>Invite all your friends by sending attrative greetings...</p>
+            <p>Invite all your friends by sending attrative greetings...
+            You can invite all your friends to your Ganpati by sending
+            them invitation from here</p>
+            <div class="tab">&nbsp;Ganesh Mahima</div>
+            <p  style="margin-bottom: 0; margin-top: 5px;"><a href="<?php echo Yii::app()->createUrl('experience/create') ?>"><b>Share Your Experiences About Ganesh Here.</b></a></p>
+            <p  style="margin-bottom: 0; margin-top: 5px;"><a href="<?php echo Yii::app()->createUrl('experience/index') ?>"><b>See Others Experiences About Ganesh Here.</b></a></p>
+            </p>
         </div>
 
         <div class="grid_4">

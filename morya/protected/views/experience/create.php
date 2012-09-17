@@ -5,11 +5,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Experience', 'url'=>array('index')),
-	array('label'=>'Manage Experience', 'url'=>array('admin')),
+	array('label'=>'Experience', 'url'=>array('index')),
 );
 ?>
 
-<h1>Create Experience</h1>
+<div class="tab">Add Your Experience</div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
