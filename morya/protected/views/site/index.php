@@ -148,6 +148,11 @@
 
         <div class="grid_4">
             <div class="tab">&nbsp;competitions</div>
+            Compititions for Gharguti Ganpati and Ganesh Mandals.
+            Uplaod your gharguti ganpati/ Ganesh Mandals photo.
+            And make your ganpati number 1 on our site.
+            <br/>
+           <strong>Compititions Coming soon.....</strong>
             <div class="fb-live-stream" data-event-app-id="493477977331627" data-width="290" data-height="300" data-always-post-to-friends="false"></div>
             <div class="fb-facepile" data-href="http://www.ganeshpics.com" data-max-rows="2" data-width="290"></div>
         </div>
