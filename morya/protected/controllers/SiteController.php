@@ -51,7 +51,7 @@ class SiteController extends AppController
         $criteria->limit = 9;
         $aartis = Vedic::model()->findAllByAttributes(array('type'=>VedicType::Aarti));
         $recipes = Recipe::model()->findAll();
-        $temples = Temple::model()->findAll();
+        $temples = Temple::model()->findAll($criteria);
         $elementsList=Photo::model()->findAll($criteria);//->with('comments')
         $this->render('index',array(
             'elementsList'=>$elementsList,

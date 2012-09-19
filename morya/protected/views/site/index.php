@@ -140,7 +140,9 @@
             <p>Invite all your friends by sending attrative greetings...
             You can invite all your friends to your Ganpati by sending
             them invitation from here</p>
-            <p><a href="<?php echo Yii::app()->createUrl('user/sendemail') ?>"><b>Invite Your Friends</b></a></p>
+            <p  style="margin-bottom: 5px;"><a href="<?php echo Yii::app()->createUrl('temple/page',array('view' => 'lalbuag')) ?>"><b>Get All photos of Lalbaug cha Raja (1937-2012)</b></a></p>
+
+         <!--   <p><a href="<?php //echo Yii::app()->createUrl('user/sendEmail') ?>"><b>Invite Your Friends</b></a></p>-->
             <div class="tab">&nbsp;Ganesh Mahima</div>
             <p  style="margin-bottom: 0; margin-top: 5px;"><a href="<?php echo Yii::app()->createUrl('experience/create') ?>"><b>Share Your Experiences About Ganesh Here.</b></a></p>
             <p  style="margin-bottom: 0; margin-top: 5px;"><a href="<?php echo Yii::app()->createUrl('experience/index') ?>"><b>See Others Experiences About Ganesh Here.</b></a></p>
@@ -168,34 +170,37 @@
                         foreach($temples as $temple){
 
                             if($i > 0) break;
-                            $filename1 = $temple->pic1;
-                            $filename2 = $temple->pic2;
-                            $filename3 = $temple->pic3;
-                            $filename4 = $temple->pic4;
+                           //$filename1 = $temple->pic1;
+                            //$filename2 = $temple->pic2;
+                            //$filename3 = $temple->pic3;
+                            //$filename4 = $temple->pic4;
                             ?>
                             <div class="title_head"><a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>"><?php echo ucfirst($temple->name); ?></a></div>
                             <?php echo $temple->description;?>
-                            <?php
-                            $i++;
-                        }
-                        ?>
+
                     </p>
                  </div>
                 <div style="float: right;width: 220px;">
                     <?php
-                    if(isset($filename1) && count($filename1)>0){
-                        ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename1->file_name; ?>" height="100px" width="100px" style="margin: 5px" border="1px #000000"/>
-                        <?php }
-                    if(isset($filename2) && count($filename2)>0){?>
-                        <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename2->file_name; ?>" height="100px" width="100px" style="margin: 5px" border="1px #000000"/>
-                        <?php } ?>
-                    <?php if(isset($filename3) && count($filename3)>0){?>
-                    <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename3->file_name; ?>" height="200px" width="200px" style="margin: 5px" border="1px #000000"/>
-                    <?php }
-                    if(isset($filename4) && count($filename4)>0){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$filename4->file_name; ?>" height="200px" width="200px" style="margin: 5px" border="1px #000000"/>
-                        <?php } ?>
-                </div>
 
+                    if(isset($temple->pic1->file_name)){
+                        ?><div style="float: left;"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic1->file_name; ?>" height="100px" width="100px" style="margin: 5px;"/></div>
+                        <?php }
+                    if(isset($temple->pic2->file_name)){?>
+                        <div style="float: left;"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic2->file_name; ?>" height="100px" width="100px" style="margin: 5px" border="1px #000000"/></div>
+                        <?php } ?>
+                    <div class="clear"></div>
+                    <?php if(isset($temple->pic3->file_name)){?>
+                    <div style="float: left;"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic3->file_name; ?>" height="100px" width="100px" style="margin: 5px" border="1px #000000"/></div>
+                    <?php }
+                    if(isset($temple->pic4->file_name)){?>
+                       <div style="float: left;"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic4->file_name; ?>" height="100px" width="100px" style="margin: 5px" border="1px #000000"/></div>
+                      <?php } ?>
+                </div>
+                            <?php
+                            $i++;
+                        }
+            ?>
         </div>
     </div>
 	<?php $this->beginClip('js-page-end'); ?>

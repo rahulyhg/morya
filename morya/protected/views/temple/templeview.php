@@ -7,6 +7,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
     array('label'=>'Historic', 'url'=>array('index','templeType'=>TempleType::Historic)),
     array('label'=>'Most Popular', 'url'=>array('index','templeType'=>TempleType::Popular)),
+    array('label'=>'Lalbaug cha Raja', 'url'=>$this->createAbsoluteUrl('page', array('view' => 'lalbuag'))),
 );
 ?>
 
@@ -44,16 +45,16 @@ $this->menu=array(
         <div><p><strong>History :</strong><?php echo $model->history;?></p></div>
         <div><b>Other Pics : </b></div>
         <div><?php
-            if(isset($temple->pic1->file_name)){
-                ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic1->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
+            if(isset($model->pic1->file_name)){
+                ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$model->pic1->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
                 <?php }
-            if(isset($temple->pic2->file_name)){?>
-                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic2->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
+            if(isset($model->pic2->file_name)){?>
+                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$model->pic2->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
                 <?php } ?>
-            <?php if(isset($temple->pic3->file_name)){?>
-                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic3->file_name; ?>" height="200px" width="200px" style="padding: 5px" border="1px #000000"/>
+            <?php if(isset($model->pic3->file_name)){?>
+                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$model->pic3->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
                 <?php }
-            if(isset($temple->pic4->file_name)){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic4->file_name; ?>" height="200px" width="200px" style="padding: 5px" border="1px #000000"/>
+            if(isset($model->pic4->file_name)){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$model->pic4->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
                 <?php } ?></div>
         <div class="clear"></div>
     </div>
