@@ -5,9 +5,6 @@ class PhotoController extends AppController
     public $layout = 'layout_1C' ;
 
 	function init(){
-		Yii::import('application.models.photo.*');
-        Yii::import('application.models.comment.*');
-        Yii::import('application.models.user.*');
 	}
 
 	public function filters()
@@ -25,7 +22,7 @@ class PhotoController extends AppController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('upload','postUpload','update','myganesha'),
+				'actions'=>array('upload','postUpload','update','myganesha','rate'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -41,9 +38,10 @@ class PhotoController extends AppController
 	public function actionIndex($userSlug = null)
     {
 		$criteria=new CDbCriteria;
-        $criteria->order = 'created desc';
+        $criteria->with = array('node');
+		$criteria->order = 'node.created DESC';
         $criteria->limit = 30;
-
+	
         $pages=new CPagination(Photo::model()->count());
         $pages->applyLimit($criteria);
         $pages->pageSize=20;
@@ -53,6 +51,26 @@ class PhotoController extends AppController
             'elementsList'=>$elementsList,
             'pages'=>$pages
         ));
+	}
+	public function actionRate($node_id){
+		if(Yii::app()->request->isPostRequest)
+		{
+			if($modak = Modak::model()->findByPk(array('node_id' => $node_id , 'user_id' => Yii::app()->user->id )))
+			{
+				$modak->rating = $_POST['rating'];
+			}
+			else
+			{
+				$modak = new Modak ;
+				$modak->rating = $_POST['rating'];	
+				$modak->node_id = $node_id ;
+			}
+			if($modak->save())
+			{
+				return $modak->rating ;
+			}
+		}
+		return -1 ;
 	}
 	
 	public function actionMyganesha(){
@@ -83,7 +101,6 @@ class PhotoController extends AppController
 			$sizeLimit = 5 * 1024 * 1024;// maximum file size in bytes - 10mb
 			$uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
 			$result = $uploader->handleUpload($folder);
-			
 			$fileSize=filesize($folder.$result['filename']);//GETTING FILE SIZE
 			$fileName=$result['filename'];//GETTING FILE NAME
 			$this->resize($folder.$fileName);
@@ -93,17 +110,23 @@ class PhotoController extends AppController
 			echo $return;// it's array
 	}
 	public function actionUpdate(){
-		$photo = Photo::model()->findByPk((int)$_POST['id']);
-        if($photo->user_id === Yii::app()->user->id){
+		$photo = Photo::model()->findByPk((int)$_POST['id'])->with('node');
+        if($photo->node->user_id === Yii::app()->user->id){
             $photo->caption = $_POST['caption'];
             $photo->description = $_POST['description'];
             if($photo->save()){
              return true;
-            }
+            }else{
+			 echo $photo->getErrors();
+			}
         }
         return false;
 	}
 	private function updateDb($type,$fileName,$ogName,$size){
+	
+		$node = new Node ;
+		$node->type = NodeType::Photo ;
+		
 		$photo = new Photo;
         $photo->type = $type ;
 		$photo->caption = $fileName;
@@ -111,10 +134,31 @@ class PhotoController extends AppController
 		$photo->file_name = $fileName;
 		$photo->file_type = 'image/jpeg';
 		$photo->file_size = $size ;
-		if($photo->validate()){
-			$photo->save();
-		}else{
-		print_r($photo->getErrors());
+		$photo->slug = $this->behaviors();
+		if($node->validate()){
+		$transaction = Yii::app()->db->beginTransaction();
+		  $success = $node->save(false);
+		  $photo->node_id = $node->id;
+		  $success = $success ? $photo->save(false) : $success;
+		 if ($success)
+		 {
+			$transaction->commit();
+			Yii::app()->facebook->setFileUploadSupport(true);
+			$img = PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name;
+			Yii::app()->facebook->api(
+			  '/me/photos',
+			  'POST',
+			  array(
+				'source' => '@' . $img,
+				'message' => 'Photo uploaded via the DevaGanesha.com'
+			  )
+			);
+		}
+		 else
+			$transaction->rollBack();
+		}
+		else{
+		return -1 ;
 		}
 		return $photo->id;
 	}
@@ -134,16 +178,28 @@ class PhotoController extends AppController
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView($slug)
 	{
-        $hit = new PhotoHit() ;
         //photoes with comments
-        $photo = Photo::model()->findByPk($id)->with('Comment');
+        $photo = Photo::model()->findByAttributes(array('slug'=>$slug));
+		if(isset(Yii::app()->user->id))
+		{
+			$modaks = Modak::model()->findByPk(array('node_id' => $photo->node_id,'user_id' => Yii::app()->user->id ));
+			if($modaks == null)
+			{
+				$modaks = new Modak ;
+			}
+		}
+		else
+		{
+			$modaks = new Modak ;
+		}
         $newComment = new Comment() ;
-        $newComment->photo_id = $id ;
+        $newComment->node_id = $photo->node_id ;
 		$this->render('view',array(
 			'photo'=>$photo,
-            'newComment'=>$newComment
+            'newComment'=>$newComment,
+			'modaks' => $modaks
 		));
 	}
 

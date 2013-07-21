@@ -4,7 +4,7 @@ margin-bottom:10px;
 }
 .logo {
 display:inline-block;
-background-image:url(../img/logo.png);
+background-image:url(../images/logo.png);
 background-repeat:no-repeat;
 width:124px;
 height:125px;
@@ -29,7 +29,7 @@ spin { from { -moz-transform:rotate(0 deg); } to {-moz-transform:rotate(360deg);
 position:absolute;
 left:31px;
 top:30px;
-background-image:url(../img/ganesh_logo.png);
+background-image:url(../images/ganesh_logo.png);
 background-repeat:no-repeat;
 width:67px;
 height:65px;
@@ -37,7 +37,7 @@ height:65px;
 
 .header_text
 {
-background-image:url(../img/bluefox/logo.png);
+background-image:url(../images/bluefox/logo.png);
 background-repeat:no-repeat;
 width:197px;
 height:33px;
@@ -55,116 +55,80 @@ font-weight: 300;
 }
 .social {
 position: relative;
-right: -221px;
-top: 30px;
-width: 107px;
-height: 28px;
 }
 .twitter {
 position:absolute;
-background-image:url(../img/twitter.png);
+background-image:url(../images/bluefox/twitter.png);
 background-repeat:no-repeat;
-right: 50px;
 width: 37px;
 height: 27px;
 }
-.twitter:hover {
-position:absolute;
-background-image:url(../img/bluefox/twitter.png);
-}
+
 .facebook {
 position:absolute;
-background-image:url(../img/facebook.png);
+background-image:url(../images/bluefox/facebook.png);
 background-repeat:no-repeat;
 width: 37px;
 height: 27px;
-right: 0px;
-}
-.facebook:hover {
-background-image:url(../img/bluefox/facebook.png);
+    left:59px;
 }
 .rss {
 position:absolute;
-background-image:url(../img/rss.png);
+background-image:url(../images/bluefox/rss.png);
 background-repeat:no-repeat;
 width: 37px;
 height: 27px;
-right: -35px;
+    right:0px;
 }
-.rss:hover {
-background-image:url(../img/bluefox/rss.png);
-}
+
 .aarti_menu_logo {
 position:absolute;
-background-image:url(../img/aarti_menu.png);
+background-image:url(../images/aarti_menu_hover.png);
 background-repeat:no-repeat;
 width: 76px;
 height: 70px;
 left:-14px;
 }
-.aarti_menu_logo:hover {
-background-image:url(../img/aarti_menu_hover.png);
-}
 .photo_menu_logo {
 position:absolute;
-background-image:url(../img/photo_menu.png);
+background-image:url(../images/photo_menu_hover.png);
 background-repeat:no-repeat;
 width: 76px;
 height: 70px;
 left:78px;
 }
-.photo_menu_logo:hover{
-background-image:url(../img/photo_menu_hover.png);
-}
 .temple_menu_logo {
 position:absolute;
-background-image:url(../img/temple_menu.png);
-background-repeat:no-repeat;
-width: 76px;
-height: 70px;
-}
-.temple_menu_logo:hover {
-position:absolute;
-background-image:url(../img/temple_menu_hover.png);
+background-image:url(../images/temple_menu_hover.png);
 background-repeat:no-repeat;
 width: 76px;
 height: 70px;
 }
 .competition_menu_logo {
 position:absolute;
-background-image:url(../img/competitions2_menu2.png);
+background-image:url(../images/competitions2_menu.png);
 background-repeat:no-repeat;
 width: 86px;
 height: 51px;
 top:12px;
 }
-.competition_menu_logo:hover {
-background-image:url(../img/competitions2_menu.png);
-}
 .recipies_menu_logo {
 position:absolute;
-background-image:url(../img/recipie_menu2.png);
+background-image:url(../images/recipie_menu_hover2.png);
 background-repeat:no-repeat;
 width: 86px;
 height: 51px;
 top:12px;
 left:340px;
 }
-.recipies_menu_logo:hover{
-background-image:url(../img/recipie_menu_hover2.png);
-}
-
 .my_ganesha_menu_logo {
 position:absolute;
-background-image:url(../img/my_ganesha_menu.png);
+background-image:url(../images/my_ganesha_menu_hover2.png);
 background-repeat:no-repeat;
 width: 76px;
 height: 70px;
 left:425px;
 top:3px;
-}
-.my_ganesha_menu_logo:hover {
-background-image:url(../img/my_ganesha_menu_hover2.png);
 }
 
 nav a {
@@ -184,63 +148,48 @@ color:#0066EE;
 #news_box {
 margin-bottom:10px;
 }
-.upload_instr
-{
-text-align:center;
-font-size:16px;
+.buttons,.button_1 {
+    background-color: #0066EE;
+    height: 30px;
+    margin:2px;
+    border: none;
+    font-size:16px;
+    color: white;
 }
-
+/*
 .upload_btn {
 position:absolute;
 right:17px;
-top:55px;
-height:25px;
+top:40px;
 display: block;
-/*or inline-block*/
 width: 105px;
 padding: 7px 0;
 text-align: center;
-background: #254677;
 border-bottom: 1px solid #DDD;
 color: #FFF;
-font-weight:400px;
+font-weight:400;
 font-size:16px;
 }
-.upload_photo {
-position: absolute;
-background-image: url(../img/add-photo.png);
-background-repeat: no-repeat;
-width: 100%;
-bottom: -1px;
-top: 14px;
-left:63px;
-}
-.upload_instr {
-position: absolute;right: 140px;
-color: #59ABB7;
-margin-top:20px;
+*/
+.upload_btn {
+
+    display: block;
+    /*or inline-block*/
+    width: 100%;
+    padding: 7px 0;
+    text-align: center;
+    color: #FFF;
+    font-weight:400;
+    font-size:16px;
 }
 
-.upload_instr  p{
-margin-bottom:10px;
-}
-
-.upload_wrapper {
-height:125px;
-margin-top:10px;
-margin-bottom:15px;
-}
-.uploader{
-height:100%;
-}
 .photo_gallery {
 height:600px;
 }
 
 .photo_thumb {
 position:relative;
-height:220px;
-margin-bottom:20px;
+margin:10px;
 }
 
 .photo_thumb h3{
@@ -261,7 +210,7 @@ opacity:1.0;
 position:absolute;
 width:auto;
 color:white;
-background-image:url(../img/whitebg.png);
+background-image:url(../images/whitebg.png);
 background-repeat:repeat-x;
 height:47px;
 width:100%;
@@ -274,10 +223,10 @@ height:47px;
 }
 .white_mask .darshan {
 position:absolute;
-background-image:url(../img/darshan.png);
+background-image:url(../images/darshan.png);
 background-repeat:repeat-x;
-left:11px;
-bottom:8px;
+left:5px;
+bottom:4px;
 width:23px;
 height:32px;
 }
@@ -290,20 +239,20 @@ top: -5px;
 
 .white_mask .modak {
 position:absolute;
-background-image:url(../img/modak.png);
+background-image:url(../images/modak.png);
 background-repeat:repeat-x;
 left:45px;
-bottom:8px;
+bottom:4px;
 width:27px;
 height:30px;
 }
 
 .white_mask .add_collection {
 position:absolute;
-background-image:url(../img/add_collection.png);
+background-image:url(../images/add_collection.png);
 background-repeat:repeat-x;
-right:13px;
-bottom:8px;
+right:4px;
+bottom:4px;
 width:26px;
 height:29px;
 }
@@ -314,4 +263,326 @@ list-style-type:none;
 margin:0;
 padding:0;
 float:left;
+}
+
+.errorMessage {
+    color: #f00;
+}
+
+#authentication-wrapper {
+    //display:none;
+}
+
+#authentication h1{
+    color: #8bc9ee;
+    text-align: center;
+}
+
+#register {
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    float:left;
+    border-right:2px solid #808080;
+}
+
+#login {
+    padding: 10px 10px 10px 10px;
+    float:left;
+}
+
+label {
+    display: block;
+    color: #0090E6;
+}
+
+input[type="text"], input[type="password"],textarea {
+    padding: 5px;
+    border: 1px solid #8BC9EE;
+    font-size: 18px;
+}
+.user_space {
+    position: fixed;
+    right: 5px;
+    background-color: #8BC9EE;
+    padding: 10px;
+    color: white;
+    z-index: 999;
+    top: 5px;
+}
+
+.user_space h2{
+    font-size:14px;
+    margin:0;
+    padding:0;
+}
+.user_space .us_details {
+    display: none;
+}
+
+.user_space .us_details a{
+    display:block;
+    text-align: right;
+}
+
+/************* Styling for comments ***********/
+#comments {
+    height:600px;
+    width:260px;
+    float:right;
+}
+#comments textarea{
+    width: 100%;
+}
+.single_comment{
+    padding: 5px;
+    margin-bottom:10px;
+    width:260px;
+    background-color: #f0f8ff;
+}
+.single_comment abbr {
+    font-size:11px;
+}
+.single_comment h4 {
+    margin:0px;
+    padding: 0px;
+    font-size:12px;
+    font-family: Verdana;
+    color:#6495ed;
+}
+.single_comment p{
+    font-family: cursive ;
+    margin-bottom: 5px;
+}
+
+/********************* Sidebars ************************/
+#lt_sidebar,#rt_sidebar {
+    min-height: 300px;
+    background-color: #f5f5f5;
+}
+#rt_sidebar {
+
+}
+
+/********************** Summary Boxes ********************/
+#mid_pane_wrapper{
+height:182px;
+}
+#mid_pane_wrapper div.grid_4 {
+}
+
+/********************** Upload Button *********************/
+.qq-upload-button {
+    width:100%;
+}
+
+.tab{
+background-color : #8BC9EE;
+font-size : 16px;
+font-weight: bold;
+border : 1px solid #000000;
+}
+
+.title_head{
+font-weight : bold;
+font-size: 14px;
+text-align : center;
+height: 18px;
+padding: 10px;
+}
+
+.cont-disp{
+border-bottom: 1px dotted #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.like{
+    text-decoration: none;
+}
+.like:hover{
+    text-decoration: underline;
+}
+
+/**************** Menu Bar Styling **********/
+
+#lt_sidebar ul{
+    list-style-type: none;
+    margin: 0px;
+    display: block;
+    height: 468px;
+    overflow-y: hidden;
+}
+#lt_sidebar li{
+    margin: 0px;
+    height:80px;
+    border-bottom: 2px solid white;
+    background-color: #8BC9EE;
+}
+
+#lt_sidebar a{
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    color: white;
+    padding: 5px 0 0 5px;
+    font-size: 14px;
+    font-family: Verdana;
+    font-weight: 700;
+    text-shadow:  0px 0px 4px rgba(0, 255, 224, 1);
+    height:100%;
+}
+.selected_menu {
+    height:220px;
+}
+.atharvashirsha_menu {
+    background-image: url(../images/ganesh.png);
+}
+.mantrapushpanjali_menu {
+    background-image: url(../images/mantras_menu.png);
+}
+
+.uttarpooja_menu {
+    background-image: url(../images/uttarpooja_menu.png);
+}
+.aarti_sidemenu {
+    background-image: url(../images/aarti_sidemenu.png);
+}
+
+.photo_success {
+    color:#0090E6;
+    font-size:12px;
+}
+
+#wrapper{
+	width:720px;
+	margin:40px auto 0;
+}
+
+#wrapper a{
+	display:block;
+	font-size:1.2em;
+	padding-top:20px;
+	color:#FFF;
+	text-decoration:none;
+	text-align:center;
+}
+
+#tabContainer {
+	width:590px;
+	padding:15px;
+	background-color:#2e2e2e;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+}
+
+#tabs{
+	height:30px;
+	overflow:hidden;
+}
+
+#tabs > ul{
+	font: 1em;
+	list-style:none;
+}
+
+#tabs > ul > li{
+	margin:0 2px 0 0;
+	padding:7px 10px;
+	display:block;
+	float:left;
+	color:#FFF;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius:4px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px; 
+	background: #C9C9C9; /* old browsers */
+	background: -moz-linear-gradient(top, #0C91EC 0%, #257AB6 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0C91EC), color-stop(100%,#257AB6)); /* webkit */
+}
+
+#tabs > ul > li:hover{
+	background: #FFFFFF; /* old browsers */
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #F3F3F3 10%, #F3F3F3 50%, #FFFFFF 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(10%,#F3F3F3), color-stop(50%,#F3F3F3), color-stop(100%,#FFFFFF)); /* webkit */
+	cursor:pointer;
+	color: #333;
+}
+
+#tabs > ul > li.tabActiveHeader{
+	background: #FFFFFF; /* old browsers */
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #F3F3F3 10%, #F3F3F3 50%, #FFFFFF 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(10%,#F3F3F3), color-stop(50%,#F3F3F3), color-stop(100%,#FFFFFF)); /* webkit */
+	cursor:pointer;
+	color: #333;
+}
+
+#tabscontent {
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px; 
+	padding:10px 10px 25px;
+	background: #FFFFFF; /* old browsers */
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 90%, #e4e9ed 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(90%,#FFFFFF), color-stop(100%,#e4e9ed)); /* webkit */
+	margin:0;
+	color:#333;
+}
+
+
+.footer {
+    background-color: #f2f3ff;
+    margin-top:10px;
+    font-family: Verdana;
+}
+
+blockquote {
+    margin: 1em 3em;
+    padding: .5em;
+
+    background: #ebf1f6; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ebf1f6 0%, #abd3ee 50%, #89c3eb 51%, #d5ebfb 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(50%,#abd3ee), color-stop(51%,#89c3eb), color-stop(100%,#d5ebfb)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ebf1f6 0%,#abd3ee 50%,#89c3eb 51%,#d5ebfb 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ebf1f6 0%,#abd3ee 50%,#89c3eb 51%,#d5ebfb 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ebf1f6 0%,#abd3ee 50%,#89c3eb 51%,#d5ebfb 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ebf1f6 0%,#abd3ee 50%,#89c3eb 51%,#d5ebfb 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', endColorstr='#d5ebfb',GradientType=0 ); /* IE6-9 */
+
+}
+blockquote p {
+    margin: 0;
+}
+
+.facebook_connect {
+    background-image: url(../images/facebook_connect.png);
+    display: block;
+    width: 203px;
+    height: 28px;
+    background-repeat: no-repeat;
+}
+
+.caption {
+    border-left:2px solid #a0a0a0;
+    padding-left: 5px;
+    margin-top:10px;
+    font-size: 16px;
+    color: #A0A0A0;
+    font-family: Verdana;
+}
+
+.photo_uploader_name
+{
+    color:#00a0F0;
 }

@@ -3,7 +3,7 @@
 class UserController extends AppController
 {
 	function init(){
-		Yii::import('application.models.user.*');
+		Yii::import('application.models.vm.user.*');
 		Yii::app()->user->setReturnUrl(Yii::app()->createUrl('site/index'));
 	}
 

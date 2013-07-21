@@ -586,3 +586,18 @@ blockquote p {
 {
     color:#00a0F0;
 }
+
+div.star-rating, div.star-rating a 
+{
+background-image: url(../images/modaks2.gif);
+width:25px;
+height:25px;
+}
+
+div.star-rating-hover a{
+background-position:0 -50px
+}
+
+div.star-rating-on a{
+background-position:0 -25px!important
+}

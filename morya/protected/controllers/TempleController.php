@@ -3,8 +3,6 @@
 class TempleController extends AppController
 {
 	function init(){
-		Yii::import('application.models.temple.*');
-        Yii::import('application.models.photo.*');
 	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning

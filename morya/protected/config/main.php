@@ -14,9 +14,12 @@ return array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
+		'application.models.db.*',
+		'application.models.enums.*',
+		'application.models.behavior.*',
+		'application.models.vm.user.*',
         'application.widgets.*',
 		'application.controllers.*',
-		'application.models.enums.*',
 		'application.components.*',
 		
 	),
@@ -45,11 +48,12 @@ return array(
 			'urlFormat'=>'path',
 			'rules'=>array(
                 'aarti/<ved_title:\w+>'=>'vedic/vedicview',
+				'pictures-and-wallpapers/<slug:[a-z0-9\-_\.]+>'=>'photo/view',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-            //'showScriptName'=>true,
+            'showScriptName'=>false,
 		),
 
 		/*
@@ -75,9 +79,9 @@ return array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
 				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
-				),
+                'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+                'ipFilters'=>array('127.0.0.1'),
+            ),
 				// uncomment the following to show log messages on web pages
 				/*
 				array(
@@ -101,6 +105,7 @@ return array(
 			'xfbml'=>true,  // JS SDK - parse XFBML / html5 Social Plugins
 			'frictionlessRequests'=>true, // JS SDK - enable frictionless requests for request dialogs
 			'html5'=>true,  // use html5 Social Plugins instead of XFBML
+			'fileUpload'=>true, 
 			// 'ogTags'=>array(  // set default OG tags
 				// 'title'=>'Global Ganesh Festival',
 				// 'description'=>'MY_WEBSITE_DESCRIPTION',
@@ -117,6 +122,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'mail@itvedant.com',
 	),
 );

@@ -3,9 +3,6 @@
 class RecipeController extends AppController
 {
 		function init(){
-		Yii::import('application.models.recipe.*');
-        Yii::import('application.models.user.*');
-        Yii::import('application.models.photo.*');
 	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning

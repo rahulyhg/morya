@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
@@ -30,6 +30,11 @@
   <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/liteaccordion.css"/>
   <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+  <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+  <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/libs/jquery.fancybox.pack.js?v=2.1.0'); ?>
+  <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/libs/jquery.timeago.js'); ?>
+  <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/libs/liteaccordion.jquery.js'); ?>
+  <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/libs/jquery.easing.1.3.js'); ?>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/modernizr-2.5.3.min.js"></script>
     <script type="text/javascript">
         var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
@@ -95,7 +100,7 @@
   </div>
   <div class="footer">
   <div class="grid_10">
-     <p> © Copyright 2012 A site decdicated to our Bappa developed by Mayuresh & Swapnil.</p>
+     <p> © Copyright 2013 A site decdicated to our Bappa developed by <a href="http://www.itvedant.com">Vedant IT Academy</a>.</p>
 
       <blockquote><p>
           <em>
@@ -111,20 +116,6 @@
           <a href="/rss.xml"><span class="rss"></span></a>
       </div>
   </div>
-
-
-  <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script-->
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.mousewheel.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.gridnav.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/liteaccordion.jquery.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.fancybox.pack.js?v=2.1.0"></script>
-  <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/libs/jquery.timeago.js"></script>
   <script type="text/javascript">
       var app = {
           user : {

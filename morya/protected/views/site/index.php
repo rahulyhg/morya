@@ -155,7 +155,7 @@
             Uplaod your gharguti ganpati/ Ganesh Mandals photo.
             And make your ganpati number 1 on our site.
             <br/>
-           <strong>Compititions Coming soon.....</strong>
+           <strong>Competitions Coming soon.....</strong>
             <div class="fb-live-stream" data-event-app-id="493477977331627" data-width="290" data-height="300" data-always-post-to-friends="false"></div>
             <div class="fb-facepile" data-href="http://www.ganeshpics.com" data-max-rows="2" data-width="290"></div>
         </div>
@@ -212,7 +212,7 @@
                 function fileUploadComplete(id,filename,response){
                     $('#upload-list').html('');
                     $('#upload-wrapper').append('<div id="upload-success"><p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p></div>');
-                    $('#upload-success').append('<img src="upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Description:</label><textarea cols="30" rows="3" id="photo-description"></textarea><br /><input type="submit" id="save-photo" class="button_1" />');
+                    $('#upload-success').append('<img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Description:</label><textarea cols="30" rows="3" id="photo-description"></textarea><br /><input type="submit" id="save-photo" class="button_1" />');
                     $.fancybox.update();
                     $('#save-photo').click(function(){
                         updateFile(response.id);

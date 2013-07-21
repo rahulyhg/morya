@@ -4,8 +4,6 @@ class ExperienceController extends AppController
 {
 
     function init(){
-        Yii::import('application.models.experience.*');
-        Yii::import('application.models.user.*');
     }
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning

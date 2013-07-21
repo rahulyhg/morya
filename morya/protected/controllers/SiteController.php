@@ -5,11 +5,7 @@ class SiteController extends AppController
     public $layout = 'layout';
 
     function init(){
-        Yii::import('application.models.user.*');
-        Yii::import('application.models.photo.*');
-        Yii::import('application.models.vedic.*');
-        Yii::import('application.models.recipe.*');
-        Yii::import('application.models.temple.*');
+        Yii::import('application.models.vm.user.*');
     }
 	/**
 	 * Declares class-based actions.
@@ -32,7 +28,6 @@ class SiteController extends AppController
 
     public function actionRecent(){
         $criteria=new CDbCriteria;
-        $criteria->order = 'created desc';
         $criteria->limit = 9;
         $elementsList=Photo::model()->findAll($criteria);
         $this->renderPartial('_recentUploads',array(
@@ -47,7 +42,6 @@ class SiteController extends AppController
 	public function actionIndex()
 	{
         $criteria=new CDbCriteria;
-        $criteria->order = 'created desc';
         $criteria->limit = 9;
         $aartis = Vedic::model()->findAllByAttributes(array('type'=>VedicType::Aarti));
         $recipes = Recipe::model()->findAll();
