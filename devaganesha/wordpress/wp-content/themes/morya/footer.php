@@ -3,10 +3,10 @@
 		<div class="span3">
 			<div class="foothead">Social ganesha</div>
 			<div class="ml40">
-				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/fb-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#" >www.facebook.com/ohmyganesha</a></div>
+				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/fb-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/ohmyganesha" target="_blank">www.facebook.com/ohmyganesha</a></div>
 				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/twit-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#">www.twitter.com/devaganesha</a></div>
 				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/pin-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#">www.pinterest.com/devaganesha</a></div>
-				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/gmail-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#">www.devaganesha.com/blog</a></div>
+				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/gmail-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>" target="_blank">www.devaganesha.com/blog</a></div>
 				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/reddit-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#">www.reddit.com</a></div>
 			</div>
 		</div>
@@ -21,10 +21,10 @@
 			</div>
 			<div class="fl ml40" style="width:42%">
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Wallpaper of ganesha</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Blog</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">News</a></div>
+				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">Blog</a></div>
+				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">News</a></div>
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Temples</a></div>
-				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Blog</a></div>
+				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">Blog</a></div>
 			</div>
 			<div class="clear"></div>
 		</div>

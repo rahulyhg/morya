@@ -16,26 +16,26 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<div class="row">
+	<div>
 		<?php echo $form->labelEx($model,'email'); ?>
 		<?php echo $form->textField($model,'email'); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
-	<div class="row">
+	<div>
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 
-	<div class="row rememberMe">
+	<div class="rememberMe">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
 		<?php echo $form->label($model,'rememberMe',array('style'=>'display:inline')); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
 
-	<div class="row">
-        <?php echo CHtml::submitButton('Login',array('class'=>'button_1')); ?>
+	<div>
+        <?php echo CHtml::submitButton('Login',array('class'=>'btn')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

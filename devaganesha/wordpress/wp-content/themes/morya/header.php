@@ -51,6 +51,7 @@
             <li><div  class="menu-single"><div class="myganesha"></div><div class="tac"><a href="" class="menu-item">My ganesha</a></div></div></li>
     </ul>
     </div>  
+	    <div class="fr">
 	<?php Yii::app()->controller->widget('UserInfo'); ?>
        <div class="clear"></div>
       <div class="pt5"><div class="fbsoc fl"></div><div class="twitsoc fl"></div><div class="pinsoc fl"></div><div class="glsoc fl"></div><div class="ytsoc fl"></div><div class="dbsoc fl"></div><div class="rsssoc fl"></div>

@@ -42,7 +42,7 @@
 					
 					</div>
 					<div class="mt10"><a href="">Assure success with god ganeshji's mantras</a></div>
-					<div><a href="<?php get_page_link(4); ?>">108 names of Lord Ganesha</a></div>
+					<div><a href="<?php echo get_page_link(4); ?>">108 names of Lord Ganesha</a></div>
 					<div><a href="">Read how kimaya gave birth to son after 10years</a></div>
 					</div>
 				</div>

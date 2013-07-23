@@ -95,6 +95,7 @@ class User extends AppActiveRecord
 			'photoes' => array(self::HAS_MANY, 'Photoes', 'user_id'),
 			'temples' => array(self::HAS_MANY, 'Temples', 'user_id'),
 			'vedics' => array(self::HAS_MANY, 'Vedics', 'user_id'),
+			'node' => array(self::HAS_MANY, 'Node', 'user_id'),
 		);
 	}
 

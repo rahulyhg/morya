@@ -36,15 +36,20 @@ $this->menu=array(
 
         <?php foreach($elementsList as $vedic){
     //$uname = User::model()->findByPk($vedic->user_id);
+	
     ?>
-        <div class="cont-disp">
-            <div class="title_head"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</a>
+		<div class="cont-disp">
+            <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</a>
             </div>
-
-            <div style="text-align: center;"><?php echo $vedic->text;?></div>
-            <div style="float: right;text-decoration: none;">Posted By : <a href="#"><?php echo $vedic->user->name;?></a></div>
+			<div class="mt10">Posted on : <?php echo $vedic->node->created; ?> | author : <?php //echo $vedic->user->name; ?></div>
+            <div class="blog-content"><?php echo $vedic->text;?></div>
+           <div><span> <a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>">Leave reply </a></span>
+		   <?php if($vedic->node->user_id == Yii::app()->user->id){?>
+			<span>&nbsp;|&nbsp;<a href="">Edit</a></span>
+		   <?php } ?>
+		   </div>
             <div class="clear"></div>
-            </div>
+          </div>
         <?php } ?>
 
 <!--

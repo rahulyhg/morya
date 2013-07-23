@@ -25,7 +25,7 @@ class RecipeController extends AppController
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/* public function accessRules()
+ public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -44,7 +44,7 @@ class RecipeController extends AppController
 				'users'=>array('*'),
 			),
 		);
-	} */
+	} 
 
 	/**
 	 * Displays a particular model.
@@ -85,9 +85,8 @@ class RecipeController extends AppController
 		if(isset($_POST['Recipe']))
 		{
 			$model->attributes=$_POST['Recipe'];
-            $model->ingredients = nl2br($model->ingredients);
             $model->method = nl2br($model->method);
-			$model->slug = $this->behaviors();
+			$model->slug = str_replace(" ","-",$model->title);
 			if($model->save())
 				$this->redirect(array('index'));
 		}

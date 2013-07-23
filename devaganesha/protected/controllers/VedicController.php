@@ -2,10 +2,6 @@
 
 class VedicController extends AppController
 {
-		function init(){
-		Yii::import('application.models.vedic.*');
-        Yii::import('application.models.user.*');
-	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -38,7 +34,7 @@ class VedicController extends AppController
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/* public function accessRules()
+	 public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -57,7 +53,7 @@ class VedicController extends AppController
 				'users'=>array('*'),
 			),
 		);
-	} */
+	} 
 
 	/**
 	 * Displays a particular model.
@@ -76,7 +72,7 @@ class VedicController extends AppController
 	{
 		if($_REQUEST['ved_title'] != '')
 		{
-			$model=Vedic::model()->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
+			$model=Vedic::model()->with('node')->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
             $elements = Vedic::model()->findAll();
 			$this->render('vedicview',array(
 			'model'=>$model,
@@ -117,7 +113,6 @@ class VedicController extends AppController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -201,7 +196,9 @@ class VedicController extends AppController
 	
 		$criteria=new CDbCriteria;
 		$criteria->limit = 10;
-		$criteria->compare('type',$vedicType); 
+		$criteria->with = array('node');
+		$criteria->order = 'node.created DESC';
+		$criteria->compare('t.type',$vedicType); 
 
 	   $pages=new CPagination(Vedic::model()->count($criteria));
 	   $pages->applyLimit($criteria);
@@ -224,12 +221,39 @@ class VedicController extends AppController
 
 		if(isset($_POST['Vedic']))
 		{
+			$node = new Node ;
+			$node->type = NodeType::Vedic;
+		
 			$model->attributes=$_POST['Vedic'];
             $model->text = nl2br($model->text);
-			$model->slug = $this->behaviors();
+			$model->slug = str_replace(" ","-",$model->title);
+			if($node->validate()){
 			
-			if($model->save())
+			
+			$transaction = Yii::app()->db->beginTransaction();
+			  $success = $node->save(false);
+			  $model->node_id = $node->id;
+			
+			  $success = $success ? $model->save(false) : $success;
+			 if ($success)
+			 {
+				$transaction->commit();
+				//Yii::app()->facebook->setFileUploadSupport(true);
+				//$img = PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name;
+				/*Yii::app()->facebook->api(
+				  '/me/photos',
+				  'POST',
+				  array(
+					'source' => '@' . $img,
+					'message' => 'Photo uploaded via the DevaGanesha.com'
+				  )
+				);*/
 				$this->redirect($this->createAbsoluteUrl('vedic',array('vedicType'=>$model->type)));
+			}else{
+			$transaction->rollBack();
+			}
+				
+			}
 		}
 
 		$this->render('addvedic',array(
@@ -237,6 +261,7 @@ class VedicController extends AppController
 			'vedicType'=>$vedicType,
 		));
 	}
+	
 	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

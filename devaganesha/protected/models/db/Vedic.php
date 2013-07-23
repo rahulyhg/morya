@@ -13,7 +13,7 @@
  * @property string $audio_path
  * @property double $audio_length
  * @property string $audio_size
- * @property string $user_id
+ * @property string $node_id
  * @property string $created
  * @property string $modified
  *
@@ -54,10 +54,10 @@ class Vedic extends AppActiveRecord
 			array('audio_length', 'numerical'),
 			array('name_of_god, title, audio_path', 'length', 'max'=>255),
 			array('audio_size', 'length', 'max'=>20),
-			array('user_id', 'length', 'max'=>11),
+			array('node_id', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, name_of_god, title, slug, text, audio_path, audio_length, audio_size, user_id, created, modified', 'safe', 'on'=>'search'),
+			array('id, type, name_of_god, title, slug, text, audio_path, audio_length, audio_size, node_id, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,7 +70,7 @@ class Vedic extends AppActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'vedicComments' => array(self::HAS_MANY, 'VedicComment', 'vedic_id'),
-			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+			'node' => array(self::BELONGS_TO, 'Node', 'node_id'),
 		);
 	}
 
@@ -89,7 +89,7 @@ class Vedic extends AppActiveRecord
 			'audio_path' => 'Audio Path',
 			'audio_length' => 'Audio Length',
 			'audio_size' => 'Audio Size',
-			'user_id' => 'User',
+			'node_id' => 'Node',
 			'created' => 'Created',
 			'modified' => 'Modified',
 		);
@@ -115,7 +115,7 @@ class Vedic extends AppActiveRecord
 		$criteria->compare('audio_path',$this->audio_path,true);
 		$criteria->compare('audio_length',$this->audio_length);
 		$criteria->compare('audio_size',$this->audio_size,true);
-		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('node_id',$this->node_id,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
 

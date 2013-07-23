@@ -49,20 +49,19 @@ $this->menu=array(
 
 //$uname = User::model()->findByPk($model->user_id);
 ?>
-<div class="mid-region">
+
     <div class="title-bar">&nbsp;<?php echo $model->name_of_god;?>(<?php echo $model->title;?>)</div>
-
-    <div class="cont-disp">
-        <div style="text-align: center;"><?php echo $model->text; ?></div>\
-        <div style="float: right;text-decoration: none;">Posted By : <a href="#"><?php echo $model->user->name;?></a></div>
+	<div class="mt10">Posted on : <?php echo $model->node->created; ?> | author : <?php //echo $vedic->user->name; ?></div>
+	<div>
+	<?php if($model->node->user_id == Yii::app()->user->id){?>
+			<span><a href="<?php echo Yii::app()->createUrl('vedic/update',array('id'=>$model->id));?>">Edit</a></span>
+		   <?php } ?>
+	</div>
+    <div class="blog-content">
+        <div><?php echo $model->text; ?></div>
+      
     </div>
+	
+	<?php comments_template( '', true ); ?>
 
-</div>
-<div>
-    <div class="title-bar">Get More <?php echo VedicType::$heading[$model->type]; ?> Here</div>
-    <?php
-    foreach($elements as $element){
-        ?>
-        <div><?php echo CHtml::link($element->title,array('vedic/vedicview','ved_title'=>$element->slug));?></div>
-        <?php } ?>
-</div>
+

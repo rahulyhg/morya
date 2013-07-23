@@ -6,7 +6,7 @@ class UserController extends AppController
 		Yii::import('application.models.vm.user.*');
 		Yii::app()->user->setReturnUrl(Yii::app()->createUrl('site/index'));
 	}
-	public $layout = 'main';
+	public $layout = 'layout_3C';
 	public function filters()
 	{
 		return array(

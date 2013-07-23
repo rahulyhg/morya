@@ -11,12 +11,9 @@
 if(Yii::app()->user->isGuest)
 {
 ?>
-
-    <div class="fr">
       <a id="signup" class="reg-log fr" href="#authentication">
-    Login / Register
-	<div class="fl pt5"><img src="<?php echo get_template_directory_uri(); ?>/img/darshan.png" /></div>
-</a>
+		<div class="in-log"><img src="<?php echo get_template_directory_uri(); ?>/img/darshan.png" />&nbsp;&nbsp;&nbsp;Login / Register </div>
+	  </a>
 
 <div style="display: none;">
     <div id="authentication">
@@ -38,13 +35,18 @@ if(Yii::app()->user->isGuest)
 }else{
 ?>
 
-<span class="us_logged user_space">
-    <h2><?php $splitIndex = strpos($user->name,' '); echo($splitIndex > 0 ? substr($user->name,0,$splitIndex) : $user->name) ; ?></h2>
+<span class="user_space">
+	<div class="fl mr10">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/prof.gif" alt="pp" wid/>
+	</div>
+	<div>
+    <div><a href="" class="us_logged"><?php $splitIndex = strpos($user->name,' '); echo($splitIndex > 0 ? substr($user->name,0,$splitIndex) : $user->name) ; ?></a></div>
     <div class="us_details">
-        <?php echo CHtml::link('My Ganesha',Yii::app()->createUrl('photo/myganesha')); ?>
-        <?php echo CHtml::link('Edit Profile',Yii::app()->createUrl('user/edit')); ?>
+        <?php //echo CHtml::link('My Ganesha',Yii::app()->createUrl('photo/myganesha')); ?>
+        <?php echo CHtml::link('Edit Profile',Yii::app()->createUrl('user/edit')); ?> &nbsp;|&nbsp; 
         <?php echo CHtml::link('logout',Yii::app()->createUrl('user/logout')); ?>
     </div>
+	</div>
 </span>
 
 <?php
@@ -54,7 +56,7 @@ if(Yii::app()->user->isGuest)
 
 
 <?php
-Yii::app()->clientScript->registerScript('user-widget-script', <<<EOD
+/* Yii::app()->clientScript->registerScript('user-widget-script', <<<EOD
         $('.us_logged').hover(
             function(){
                 //mouserenter
@@ -67,5 +69,5 @@ Yii::app()->clientScript->registerScript('user-widget-script', <<<EOD
             }
         );
 EOD
-);
+); */
 ?>

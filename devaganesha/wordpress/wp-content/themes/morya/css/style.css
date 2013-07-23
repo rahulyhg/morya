@@ -30,7 +30,8 @@
 .compi:hover{ background: url("../img/menu-sprite.png") no-repeat scroll -155px -46px transparent;height: 40px;width: 45px;cursor: pointer;}
 .recipe:hover{ background: url("../img/menu-sprite.png") no-repeat scroll -205px -41px transparent;height: 40px;width: 48px;cursor: pointer;}
 .myganesha:hover{ background: url("../img/menu-sprite.png") no-repeat scroll -255px -43px transparent;height: 40px;width: 45px;cursor: pointer;}
-.reg-log{width:150px;height:43px;background-color:#cccccc;cursor:pointer;}
+.reg-log{width:150px;height:43px;background-color:#cccccc;}
+.in-log{padding-left:5px;padding-top:5px;}
 .logtext{padding:12px;}
 .logtextclr{color:#666666;}
 .menu-single{padding:0 10px;}
@@ -204,6 +205,19 @@ font-size:14px;
 margin-bottom:5px;
 }
 
+.fnt24{
+font-size:24px;
+}
+
+.blog-content{
+margin:15px 0;
+}
+
+.blogs{
+border-bottom:1px solid #cccccc;
+margin-bottom:10px;
+padding:10px 0;
+}
 
 #authentication h1{
     color: #8bc9ee;
@@ -211,13 +225,25 @@ margin-bottom:5px;
 }
 
 #register {
-    width: 300px;
+    width: 250px;
     padding: 10px 10px 10px 10px;
     float:left;
     border-right:2px solid #808080;
 }
 
 #login {
-    padding: 10px 10px 10px 10px;
+	width: 250px;
+    padding: 10px 10px 10px 20px;
     float:left;
+}
+
+.us_logged{
+font-size:20px;
+padding-bottom:5px;
+font-weight:bold;
+}
+
+.cont-disp{
+border-bottom:1px solid #CCCCCC;
+margin:10px;
 }
