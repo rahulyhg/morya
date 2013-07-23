@@ -155,37 +155,48 @@
 		<div class="span4">
 			<div class="title-bar"><strong>News and Blogs</strong></div>
 			<div>
+			<?php 
+			query_posts( 'posts_per_page=3' );
+			while(have_posts()): the_post();
+			?>
 				<div class="each-news"> 
-					<div class="fl newsimg"><img src="<?php echo get_template_directory_uri(); ?>/img/ganeshpic.png"/></div>
+				<?php 
+					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+					  ?>
+					  <a href="<?php the_permalink(); ?>"><div class="fl newsimg"><?php the_post_thumbnail( array(68,68)); ?></div></a>
+					  <?php
+					}else{
+					?>
+					  <a href="<?php the_permalink(); ?>"><div class="fl newsimg"><img src="<?php echo get_template_directory_uri(); ?>/img/ganeshpic.png"/></div></a>
+					<?php
+					}
+					?>					
 					<div class="fl newscont">
-						<div class="newshead">New heading are so attension catching</div>
-						<div>lalbaugcharaja - 75 years of lalbuagcharaja sarvajanik ganeshotsav mandal. All the latest photos and videos from the famous ganesh raja.</div>
+						<div class="newshead"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></div>
+						<div><?php the_excerpt(); ?></div>
 					</div>
-					<div class="fl newsmore">&raquo;</div>
+					<a href="<?php the_permalink(); ?>"><div class="fl newsmore">&raquo;</div></a>
 					<div class="clear"></div>
 				</div>
-				<div class="each-news"> 
-					<div class="fl newsimg"><img src="<?php echo get_template_directory_uri(); ?>/img/ganeshpic.png"/></div>
-					<div class="fl newscont">
-						<div class="newshead">New heading are so attension catching</div>
-						<div>lalbaugcharaja - 75 years of lalbuagcharaja sarvajanik ganeshotsav mandal. All the latest photos and videos from the famous ganesh raja.</div>
-					</div>
-					<div class="fl newsmore">&raquo;</div>
-					<div class="clear"></div>
-				</div>
-				<div class="each-news"> 
-					<div class="fl newsimg"><img src="<?php echo get_template_directory_uri(); ?>/img/ganeshpic.png"/></div>
-					<div class="fl newscont">
-						<div class="newshead">New heading are so attension catching</div>
-						<div>lalbaugcharaja - 75 years of lalbuagcharaja sarvajanik ganeshotsav mandal. All the latest photos and videos from the famous ganesh raja.</div>
-					</div>
-					<div class="fl newsmore">&raquo;</div>
-					<div class="clear"></div>
-				</div>
+				<?php endwhile;wp_reset_query(); ?>
 			</div>
 		</div>
 		<div class="span4">
 			<div class="title-bar"><strong>Ads</strong></div>
-			<div><img src="<?php echo get_template_directory_uri(); ?>/img/ads.png" /></div>
+			<div>
+			
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-5804770278813362";
+			/* Devaganesha Homepage */
+			google_ad_slot = "8728645858";
+			google_ad_width = 300;
+			google_ad_height = 400;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			
+			</div>
 		</div>
 	</div>
