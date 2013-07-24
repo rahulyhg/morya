@@ -11,40 +11,25 @@ $this->menu=array(
 );
 ?>
 
-<?php /*$this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'name',
-		'description',
-		'established',
-		'how_to_go',
-		'history',
-	),
-)); */
 
-//$filename = Photo::model()->findByPk($model->primary_pic);
-//$filename1 = Photo::model()->findByPk($model->secondary_pic1);
-//$filename2 = Photo::model()->findByPk($model->secondary_pic2);
-//$filename3 = Photo::model()->findByPk($model->secondary_pic3);
-//$filename4 = Photo::model()->findByPk($model->secondary_pic4);
+    <div class="title-bar"><?php echo $model->name;?></div>
 
-?>
+		<div class="mt10">Posted on : <?php echo $model->node->created; ?> | author : <?php //echo $vedic->user->name; ?></div>
+		 <div>
+	<?php if($model->node->user_id == Yii::app()->user->id){?>
+			<span><a href="<?php echo Yii::app()->createUrl('temple/update',array('id'=>$model->id));?>">Edit</a></span>
+		   <?php } ?>
+	</div>
+        <div class="mt10">
+            <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$model->main_pic->file_name; ?>" height="200px" width="200px" class="fl mr10"/>
+            <p><?php echo $model->description;?></p>
 
-<div class="mid-region">
-    <div class="title_head"><a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$model->slug))?>"><?php echo $model->name;?></a></div>
-
-
-    <div class="cont-disp">
-        <p>
-            <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$model->main_pic->file_name; ?>" height="200px" width="200px" style="padding: 5px;float: left;"/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $model->description;?>
-
-        </p>
-        <div><strong>Established In  :</strong> <?php echo $model->established ?></div>
-        <div><strong> How to reach :</strong><?php echo $model->how_to_go;?></div>
-        <div><p><strong>History :</strong><?php echo $model->history;?></p></div>
-        <div><b>Other Pics : </b></div>
-        <div><?php
+        </div>
+        <div><strong>Established In  : </strong> <?php echo $model->established ?></div>
+        <div class="mt10"><strong> How to reach : </strong><?php echo $model->how_to_go;?></div>
+        <div  class="mt10"><p><strong>History : </strong><?php echo $model->history;?></p></div>
+     
+        <div class="mt10"><?php
             if(isset($model->pic1->file_name)){
                 ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$model->pic1->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
                 <?php }
@@ -56,15 +41,13 @@ $this->menu=array(
                 <?php }
             if(isset($model->pic4->file_name)){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$model->pic4->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
                 <?php } ?></div>
-        <div class="clear"></div>
-    </div>
+				
+				<div class="mt20"><a href="<?php echo Yii::app()->createUrl('temple/index');?>">Back to  All</a></div>
+				<?php
+				$file = get_template_directory_uri()."/comments.php";
+				echo comments_template( $file, true );
+		
+		?>
 
-</div>
-<div>
-    <div class="tab">Get More Temples Here</div>
-    <?php
-    foreach($elements as $element){
-        ?>
-        <div><?php echo CHtml::link($element->name,array('temple/templeview','temple_name'=>$element->slug));?></div>
-        <?php } ?>
-</div>
+
+

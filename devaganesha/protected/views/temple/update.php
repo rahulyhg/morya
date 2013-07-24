@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Temple <?php echo $model->id; ?></h1>
+<div class="title-bar">Edit Temple <?php echo $model->name; ?></div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

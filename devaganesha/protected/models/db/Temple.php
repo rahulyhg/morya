@@ -51,11 +51,11 @@ class Temple extends AppActiveRecord
 			array('slug', 'length', 'max'=>30),
 			array('name', 'length', 'max'=>255),
 			array('established', 'length', 'max'=>4),
-			array('user_id', 'length', 'max'=>11),
+			array('node_id', 'length', 'max'=>11),
             array('secondary_pic1, secondary_pic2,secondary_pic3, secondary_pic4','default', 'setOnEmpty'=>true, 'value'=>null),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, slug, name, description, established, how_to_go, history, user_id, created, modified', 'safe', 'on'=>'search'),
+			array('id, slug, name, description, established, how_to_go, history, node_id, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,7 +74,7 @@ class Temple extends AppActiveRecord
             'pic3' => array(self::BELONGS_TO, 'Photo', 'secondary_pic3'),
             'pic4' => array(self::BELONGS_TO, 'Photo', 'secondary_pic4'),
 
-			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+			'node' => array(self::BELONGS_TO, 'Node', 'node_id'),
 		);
 	}
 
@@ -88,13 +88,10 @@ class Temple extends AppActiveRecord
 			'slug' => 'Slug',
 			'name' => 'Name',
 			'description' => 'Description',
-			'established' => 'Established',
+			'established' => 'Established In',
 			'how_to_go' => 'How To Go',
 			'history' => 'History',
             'primary_pic' =>'Primary Ganesh Picture',
-            'user_id' => 'User',
-			'created' => 'Created',
-			'modified' => 'Modified',
 
 		);
 	}
@@ -117,9 +114,6 @@ class Temple extends AppActiveRecord
 		$criteria->compare('established',$this->established,true);
 		$criteria->compare('how_to_go',$this->how_to_go,true);
 		$criteria->compare('history',$this->history,true);
-		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('created',$this->created,true);
-		$criteria->compare('modified',$this->modified,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

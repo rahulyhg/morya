@@ -41,7 +41,7 @@ $this->menu=array(
 		<div class="mt10"><strong> Cooking Time :</strong><?php echo $recipe->cooking_time;?></div>
         <div class="mt10"><strong> Method :</strong></div>
         <div><p><?php echo $recipe->method; ?></p></div>
-		<div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$vedic->slug))?>">Leave reply </a></span>
+		<div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug))?>">Leave reply </a></span>
 		   <?php if($recipe->node->user_id == Yii::app()->user->id){?>
 			<span>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('recipe/update',array('id'=>$recipe->id));?>">Edit</a></span>
 		   <?php } ?>

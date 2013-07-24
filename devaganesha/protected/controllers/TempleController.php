@@ -38,7 +38,7 @@ class TempleController extends AppController
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-/* 	public function accessRules()
+ 	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -57,7 +57,7 @@ class TempleController extends AppController
 				'users'=>array('*'),
 			),
 		);
-	} */
+	}
 
 	/**
 	 * Displays a particular model.
@@ -74,11 +74,11 @@ class TempleController extends AppController
 	{
 		if($_REQUEST['temple_name'] != '')
 		{
-			$model=Temple::model()->findByAttributes(array('slug'=>$_REQUEST['temple_name']));
-            $elements=Temple::model()->findAll();
+			$model=Temple::model()->with('node','main_pic')->findByAttributes(array('slug'=>$_REQUEST['temple_name']));
+            //$elements=Temple::model()->findAll();
 			$this->render('templeview',array(
 			'model'=>$model,
-            'elements'=>$elements,
+            //'elements'=>$elements,
 			));
 		
 		}
@@ -97,11 +97,42 @@ class TempleController extends AppController
 
 		if(isset($_POST['Temple']))
 		{
+			$node = new Node ;
+			$node->type = NodeType::Temple;
+			
 			$model->attributes=$_POST['Temple'];
-			if($model->validate()){
-				if($model->save())
+			$model->slug = $this->behaviors();
+			
+			
+			if($node->validate())
+			{
+				$transaction = Yii::app()->db->beginTransaction();
+				$success = $node->save(false);
+				$model->node_id = $node->id;
+			
+				$success = $success ? $model->save(false) : $success;
+				 if ($success)
+				 {
+					$transaction->commit();
+					//Yii::app()->facebook->setFileUploadSupport(true);
+					//$img = PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name;
+					/*Yii::app()->facebook->api(
+					  '/me/photos',
+					  'POST',
+					  array(
+						'source' => '@' . $img,
+						'message' => 'Photo uploaded via the DevaGanesha.com'
+					  )
+					);*/
 					$this->redirect(array('index','templeType'=>$templeType));
+				}
+				else
+				{
+					$transaction->rollBack();
+				}
+				
 			}
+			
 		}
 
 		$this->render('create',array(
@@ -126,7 +157,7 @@ class TempleController extends AppController
 		{
 			$model->attributes=$_POST['Temple'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -161,6 +192,8 @@ class TempleController extends AppController
 	{
 
         $criteria=new CDbCriteria;
+		$criteria->with = array('node','main_pic');
+		$criteria->order = 'node.created DESC';
         $criteria->limit = 10;
         //$criteria->compare('type',$templeType);
 
