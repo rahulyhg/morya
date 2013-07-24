@@ -9,34 +9,19 @@ $this->menu=array(
 );
 ?>
 
-<div class="mid-region">
-    <div class="tab">&nbsp;<?php echo $model->title;?></div>
 
-    <div class="cont-disp">
-        <div><p><?php echo $model->text; ?></p></div>
-        <div style="float: right;text-decoration: none;">Posted By : <a href="#"><?php echo $model->user->name;?></a></div>
-        <div class="clear"></div>
+   <div class="title-bar">&nbsp;<?php echo $model->title;?></div>
+	<div class="mt10">Posted on : <?php echo $model->node->created; ?> | author : <?php //echo $vedic->user->name; ?></div>
+	<div>
+	<?php if($model->node->user_id == Yii::app()->user->id){?>
+			<span><a href="<?php echo Yii::app()->createUrl('experience/update',array('id'=>$model->id));?>">Edit</a></span>
+		   <?php } ?>
+	</div>
+    <div class="blog-content">
+        <div><?php echo $model->text; ?></div>
+
     </div>
-
-</div>
-<div>
-    <div class="tab">Read More Experiences Here</div>
-    <?php
-    foreach($elements as $element){
-        ?>
-        <div><?php echo CHtml::link($element->title,array('expview','exp_title'=>$element->slug));?></div>
-        <?php } ?>
-</div>
+	
+	<div class="mt20"><a href="<?php echo Yii::app()->createUrl('experience/index');?>">Back to  All</a></div>
 
 
-
-
-<?php /*$this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'title',
-		'cooking_time',
-		'ingredients',
-		'method',
-	),
-)); */?>

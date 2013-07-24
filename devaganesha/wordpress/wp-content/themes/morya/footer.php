@@ -15,8 +15,8 @@
 			<div class="fl" style="width:42%">
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Recipes</a></div>
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Top 10 ganesha</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Aarti sangrah in marathi, hindi</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Ganesh mahima</a></div>
+				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>">Aarti sangrah in marathi, hindi</a></div>
+				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('experience/index');?>">Ganesh mahima</a></div>
 				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Children's stories of Lord ganesha</a></div>
 			</div>
 			<div class="fl ml40" style="width:42%">

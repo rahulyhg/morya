@@ -73,10 +73,10 @@ class VedicController extends AppController
 		if($_REQUEST['ved_title'] != '')
 		{
 			$model=Vedic::model()->with('node')->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
-            $elements = Vedic::model()->findAll();
+            //$elements = Vedic::model()->findAll();
 			$this->render('vedicview',array(
 			'model'=>$model,
-             'elements'=>$elements,
+            // 'elements'=>$elements,
 			));
 		
 		}
@@ -177,23 +177,10 @@ class VedicController extends AppController
 	
 	
 	public function actionVedic($vedicType = VedicType::Aarti)
-	{
-		
-		//$dataProvider=new CActiveDataProvider('Vedic');
-	/*	$dataProvider=new CActiveDataProvider('vedic', array(
-			'criteria'=>array(
-				'condition'=>'type='.$vedicType,
-				'order'=>'id ASC',
-			),
-			'pagination'=>array(
-				'pageSize'=>20,
-			),
-		));
-		$this->render('vedic',array(
-			'dataProvider'=>$dataProvider,
-			'vedicType'=>$vedicType,
-		));  */
-	
+	{	
+		if(isset($_REQUEST['vedicType'])){
+		$vedicType = $_REQUEST['vedicType'];
+		}
 		$criteria=new CDbCriteria;
 		$criteria->limit = 10;
 		$criteria->with = array('node');
@@ -226,7 +213,7 @@ class VedicController extends AppController
 		
 			$model->attributes=$_POST['Vedic'];
             $model->text = nl2br($model->text);
-			$model->slug = str_replace(" ","-",$model->title);
+			$model->slug = $this->behaviors();
 			if($node->validate()){
 			
 			

@@ -62,6 +62,7 @@ $this->menu=array(
       
     </div>
 	
+	<div class="mt20"><a href="<?php echo Yii::app()->createUrl('vedic/vedic',array('vedicType'=>$model->type));?>">Back to  All</a></div>
 	<?php comments_template( '', true ); ?>
 
 

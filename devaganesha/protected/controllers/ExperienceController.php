@@ -26,7 +26,7 @@ class ExperienceController extends AppController
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-/* 	public function accessRules()
+ 	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -45,7 +45,7 @@ class ExperienceController extends AppController
 				'users'=>array('*'),
 			),
 		);
-	} */
+	}
 
 	/**
 	 * Displays a particular model.
@@ -62,11 +62,11 @@ class ExperienceController extends AppController
     {
         if($_REQUEST['exp_title'] != '')
         {
-            $model=Experience::model()->findByAttributes(array('slug'=>$_REQUEST['exp_title']));
-            $elements=Experience::model()->findAll();
+            $model=Experience::model()->with('node')->findByAttributes(array('slug'=>$_REQUEST['exp_title']));
+           // $elements=Experience::model()->findAll();
             $this->render('expview',array(
                 'model'=>$model,
-                'elements'=>$elements
+            //    'elements'=>$elements
             ));
 
         }
@@ -86,10 +86,40 @@ class ExperienceController extends AppController
 
 		if(isset($_POST['Experience']))
 		{
+			$node = new Node ;
+			$node->type = NodeType::Experience;
+			
 			$model->attributes=$_POST['Experience'];
             $model->slug = $this->behaviors();
-			if($model->save())
-				$this->redirect(array('index'));
+
+			if($node->validate())
+			{
+			  $transaction = Yii::app()->db->beginTransaction();
+			  $success = $node->save(false);
+			  $model->node_id = $node->id;
+			
+			  $success = $success ? $model->save(false) : $success;
+				if ($success)
+				{
+					$transaction->commit();
+					//Yii::app()->facebook->setFileUploadSupport(true);
+					//$img = PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name;
+					/*Yii::app()->facebook->api(
+					  '/me/photos',
+					  'POST',
+					  array(
+						'source' => '@' . $img,
+						'message' => 'Photo uploaded via the DevaGanesha.com'
+					  )
+					);*/
+					$this->redirect(array('index'));
+				}else
+				{
+					$transaction->rollBack();
+				}
+				
+			}
+				
 		}
 
 		$this->render('create',array(
@@ -113,7 +143,7 @@ class ExperienceController extends AppController
 		{
 			$model->attributes=$_POST['Experience'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('expview','exp_title'=>$model->slug));
 		}
 
 		$this->render('update',array(
@@ -146,12 +176,11 @@ class ExperienceController extends AppController
 	 */
 	public function actionIndex()
 	{
-		/* $dataProvider=new CActiveDataProvider('Experience');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		)); */
+
         $criteria=new CDbCriteria;
-        $criteria->limit = 20;
+		$criteria->with = array('node');
+		$criteria->order = 'node.created DESC';
+		$criteria->limit = 20;
 
         $pages=new CPagination(Experience::model()->count($criteria));
         $pages->applyLimit($criteria);

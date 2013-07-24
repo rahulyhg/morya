@@ -58,7 +58,7 @@ class Experience extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'node' => array(self::BELONGS_TO, 'Nodes', 'node_id'),
+			'node' => array(self::BELONGS_TO, 'Node', 'node_id'),
 		);
 	}
 
@@ -97,4 +97,17 @@ class Experience extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	//slug behaviors function
+		public function behaviors(){
+		return array(
+			'SlugBehavior' => array(
+				'class' => 'application.models.behaviors.SlugBehavior',
+				'slug_col' => 'slug',
+				'title_col' => 'title',
+				'overwrite' => false
+			)
+		);
+	}
+	
 }
