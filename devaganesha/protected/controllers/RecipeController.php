@@ -61,7 +61,7 @@ class RecipeController extends AppController
 	{
 		if($_REQUEST['rec_title'] != '')
 		{
-			$model=Recipe::model()->findByAttributes(array('slug'=>$_REQUEST['rec_title']));
+			$model=Recipe::model()->with('node','rec_pic')->findByAttributes(array('slug'=>$_REQUEST['rec_title']));
             $elements=Recipe::model()->findAll();
 			$this->render('recipeview',array(
 			'model'=>$model,
@@ -84,11 +84,42 @@ class RecipeController extends AppController
 
 		if(isset($_POST['Recipe']))
 		{
+			$node = new Node ;
+			$node->type = NodeType::Recipe;
+			
 			$model->attributes=$_POST['Recipe'];
-            $model->method = nl2br($model->method);
-			$model->slug = str_replace(" ","-",$model->title);
-			if($model->save())
-				$this->redirect(array('index'));
+            //$model->method = nl2br($model->method);
+			$model->slug = $this->behaviors();
+				
+			if($node->validate())
+			{
+				$transaction = Yii::app()->db->beginTransaction();
+				$success = $node->save(false);
+				$model->node_id = $node->id;
+			
+				$success = $success ? $model->save(false) : $success;
+				 if ($success)
+				 {
+					$transaction->commit();
+					//Yii::app()->facebook->setFileUploadSupport(true);
+					//$img = PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name;
+					/*Yii::app()->facebook->api(
+					  '/me/photos',
+					  'POST',
+					  array(
+						'source' => '@' . $img,
+						'message' => 'Photo uploaded via the DevaGanesha.com'
+					  )
+					);*/
+					$this->redirect(array('index'));
+				}
+				else
+				{
+					$transaction->rollBack();
+				}
+				
+			}
+				
 		}
 
 		$this->render('create',array(
@@ -113,7 +144,7 @@ class RecipeController extends AppController
 		{
 			$model->attributes=$_POST['Recipe'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('recipeview','rec_title'=>$model->slug));
 		}
 
 		$this->render('update',array(
@@ -148,6 +179,8 @@ class RecipeController extends AppController
 	{
 		//$dataProvider=new CActiveDataProvider('Recipe');
 		$criteria=new CDbCriteria;
+		$criteria->with = array('node','rec_pic');
+		$criteria->order = 'node.created DESC';
 		$criteria->limit = 10;
 
 	   $pages=new CPagination(Recipe::model()->count($criteria));

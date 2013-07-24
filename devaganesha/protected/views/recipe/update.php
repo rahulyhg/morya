@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update recipe <?php echo $model->id; ?></h1>
+<div class="title-bar">Edit recipe - <?php echo $model->title; ?></div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

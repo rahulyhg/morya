@@ -11,5 +11,6 @@ class PhotoUploadCategory
     const Normal = 0;   //allowed for anonymous users too.
     const Profile = 1;  //for Competition
     const Temple = 2;
+	const Recipe = 3;
     const Other = 5;
 }

@@ -19,20 +19,34 @@ $this->menu=array(
 
     <div class="cont-disp">
 
-        <div class="fnt24" style="text-align:center;"><a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug))?>"><?php echo $recipe->title; ?></a></div>
+        <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug))?>"><?php echo $recipe->title; ?></a></div>
  
-        <div class="fl pr5">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/recipe_noimg.jpg" height="250px" width="250px" />
-        </div>
-   
-        <div class="fl"><div style="float: left;width:85px;"><strong>Ingradients :</strong></div>
-            <div style="float: left;"><?php echo $recipe->ingredients; ?></div>
+        <div class="mt10">Posted on : <?php echo $recipe->node->created; ?> | author : <?php //echo $vedic->user->name; ?></div>
+
+        <div class="mt10">
+		<?php 
+		if(isset($recipe->rec_pic->file_name) && $recipe->rec_pic->file_name != '')
+		{
+			$recimg = PhotoType::$relativeFolderName[PhotoType::Screen].$recipe->rec_pic->file_name;
+		}else{
+			$recimg = get_template_directory_uri()."/img/recipe_noimg.jpg";
+		}
+		
+		?>
+		<img src="<?php echo $recimg; ?>" height="200px" width="200px" class="fl mr10"/>
+			<p><strong>Ingradients :</strong></p>
+            <p><?php echo $recipe->ingredients; ?></p>
         </div>
 		<div class="clear"></div>
-        <div class="clear"></div>
-        <div><strong> Method :</strong></div>
+		<div class="mt10"><strong> Cooking Time :</strong><?php echo $recipe->cooking_time;?></div>
+        <div class="mt10"><strong> Method :</strong></div>
         <div><p><?php echo $recipe->method; ?></p></div>
-        <div style="float: right;text-decoration: none;">Posted By : <a href="#"><?php echo $recipe->user->name;?></a></div>
+		<div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$vedic->slug))?>">Leave reply </a></span>
+		   <?php if($recipe->node->user_id == Yii::app()->user->id){?>
+			<span>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('recipe/update',array('id'=>$recipe->id));?>">Edit</a></span>
+		   <?php } ?>
+		   </div>
+		
         <div class="clear"></div>
 
         <?php /*$this->widget('zii.widgets.CListView', array(

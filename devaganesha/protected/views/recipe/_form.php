@@ -50,7 +50,7 @@
         array(
             'id'=>'uploadFile',
             'config'=>array(
-                'action'=>Yii::app()->createUrl('photo/postUpload'),
+                'action'=>Yii::app()->createUrl('photo/postUpload',array('type'=>PhotoUploadCategory::Recipe)),
                 'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
                 'sizeLimit'=>10*1024*1024,// maximum file size in bytes
                 'minSizeLimit'=>10,// minimum file size in bytes

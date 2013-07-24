@@ -41,14 +41,14 @@ class Recipe extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, method, created, modified', 'required'),
+			array('title, method', 'required'),
 			array('slug', 'length', 'max'=>30),
 			array('title', 'length', 'max'=>50),
 			array('cooking_time, ingredients', 'safe'),
             array('primary_pic','default', 'setOnEmpty'=>true, 'value'=>null),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, slug, title, cooking_time, ingredients, method, created, modified', 'safe', 'on'=>'search'),
+			array('id, slug, title, cooking_time, ingredients, method', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -77,8 +77,6 @@ class Recipe extends AppActiveRecord
 			'cooking_time' => 'Cooking Time',
 			'ingredients' => 'Ingredients',
 			'method' => 'Method',
-			'created' => 'Created',
-			'modified' => 'Modified',
 		);
 	}
 
@@ -99,8 +97,6 @@ class Recipe extends AppActiveRecord
 		$criteria->compare('cooking_time',$this->cooking_time,true);
 		$criteria->compare('ingredients',$this->ingredients,true);
 		$criteria->compare('method',$this->method,true);
-		$criteria->compare('created',$this->created,true);
-		$criteria->compare('modified',$this->modified,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
