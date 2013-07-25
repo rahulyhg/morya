@@ -69,7 +69,7 @@ class Node extends AppActiveRecord
 			'modaks' => array(self::HAS_MANY, 'Modak', 'node_id'),
 			'creator'=>array(self::BELONGS_TO, 'User', 'user_id'),
 			'photoes' => array(self::HAS_MANY, 'Photo', 'node_id'),
-			'recepies' => array(self::HAS_MANY, 'Recepie', 'node_id'),
+			'recepies' => array(self::HAS_MANY, 'Recipe', 'node_id'),
 			'temples' => array(self::HAS_MANY, 'Temple', 'node_id'),
 			'vedics' => array(self::HAS_MANY, 'Vedic', 'node_id'),
 		);

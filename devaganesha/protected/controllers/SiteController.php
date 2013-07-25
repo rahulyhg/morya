@@ -90,6 +90,19 @@ class SiteController extends Controller
 		$this->render('contact',array('model'=>$model));
 	}
 	
+		public function actionMyganesha(){
+		$node = new Node;
+		$criteria=new CDbCriteria;
+		$criteria->with = array('photoes','recepies','temples','vedics');
+		$criteria->compare('user_id',Yii::app()->user->Id);
+
+
+	   $elementsList = $node::model()->findAll($criteria);//->with('comments')
+	   $this->render('myganesha',array(
+		  'elementsList'=>$elementsList,
+	   ));
+	}
+	
 	public function actionTopwinner()
 	{
 		echo $resp = $this->renderPartial('_topwinner');

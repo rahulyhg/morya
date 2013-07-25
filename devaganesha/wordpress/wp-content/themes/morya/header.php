@@ -48,7 +48,7 @@
             <li><div  class="menu-single"><div class="temple"></div><div class="tac"><a href="<?php echo Yii::app()->createUrl('temple/index');?>" class="menu-item">Temples</a></div></div></li>
             <li><div  class="menu-single"><div class="compi"></div><div class="tac"><a href="" class="menu-item">Comeptition</a></div></div></li>
             <li><div  class="menu-single"><div class="recipe"></div><div class="tac"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>" class="menu-item">Recipe</a></div></div></li>
-            <li><div  class="menu-single"><div class="myganesha"></div><div class="tac"><a href="" class="menu-item">My ganesha</a></div></div></li>
+            <li><div  class="menu-single"><div class="myganesha"></div><div class="tac"><a href="<?php echo Yii::app()->createUrl('site/myganesha');?>" class="menu-item">My ganesha</a></div></div></li>
     </ul>
     </div>  
 	    <div class="fr">
