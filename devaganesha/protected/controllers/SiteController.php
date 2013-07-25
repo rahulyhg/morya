@@ -32,7 +32,22 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$criteria=new CDbCriteria;
+		$criteria->with = array('node');
+		$criteria->order = 'node.created DESC';
+		 $criteria->limit = 8;
+		 $elementsList=Photo::model()->findAll($criteria);//->with('comments')
+		 
+		 $criteria1=new CDbCriteria;
+		 $criteria1->with = array('node','main_pic');
+		 $criteria1->order = 'node.created DESC';
+		$elementsList1=Temple::model()->findAll($criteria);//->with('comments')
+
+		
+		$this->render('index',array(
+			'elementsList'=>$elementsList,
+			'elementsList1'=>$elementsList1,
+		));
 	}
 
 	/**

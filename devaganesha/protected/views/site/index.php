@@ -1,24 +1,12 @@
 <div class="row-fluid">
       <div class="span9 grid-gal">
 		<div id="container" style="height:253px !important;overflow-y:hidden;">
-		<div class="pin">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/5.jpg" alt="">
+		<?php foreach($elementsList as $photo){ ?>
+		<div class="pin" style="width:140px !important;margin:5px !important;padding:5px !important;">
+			<img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" alt="">
 		</div>
+	<?php } ?>
 
-		<div class="pin">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/7.jpg" alt="">
-		</div>
-
-		<div class="pin">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/10.jpg" alt="">
-		</div>
-
-		<div class="pin">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/9.jpg" alt="">
-		</div>
-		<div class="pin">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/8.jpg" alt="">
-		</div>
 		</div>
       </div>  
       <div class="span3 fl visible-desktop">
@@ -66,17 +54,13 @@
 				<div class="title-bar"><strong>Navasache Ganpati (Wish fulfilling ganesha)</strong></div>
                 <div>
                   <ul id="mycarousel" class="jcarousel-skin-tango">
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/1.jpg" width="75" height="75" alt="" /></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/2.jpg" width="75" height="75" alt="" /></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/3.jpg" width="75" height="75" alt="" /></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/4.jpg" width="75" height="75" alt="" /></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/5.jpg" width="75" height="75" alt="" /></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/6.jpg" width="75" height="75" alt="" /></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/9.jpg" width="75" height="75" alt="" /></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/10.jpg" width="75" height="75" alt="" /></li>
-					   <li><img src="<?php echo get_template_directory_uri(); ?>/images/3.jpg" width="75" height="75" alt="" /></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/4.jpg" width="75" height="75" alt="" /></li>
-                </ul>
+				  <?php foreach($elementsList1 as $temple){ ?>
+                    <li><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $temple->main_pic->file_name; ?>" width="75" height="75" alt="" />
+					<a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>"><?php echo $temple->name;?></a>
+					</li>
+					<?php } ?>
+                 
+				 </ul>
                </div>
             </div>
           </div>

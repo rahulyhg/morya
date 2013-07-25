@@ -105,9 +105,7 @@
 		$('#container').masonry({
 		  itemSelector: '.pin',
 		  isFitWidth: true
-		});
-
-		
+		});	
 	});
     </script>
 	 <script type="text/javascript">
