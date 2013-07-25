@@ -89,4 +89,14 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
+	
+	public function actionTopwinner()
+	{
+		echo $resp = $this->renderPartial('_topwinner');
+	}
+	
+	public function actionTopmakhar()
+	{
+		echo $resp = $this->renderPartial('_topmakhar');
+	}
 }
