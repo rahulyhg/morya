@@ -43,18 +43,25 @@
       <div class="fl" style="padding-top:10px;"><a href="<?php echo Yii::app()->createUrl('site/index');?>" class="logo"><h1>Devaganesha.com</h1></a></div>
     <div class="fl">
     <ul class="menu">
-      <li><div class="menu-single"><div class="aarti"></div><div class="tac"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>" class="menu-item">Aarti</a></div></div></li>
-            <li><div  class="menu-single"><div class="photo"></div><div class="tac"><a href="<?php echo Yii::app()->createUrl('photo/index');?>" class="menu-item">photo</a></div></div></li>
-            <li><div  class="menu-single"><div class="temple"></div><div class="tac"><a href="<?php echo Yii::app()->createUrl('temple/index');?>" class="menu-item">Temples</a></div></div></li>
-            <li><div  class="menu-single"><div class="compi"></div><div class="tac"><a href="" class="menu-item">Comeptition</a></div></div></li>
-            <li><div  class="menu-single"><div class="recipe"></div><div class="tac"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>" class="menu-item">Recipe</a></div></div></li>
-            <li><div  class="menu-single"><div class="myganesha"></div><div class="tac"><a href="<?php echo Yii::app()->createUrl('site/myganesha');?>" class="menu-item">My ganesha</a></div></div></li>
+      <li><div class="menu-single"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>" class="menu-item"><div class="aarti"></div><div class="tac">Aarti</div></a></div></li>
+      <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('photo/index');?>" class="menu-item"><div class="photo"></div><div class="tac">photo</div></a></div></li>
+      <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('temple/index');?>" class="menu-item"><div class="temple"></div><div class="tac">Temples</div></a></div></li>
+      <li><div  class="menu-single"><a href="" class="menu-item"><div class="compi"></div><div class="tac">Comeptition</div></a></div></li>
+      <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>" class="menu-item"><div class="recipe"></div><div class="tac">Recipe</div></a></div></li>
+            <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('site/myganesha');?>" class="menu-item"><div class="myganesha"></div><div class="tac">My ganesha</div></a></div></li>
     </ul>
     </div>  
 	    <div class="fr">
 	<?php Yii::app()->controller->widget('UserInfo'); ?>
        <div class="clear"></div>
-      <div class="pt5"><div class="fbsoc fl"></div><div class="twitsoc fl"></div><div class="pinsoc fl"></div><div class="glsoc fl"></div><div class="ytsoc fl"></div><div class="dbsoc fl"></div><div class="rsssoc fl"></div>
+      <div class="pt5">
+	  		<a href="http://facebook.com/ohmyganesha" target="_blank"><div class="fbsoc fl"></div></a>
+			<a href="http://twitter.com" target="_blank"><div class="twitsoc fl"></div></a>
+			<a href="http://pintrest.com" target="_blank"><div class="pinsoc fl"></div></a>
+			<a href="" target="_blank"><div class="glsoc fl"></div></a>
+			<a href="" target="_blank"><div class="ytsoc fl"></div></a>
+			<a href="" target="_blank"><div class="dbsoc fl"></div><a>
+			<a href="" target="_blank"><div class="rsssoc fl"></div></a>
       </div>
     </div>
     <div class="clear"></div>
