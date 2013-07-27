@@ -91,15 +91,44 @@ class SiteController extends Controller
 	}
 	
 		public function actionMyganesha(){
-		$node = new Node;
+		
 		$criteria=new CDbCriteria;
-		$criteria->with = array('photoes','recepies','temples','vedics');
-		$criteria->compare('user_id',Yii::app()->user->Id);
-
-
-	   $elementsList = $node::model()->findAll($criteria);//->with('comments')
+		$criteria->with = array('node');
+		$criteria->order = 'node.created DESC';
+		$criteria->compare('node.user_id',Yii::app()->user->Id);
+		$criteria->compare('t.type',PhotoUploadCategory::Normal,'AND');
+		$photos = Photo::model()->findAll($criteria);//->with('comments')
+		
+		$criteria1=new CDbCriteria;
+		$criteria1->with = array('node');
+		$criteria1->order = 'node.created DESC';
+		$criteria1->compare('node.user_id',Yii::app()->user->Id);
+		$recipes = Recipe::model()->findAll($criteria1);//->with('comments')
+		
+		$criteria2=new CDbCriteria;
+		$criteria2->with = array('node');
+		$criteria2->order = 'node.created DESC';
+		$criteria2->compare('node.user_id',Yii::app()->user->Id);
+		$temples = Temple::model()->findAll($criteria2);//->with('comments')
+		
+		$criteria3=new CDbCriteria;
+		$criteria3->with = array('node');
+		$criteria3->order = 'node.created DESC';
+		$criteria3->compare('node.user_id',Yii::app()->user->Id);
+		$vedics = Vedic::model()->findAll($criteria3);//->with('comments')
+		
+		$criteria4=new CDbCriteria;
+		$criteria4->with = array('node');
+		$criteria4->order = 'node.created DESC';
+		$criteria4->compare('node.user_id',Yii::app()->user->Id);
+		$experiences = Experience::model()->findAll($criteria3);//->with('comments')
+		
 	   $this->render('myganesha',array(
-		  'elementsList'=>$elementsList,
+		  'photos'=>$photos,
+		  'recipes'=>$recipes,
+		  'temples'=>$temples,
+		 'vedics'=>$vedics,
+		 'experiences'=>$experiences,
 	   ));
 	}
 	

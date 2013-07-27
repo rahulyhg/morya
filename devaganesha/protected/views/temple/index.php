@@ -37,7 +37,7 @@ $this->menu=array(
     ?>
     <div class="cont-disp">
         <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>"><?php echo $temple->name;?></a></div>
-		<div class="mt10">Posted on : <?php echo $temple->node->created; ?> | author : <?php echo $temple->node->creator->name; ?></div>
+		<div class="mt10"><strong>Posted on : <?php echo $temple->node->created; ?> | author : <?php echo $temple->node->creator->name; ?></strong></div>
         <div class="mt10">
              <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->main_pic->file_name; ?>" height="200px" width="200px" class="fl mr10"/>
              <p><?php echo $temple->description;?></p>

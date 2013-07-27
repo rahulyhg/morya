@@ -7,12 +7,10 @@
  */
 ?>
 <div class="span3">
-<div class="title-bar"><strong>See more</strong></div>
-<ul>
-<li><strong>more links</strong>
-	<ul>
-		<?php wp_list_pages(); ?>
-	</ul>
-</li>
-</ul>
+	<div class="top-widget">
+		<div class="title-bar">Find more</div>
+			<ul>
+				<?php wp_list_pages(); ?>
+			</ul>
+	</div>
 </div>

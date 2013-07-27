@@ -22,7 +22,7 @@ if(have_posts()) :
 		<div>
 			<img src="<?php echo get_template_directory_uri(); ?>/img/gan1.png" class="fl mr10" />
 					<p class="fnt24 mt5"><a href="<?php echo the_permalink() ; ?>"><b><?php echo the_title() ; ?></b></a></p>
-					<p>Posted on: <?php the_date(); ?> | author: <?php the_author();?></p>
+					<p><strong>Posted on: <?php the_date(); ?> | author: <?php the_author();?></strong></p>
 					
 		</div>
 		<div class="clear"></div>

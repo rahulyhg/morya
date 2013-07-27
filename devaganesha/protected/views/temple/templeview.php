@@ -14,7 +14,7 @@ $this->menu=array(
 
     <div class="title-bar"><?php echo $model->name;?></div>
 
-		<div class="mt10">Posted on : <?php echo $model->node->created; ?> | author : <?php echo $model->node->creator->name; ?></div>
+		<div class="mt10"><strong>Posted on : <?php echo $model->node->created; ?> | author : <?php echo $model->node->creator->name; ?></strong></div>
 		 <div>
 	<?php if($model->node->user_id == Yii::app()->user->id){?>
 			<span><a href="<?php echo Yii::app()->createUrl('temple/update',array('id'=>$model->id));?>">Edit</a></span>

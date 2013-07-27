@@ -1,13 +1,10 @@
 <div class="row-fluid">
       <div class="span9 grid-gal">
-		<div id="container" style="height:253px !important;overflow-y:hidden;">
-		<?php foreach($elementsList as $photo){ ?>
-		<div class="pin" style="width:140px !important;margin:5px !important;padding:5px !important;">
-			<img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" alt="">
-		</div>
-	<?php } ?>
-
-		</div>
+			<div class="am-container mt10 home-grid" id="am-container">
+		 <?php foreach($elementsList as $photo){ ?>
+				<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" alt=""></a>
+		  <?php } ?>
+			</div>
       </div>  
       <div class="span3 fl visible-desktop">
       	<div class="Flexible-container">

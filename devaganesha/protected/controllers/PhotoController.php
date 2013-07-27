@@ -196,10 +196,17 @@ class PhotoController extends AppController
 		}
         $newComment = new Comment() ;
         $newComment->node_id = $photo->node_id ;
+		$criteria=new CDbCriteria;
+        $criteria->with = array('node');
+		$criteria->order = 'node.created DESC';
+        $criteria->limit = 30;
+	
+		$elementsList=Photo::model()->findAll($criteria);//->with('comments')
 		$this->render('view',array(
 			'photo'=>$photo,
             'newComment'=>$newComment,
-			'modaks' => $modaks
+			'modaks' => $modaks,
+			'elementsList'=>$elementsList,
 		));
 	}
 

@@ -20,7 +20,7 @@ $this->menu=array(
     <div class="cont-disp">
 
          <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug));?>"><?php echo $exp->title; ?></a></div>
-         <div class="mt10">Posted on : <?php echo $exp->node->created; ?> | author : <?php //echo $exp->user->name; ?></div>
+         <div class="mt10"><strong>Posted on : <?php echo $exp->node->created; ?> | author : <?php echo $exp->->name; ?></strong></div>
 		<div class="blog-content"><?php echo $exp->text; ?></div>
 		<div><span> <a href="<?php echo Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug));?>">Leave reply </a></span>
 		   <?php if($vedic->node->user_id == Yii::app()->user->id){?>

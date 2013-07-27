@@ -51,7 +51,7 @@ $this->menu=array(
 ?>
 
     <div class="title-bar">&nbsp;<?php echo $model->name_of_god;?>(<?php echo $model->title;?>)</div>
-	<div class="mt10">Posted on : <?php echo $model->node->created; ?> | author : <?php //echo $vedic->user->name; ?></div>
+	<div class="mt10"><strong>Posted on : <?php echo $model->node->created; ?> | author : <?php echo $model->node->creator->name; ?></strong></div>
 	<div>
 	<?php if($model->node->user_id == Yii::app()->user->id){?>
 			<span><a href="<?php echo Yii::app()->createUrl('vedic/update',array('id'=>$model->id));?>">Edit</a></span>
