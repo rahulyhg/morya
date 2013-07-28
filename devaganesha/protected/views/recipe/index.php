@@ -21,7 +21,7 @@ $this->menu=array(
 
         <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug))?>"><?php echo $recipe->title; ?></a></div>
  
-        <div class="mt10">Posted on : <?php echo $recipe->node->created; ?> | author : <?php //echo $vedic->user->name; ?></div>
+        <div class="mt10">Posted on : <?php echo $recipe->node->created; ?> | author : <?php echo $recipe->node->creator->name; ?></div>
 
         <div class="mt10">
 		<?php 

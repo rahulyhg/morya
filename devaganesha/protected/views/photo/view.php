@@ -73,6 +73,39 @@
 			?>
 		<?php $this->renderPartial('//comment/create',array('comment'=>$newComment)); ?>
 		</div>
+		<div class="mt10"><h3>See more :</h3></div>
+		<div class="am-container mt10" id="am-container">
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/1.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/2.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/3.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/4.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/5.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/6.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/7.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/8.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/9.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/10.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/11.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/12.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/13.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/14.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/15.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/16.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/17.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/18.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/19.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/20.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/21.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/22.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/23.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/24.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/25.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/26.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/27.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/28.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/29.jpg"></img></a>
+				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/30.jpg"></img></a>
+			</div>
 	</div>
 
 </div>

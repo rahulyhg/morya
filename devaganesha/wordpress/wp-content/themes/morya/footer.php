@@ -63,6 +63,8 @@
 <!-- our javascript code -->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/custom.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.timeago.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.montage.min.js"></script>
+		
 
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -163,6 +165,39 @@
           $("abbr.timeago").timeago();
       });
   </script>
+  <script type="text/javascript">
+			$(function() {
+				var $container 	= $('#am-container'),
+					$imgs		= $container.find('img').hide(),
+					totalImgs	= $imgs.length,
+					cnt			= 0;
+				
+				$imgs.each(function(i) {
+					var $img	= $(this);
+					$('<img/>').load(function() {
+						++cnt;
+						if( cnt === totalImgs ) {
+							$imgs.show();
+							$container.montage({
+								liquid 	: false,
+								fixedHeight : 80
+							});
+							
+							/* 
+							 * just for this demo:
+							 */
+							$('#overlay').fadeIn(500);
+							var imgarr	= new Array();
+							for( var i = 1; i <= 30; ++i ) {
+								imgarr.push( i );
+							}
+					
+						}
+					}).attr('src',$img.attr('src'));
+				});	
+				
+			});
+		</script>
 	<?php Yii::app()->controller->renderClip('js-page-end'); ?>
 
   </body>

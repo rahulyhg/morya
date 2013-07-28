@@ -259,3 +259,40 @@ font-weight:bold;
 border-bottom:1px solid #CCCCCC;
 margin:10px;
 }
+
+.am-container{
+background:#FFFFFF;
+height:360px;
+width:100%;
+overflow:hidden;
+}
+
+
+.caption {
+    border-left:2px solid #a0a0a0;
+    padding-left: 5px;
+    margin-top:10px;
+    font-size: 16px;
+    color: #A0A0A0;
+    font-family: Verdana;
+}
+
+.photo_uploader_name
+{
+    color:#00a0F0;
+}
+
+div.star-rating, div.star-rating a 
+{
+background-image: url("../img/modaks2.gif");
+width:25px;
+height:25px;
+}
+
+div.star-rating-hover a{
+background-position:0 -50px
+}
+
+div.star-rating-on a{
+background-position:0 -25px!important
+}
