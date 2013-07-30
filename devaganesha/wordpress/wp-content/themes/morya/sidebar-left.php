@@ -13,4 +13,5 @@
 				<?php wp_list_pages(); ?>
 			</ul>
 	</div>
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </div>
