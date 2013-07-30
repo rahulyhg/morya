@@ -134,7 +134,8 @@ width: 100%;
 }
 
 .description{
-	padding:10px;
+	padding:5px 0;
+	color: #A0A0A0;
 }
 .convo{
 	margin: 0 -15px;
@@ -315,4 +316,61 @@ padding:1px 2px;
 margin:0 5px;
 padding:3px;
 border-bottom:1px solid #CCCCCC;
+}
+
+
+
+.white_mask_wrapper {
+position:absolute;
+width:auto;
+color:white;
+background-image:url(../img/whitebg.png);
+background-repeat:repeat-x;
+height:40px;
+width:87%;
+}
+
+.white_mask {
+position:relative;
+height:40px;
+}
+.white_mask .darshan {
+position:absolute;
+background-image:url(../img/darshan.png);
+background-repeat:repeat-x;
+left:5px;
+bottom:4px;
+width:23px;
+height:32px;
+}
+.white_mask p{
+ color: #000000;
+    font-size: 11px;
+    position: absolute;
+    right: -20px;
+    top: -6px;
+}
+
+.white_mask .modak {
+position:absolute;
+background-image:url(../img/modak.png);
+background-repeat:repeat-x;
+left:45px;
+bottom:4px;
+width:27px;
+height:30px;
+}
+
+.white_mask .add_collection {
+position:absolute;
+background-image:url(../img/add_collection.png);
+background-repeat:repeat-x;
+right:4px;
+bottom:4px;
+width:26px;
+height:29px;
+}
+
+.at16nc.at16t_compact {
+    background : none !important;
 }
