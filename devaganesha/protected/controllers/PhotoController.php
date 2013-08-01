@@ -95,6 +95,7 @@ class PhotoController extends AppController
 		$this->render('upload');
 	}
 	public function actionPostUpload($type = PhotoUploadCategory::Normal){
+
 			Yii::import("ext.EAjaxUpload.qqFileUploader");
 			$folder = PhotoType::$folderName[PhotoType::Original];// folder for uploaded files
 			$allowedExtensions = array("jpg","jpeg","gif");//array("jpg","jpeg","gif","exe","mov" and etc...

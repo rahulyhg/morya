@@ -1,9 +1,12 @@
 <?php
 $this->breadcrumbs=array(
 	'Ganesh Photos',
-);?>
-
-        <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
+);
+			if(Yii::app()->user->isGuest){ ?>
+				<a href="<?php echo Yii::app()->createUrl('user/login'); ?>"><div class="qq-upload-button">Upload Your ganesha</div></a>
+		<?php	}else{
+			
+          $this->widget('ext.EAjaxUpload.EAjaxUpload',
         array(
             'id'=>'uploadFile',
             'config'=>array(
@@ -22,7 +25,9 @@ $this->breadcrumbs=array(
                 ),
                 'showMessage'=>"js:function(message){ alert(message); }"
             )
-        )); ?>
+        )); 
+		
+		} ?>
 
     <div class="row-fluid" >
       <div id="container">
