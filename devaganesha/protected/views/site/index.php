@@ -1,4 +1,5 @@
-<div class="row-fluid">
+
+<div class="row-fluid mt10">
       <div class="span9 grid-gal">
 			<div class="am-container mt10 home-grid" id="am-container">
 		 <?php foreach($elementsList as $photo){ ?>

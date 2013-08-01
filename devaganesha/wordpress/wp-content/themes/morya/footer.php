@@ -56,23 +56,35 @@
 	<!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/masonry.js"></script> -->
 		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.masonry.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.mousewheel.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.pack.js"></script>
 
-<!-- the jScrollPane script -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.jscrollpane.min.js"></script>
+
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.pack.js"></script>
 <!-- our javascript code -->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/custom.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.timeago.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.montage.min.js"></script>
+<!-- the jScrollPane script -->
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.jscrollpane.min.js"></script>
 		
 
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=161728354002755";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=231642110292386";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+	
+	<script>
+	$(document).ready(function(){
+		$('.conn-fb').click(function(){
+		FB.ui({
+		  method: 'send',
+		  link: 'http://www.itvedant.com/programming/php-training-classes-in-mumbai',
+		});
+		});
+	});
+	</script>
 	
     <script type="text/javascript">
 
@@ -82,7 +94,7 @@
          scroll: 5,
         });
 		
-		 $( "#tabs" ).tabs({
+		 jQuery( "#tabs" ).tabs({
 		beforeLoad: function( event, ui ) {
 		ui.jqXHR.error(function() {
 		ui.panel.html(
@@ -92,9 +104,9 @@
 		}
 		});
 		
-		$(function()
+		jQuery(function()
 		{
-			$('.scroll-pane').jScrollPane();
+			jQuery('.scroll-pane').jScrollPane();
 		});
 		
       });

@@ -40,8 +40,8 @@
 
     <div class="container-fluid">
             <div class="row-fluid">
-      <div class="fl" style="padding-top:10px;"><a href="<?php echo Yii::app()->createUrl('site/index');?>" class="logo"><h1>Devaganesha.com</h1></a></div>
-    <div class="fl">
+      <div class="fl"><a href="<?php echo Yii::app()->createUrl('site/index');?>" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" alt="logo" /></a></div>
+    <div class="fl mt10">
     <ul class="menu">
       <li><div class="menu-single"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>" class="menu-item"><div class="aarti"></div><div class="tac">Aarti</div></a></div></li>
       <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('photo/index');?>" class="menu-item"><div class="photo"></div><div class="tac">photo</div></a></div></li>
@@ -51,7 +51,7 @@
             <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('site/myganesha');?>" class="menu-item"><div class="myganesha"></div><div class="tac">My ganesha</div></a></div></li>
     </ul>
     </div>  
-	    <div class="fr">
+	    <div class="fr mt10">
 	<?php Yii::app()->controller->widget('UserInfo'); ?>
        <div class="clear"></div>
       <div class="pt5">
