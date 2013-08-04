@@ -43,11 +43,7 @@ $this->menu=array(
                 <?php } ?></div>
 				
 				<div class="mt20"><a href="<?php echo Yii::app()->createUrl('temple/index');?>">Back to  All</a></div>
-				<?php
-				$file = get_template_directory_uri()."/comments.php";
-				echo comments_template( $file, true );
-		
-		?>
+		<?php $this->renderPartial('//comment/create',array('comment'=>$newComment)); ?>
 
 
 

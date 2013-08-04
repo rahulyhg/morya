@@ -3,7 +3,19 @@ $this->breadcrumbs=array(
 	'Edit Profile',
 );
 ?>
+<?php
+Yii::app()->clientScript->registerScript(
+   'myHideEffect',
+   '$(".info").animate({opacity: 1.0}, 3000).fadeOut("slow");',
+   CClientScript::POS_READY
+);
+?>
 <div class="title-bar">Edit your profile</div>
+<?php if(Yii::app()->user->hasFlash('success')):?>
+    <div class="info">
+        <?php echo Yii::app()->user->getFlash('success'); ?>
+    </div>
+<?php endif; ?>
 <div class="form">
 
     <?php $form=$this->beginWidget('CActiveForm', array(

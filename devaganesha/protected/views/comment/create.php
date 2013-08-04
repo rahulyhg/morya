@@ -26,7 +26,7 @@
     ?>
 	<?php echo $form->hiddenField($comment,'node_id',array('value'=>$comment->node_id)); ?>
     <div>
-        <?php echo $form->textArea($comment,'comment',array('maxlength'=>255,'class'=>'span8')); ?>
+        <?php echo $form->textArea($comment,'comment',array('maxlength'=>255,'placeholder'=>'comment here...','class'=>'span8')); ?>
     </div>
 
     <div>

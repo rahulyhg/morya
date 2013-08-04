@@ -4,7 +4,6 @@ class UserController extends AppController
 {
 	function init(){
 		Yii::import('application.models.vm.user.*');
-		//Yii::app()->user->setReturnUrl(Yii::app()->createUrl('site/index'));
 	}
 	public $layout = 'layout_3C';
 	public function filters()
@@ -121,7 +120,7 @@ class UserController extends AppController
         if(isset($_POST['User'])){
             $user->attributes = $_POST['User'];
             if($user->save()){
-                //Yii::app()->user->setFlash('Successfully Updated the profile');
+                Yii::app()->user->setFlash('success','Successfully Updated the profile');
                 //$this->redirect(Yii::app()->createUrl('user/profile'));
             }
         }
@@ -133,7 +132,7 @@ class UserController extends AppController
 	{
 		//redirect loggedIn users
 		if(!Yii::app()->user->isGuest){
-			$this->redirect(Yii::app()->user->returnUrl);
+			Yii::app()->request->redirect(Yii::app()->user->returnUrl);
 		}
 
 		$model=new LoginForm;
@@ -149,9 +148,10 @@ class UserController extends AppController
 		if(isset($_POST['LoginForm']))
 		{
 			$model->attributes=$_POST['LoginForm'];
+			
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+				Yii::app()->request->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));

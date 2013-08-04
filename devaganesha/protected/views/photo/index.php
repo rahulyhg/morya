@@ -1,3 +1,5 @@
+
+
 <?php
 $this->breadcrumbs=array(
 	'Ganesh Photos',
@@ -14,7 +16,12 @@ $this->breadcrumbs=array(
                 'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
                 'sizeLimit'=>10*1024*1024,// maximum file size in bytes
                 'minSizeLimit'=>10,// minimum file size in bytes
-                'onComplete'=>"js:function(id,filename,response){}",
+                    'onComplete'=>"js:function(id,filename,response){
+                                    fileUploadComplete(id,filename,response);
+                            }",
+                    'onUpload'=>"js:function(id,fileName){
+                                fileUploadBegin(id,fileName);
+                            }",
                 'uploadButtonText'=>'Drop Your Ganesha`s Photoes Here to Upload. ',
                 'messages'=>array(
                     'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
@@ -28,7 +35,12 @@ $this->breadcrumbs=array(
         )); 
 		
 		} ?>
-
+	<div id="upload" style="display: none">
+		<div id="upload-wrapper">
+			<div id="upload-list">
+			</div>
+		</div>
+	</div>
     <div class="row-fluid" >
       <div id="container">
     <?php

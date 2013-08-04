@@ -380,3 +380,14 @@ padding:3px;
 border-bottom:1px solid #CCCCCC;
 list-style:none;
 }
+
+.info{
+	background: #E6EFC2;
+	border-color: #C6D880;
+	padding:5px;
+}
+div.form .errorMessage
+{
+	color: red;
+	font-size: 0.9em;
+}

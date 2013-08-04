@@ -52,6 +52,12 @@ return array(
 			'urlFormat'=>'path',
 			'showScriptName'=>false,
 			'rules'=>array(
+				''=>'site/index',
+				'login'=>'user/login',
+				'myganesha'=>'site/myganesha',
+				'edit-profile'=>'user/edit',
+				'logout'=>'user/logout',
+				'register'=>'user/register',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

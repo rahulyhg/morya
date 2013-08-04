@@ -76,8 +76,11 @@ class TempleController extends AppController
 		{
 			$model=Temple::model()->with('node','main_pic')->findByAttributes(array('slug'=>$_REQUEST['temple_name']));
             //$elements=Temple::model()->findAll();
+			$newComment = new Comment() ;
+        	$newComment->node_id = $model->node_id ;
 			$this->render('templeview',array(
 			'model'=>$model,
+			'newComment'=>$newComment,
             //'elements'=>$elements,
 			));
 		

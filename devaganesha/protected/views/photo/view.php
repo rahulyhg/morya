@@ -19,7 +19,7 @@
                 'showMessage'=>"js:function(message){ alert(message); }"
             )
         )); ?>
-<div class="row-fluid">
+<div class="row-fluid mt10">
 <div class="span6">
     <div id="modak-rating">
 	<?php

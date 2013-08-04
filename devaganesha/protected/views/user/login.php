@@ -28,7 +28,7 @@ $this->breadcrumbs=array(
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 
-	<div class="rememberMe">
+	<div class="checkbox">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
 		<?php echo $form->label($model,'rememberMe',array('style'=>'display:inline')); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>

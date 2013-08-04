@@ -4,10 +4,10 @@
 			<div class="foothead">Social ganesha</div>
 			<div class="ml40">
 				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/fb-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/ohmyganesha" target="_blank">www.facebook.com/ohmyganesha</a></div>
-				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/twit-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#">www.twitter.com/devaganesha</a></div>
-				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/pin-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#">www.pinterest.com/devaganesha</a></div>
+				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/twit-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/devaganeshacom" target="_blank">www.twitter.com/devaganeshacom</a></div>
+				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/pin-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="http://pinterest.com/devaganesha" target="_blank">www.pinterest.com/devaganesha</a></div>
 				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/gmail-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>" target="_blank">www.devaganesha.com/blog</a></div>
-				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/reddit-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#">www.reddit.com</a></div>
+				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/reddit-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#" target="_blank">www.reddit.com</a></div>
 			</div>
 		</div>
 		<div class="span5">
@@ -210,6 +210,37 @@
 				
 			});
 		</script>
+		<script type="text/javascript">
+		
+		 // $('.fancybox-thumb').attr('rel', 'gallery').fancybox();
+		   function fileUploadBegin(id,fileName){
+                    $.fancybox($('#upload-wrapper'));
+                }
+          function fileUploadComplete(id,filename,response){
+                    $('#upload-list').html('');
+                    $('#upload-wrapper').append('<div id="upload-success"><p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p></div>');
+                    $('#upload-success').append('<img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Description:</label><textarea cols="30" rows="3" id="photo-description"></textarea><br /><input type="submit" id="save-photo" class="button_1" />');
+                    $.fancybox.update();
+                    $('#save-photo').click(function(){
+                        updateFile(response.id);
+                        return false;
+                    });
+                }
+                function updateFile(photoId){
+                    $.ajax({
+                        url: "<?php echo Yii::app()->createUrl("photo/update"); ?>",
+                        type: 'POST',
+                        data: { 'id': photoId , 'caption':$('#photo-caption').val() ,'description': $('#photo-description').val() },
+                        success: function() {
+                            $.fancybox.close();
+                            $('#upload-success').remove();
+                            $('#recent-uploads').load('<?php echo Yii::app()->createUrl('site/recent'); ?>');
+                        }
+                    });
+                }
+	
+
+</script>
 	<?php Yii::app()->controller->renderClip('js-page-end'); ?>
 
   <div id="fb-root"></div>
