@@ -31,8 +31,8 @@
 		<div class="span4">
 			<div class="fl">
 				<div class="daily-text">Enter your email to get one daily<br/>ganesha in your inbox.</div>
-				<div class="mb20"><span><input type="text" name="getsub" style="width:65%"/></span><span class="getbox">Get !</span></div>
-				<div class="foot-logo">devaganesha.com</div>
+				<div><span><input type="text" name="getsub" style="width:65%"/></span><span class="getbox">Get !</span></div>
+				<div class="foot-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="width:220px;" alt="logo" /></div>
 				<div class="footer-link"><a href="">home</a> | <a href="">about</a> | <a href="">sitemap</a> | <a href="">rss</a></div>
 			</div>
 			<div class="fl footer-image visible-desktop"></div>

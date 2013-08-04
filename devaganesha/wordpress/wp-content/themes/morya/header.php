@@ -17,7 +17,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen"  />
 	 <style>
       body {
-        margin-top: 10px; /* 60px to make the container go all the way to the bottom of the topbar */
         overflow-x: hidden;
       }
     </style>
