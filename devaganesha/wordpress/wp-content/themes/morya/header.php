@@ -53,12 +53,12 @@
        <div class="clear"></div>
       <div class="pt5">
 	  		<a href="http://facebook.com/ohmyganesha" target="_blank"><div class="fbsoc fl"></div></a>
-			<a href="http://twitter.com" target="_blank"><div class="twitsoc fl"></div></a>
-			<a href="http://pintrest.com" target="_blank"><div class="pinsoc fl"></div></a>
-			<a href="" target="_blank"><div class="glsoc fl"></div></a>
-			<a href="" target="_blank"><div class="ytsoc fl"></div></a>
-			<a href="" target="_blank"><div class="dbsoc fl"></div><a>
-			<a href="" target="_blank"><div class="rsssoc fl"></div></a>
+			<a href="https://twitter.com/devaganeshacom" target="_blank"><div class="twitsoc fl"></div></a>
+			<a href="http://pinterest.com/devaganesha" target="_blank"><div class="pinsoc fl"></div></a>
+			<a href="https://plus.google.com/114951965233578328868" rel="publisher" target="_blank"><div class="glsoc fl"></div></a>
+			<a href="http://www.youtube.com/devaganesha" target="_blank"><div class="ytsoc fl"></div></a>
+			<a href="mailto:mail@devaganesha.com" target="_blank"><div class="dbsoc fl"></div><a>
+			<a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><div class="rsssoc fl"></div></a>
       </div>
     </div>
     <div class="clear"></div>
