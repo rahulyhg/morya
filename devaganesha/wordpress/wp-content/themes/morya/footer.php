@@ -212,5 +212,6 @@
 		</script>
 	<?php Yii::app()->controller->renderClip('js-page-end'); ?>
 
+  <div id="fb-root"></div>
   </body>
 </html>

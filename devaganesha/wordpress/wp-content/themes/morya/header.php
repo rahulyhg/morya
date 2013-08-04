@@ -35,9 +35,6 @@
   </head>
 
   <body>
-  <div id="fb-root"></div>
-
-
     <div class="container-fluid">
             <div class="row-fluid">
       <div class="fl"><a href="<?php echo Yii::app()->createUrl('site/index');?>" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" alt="logo" /></a></div>
