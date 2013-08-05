@@ -7,7 +7,12 @@
                 'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
                 'sizeLimit'=>10*1024*1024,// maximum file size in bytes
                 'minSizeLimit'=>10,// minimum file size in bytes
-                'onComplete'=>"js:function(id,filename,response){}",
+                       'onComplete'=>"js:function(id,filename,response){
+                                    fileUploadComplete(id,filename,response);
+                            }",
+                    'onUpload'=>"js:function(id,fileName){
+                                fileUploadBegin(id,fileName);
+                            }",
                 'uploadButtonText'=>'Drop Your Ganesha`s Photoes Here to Upload. ',
                 'messages'=>array(
                     'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
@@ -51,7 +56,7 @@
 			}'
 	));?>
 	</div>
-	<div>
+	<div class="mt10">
 	<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" /></div>
     <div class="caption"><?php echo $photo->original_name; ?></div>
     <p style="font-size:12px "><em>Posted By: </em><a class="photo_uploader_name"><?php echo $photo->node->creator->name ?></a></p>

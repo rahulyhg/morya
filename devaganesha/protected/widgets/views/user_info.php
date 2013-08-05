@@ -37,7 +37,14 @@ if(Yii::app()->user->isGuest)
 
 <span class="user_space">
 	<div class="fl mr10">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/prof.gif" alt="pp" wid/>
+	<?php if(!$user->ganpati_pic && !$user->profile_pic){ ?>
+		<img src="<?php echo get_template_directory_uri(); ?>/img/prof.gif" alt="pp" />
+		
+		<?php }else if($user->ganpati_pic){ ?>
+		<img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Profile].$user->id.".jpg"; ?>" alt="pp" width="40" height="40"/>
+		<?php }else{ ?>
+		<img src="<?php echo $user->profile_pic; ?>" alt="pp" width="40" height="40"/>
+		<?php }?>
 	</div>
 	<div>
     <div><a href="" class="us_logged"><?php $splitIndex = strpos($user->name,' '); echo($splitIndex > 0 ? substr($user->name,0,$splitIndex) : $user->name) ; ?></a></div>

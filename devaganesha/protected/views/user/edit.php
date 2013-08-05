@@ -43,6 +43,16 @@ Yii::app()->clientScript->registerScript(
         <?php echo $form->error($model,'contact'); ?>
     </div>
 
+	<div>
+        <?php echo $form->labelEx($model,'ganpati_pic'); ?>
+        <?php echo $form->fileField($model,'ganpati_pic'); ?>
+        <?php echo $form->error($model,'ganpati_pic'); ?>
+		<?php if($model->ganpati_pic){ ?>
+		<img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Profile].$model->id.".jpg"; ?>" width="100" height="100"/>
+		<?php } ?>
+    </div> 
+	
+	
     <div>
         <?php echo $form->labelEx($model,'add_line_1'); ?>
         <?php echo $form->textField($model,'add_line_1',array('maxlength'=>255,'class'=>'span8')); ?>

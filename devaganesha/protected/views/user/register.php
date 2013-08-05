@@ -43,11 +43,11 @@ $this->breadcrumbs=array(
         <?php echo $form->error($model,'contact'); ?>
     </div>
 
- <!--   <div>
+	<div>
         <?php echo $form->labelEx($model,'ganpati_pic'); ?>
-        <?php echo $form->fileField($model,'ganpati_pic',array('size'=>11,'maxlength'=>11)); ?>
+        <?php echo $form->fileField($model,'ganpati_pic'); ?>
         <?php echo $form->error($model,'ganpati_pic'); ?>
-    </div> -->
+    </div> 
 
     <div>
         <?php echo $form->labelEx($model,'add_line_1'); ?>

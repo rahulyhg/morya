@@ -44,7 +44,12 @@
 	<div class="row-fluid thin-footer">
 		<p class="mt25">copyright &copy; 2013 Devaganesha.com - Developed by Vedant IT Academy</p>
 	</div>
-
+<div id="upload" style="display: none">
+		<div id="upload-wrapper">
+			<div id="upload-list">
+			</div>
+		</div>
+	</div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -219,7 +224,7 @@
           function fileUploadComplete(id,filename,response){
                     $('#upload-list').html('');
                     $('#upload-wrapper').append('<div id="upload-success"><p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p></div>');
-                    $('#upload-success').append('<img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Description:</label><textarea cols="30" rows="3" id="photo-description"></textarea><br /><input type="submit" id="save-photo" class="button_1" />');
+                    $('#upload-success').append('<img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Tags:</label><input type="text" id="photo-description" /><br /><input type="submit" id="save-photo" class="btn" value="Save"/>');
                     $.fancybox.update();
                     $('#save-photo').click(function(){
                         updateFile(response.id);
@@ -234,7 +239,8 @@
                         success: function() {
                             $.fancybox.close();
                             $('#upload-success').remove();
-                            $('#recent-uploads').load('<?php echo Yii::app()->createUrl('site/recent'); ?>');
+                            //$('#recent-uploads').load('<?php echo Yii::app()->createUrl('site/recent'); ?>');
+							window.location.reload();
                         }
                     });
                 }

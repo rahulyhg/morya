@@ -133,7 +133,7 @@ width: 100%;
 }
 
 .description{
-	padding:5px 0;
+	padding-top:5px;
 	color: #A0A0A0;
 }
 .convo{
@@ -390,4 +390,32 @@ div.form .errorMessage
 {
 	color: red;
 	font-size: 0.9em;
+}
+
+.photo_success {
+    color:#0090E6;
+    font-size:12px;
+}
+
+/************* Styling for comments ***********/
+
+.single_comment{
+    padding: 5px;
+    margin-bottom:10px;
+    width: 65.812%;
+    background-color: #f0f8ff;
+}
+.single_comment abbr {
+    font-size:11px;
+}
+.single_comment h4 {
+    margin:0px;
+    padding: 0px;
+    font-size:12px;
+    font-family: Verdana;
+    color:#6495ed;
+}
+.single_comment p{
+    font-family: cursive ;
+    margin-bottom: 5px;
 }

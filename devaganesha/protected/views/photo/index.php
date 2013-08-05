@@ -35,12 +35,7 @@ $this->breadcrumbs=array(
         )); 
 		
 		} ?>
-	<div id="upload" style="display: none">
-		<div id="upload-wrapper">
-			<div id="upload-list">
-			</div>
-		</div>
-	</div>
+	
     <div class="row-fluid" >
       <div id="container">
     <?php

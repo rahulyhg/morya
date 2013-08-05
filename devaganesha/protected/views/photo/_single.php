@@ -38,11 +38,19 @@
         </div>
 			<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen] . $photo->file_name ;?>" alt=""></a>
 			
-			<div class="description"><?php echo $photo->original_name; ?></div>
+			<div class="description"><a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>"><?php echo $photo->caption; ?></a></div>
+			<?php if($photo->description){?>
+			<div class="description"><strong>Tags : </strong><?php echo $photo->description; ?></div>
+			<?php } ?>
 			<div class="convo">
-      			<img src="<?php echo get_template_directory_uri(); ?>/img/prof.gif" alt="pp" />
+      			
+				<?php if(!$photo->node->creator->ganpati_pic){ ?>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/prof.gif" alt="pp" />
+				<?php }else{ ?>
+				<img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Profile].$photo->node->creator->id.".jpg"; ?>" alt="pp" width="40" height="40"/>
+				<?php } ?>
 		        <p>
-		          <a href=""><?php echo $photo->node->creator->name; ?></a> via <a href="">amolwadi</a>
+		          <a href=""><?php echo $photo->node->creator->name; ?></a>
 		        </p>
        		</div>
 		</div>

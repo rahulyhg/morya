@@ -56,15 +56,26 @@ class UserController extends AppController
 		}
 		$model=new RegistrationForm;
 		$this->performAjaxValidation($model);
+		
 		if(isset($_POST['RegistrationForm']))
 		{
+		
 			$model->attributes=$_POST['RegistrationForm'];
+			
 			if($model->validate()){
 				$user = new User ;
+				//$filepath = PhotoType::$folderName[PhotoType::Profile];
 				//RegistrationForm Model variables bulk assigned to User
 				$user->attributes = $model->attributes ;
+				if(CUploadedFile::getInstance($model,'ganpati_pic')){
+				$user->ganpati_pic=CUploadedFile::getInstance($model,'ganpati_pic');
+				}
+				//print_r($user->ganpati_pic);exit;
 				if($user->save()){
 					//log-in the user
+					if(CUploadedFile::getInstance($model,'ganpati_pic')){
+					$user->ganpati_pic->saveAs(PhotoType::$folderName[PhotoType::Profile].$user->id.".jpg");
+					}
 					$identity=new UserIdentity($model->email,$model->password);
 					$identity->authenticate();
 					Yii::app()->user->login($identity);
@@ -119,7 +130,13 @@ class UserController extends AppController
         $user = User::model()->findByPk(Yii::app()->user->id);
         if(isset($_POST['User'])){
             $user->attributes = $_POST['User'];
+			if(CUploadedFile::getInstance($user,'ganpati_pic')){
+			$user->ganpati_pic=CUploadedFile::getInstance($user,'ganpati_pic');
+			}
             if($user->save()){
+			if(CUploadedFile::getInstance($user,'ganpati_pic')){
+				$user->ganpati_pic->saveAs(PhotoType::$folderName[PhotoType::Profile].$user->id.".jpg");
+				}
                 Yii::app()->user->setFlash('success','Successfully Updated the profile');
                 //$this->redirect(Yii::app()->createUrl('user/profile'));
             }
@@ -176,7 +193,8 @@ class UserController extends AppController
                     $user->name = $userInfo['name'];
                     $user->city = $userInfo['hometown']['name'];
                     $user->open_id = $userInfo['id'];
-                    $user->profile_pic = Yii::app()->facebook->api('/me/picture','GET',array('size'=>'large'));
+                    //$user->profile_pic = Yii::app()->facebook->api('/me/picture','GET',array('type'=>'large'));
+					$user->profile_pic = "https://graph.facebook.com/".$userInfo['id']."/picture?type=small";
                     if($user->save()){
                         //log-in the user
                         $identity=new FacebookIdentity($user->open_id,'');
@@ -184,8 +202,8 @@ class UserController extends AppController
                         Yii::app()->user->login($identity);
                         $postObj   = Yii::app()->facebook->api('/me/feed', 'POST',
                             array(
-                                'link' => 'www.ganeshpic.com',
-                                'message' => 'Swapnil has Signed Up for Ganesh Pics to share his Ganesh Festival Experience !'
+                                'link' => 'www.devaganesha.com',
+                                'message' => $userInfo['name'].' has Signed Up for Ganesh Pics to share his Ganesh Festival Experience !'
                             ));
                         $this->redirect(array('site/index'));
                     }else{

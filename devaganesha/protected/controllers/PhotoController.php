@@ -44,7 +44,7 @@ class PhotoController extends AppController
 	
         $pages=new CPagination(Photo::model()->count());
         $pages->applyLimit($criteria);
-        $pages->pageSize=20;
+        $pages->pageSize=30;
 
         $elementsList=Photo::model()->findAll($criteria);//->with('comments')
         $this->render('index',array(
