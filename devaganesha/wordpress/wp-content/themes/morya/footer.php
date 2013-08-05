@@ -42,7 +42,7 @@
 		</div>
 	</div>
 	<div class="row-fluid thin-footer">
-		<p class="mt25">copyright &copy; 2013 Devaganesha.com - Developed by Vedant IT Academy</p>
+		<p class="mt25">copyright &copy; 2013 Devaganesha.com - Developed by <a href="http://www.itvedant.com" target="_blank">Vedant IT Academy</a></p>
 	</div>
 <div id="upload" style="display: none">
 		<div id="upload-wrapper">
@@ -70,7 +70,8 @@
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.montage.min.js"></script>
 <!-- the jScrollPane script -->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.jscrollpane.min.js"></script>
-		
+	
+
 
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -223,7 +224,7 @@
                 }
           function fileUploadComplete(id,filename,response){
                     $('#upload-list').html('');
-                    $('#upload-wrapper').append('<div id="upload-success"><p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p></div>');
+                    $('#upload-wrapper').append('<div id="upload-success" class="fl"><p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p> <p><input type="text" id="latFld"><input type="text" id="lngFld"></p></div><div id="map_canvas" class="fl"></div><div class="clear"></div>');
                     $('#upload-success').append('<img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Tags:</label><input type="text" id="photo-description" /><br /><input type="submit" id="save-photo" class="btn" value="Save"/>');
                     $.fancybox.update();
                     $('#save-photo').click(function(){
