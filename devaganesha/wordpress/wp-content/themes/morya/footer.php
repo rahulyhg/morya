@@ -224,7 +224,7 @@
                 }
           function fileUploadComplete(id,filename,response){
                     $('#upload-list').html('');
-                    $('#upload-wrapper').append('<div id="upload-success" class="fl"><p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p> <p><input type="text" id="latFld"><input type="text" id="lngFld"></p></div><div id="map_canvas" class="fl"></div><div class="clear"></div>');
+                    $('#upload-wrapper').append('<div id="upload-success"><p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p></div>');
                     $('#upload-success').append('<img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Tags:</label><input type="text" id="photo-description" /><br /><input type="submit" id="save-photo" class="btn" value="Save"/>');
                     $.fancybox.update();
                     $('#save-photo').click(function(){
@@ -248,6 +248,7 @@
 	
 
 </script>
+
 	<?php Yii::app()->controller->renderClip('js-page-end'); ?>
 
   <div id="fb-root"></div>

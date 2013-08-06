@@ -60,6 +60,7 @@
 	<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" /></div>
     <div class="caption"><?php echo $photo->original_name; ?></div>
     <p style="font-size:12px "><em>Posted By: </em><a class="photo_uploader_name"><?php echo $photo->node->creator->name ?></a></p>
+	<p>View : <?php echo $novisit;?></p>
 	
 
 

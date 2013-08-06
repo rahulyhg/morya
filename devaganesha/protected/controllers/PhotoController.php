@@ -201,13 +201,30 @@ class PhotoController extends AppController
         $criteria->with = array('node');
 		$criteria->order = 'node.created DESC';
         $criteria->limit = 30;
-	
+		if(isset(Yii::app()->user->id))
+		{
+			$viewnum = Visit::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
+			
+			if($viewnum == null){
+			$visit = new Visit();
+			
+			$visit->node_id = $photo->node_id;
+			$visit->user_id = Yii::app()->user->id;
+			//var_dump($visit);
+			$visit->created = date('Y-m-d h:I:s');
+			$visit->save();
+			
+			}
+		}
+		$novisit = Visit::model()->count('node_id',$photo->id);
+		
 		$elementsList=Photo::model()->findAll($criteria);//->with('comments')
 		$this->render('view',array(
 			'photo'=>$photo,
             'newComment'=>$newComment,
 			'modaks' => $modaks,
 			'elementsList'=>$elementsList,
+			'novisit'=>$novisit,
 		));
 	}
 
