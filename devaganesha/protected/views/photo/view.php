@@ -1,5 +1,7 @@
-
-        <?php $this->widget('ext.EAjaxUpload.EAjaxUpload',
+		<?php 	if(Yii::app()->user->isGuest){ ?>
+				<a href="<?php echo Yii::app()->createUrl('user/login'); ?>"><div class="qq-upload-button">Upload Your ganesha</div></a>
+		<?php	}else{
+        $this->widget('ext.EAjaxUpload.EAjaxUpload',
         array(
             'id'=>'uploadFile',
             'config'=>array(
@@ -23,7 +25,9 @@
                 ),
                 'showMessage'=>"js:function(message){ alert(message); }"
             )
-        )); ?>
+        )); 
+		}
+		?>
 <div class="row-fluid mt10">
 <div class="span6">
     <div id="modak-rating">
