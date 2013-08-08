@@ -38,7 +38,7 @@ if(Yii::app()->user->isGuest)
 }else{
 ?>
 
-<span class="user_space">
+<span class="user_space fr">
 	<div class="fl mr10">
 	<?php if(!$user->ganpati_pic && !$user->profile_pic){ ?>
 		<img src="<?php echo get_template_directory_uri(); ?>/img/prof.gif" alt="pp" />
@@ -49,7 +49,7 @@ if(Yii::app()->user->isGuest)
 		<img src="<?php echo $user->profile_pic; ?>" alt="pp" width="40" height="40"/>
 		<?php }?>
 	</div>
-	<div>
+	<div class="fl">
     <div><a href="" class="us_logged"><?php $splitIndex = strpos($user->name,' '); echo($splitIndex > 0 ? substr($user->name,0,$splitIndex) : $user->name) ; ?></a></div>
     <div class="us_details">
         <?php //echo CHtml::link('My Ganesha',Yii::app()->createUrl('photo/myganesha')); ?>
@@ -57,6 +57,7 @@ if(Yii::app()->user->isGuest)
         <?php echo CHtml::link('logout',Yii::app()->createUrl('user/logout')); ?>
     </div>
 	</div>
+	<div class="clear"></div>
 </span>
 
 <?php

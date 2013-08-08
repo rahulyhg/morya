@@ -12,14 +12,14 @@
 		</div>
 		<div class="span5">
 			<div class="foothead">Sitemap</div>
-			<div class="fl" style="width:42%">
+			<div class="sitemap1">
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('recipe/index');?>">Recipes</a></div>
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Top 10 ganesha</a></div>
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>">Aarti sangrah in marathi, hindi</a></div>
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('experience/index');?>">Ganesh mahima</a></div>
 				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Children's stories of Lord ganesha</a></div>
 			</div>
-			<div class="fl ml40" style="width:42%">
+			<div class="sitemap2">
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Wallpaper of ganesha</a></div>
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">Blog</a></div>
 				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">News</a></div>
@@ -53,23 +53,24 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js" type="text/javascript"></script>
+  <!--  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js" type="text/javascript"></script> -->
+	  <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
     <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js" type="text/javascript"></script>
-	  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui-1.10.2.custom.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui-1.10.2.custom.js" type="text/javascript"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.jcarousel.min.js"></script>
 	<!-- the mousewheel plugin - optional to provide mousewheel support -->
-	<!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/masonry.js"></script> -->
-		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.masonry.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.mousewheel.js"></script>
+
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.masonry.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.mousewheel.js"></script>
 
 
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.pack.js"></script>
-<!-- our javascript code -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/custom.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.timeago.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.montage.min.js"></script>
-<!-- the jScrollPane script -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.pack.js"></script>
+	<!-- our javascript code -->
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/custom.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.timeago.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.montage.min.js"></script>
+	<!-- the jScrollPane script -->
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.jscrollpane.min.js"></script>
 	
 
 
@@ -110,11 +111,11 @@
 		}
 		});
 		
-		jQuery(function()
-		{
-			jQuery('.scroll-pane').jScrollPane();
-		});
+		jQuery('.scroll-pane').jScrollPane();
 		
+		$('.act-com').focus(function() {
+			$('.nact-com').show();
+		});
       });
 
   </script>

@@ -124,7 +124,7 @@
 				<div class="fl inv-cont"><div>Invite your friend from gmail.com</div><div class="conn-gm">Invite contact from gmail</div></div>
 				<div class="clear"></div>
 			</div>
-			<div class="pt5">
+			<div class="inv-frm">
 				<table width="100%">
 				<tr><td style="width:30%;color:#666666;text-align:center;">Name</td><td><input type="text" name="uname" placeholder="enter your full name"/></td></tr>
 				<tr><td style="width:30%;color:#666666;text-align:center;">Email</td><td><input type="text" name="email" placeholder="enter comma seperated email address"/></td></tr>
@@ -156,8 +156,9 @@
 					<div class="fl newscont">
 						<div class="newshead"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></div>
 						<div><?php the_excerpt(); ?></div>
+						<a href="<?php the_permalink(); ?>"><div class="altmore hidden-desktop">Read More</div></a>
 					</div>
-					<a href="<?php the_permalink(); ?>"><div class="fl newsmore">&raquo;</div></a>
+					<a href="<?php the_permalink(); ?>"><div class="fl newsmore visible-desktop">&raquo;</div></a>
 					<div class="clear"></div>
 				</div>
 				<?php endwhile;wp_reset_query(); ?>

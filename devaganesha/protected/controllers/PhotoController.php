@@ -4,9 +4,6 @@ class PhotoController extends AppController
 {
     public $layout = 'main' ;
 
-	function init(){
-	}
-
 	public function filters()
 	{
 		return array(

@@ -7,8 +7,9 @@
 ));
     ?>
     <?php
-    if(Yii::app()->user->isGuest):
+    if(Yii::app()->user->isGuest){
     ?>
+	<div class="nact-com" style="display:none;">
     <div>
         <?php echo $form->labelEx(User::model(),'name'); ?>
         <?php echo $form->textField(User::model(),'name',array('maxlength'=>255,'class'=>'span8')); ?>
@@ -20,15 +21,19 @@
             <?php echo $form->textField(User::model(),'email',array('maxlength'=>255,'class'=>'span8')); ?>
             <?php echo $form->error(User::model(),'email'); ?>
         </div>
-	
+	</div>
+	<div>
+        <?php echo $form->textArea($comment,'comment',array('maxlength'=>255,'placeholder'=>'comment here...','class'=>'span8 act-com')); ?>
+    </div>
     <?php
-    endif;
+    } else{
     ?>
-	<?php echo $form->hiddenField($comment,'node_id',array('value'=>$comment->node_id)); ?>
+	
     <div>
         <?php echo $form->textArea($comment,'comment',array('maxlength'=>255,'placeholder'=>'comment here...','class'=>'span8')); ?>
     </div>
-
+	<?php } ?>
+	<?php echo $form->hiddenField($comment,'node_id',array('value'=>$comment->node_id)); ?>
     <div>
         <?php echo CHtml::submitButton('Comment',array('class'=>'btn')); ?>
     </div>

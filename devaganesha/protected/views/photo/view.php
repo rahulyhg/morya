@@ -1,5 +1,5 @@
 		<?php 	if(Yii::app()->user->isGuest){ ?>
-				<a href="<?php echo Yii::app()->createUrl('user/login'); ?>"><div class="qq-upload-button">Upload Your ganesha</div></a>
+				<div class="non-user-upld"><a href="<?php echo Yii::app()->createUrl('user/login'); ?>"><div class="qq-upload-button">Upload Your ganesha</div></a></div>
 		<?php	}else{
         $this->widget('ext.EAjaxUpload.EAjaxUpload',
         array(
@@ -30,7 +30,8 @@
 		?>
 <div class="row-fluid mt10">
 <div class="span6">
-    <div id="modak-rating" class="star-rating">
+<div class="photo-opt">
+    <div id="modak-rating">
 	<?php
 		$this->widget('CStarRating',array(
 		'model'=> $modaks,
@@ -60,11 +61,14 @@
 			}'
 	));?>
 	</div>
-	<div class="mt10">
-	<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" /></div>
+	<div class="visit-vw">View : <?php echo $novisit;?></div>
+</div>
+	<div class="single-photo">
+		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>
+	</div>
     <div class="caption"><?php echo $photo->original_name; ?></div>
-    <p style="font-size:12px "><em>Posted By: </em><a class="photo_uploader_name"><?php echo $photo->node->creator->name ?></a></p>
-	<p>View : <?php echo $novisit;?></p>
+	<div>Tags: <?php echo $photo->description; ?></div>
+    <div>Posted By:<a class="photo_uploader_name"><?php echo $photo->node->creator->name ?></a></div>
 	
 
 
@@ -84,7 +88,7 @@
 			?>
 		<?php $this->renderPartial('//comment/create',array('comment'=>$newComment)); ?>
 		</div>
-		<div class="mt10"><h3>See more :</h3></div>
+		<div class="mt10"><h4>Related :</h4></div>
 		<div class="am-container mt10 photo-more" id="am-container">
 		 <?php foreach($elementsList as $photo){ ?>
 				<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" alt=""></a>

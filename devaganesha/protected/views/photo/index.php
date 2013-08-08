@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 	'Ganesh Photos',
 );
 			if(Yii::app()->user->isGuest){ ?>
-				<a href="<?php echo Yii::app()->createUrl('user/login'); ?>"><div class="qq-upload-button">Upload Your ganesha</div></a>
+				<div class="non-user-upld"><a href="<?php echo Yii::app()->createUrl('user/login'); ?>"><div class="qq-upload-button">Upload Your ganesha</div></a></div>
 		<?php	}else{
 			
           $this->widget('ext.EAjaxUpload.EAjaxUpload',

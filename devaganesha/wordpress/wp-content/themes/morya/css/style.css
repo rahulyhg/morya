@@ -441,6 +441,7 @@ width:15px;
 height:18px;
 display:inline-block;
 margin-right:22px;
+margin-left:5px;
 }
 
 .darshancnt{
@@ -460,4 +461,55 @@ display:inline-block;
 
 .cnt{
 margin-left:18px;
+}
+
+.portlet-content a:hover{text-decoration:none !important;}
+.menu-single a:hover{text-decoration:none !important;}
+
+.inv-frm{
+padding:10px 0;
+}
+
+.sitemap1{
+float:left;
+width:40%;
+margin-left:10px;
+}
+
+.sitemap2{
+float:left;
+width:40%;
+margin-left:30px;
+}
+
+.photo-opt{
+background:#ffffff;
+border:1px solid #cccccc;
+height:40px;
+}
+.large-img{
+  display: block;
+  margin: 5px auto;
+}
+
+.single-photo{
+background:#ffffff;
+border:1px solid #cccccc;
+margin:10px 0;
+width:100%;
+}
+#modak-rating{
+padding:6px;
+float:left;
+}
+
+.visit-vw{
+float:left;
+margin:6px 20px;
+font-size:16px;
+font-weight:bold;
+}
+ 
+.non-user-upld  a:hover{
+text-decoration:none;
 }
