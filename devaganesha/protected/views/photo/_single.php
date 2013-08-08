@@ -26,16 +26,23 @@
         ?>
 
 		<div class="pin">
-		  <div class="white_mask_wrapper">
-            <div class="white_mask">
+		  <!-- <div class="white_mask_wrapper">
+           <div class="white_mask">
                 <span class="darshan"><p>789</p></span>
                 <span class="modak"><p><?php //echo count($photo->node->modaks); ?></p></span>
                 <div class="add_collection">
 				<a class="addthis_button_compact"></a>
 				</div>
 				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
-            </div>
-        </div>
+            </div> 
+        </div>-->
+		<div class="black-mask">
+			<span class="modakcnt"><span class="cnt">99</span></span>
+			<span class="darshancnt"><span class="cnt">99</span></span>
+			<span class="multishare">
+			<a class="addthis_button_compact"></a>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script></span>
+		</div>
 			<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen] . $photo->file_name ;?>" alt=""></a>
 			
 			<div class="description"><a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>"><?php echo $photo->caption; ?></a></div>

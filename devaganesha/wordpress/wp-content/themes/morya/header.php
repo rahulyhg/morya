@@ -34,11 +34,11 @@
 
   </head>
 
-  <body onload="initMap()">
+  <body>
     <div class="container-fluid">
             <div class="row-fluid">
-      <div class="fl"><a href="<?php echo Yii::app()->createUrl('site/index');?>" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="height:70px;" alt="logo" /></a></div>
-    <div class="fl mt10">
+      <div class="span3 logo"><a href="<?php echo Yii::app()->createUrl('site/index');?>"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="height:70px;" alt="logo" /></a></div>
+    <div class="span6 mt10">
     <ul class="menu">
       <li><div class="menu-single"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>" class="menu-item"><div class="aarti"></div><div class="tac">Aarti</div></a></div></li>
       <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('photo/index');?>" class="menu-item"><div class="photo"></div><div class="tac">photo</div></a></div></li>
@@ -48,10 +48,19 @@
             <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('site/myganesha');?>" class="menu-item"><div class="myganesha"></div><div class="tac">My ganesha</div></a></div></li>
     </ul>
     </div>  
-	    <div class="fr mt10">
+<div class="span3 mt10">
 	<?php Yii::app()->controller->widget('UserInfo'); ?>
        <div class="clear"></div>
-      <div class="pt5">
+      <div class="pt5 fr visible-desktop">
+	  		<a href="http://facebook.com/ohmyganesha" target="_blank"><div class="fbsoc fl"></div></a>
+			<a href="https://twitter.com/devaganeshacom" target="_blank"><div class="twitsoc fl"></div></a>
+			<a href="http://pinterest.com/devaganesha" target="_blank"><div class="pinsoc fl"></div></a>
+			<a href="https://plus.google.com/114951965233578328868" rel="publisher" target="_blank"><div class="glsoc fl"></div></a>
+			<a href="http://www.youtube.com/devaganesha" target="_blank"><div class="ytsoc fl"></div></a>
+			<a href="mailto:mail@devaganesha.com" target="_blank"><div class="dbsoc fl"></div><a>
+			<a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><div class="rsssoc fl"></div></a>
+      </div>
+	  <div class="pt5 mza hidden-desktop">
 	  		<a href="http://facebook.com/ohmyganesha" target="_blank"><div class="fbsoc fl"></div></a>
 			<a href="https://twitter.com/devaganeshacom" target="_blank"><div class="twitsoc fl"></div></a>
 			<a href="http://pinterest.com/devaganesha" target="_blank"><div class="pinsoc fl"></div></a>

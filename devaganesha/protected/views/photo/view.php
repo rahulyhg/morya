@@ -30,7 +30,7 @@
 		?>
 <div class="row-fluid mt10">
 <div class="span6">
-    <div id="modak-rating">
+    <div id="modak-rating" class="star-rating">
 	<?php
 		$this->widget('CStarRating',array(
 		'model'=> $modaks,

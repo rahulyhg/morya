@@ -11,7 +11,10 @@
 if(Yii::app()->user->isGuest)
 {
 ?>
-      <a id="signup" class="reg-log fr" href="#authentication">
+      <a id="signup" class="reg-log fr visible-desktop" href="#authentication">
+		<div class="in-log"><img src="<?php echo get_template_directory_uri(); ?>/img/darshan.png" />&nbsp;&nbsp;&nbsp;Login / Register </div>
+	  </a>
+	  <a class="reg-log hidden-desktop mza" href="<?php echo Yii::app()->createUrl('user/login');?>">
 		<div class="in-log"><img src="<?php echo get_template_directory_uri(); ?>/img/darshan.png" />&nbsp;&nbsp;&nbsp;Login / Register </div>
 	  </a>
 

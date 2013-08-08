@@ -25,7 +25,7 @@ class RegistrationForm extends CFormModel
 			array('name,email','filter','filter'=>'strtolower'),
 			array('email','unique','caseSensitive'=>'false','className'=>'User'),
 			array('email','email'),
-			array('ganpati_pic', 'file', 'types'=>'jpg, gif, png'),
+			array('ganpati_pic', 'file', 'types'=>'jpg, gif, png','allowEmpty' => true),
 			array('password, ganpati_pic, city,add_line_1, add_line_2','default', 'setOnEmpty'=>true, 'value'=>null),
 			array('password', 'safe')
 		);

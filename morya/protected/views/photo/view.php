@@ -1,6 +1,8 @@
 <div style="float:left;">
     <div id="modak-rating">
 	<?php
+	$this->widget('CStarRating',array('name'=>'rating'));
+	/*
 		$this->widget('CStarRating',array(
 		'model'=> $modaks,
 		'attribute' => 'rating',
@@ -27,7 +29,9 @@
                   return false;
 			}
 			}'
-	));?>
+	));
+	*/
+	?>
 	</div>
 	<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" />
     <div class="caption"><?php echo $photo->caption ?></div>
