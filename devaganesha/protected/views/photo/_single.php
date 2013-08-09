@@ -5,16 +5,6 @@
         ?>
 
 		<div class="pin">
-		  <!-- <div class="white_mask_wrapper">
-           <div class="white_mask">
-                <span class="darshan"><p>789</p></span>
-                <span class="modak"><p><?php //echo count($photo->node->modaks); ?></p></span>
-                <div class="add_collection">
-				<a class="addthis_button_compact"></a>
-				</div>
-				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
-            </div> 
-        </div>-->
 		<div class="black-mask">
 			<span class="modakcnt"><span class="cnt">
 			<?php $row = Yii::app()->db->createCommand(array(
