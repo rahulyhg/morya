@@ -29,8 +29,9 @@
 		}
 		?>
 <div class="row-fluid mt10">
-<div class="span6">
+<div class="span7">
 <div class="photo-opt">
+	<div class="btn feedmdk">Feed Modaks</div>
     <div id="modak-rating">
 	<?php
 		$this->widget('CStarRating',array(
@@ -61,7 +62,9 @@
 			}'
 	));?>
 	</div>
-	<div class="visit-vw">View : <?php echo $novisit;?></div>
+	<!--<div class="visit-vw">View : <?php echo $novisit;?></div> -->
+	<div class="visit-vw"><span class="btn">View</span><span class="btn"><?php echo $novisit;?></span></div>
+	<div class="visit-vw"><span class="btn mr10">Share on</span><span class="mr10"><img src="<?php echo get_template_directory_uri(); ?>/img/fbmono.png"/></span><span><img src="<?php echo get_template_directory_uri(); ?>/img/twitmono.png"/></span></div>
 </div>
 	<div class="single-photo">
 		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>
@@ -79,7 +82,7 @@
 	<?php $this->endClip(); ?>
 
 </div>
-	<div class="span6">
+	<div class="span5">
 		<div id="comments">
 			<?php
 			foreach($photo->node->comments as $comment){

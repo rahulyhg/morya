@@ -45,6 +45,11 @@ $this->breadcrumbs=array(
     ?>
      </div> 
 	</div>
+	<div class="mt10">
+	<?php $this->widget('CLinkPager', array(
+		'pages' => $pages,
+	)) ?>
+	</div>
 
  
 

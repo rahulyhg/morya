@@ -12,7 +12,7 @@
  * @property Users $user
  * @property Nodes $node
  */
-class Visit extends CActiveRecord
+class Visit extends AppActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -48,9 +48,14 @@ class Visit extends CActiveRecord
 		);
 	}
 
+
+	
 	/**
 	 * @return array relational rules.
 	 */
+	 
+	 
+	 
 	public function relations()
 	{
 		// NOTE: you may need to adjust the relation name and the related

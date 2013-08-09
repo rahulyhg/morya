@@ -509,6 +509,12 @@ margin:6px 20px;
 font-size:16px;
 font-weight:bold;
 }
+.feedmdk{
+ float:left;
+margin:6px 0;
+font-size:14px;
+font-weight:bold;
+ }
  
 .non-user-upld  a:hover{
 text-decoration:none;

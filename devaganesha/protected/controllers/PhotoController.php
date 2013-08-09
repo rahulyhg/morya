@@ -37,11 +37,13 @@ class PhotoController extends AppController
 		$criteria=new CDbCriteria;
         $criteria->with = array('node');
 		$criteria->order = 'node.created DESC';
+		$criteria->compare('t.type',PhotoUploadCategory::Normal);
         $criteria->limit = 30;
 	
-        $pages=new CPagination(Photo::model()->count());
+        $pages=new CPagination(Photo::model()->count($criteria));
+		$pages->pageSize=20;
         $pages->applyLimit($criteria);
-        $pages->pageSize=30;
+        
 
         $elementsList=Photo::model()->findAll($criteria);//->with('comments')
         $this->render('index',array(
@@ -200,7 +202,7 @@ class PhotoController extends AppController
         $criteria->limit = 30;
 		if(isset(Yii::app()->user->id))
 		{
-			$viewnum = Visit::model()->findByAttributes(array('user_id'=>Yii::app()->user->id));
+			$viewnum = Visit::model()->findByAttributes(array('user_id'=>Yii::app()->user->id,'node_id'=>$photo->node_id));
 			
 			if($viewnum == null){
 			$visit = new Visit();
@@ -208,12 +210,14 @@ class PhotoController extends AppController
 			$visit->node_id = $photo->node_id;
 			$visit->user_id = Yii::app()->user->id;
 			//var_dump($visit);
-			$visit->created = date('Y-m-d h:I:s');
+			$visit->created = date('Y-m-d h:i:s');
 			$visit->save();
 			
 			}
 		}
-		$novisit = Visit::model()->count('node_id',$photo->id);
+		$criteria1=new CDbCriteria;
+		$criteria1->compare('node_id',$photo->node_id);
+		$novisit = Visit::model()->count($criteria1);
 		
 		$elementsList=Photo::model()->findAll($criteria);//->with('comments')
 		$this->render('view',array(
