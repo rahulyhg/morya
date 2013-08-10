@@ -113,6 +113,8 @@
 		
 		jQuery('.scroll-pane').jScrollPane();
 		
+		 $( "#accordion" ).accordion({ active: false, collapsible: true });
+	
 		$('.act-com').focus(function() {
 			$('.nact-com').show();
 		});

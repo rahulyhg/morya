@@ -29,7 +29,7 @@
 		}
 		?>
 <div class="row-fluid mt10">
-<div class="span7">
+<div class="span8">
 <div class="photo-opt">
 	<div class="btn feedmdk">Feed Modaks</div>
     <div id="modak-rating">
@@ -70,8 +70,9 @@
 		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>
 	</div>
     <div class="caption"><?php echo $photo->original_name; ?></div>
-	<div>Tags: <?php echo $photo->description; ?></div>
-    <div>Posted By:<a class="photo_uploader_name"><?php echo $photo->node->creator->name ?></a></div>
+	<div><strong>Tags: </strong><?php echo $photo->description; ?></div>
+    <div><strong>Posted By: </strong><a class="photo_uploader_name"><?php echo $photo->node->creator->name ?></a></div>
+	<div><strong>Posted on: </strong><?php echo $photo->node->created; ?></div>
 	
 
 
@@ -82,7 +83,7 @@
 	<?php $this->endClip(); ?>
 
 </div>
-	<div class="span5">
+	<div class="span4">
 		<div id="comments">
 			<?php
 			foreach($photo->node->comments as $comment){
