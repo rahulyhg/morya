@@ -4,7 +4,11 @@ $this->breadcrumbs=array(
 	'Login',
 );
 ?>
-
+<?php if(Yii::app()->user->hasFlash('success')):?>
+    <div class="info">
+        <?php echo Yii::app()->user->getFlash('success'); ?>
+    </div>
+<?php endif; ?>
 <a class="fblogina" href="#"><span class="facebook_connect"></span></a>
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(

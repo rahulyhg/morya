@@ -18,7 +18,7 @@ class UserController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpass'),
+				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpassword','changepassword'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -312,7 +312,12 @@ class UserController extends AppController
 		{
 			$val = User::model()->randomPassword();
 			$val = md5($val);
-			$url = Yii::app()->createUrl('user/resetpass',array('key'=>$val));
+			$url = Yii::app()->createUrl('user/resetpassword',array('key'=>$val));
+			if($url){
+				$user->key_reset = $val;
+				$user->key_status = 1;
+				$user->save();
+			}
 			echo $url;
 		}else{
 			echo "invalid";
@@ -320,9 +325,38 @@ class UserController extends AppController
 		
 	}
 	
-	public function actionResetpass()
+	public function actionResetpassword($key)
 	{
+		if(isset($key))
+		{
+			$result = User::model()->findByAttributes(array('key_reset'=>$key));
+			if($result !== null)
+			{
+				$key_status = $result->key_status;
+				$this->render('resetpassword',array(
+					'key_status'=>$key_status,
+					'key'=>$key,
+				));
+			}else{
+				$this->redirect(array('site/index'));
+			}
+		}else{
+			$this->redirect(array('site/index'));
+		}
+	}
 	
+	public function actionChangepassword()
+	{
+		$newpass = $_POST['newpass'];
+		$confpass = $_POST['confpass'];
+		$key = $_POST['key'];
+		$result = User::model()->findByAttributes(array('key_reset'=>$key));
+		$pass = md5($newpass);
+		$result->password = $pass;
+		$result->key_status = 0;
+		$result->save();
+		Yii::app()->user->setFlash('success','Password has been change successfully. Now login with new password.');
+		$this->redirect(array('user/login'));
 	}
 	
 	/**
