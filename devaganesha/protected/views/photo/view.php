@@ -64,7 +64,14 @@
 	</div>
 	<!--<div class="visit-vw">View : <?php echo $novisit;?></div> -->
 	<div class="visit-vw"><span class="btn">View</span><span class="btn"><?php echo $novisit;?></span></div>
-	<div class="visit-vw"><span class="btn mr10">Share on</span><span class="mr10"><img src="<?php echo get_template_directory_uri(); ?>/img/fbmono.png"/></span><span><img src="<?php echo get_template_directory_uri(); ?>/img/twitmono.png"/></span></div>
+	<div class="visit-vw">
+	<span class="share32 fb"></span>
+	<span class="share32 tw"></span>
+	<span class="share32 pi"></span>
+	<span class="share32 gg"></span>
+	<span class="share32 fl"></span>
+	<span class="share32 st"></span>
+	</div>
 </div>
 	<div class="single-photo">
 		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>

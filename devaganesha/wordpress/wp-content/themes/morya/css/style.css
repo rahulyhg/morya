@@ -518,3 +518,44 @@ font-weight:bold;
 .non-user-upld  a:hover{
 text-decoration:none;
 }
+.share32{
+width:32px;
+height:32px;
+display:inline-block;
+}
+.tw {
+background-image:url(../img/twitter.png);
+}
+.tw:hover{
+background-image:url(../img/twitter2.png);
+}
+.fb{
+background-image:url(../img/facebook.png);
+}
+.fb:hover{
+background-image:url(../img/facebook2.png);
+}
+.pi {
+background-image:url(../img/pinterest.png);
+}
+.pi:hover{
+background-image:url(../img/pinterest2.png);
+}
+.gg {
+background-image:url(../img/google.png);
+}
+.gg:hover{
+background-image:url(../img/google2.png);
+}
+.fl {
+background-image:url(../img/flicker.png);
+}
+.fl:hover{
+background-image:url(../img/flicker2.png);
+}
+.st {
+background-image:url(../img/ShareThis.png);
+}
+.st:hover{
+background-image:url(../img/ShareThis2.png);
+}
