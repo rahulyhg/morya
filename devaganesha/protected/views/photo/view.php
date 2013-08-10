@@ -112,8 +112,12 @@
 			<h3>Show comments</h3>
 			<div class="single_comment">
 			<?php
-			foreach($photo->node->comments as $comment){
-				$this->renderPartial('//comment/view',array('comment'=>$comment));
+			if($photo->node->comments){
+				foreach($photo->node->comments as $comment){
+					$this->renderPartial('//comment/view',array('comment'=>$comment));
+				}
+			}else{
+			echo "<p>Be the first one to give the comment.</p>";
 			}
 			?>
 			</div>
