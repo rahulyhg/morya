@@ -25,3 +25,19 @@ function arphabet_widgets_init() {
 	
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );
+
+
+add_action( 'save_post', 'morya_create_node' );
+
+function morya_create_node( $post_id ) {
+	//verify post is not a revision
+	if ( !wp_is_post_revision( $post_id ) ) {		
+		$node = new Node ;
+		$node->type = NodeType::Post ;
+		if(!$node->save())
+			file_put_contents(ABSPATH."../errors.txt",$node->getErrors());
+		
+		add_post_meta($post_id, 'node_id',$node->id, true);
+	}
+
+}

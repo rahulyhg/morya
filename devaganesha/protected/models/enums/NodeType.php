@@ -5,6 +5,7 @@ class NodeType{
  const Temple = 2;
  const Experience = 3;
  const Recipe = 4;
+ const Post = 4;
 
     public static $heading = array(
          self::Photo => 'Photo',
@@ -12,6 +13,7 @@ class NodeType{
          self::Temple => 'Temple',
          self::Experience => 'Experience',
 		 self::Recipe => 'Recipe',
-     );
+		 self::Post => 'Post',
+     );	
 }
 ?>
