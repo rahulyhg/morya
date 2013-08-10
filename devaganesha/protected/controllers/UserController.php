@@ -18,7 +18,7 @@ class UserController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('authPopup','register','shortRegister','login','fbLogin'),
+				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpass'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -304,6 +304,27 @@ class UserController extends AppController
 		));
 	}
 
+	public function actionForgotpass()
+	{
+		
+		$user = User::model()->findByAttributes(array('email'=>$_POST['email']));
+		if($user !== null)
+		{
+			$val = User::model()->randomPassword();
+			$val = md5($val);
+			$url = Yii::app()->createUrl('user/resetpass',array('key'=>$val));
+			echo $url;
+		}else{
+			echo "invalid";
+		}
+		
+	}
+	
+	public function actionResetpass()
+	{
+	
+	}
+	
 	/**
 	 * Manages all models.
 	 */

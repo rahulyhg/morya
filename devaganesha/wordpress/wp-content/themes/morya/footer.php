@@ -50,6 +50,20 @@
 			</div>
 		</div>
 	</div>
+	
+	<div style="display: none;">
+    <div id="forgot-pass">
+			<div>
+				<h1>Forgot password</h1>
+				<p>Put your email address below</p>
+				<div><input type="text" name="emailadd" id="emailadd" class="span6" placeholder="Email address"/></div>
+				<div><input type="submit" class="btn emailsub" value="Submit"></div>
+			</div>
+    </div>
+</div>
+	<div id="succmail" style="display: none;" title="Email sent">
+		<p>Link to reset your password has been sent on your email. Go and change the password.</p>
+	</div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -184,6 +198,36 @@
               }
           });
           $("abbr.timeago").timeago();
+		  
+		  $('a#forpass').click(function(){
+			$('#forpass').fancybox();
+		  });
+		  
+		  $('.emailsub').click(function(){
+			var email = $('#emailadd').val();
+			if(email == ''){
+				alert('Please enter email address');
+				return false;
+			}else{
+				$.ajax({
+                        url: "<?php echo Yii::app()->createUrl("user/forgotpass"); ?>",
+                        type: 'POST',
+                        data: { 'email': email},
+                        success: function() {
+                            $.fancybox.close();
+							$('#succmail').dialog({
+							modal: true,
+							minWidth: 500,
+							});
+							//alert('succcess');
+							//window.location.reload();
+                        }
+                    });
+			
+			
+			}
+		  });
+		  
       });
   </script>
   <script type="text/javascript">

@@ -33,6 +33,8 @@ $this->breadcrumbs=array(
 		<?php echo $form->label($model,'rememberMe',array('style'=>'display:inline')); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
+	
+	<div><a href="#forgot-pass" id="forpass">forgot password?</a></div>
 
 	<div>
         <?php echo CHtml::submitButton('Login',array('class'=>'btn')); ?>
@@ -40,3 +42,5 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+
+
