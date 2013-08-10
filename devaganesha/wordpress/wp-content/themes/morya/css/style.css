@@ -523,6 +523,9 @@ width:32px;
 height:32px;
 display:inline-block;
 }
+.share32:hover{
+cursor:pointer ;
+}
 .tw {
 background-image:url(../img/twitter.png);
 }
