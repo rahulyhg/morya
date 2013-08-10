@@ -209,7 +209,7 @@ class UserController extends AppController
                 if($userModel){
                     //user is already registered with us
                     $identity=new FacebookIdentity($userModel->open_id,'');
-                    $identity->authenticate();
+                    $identity->authenticate(AuthType::Facebook);
                     Yii::app()->user->login($identity);
                     $this->redirect(array('site/index'));
                 }else{
@@ -238,7 +238,10 @@ class UserController extends AppController
                     }
                 }
             }else{
-                $this->redirect(array('user/login'));
+                //$this->redirect(array('user/login'));
+				$login = Yii::app()->facebook->getLoginUrl();
+				$this->redirect($login);
+			//$loginUrl = $facebook->getLoginUrl();
             }
     }
 	public function actionLogout()

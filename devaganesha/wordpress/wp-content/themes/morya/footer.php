@@ -208,7 +208,7 @@
 										$container.montage({
 											liquid 	: false,
 											minw : 100,
-											fixedHeight : 100,
+											fixedHeight : 85,
 											margin:2,
 											//fillLastRow : true
 										});
