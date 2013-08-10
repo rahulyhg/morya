@@ -63,7 +63,15 @@ $this->breadcrumbs=array(
 
     <div>
         <?php echo $form->labelEx($model,'city'); ?>
-        <?php echo $form->textField($model,'city',array('size'=>50,'maxlength'=>50)); ?>
+        <?php $htmlOptions = array('class'=>'span8','style'=>'margin-bottom:5px','empty' => "Select city");?>
+		<?php //echo Chosen::dropDownList($model->city,$model->city,$cityarr, $htmlOptions); 
+		$this->widget('ext.chosen.Chosen',array(
+			'name' => 'User[city]', // input name
+			//'value' => $model->city, // selection
+			'data' =>$cityarr,
+			'htmlOptions'=>$htmlOptions,
+		));
+		?>
         <?php echo $form->error($model,'city'); ?>
     </div>
 

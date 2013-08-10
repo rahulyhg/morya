@@ -4,6 +4,7 @@ class UserController extends AppController
 {
 	function init(){
 		Yii::import('application.models.vm.user.*');
+		//Yii::import('ext.chosen.Chosen');
 	}
 	public $layout = 'layout_3C';
 	public function filters()
@@ -56,7 +57,11 @@ class UserController extends AppController
 		}
 		$model=new RegistrationForm;
 		$this->performAjaxValidation($model);
-		
+		$city = Citymaster::model()->findAll();
+		foreach($city as $cityname)
+		{
+			$cityarr[$cityname->city_name.",".$cityname->city_state] = $cityname->city_name.",".$cityname->city_state;
+		}
 		if(isset($_POST['RegistrationForm']))
 		{
 		
@@ -89,6 +94,7 @@ class UserController extends AppController
 
 		$this->render('register',array(
 			'model'=>$model,
+			'cityarr'=>$cityarr,
 		));
 	}
     public function actionShortRegister()
@@ -134,6 +140,12 @@ class UserController extends AppController
      */
     public function actionEdit(){
         $user = User::model()->findByPk(Yii::app()->user->id);
+		$city = Citymaster::model()->findAll();
+		foreach($city as $cityname)
+		{
+			$cityarr[$cityname->city_name.",".$cityname->city_state] = $cityname->city_name.",".$cityname->city_state;
+		}
+		//print_r($cityarr);exit;
         if(isset($_POST['User'])){
             $user->attributes = $_POST['User'];
 			if(CUploadedFile::getInstance($user,'ganpati_pic')){
@@ -149,6 +161,7 @@ class UserController extends AppController
         }
         $this->render('edit',array(
             'model' => $user,
+			'cityarr'=>$cityarr,
         ));
     }
 	public function actionLogin()

@@ -71,10 +71,20 @@ Yii::app()->clientScript->registerScript(
 
     <div>
         <?php echo $form->labelEx($model,'city'); ?>
-        <?php echo $form->textField($model,'city',array('maxlength'=>50,'class'=>'span8')); ?>
+        <?php //echo $form->textField($model,'city',array('maxlength'=>50,'class'=>'span8')); ?>
+		<?php $htmlOptions = array('class'=>'span8','style'=>'margin-bottom:5px','empty' => "Select city");?>
+		<?php //echo Chosen::dropDownList($model->city,$model->city,$cityarr, $htmlOptions); 
+		$this->widget('ext.chosen.Chosen',array(
+			'name' => 'User[city]', // input name
+			'value' => $model->city, // selection
+			'data' =>$cityarr,
+			'htmlOptions'=>$htmlOptions,
+		));
+		?>
         <?php echo $form->error($model,'city'); ?>
     </div>
-
+	
+	
     <div>
         <?php echo CHtml::submitButton('Update',array('class'=>'btn')); ?>
     </div>
