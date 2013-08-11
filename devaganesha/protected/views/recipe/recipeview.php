@@ -30,12 +30,12 @@ $this->menu=array(
 		?>
 		<img src="<?php echo $recimg; ?>" height="200px" width="200px" class="fl mr10"/>
 			<p><strong>Ingradients :</strong></p>
-            <p><?php echo $model->ingredients; ?></p>
+            <p><?php echo html_entity_decode($model->ingredients, ENT_COMPAT, "UTF-8"); ?></p>
         </div>
 		<div class="clear"></div>
 		<div class="mt10"><strong> Cooking Time :</strong><?php echo $model->cooking_time;?></div>
         <div class="mt10"><strong> Method :</strong></div>
-        <div><p><?php echo $model->method; ?></p></div>
+        <div><p><?php echo html_entity_decode($model->method, ENT_COMPAT, "UTF-8"); ?></p></div>
 		
 		<div class="mt20"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>">Back to  All</a></div>
 

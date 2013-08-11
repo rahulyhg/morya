@@ -213,7 +213,7 @@ class VedicController extends AppController
 			$node->type = NodeType::Vedic;
 		
 			$model->attributes=$_POST['Vedic'];
-            $model->text = htmlentities($model->text, ENT_NOQUOTES, "UTF-8");
+            $model->text = htmlentities($model->text, ENT_COMPAT, "UTF-8");
 			$model->slug = $this->behaviors();
 			if($node->validate()){
 			

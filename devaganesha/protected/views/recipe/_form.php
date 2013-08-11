@@ -34,13 +34,13 @@
 
 	<div class="controls">
 		<?php echo $form->labelEx($model,'ingredients'); ?>
-		<?php echo $form->textArea($model,'ingredients',array('rows'=>4,'class'=>'span12')); ?>
+		<?php echo $form->textArea($model,'ingredients',array('rows'=>4,'class'=>'span12','id'=>'ingredients-editor')); ?>
 		<?php echo $form->error($model,'ingredients'); ?>
 	</div>
 
 	<div class="controls">
 		<?php echo $form->labelEx($model,'method'); ?>
-		<?php echo $form->textArea($model,'method',array('rows'=>8,'class'=>'span12')); ?>
+		<?php echo $form->textArea($model,'method',array('rows'=>8,'class'=>'span12','id'=>'method-editor')); ?>
 		<?php echo $form->error($model,'method'); ?>
 	</div>
 
@@ -75,3 +75,28 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	tinymce.init({
+		selector: "#ingredients-editor",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+	});
+	tinymce.init({
+		selector: "#method-editor",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+	});
+});
+
+</script>

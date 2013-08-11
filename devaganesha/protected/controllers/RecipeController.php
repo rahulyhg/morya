@@ -88,7 +88,8 @@ class RecipeController extends AppController
 			$node->type = NodeType::Recipe;
 			
 			$model->attributes=$_POST['Recipe'];
-            //$model->method = nl2br($model->method);
+            $model->ingredients = htmlentities($model->ingredients, ENT_COMPAT, "UTF-8");
+            $model->method = htmlentities($model->method, ENT_COMPAT, "UTF-8");
 			$model->slug = $this->behaviors();
 				
 			if($node->validate())
@@ -139,10 +140,14 @@ class RecipeController extends AppController
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		$model->ingredients = html_entity_decode($model->ingredients, ENT_COMPAT, "UTF-8");
+		$model->method = html_entity_decode($model->method, ENT_COMPAT, "UTF-8");
 
 		if(isset($_POST['Recipe']))
 		{
 			$model->attributes=$_POST['Recipe'];
+            $model->ingredients = htmlentities($model->ingredients, ENT_COMPAT, "UTF-8");
+            $model->method = htmlentities($model->method, ENT_COMPAT, "UTF-8");
 			if($model->save())
 				$this->redirect(array('recipeview','rec_title'=>$model->slug));
 		}
