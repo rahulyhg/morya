@@ -92,6 +92,11 @@ class SiteController extends Controller
 	
 		public function actionMyganesha(){
 		
+		if(Yii::app()->user->isGuest)
+		{
+			$this->redirect(array('user/login'));
+		}
+		
 		$criteria=new CDbCriteria;
 		$criteria->with = array('node');
 		$criteria->order = 'node.created DESC';

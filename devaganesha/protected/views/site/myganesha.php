@@ -12,33 +12,48 @@
 <div class="mt10">
 <div class="title-bar">Aarti and mantra</div>
 	<div>
-        <?php foreach($vedics as $vedic){
+        <?php 
+		if(!empty($vedics)){
+		foreach($vedics as $vedic){
     ?>
 		<div class="span6">
             <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</a>
             </div>
 			
 			<div class="mt10"><strong>Posted on : <?php echo $vedic->node->created; ?></strong></div>
-            <div class="blog-content"><?php echo html_entity_decode($vedic->text, ENT_COMPAT, "UTF-8");?></div>
-           <div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>">Leave reply </a></span>
+			<div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>">Leave reply </a></span>
 		   <?php if($vedic->node->user_id == Yii::app()->user->id){?>
-			<span>&nbsp;|&nbsp;<a href="">Edit</a></span>
+			<span>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('vedic/update',array('id'=>$vedic->id))?>">Edit</a></span>
+			<span>&nbsp;|&nbsp;<?php echo CHtml::link('Delete','#',array("submit"=>array('vedic/delete','id'=>$vedic->id),"confirm" => "Are you sure?"));?></span>
 		   <?php } ?>
 		   </div>
+            <div class="blog-content"><?php echo html_entity_decode($vedic->text, ENT_COMPAT, "UTF-8");?></div>
+           
             
           </div>
-        <?php } ?>
+        <?php } 
+		}else{?>
+		
+		<?php echo "<p>You haven't added any aarti or mantra yet.</p>";
+		}
+		?>
 		<div class="clear"></div>
 		</div>
 </div>
 <div class="mt10">
 <div class="title-bar">Temples</div>
 <div>
-<?php foreach($temples as $temple){
+<?php 
+	if(!empty($temples)){
+	foreach($temples as $temple){
     ?>
     <div class="span6">
         <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>"><?php echo $temple->name;?></a></div>
 		<div class="mt10"><strong>Posted on : <?php echo $temple->node->created; ?></strong></div>
+		<div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>">Leave reply </a></span>
+			 <span>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('temple/update',array('id'=>$temple->id));?>">Edit</a></span>
+		     <span>&nbsp;|&nbsp;<?php echo CHtml::link('Delete','#',array("submit"=>array('temple/delete','id'=>$temple->id),"confirm" => "Are you sure?"));?></span>
+		    </div>
         <div class="mt10">
              <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->main_pic->file_name; ?>" height="200px" width="200px" class="fl mr10"/>
              <p><?php echo html_entity_decode($temple->description, ENT_COMPAT, "UTF-8");?></p>
@@ -61,26 +76,31 @@
     if(isset($temple->pic4->file_name)){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->pic4->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
     <?php } ?></div>
         <div class="clear"></div>
-				<div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>">Leave reply </a></span>
-		   <?php if($temple->node->user_id == Yii::app()->user->id){?>
-			<span>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('temple/update',array('id'=>$temple->id));?>">Edit</a></span>
-		   <?php } ?>
-		   </div>
+			
     </div>
-    <?php } ?>
+    <?php }
+	}else{ ?>
+		<?php echo "<p>You haven't added any temple yet.</p>";?>
+	<?php } ?>
 	<div class="clear"></div>
 </div>
 </div>
 <div class="mt10">
 <div class="title-bar">Recipes</div>
 <div>
-  <?php foreach($recipes as $recipe){    ?>
+  <?php 
+  if(!empty($recipes)){
+  foreach($recipes as $recipe){    ?>
     <div class="span6">
 
         <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug))?>"><?php echo $recipe->title; ?></a></div>
  
         <div class="mt10"><strong>Posted on : <?php echo $recipe->node->created; ?></strong></div>
-
+		<div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug))?>">Leave reply </a></span>
+	
+			<span>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('recipe/update',array('id'=>$recipe->id));?>">Edit</a></span>
+			   <span>&nbsp;|&nbsp;<?php echo CHtml::link('Delete','#',array("submit"=>array('recipe/delete','id'=>$recipe->id),"confirm" => "Are you sure?"));?></span>
+		   </div>
         <div class="mt10">
 		<?php 
 		if(isset($recipe->rec_pic->file_name) && $recipe->rec_pic->file_name != '')
@@ -99,43 +119,41 @@
 		<div class="mt10"><strong> Cooking Time :</strong><?php echo $recipe->cooking_time;?></div>
         <div class="mt10"><strong> Method :</strong></div>
         <div><p><?php echo html_entity_decode($recipe->method, ENT_COMPAT, "UTF-8"); ?></p></div>
-		<div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug))?>">Leave reply </a></span>
-		   <?php if($recipe->node->user_id == Yii::app()->user->id){?>
-			<span>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('recipe/update',array('id'=>$recipe->id));?>">Edit</a></span>
-		   <?php } ?>
-		   </div>
 
     </div>
-    <?php }?>
+    <?php }
+	}else{
+		echo "<p>You haven't added any recipe yet.</p>";
+	} ?>
 	<div class="clear"></div>
 	</div>
 </div>
 <div class="mt10">
 	<div class="title-bar">Experiences/ Ganesha Mahima / wishes</div>
 	<div>
-	   <?php foreach($experiences as $exp){ ?>
+	   <?php 
+	   if(!empty($experiences)){
+	   foreach($experiences as $exp){ ?>
 	 <div class="span6">
 
          <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug));?>"><?php echo $exp->title; ?></a></div>
          <div class="mt10"><strong>Posted on : <?php echo $exp->node->created; ?> | author : <?php echo $exp->node->creator->name; ?></strong></div>
-		<div class="blog-content"><?php echo html_entity_decode($exp->text, ENT_COMPAT, "UTF-8"); ?></div>
-		<div><span> <a href="<?php echo Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug));?>">Leave reply </a></span>
-		   <?php if($vedic->node->user_id == Yii::app()->user->id){?>
-			<span>&nbsp;|&nbsp;<a href="">Edit</a></span>
-		   <?php } ?>
+		 <div><span> <a href="<?php echo Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug));?>">Leave reply </a></span>
+			<span>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('experience/update',array('id'=>$exp->id));?>">Edit</a></span>
+			   <span>&nbsp;|&nbsp;<?php echo CHtml::link('Delete','#',array("submit"=>array('experience/delete','id'=>$exp->id),"confirm" => "Are you sure?"));?></span>
+
 		   </div>
+		 
+		<div class="blog-content"><?php echo html_entity_decode($exp->text, ENT_COMPAT, "UTF-8"); ?></div>
+		
         <div class="clear"></div>
 
-        <?php /*$this->widget('zii.widgets.CListView', array(
-        'dataProvider'=>$dataProvider,
-        'itemView'=>'_view',
-    )); */
-        //print_r($recipe);
-        ?>
-
-
     </div>
-    <?php }?>
+    <?php }
+	}else{
+				echo "<p>You haven't share any experience of yours.</p>";
+	}
+	?>
 	<div class="clear"></div>
 	</div>
 </div>
