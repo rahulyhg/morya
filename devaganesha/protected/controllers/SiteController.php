@@ -137,6 +137,10 @@ class SiteController extends Controller
 	   ));
 	}
 	
+	public function actionShowmap(){
+	$this->render('showmap');
+	}
+	
 	public function actionTopwinner()
 	{
 		echo $resp = $this->renderPartial('_topwinner');
