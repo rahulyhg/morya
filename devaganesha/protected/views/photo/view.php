@@ -95,12 +95,19 @@
 </div>
 	<div class="span4">
 		<div id="comments">
+			<div id="accordion" style="margin-bottom:10px !important;">
+			
+			<h3>Show comments</h3>
+			<div class="single_comment">
 			<?php
 			foreach($photo->node->comments as $comment){
 				$this->renderPartial('//comment/view',array('comment'=>$comment));
 			}
 			?>
+			</div>
+			</div>
 		<?php $this->renderPartial('//comment/create',array('comment'=>$newComment)); ?>
+			
 		</div>
 		<div class="mt10"><h4>Related bappa:</h4></div>
 		<div class="am-container mt10 photo-more" id="am-container">
