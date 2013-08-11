@@ -23,5 +23,24 @@ $this->menu=array(
     </div>
 	
 	<div class="mt20"><a href="<?php echo Yii::app()->createUrl('experience/index');?>">Back to  All</a></div>
+	<div id="comments">
+			<div id="accordion" style="margin-bottom:10px !important;">
+			
+			<h3>Show comments</h3>
+			<div class="single_comment">
+			<?php
+			if($model->node->comments){
+				foreach($model->node->comments as $comment){
+					$this->renderPartial('//comment/view',array('comment'=>$comment));
+				}
+			}else{
+			echo "<p>Be the first one to give the comment.</p>";
+			}
+			?>
+			</div>
+			</div>
+		<?php $this->renderPartial('//comment/create',array('comment'=>$newComment)); ?>
+			
+		</div>
 
 

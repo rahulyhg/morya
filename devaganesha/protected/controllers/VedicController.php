@@ -74,9 +74,12 @@ class VedicController extends AppController
 		{
 			$model=Vedic::model()->with('node')->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
             //$elements = Vedic::model()->findAll();
+			$newComment = new Comment() ;
+        	$newComment->node_id = $model->node_id ;
 			$this->render('vedicview',array(
 			'model'=>$model,
             // 'elements'=>$elements,
+			'newComment'=>$newComment,
 			));
 		
 		}

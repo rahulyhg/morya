@@ -63,9 +63,12 @@ class RecipeController extends AppController
 		{
 			$model=Recipe::model()->with('node','rec_pic')->findByAttributes(array('slug'=>$_REQUEST['rec_title']));
             $elements=Recipe::model()->findAll();
+			$newComment = new Comment() ;
+        	$newComment->node_id = $model->node_id ;
 			$this->render('recipeview',array(
 			'model'=>$model,
-             'elements'=>$elements
+             'elements'=>$elements,
+			 'newComment'=>$newComment,
 		));
 		
 		}

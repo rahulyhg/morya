@@ -64,9 +64,12 @@ class ExperienceController extends AppController
         {
             $model=Experience::model()->with('node')->findByAttributes(array('slug'=>$_REQUEST['exp_title']));
            // $elements=Experience::model()->findAll();
+		   $newComment = new Comment() ;
+        	$newComment->node_id = $model->node_id ;
             $this->render('expview',array(
                 'model'=>$model,
             //    'elements'=>$elements
+				'newComment'=>$newComment,
             ));
 
         }

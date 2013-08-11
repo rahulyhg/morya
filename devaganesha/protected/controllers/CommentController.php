@@ -75,6 +75,18 @@ class CommentController extends AppController
 				case NodeType::Photo :$photo = Photo::model()->findByAttributes(array('node_id' => $comment->node_id));
 									  return $this->redirect(Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)));
 									  break ;
+				case NodeType::Temple :$temple = Temple::model()->findByAttributes(array('node_id' => $comment->node_id));
+									  return $this->redirect(Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug)));
+									  break ;
+			  case NodeType::Recipe :$recipe = Recipe::model()->findByAttributes(array('node_id' => $comment->node_id));
+									  return $this->redirect(Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug)));
+									  break ;
+				case NodeType::Vedic :$vedic = Vedic::model()->findByAttributes(array('node_id' => $comment->node_id));
+									  return $this->redirect(Yii::app()->createUrl('vedic/vedicview',array('ved_title'=>$vedic->slug)));
+									  break ;
+				case NodeType::Experience :$exp = Experience::model()->findByAttributes(array('node_id' => $comment->node_id));
+									  return $this->redirect(Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug)));
+									  break ;
 				}
 				
 			}else{
