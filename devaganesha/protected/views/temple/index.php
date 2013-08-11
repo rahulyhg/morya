@@ -40,12 +40,12 @@ $this->menu=array(
 		<div class="mt10"><strong>Posted on : <?php echo $temple->node->created; ?> | author : <?php echo $temple->node->creator->name; ?></strong></div>
         <div class="mt10">
              <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->main_pic->file_name; ?>" height="200px" width="200px" class="fl mr10"/>
-             <p><?php echo $temple->description;?></p>
+             <p><?php echo html_entity_decode($temple->description, ENT_COMPAT, "UTF-8");?></p>
 
         </div>
         <div><b>Established In : </b>&nbsp;<?php echo $temple->established;?></div>
-        <div class="mt10"><b>How to reach : </b>&nbsp;<?php echo $temple->how_to_go;?></div>
-        <div class="mt10"><b>History : </b>&nbsp;<?php echo $temple->history;?></div>
+        <div class="mt10"><b>How to reach : </b>&nbsp;<?php echo html_entity_decode($temple->how_to_go, ENT_COMPAT, "UTF-8");?></div>
+        <div class="mt10"><b>History : </b>&nbsp;<?php echo html_entity_decode($temple->history, ENT_COMPAT, "UTF-8");?></div>
 
         <div class="mt10"><?php
            if(isset($temple->pic1->file_name)){

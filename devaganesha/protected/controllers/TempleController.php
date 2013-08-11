@@ -105,6 +105,9 @@ class TempleController extends AppController
 			
 			$model->attributes=$_POST['Temple'];
 			$model->slug = $this->behaviors();
+			$model->description = htmlentities($model->description, ENT_COMPAT, "UTF-8");
+			$model->how_to_go = htmlentities($model->how_to_go, ENT_COMPAT, "UTF-8");
+			$model->history = htmlentities($model->history, ENT_COMPAT, "UTF-8");
 			
 			
 			if($node->validate())
@@ -152,13 +155,19 @@ class TempleController extends AppController
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		
+			$model->description = html_entity_decode($model->description, ENT_COMPAT, "UTF-8");
+			$model->how_to_go = html_entity_decode($model->how_to_go, ENT_COMPAT, "UTF-8");
+			$model->history = html_entity_decode($model->history, ENT_COMPAT, "UTF-8");
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Temple']))
 		{
 			$model->attributes=$_POST['Temple'];
+			$model->description = htmlentities($model->description, ENT_COMPAT, "UTF-8");
+			$model->how_to_go = htmlentities($model->how_to_go, ENT_COMPAT, "UTF-8");
+			$model->history = htmlentities($model->history, ENT_COMPAT, "UTF-8");
 			if($model->save())
 				$this->redirect(array('index','id'=>$model->id));
 		}

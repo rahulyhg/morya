@@ -45,7 +45,7 @@ function templeUploadComplete(id, fileName, responseJSON){
 
 	<div class="controls">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6,'class'=>'span12')); ?>
+		<?php echo $form->textArea($model,'description',array('rows'=>6,'class'=>'span12','id'=>'temple-desc')); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
@@ -57,13 +57,13 @@ function templeUploadComplete(id, fileName, responseJSON){
 
 	<div class="controls">
 		<?php echo $form->labelEx($model,'how_to_go'); ?>
-		<?php echo $form->textArea($model,'how_to_go',array('rows'=>6,'class'=>'span12')); ?>
+		<?php echo $form->textArea($model,'how_to_go',array('rows'=>6,'class'=>'span12','id'=>'how-to-go')); ?>
 		<?php echo $form->error($model,'how_to_go'); ?>
 	</div>
 
 	<div class="controls">
 		<?php echo $form->labelEx($model,'history'); ?>
-		<?php echo $form->textArea($model,'history',array('rows'=>6,'class'=>'span12')); ?>
+		<?php echo $form->textArea($model,'history',array('rows'=>6,'class'=>'span12','id'=>'temple-history')); ?>
 		<?php echo $form->error($model,'history'); ?>
 	</div>
 	<div id="photo_id"></div>
@@ -97,3 +97,37 @@ array(
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	tinymce.init({
+		selector: "#temple-desc",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+	});
+	tinymce.init({
+		selector: "#how-to-go",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+	});
+	tinymce.init({
+		selector: "#temple-history",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+	});
+});
+
+</script>
