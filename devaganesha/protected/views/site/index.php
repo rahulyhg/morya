@@ -1,10 +1,8 @@
 
 <div class="row-fluid mt10">
       <div class="span9 grid-gal">
-			<div class="am-container mt10 home-grid" id="am-container">
-		 <?php foreach($elementsList as $photo){ ?>
-				<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" alt=""></a>
-		  <?php } ?>
+			<div class="am-container home-grid" id="am-container">
+		
 			</div>
       </div>  
       <div class="span3 fl visible-desktop">

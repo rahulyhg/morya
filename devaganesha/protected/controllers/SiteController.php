@@ -36,7 +36,7 @@ class SiteController extends Controller
 		$criteria->with = array('node');
 		$criteria->order = 'node.created DESC';
 		 $criteria->limit = 8;
-		 $elementsList=Photo::model()->findAll($criteria);//->with('comments')
+		 //$elementsList=Photo::model()->findAll($criteria);//->with('comments')
 		 
 		 $criteria1=new CDbCriteria;
 		 $criteria1->with = array('node','main_pic');
@@ -45,7 +45,7 @@ class SiteController extends Controller
 
 		
 		$this->render('index',array(
-			'elementsList'=>$elementsList,
+			//'elementsList'=>$elementsList,
 			'elementsList1'=>$elementsList1,
 		));
 	}
