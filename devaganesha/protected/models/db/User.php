@@ -163,11 +163,11 @@ class User extends AppActiveRecord
         return implode($pass); //turn the array into a string
     }
 
-	protected function beforeSave()
+	/* protected function beforeSave()
 	{
 		if(isset($this->password) && !empty($this->password)){
 			$this->password = md5($this->password);
 		}
 		return true;
-	}
+	} */
 }

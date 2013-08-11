@@ -67,6 +67,9 @@ class UserController extends AppController
 				//$filepath = PhotoType::$folderName[PhotoType::Profile];
 				//RegistrationForm Model variables bulk assigned to User
 				$user->attributes = $model->attributes ;
+				if(isset($model->password) && !empty($model->password)){
+					$user->password = md5($model->password);
+				}
 				if(CUploadedFile::getInstance($model,'ganpati_pic')){
 				$user->ganpati_pic=CUploadedFile::getInstance($model,'ganpati_pic');
 				}
@@ -102,6 +105,9 @@ class UserController extends AppController
                 $user = new User ;
                 //RegistrationForm Model variables bulk assigned to User
                 $user->attributes = $model->attributes ;
+				if(isset($model->password) && !empty($model->password)){
+					$user->password = md5($model->password);
+				}
                 if($user->save()){
                     //log-in the user
                     $identity=new UserIdentity($model->email,$model->password);
@@ -161,6 +167,10 @@ class UserController extends AppController
 			Yii::app()->end();
 		}
 
+		if(isset($_GET['rurl']) && !empty($_GET['rurl'])){
+				Yii::app()->user->setReturnUrl($_GET['rurl']);
+				}
+		
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
@@ -168,7 +178,11 @@ class UserController extends AppController
 			
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				Yii::app()->request->redirect(Yii::app()->user->returnUrl);
+			{
+			
+					Yii::app()->request->redirect(Yii::app()->user->returnUrl);
+			}
+			
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
