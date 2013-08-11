@@ -19,7 +19,7 @@
             </div>
 			
 			<div class="mt10"><strong>Posted on : <?php echo $vedic->node->created; ?></strong></div>
-            <div class="blog-content"><?php echo $vedic->text;?></div>
+            <div class="blog-content"><?php echo html_entity_decode($vedic->text, ENT_COMPAT, "UTF-8");?></div>
            <div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>">Leave reply </a></span>
 		   <?php if($vedic->node->user_id == Yii::app()->user->id){?>
 			<span>&nbsp;|&nbsp;<a href="">Edit</a></span>
@@ -41,12 +41,12 @@
 		<div class="mt10"><strong>Posted on : <?php echo $temple->node->created; ?></strong></div>
         <div class="mt10">
              <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$temple->main_pic->file_name; ?>" height="200px" width="200px" class="fl mr10"/>
-             <p><?php echo $temple->description;?></p>
+             <p><?php echo html_entity_decode($temple->description, ENT_COMPAT, "UTF-8");?></p>
 
         </div>
         <div><b>Established In : </b>&nbsp;<?php echo $temple->established;?></div>
-        <div class="mt10"><b>How to reach : </b>&nbsp;<?php echo $temple->how_to_go;?></div>
-        <div class="mt10"><b>History : </b>&nbsp;<?php echo $temple->history;?></div>
+        <div class="mt10"><b>How to reach : </b>&nbsp;<?php echo html_entity_decode($temple->how_to_go, ENT_COMPAT, "UTF-8");?></div>
+        <div class="mt10"><b>History : </b>&nbsp;<?php echo html_entity_decode($temple->history, ENT_COMPAT, "UTF-8");?></div>
 
         <div class="mt10"><?php
            if(isset($temple->pic1->file_name)){
@@ -93,12 +93,12 @@
 		?>
 		<img src="<?php echo $recimg; ?>" height="200px" width="200px" class="fl mr10"/>
 			<p><strong>Ingradients :</strong></p>
-            <p><?php echo $recipe->ingredients; ?></p>
+            <p><?php echo html_entity_decode($recipe->ingredients, ENT_COMPAT, "UTF-8"); ?></p>
         </div>
 		<div class="clear"></div>
 		<div class="mt10"><strong> Cooking Time :</strong><?php echo $recipe->cooking_time;?></div>
         <div class="mt10"><strong> Method :</strong></div>
-        <div><p><?php echo $recipe->method; ?></p></div>
+        <div><p><?php echo html_entity_decode($recipe->method, ENT_COMPAT, "UTF-8"); ?></p></div>
 		<div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug))?>">Leave reply </a></span>
 		   <?php if($recipe->node->user_id == Yii::app()->user->id){?>
 			<span>&nbsp;|&nbsp;<a href="<?php echo Yii::app()->createUrl('recipe/update',array('id'=>$recipe->id));?>">Edit</a></span>
@@ -118,7 +118,7 @@
 
          <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug));?>"><?php echo $exp->title; ?></a></div>
          <div class="mt10"><strong>Posted on : <?php echo $exp->node->created; ?> | author : <?php echo $exp->node->creator->name; ?></strong></div>
-		<div class="blog-content"><?php echo $exp->text; ?></div>
+		<div class="blog-content"><?php echo html_entity_decode($exp->text, ENT_COMPAT, "UTF-8"); ?></div>
 		<div><span> <a href="<?php echo Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug));?>">Leave reply </a></span>
 		   <?php if($vedic->node->user_id == Yii::app()->user->id){?>
 			<span>&nbsp;|&nbsp;<a href="">Edit</a></span>
