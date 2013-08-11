@@ -15,7 +15,7 @@ class PhotoController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','loadRelated'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -219,16 +219,26 @@ class PhotoController extends AppController
 		$criteria1->compare('node_id',$photo->node_id);
 		$novisit = Visit::model()->count($criteria1);
 		
-		$elementsList=Photo::model()->findAll($criteria);//->with('comments')
+	
 		$this->render('view',array(
 			'photo'=>$photo,
             'newComment'=>$newComment,
 			'modaks' => $modaks,
-			'elementsList'=>$elementsList,
 			'novisit'=>$novisit,
 		));
 	}
 
+	public function actionLoadRelated()
+	{
+	
+		$elementsList=Photo::model()->findAll($criteria);//->with('comments')
+		
+		
+		echo $resp = $this->renderPartial('_related',array(
+		'elementsList'=>$elementsList,
+		));
+	}
+	
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.

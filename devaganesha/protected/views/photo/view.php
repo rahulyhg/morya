@@ -71,15 +71,18 @@
 	<span class="share32 gg"></span>
 	<span class="share32 fl"></span>
 	<span class="share32 st"></span>
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
 	</div>
 </div>
 	<div class="single-photo">
 		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>
 	</div>
-    <div class="caption"><?php echo $photo->original_name; ?></div>
-	<div><strong>Tags: </strong><?php echo $photo->description; ?></div>
-    <div><strong>Posted By: </strong><a class="photo_uploader_name"><?php echo $photo->node->creator->name ?></a></div>
-	<div><strong>Posted on: </strong><?php echo $photo->node->created; ?></div>
+    <p class="caption"><?php echo $photo->original_name; ?></p>
+	<?php if($photo->description){?>
+	<p><strong>Tags: </strong><?php echo $photo->description; ?></p>
+	<?php } ?>
+    <p><strong>Posted By: </strong><a class="photo_uploader_name"><?php echo $photo->node->creator->name ?></a></p>
+	<p><strong>Posted on: </strong><?php echo $photo->node->created; ?></p>
 	
 
 
@@ -99,11 +102,9 @@
 			?>
 		<?php $this->renderPartial('//comment/create',array('comment'=>$newComment)); ?>
 		</div>
-		<div class="mt10"><h4>Related :</h4></div>
+		<div class="mt10"><h4>Related bappa:</h4></div>
 		<div class="am-container mt10 photo-more" id="am-container">
-		 <?php foreach($elementsList as $photo){ ?>
-				<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" alt=""></a>
-		  <?php } ?>
+		
 			</div>
 	</div>
 

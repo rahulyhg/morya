@@ -188,35 +188,38 @@
   </script>
   <script type="text/javascript">
 			$(function() {
-				var $container 	= $('#am-container'),
-					$imgs		= $container.find('img').hide(),
-					totalImgs	= $imgs.length,
-					cnt			= 0;
+			$('#am-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
+			  $.ajax({
+                        url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
+						
+                        success: function(data) {
+							$('#am-container').html(data);
+							var $container 	= $('#am-container'),
+                            $imgs		= $container.find('img').hide(),
+							totalImgs	= $imgs.length,
+							cnt			= 0;
 				
-				$imgs.each(function(i) {
-					var $img	= $(this);
-					$('<img/>').load(function() {
-						++cnt;
-						if( cnt === totalImgs ) {
-							$imgs.show();
-							$container.montage({
-								liquid 	: false,
-								fixedHeight : 80
-							});
-							
-							/* 
-							 * just for this demo:
-							 */
-							$('#overlay').fadeIn(500);
-							var imgarr	= new Array();
-							for( var i = 1; i <= 30; ++i ) {
-								imgarr.push( i );
-							}
-					
-						}
-					}).attr('src',$img.attr('src'));
-				});	
-				
+							$imgs.each(function(i) {
+								var $img	= $(this);
+								$('<img/>').load(function() {
+									++cnt;
+									if( cnt === totalImgs ) {
+										$imgs.show();
+										$container.montage({
+											liquid 	: false,
+											minw : 100,
+											fixedHeight : 100,
+											margin:2,
+											//fillLastRow : true
+										});
+									
+										$('#overlay').fadeIn(500);
+								
+									}
+								}).attr('src',$img.attr('src'));
+							});	
+                        }
+                    });	
 			});
 		</script>
 		<script type="text/javascript">
