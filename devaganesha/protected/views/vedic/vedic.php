@@ -43,7 +43,7 @@ $this->menu=array(
             </div>
 			
 			<div class="mt10"><strong>Posted on : <?php echo $vedic->node->created; ?> | author : <?php echo $vedic->node->creator->name; ?></strong></div>
-            <div class="blog-content"><?php echo $vedic->text;?></div>
+            <div class="blog-content"><?php echo html_entity_decode($vedic->text, ENT_COMPAT, "UTF-8");?></div>
            <div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'ved_title'=>$vedic->slug))?>">Leave reply </a></span>
 		   <?php if($vedic->node->user_id == Yii::app()->user->id){?>
 			<span>&nbsp;|&nbsp;<a href="">Edit</a></span>

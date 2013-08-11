@@ -17,7 +17,7 @@
 
 	<div class="controls">
 		<?php echo $form->labelEx($model,'text'); ?>
-        <?php echo $form->textArea($model,'text',array('rows'=>10, 'cols'=>50,'class'=>'span12')); ?>
+        <?php echo $form->textArea($model,'text',array('rows'=>10, 'cols'=>50,'class'=>'span12','id'=>'exp-editor')); ?>
 		<?php echo $form->error($model,'text'); ?>
 	</div>
 
@@ -28,3 +28,19 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	tinymce.init({
+		selector: "#exp-editor",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+	});
+});
+
+</script>

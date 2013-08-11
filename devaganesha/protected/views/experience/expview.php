@@ -18,7 +18,7 @@ $this->menu=array(
 		   <?php } ?>
 	</div>
     <div class="blog-content">
-        <div><?php echo $model->text; ?></div>
+        <div><?php echo html_entity_decode($model->text, ENT_COMPAT, "UTF-8"); ?></div>
 
     </div>
 	

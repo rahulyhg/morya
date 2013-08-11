@@ -115,12 +115,13 @@ class VedicController extends AppController
 		$model=$this->loadModel($id);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		$model->text = html_entity_decode($model->text, ENT_COMPAT, "UTF-8");
 		if(isset($_POST['Vedic']))
 		{
 			$model->attributes=$_POST['Vedic'];
+            $model->text = htmlentities($model->text, ENT_COMPAT, "UTF-8");
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('vedicview','ved_title'=>$model->slug));
 		}
 
 		$this->render('update',array(
@@ -212,7 +213,7 @@ class VedicController extends AppController
 			$node->type = NodeType::Vedic;
 		
 			$model->attributes=$_POST['Vedic'];
-            $model->text = nl2br($model->text);
+            $model->text = htmlentities($model->text, ENT_NOQUOTES, "UTF-8");
 			$model->slug = $this->behaviors();
 			if($node->validate()){
 			

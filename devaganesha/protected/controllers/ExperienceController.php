@@ -90,6 +90,7 @@ class ExperienceController extends AppController
 			$node->type = NodeType::Experience;
 			
 			$model->attributes=$_POST['Experience'];
+            $model->text = htmlentities($model->text, ENT_COMPAT, "UTF-8");
             $model->slug = $this->behaviors();
 
 			if($node->validate())
@@ -138,10 +139,11 @@ class ExperienceController extends AppController
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		$model->text = html_entity_decode($model->text, ENT_COMPAT, "UTF-8");
 		if(isset($_POST['Experience']))
 		{
 			$model->attributes=$_POST['Experience'];
+			$model->text = htmlentities($model->text, ENT_COMPAT, "UTF-8");
 			if($model->save())
 				$this->redirect(array('expview','exp_title'=>$model->slug));
 		}
