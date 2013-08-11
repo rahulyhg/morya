@@ -557,3 +557,7 @@ background-image:url(../img/ShareThis.png);
 .st:hover{
 background-image:url(../img/ShareThis2.png);
 }
+
+.addthis_toolbox {
+    margin: 5px;
+}

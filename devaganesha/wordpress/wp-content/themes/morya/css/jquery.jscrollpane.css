@@ -4,16 +4,21 @@
  * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
  * may not operate correctly without them.
  */
-
+.scroll-pane{
+width:100% !important;
+}
+ 
 .jspContainer
 {
 	overflow: hidden;
 	position: relative;
+	width:100% !important;
 }
 
 .jspPane
 {
 	position: absolute;
+	width:100% !important;
 }
 
 .jspVerticalBar
