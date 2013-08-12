@@ -29,6 +29,7 @@ then on client side ajaxValidation takes place.
  * @property string $add_line_1
  * @property string $add_line_2
  * @property string $city
+ * @property string $key_reset
  * @property string $created
  * @property string $modified
  *
@@ -73,7 +74,7 @@ class User extends AppActiveRecord
 			array('email, name, add_line_1, add_line_2', 'length', 'max'=>255),
 			array('contact, ganpati_pic', 'length', 'max'=>11),
 			array('city', 'length', 'max'=>50),
-			array('password, ganpati_pic,contact, city,add_line_1, add_line_2','default', 'setOnEmpty'=>true, 'value'=>null),
+			array('password, ganpati_pic,contact, city,add_line_1, add_line_2, key_reset','default', 'setOnEmpty'=>true, 'value'=>null),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('email,name, contact,city,', 'safe', 'on'=>'search')
