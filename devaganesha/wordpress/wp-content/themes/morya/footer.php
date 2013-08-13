@@ -85,6 +85,7 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.montage.min.js"></script>
 	<!-- the jScrollPane script -->
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/tinymce/tinymce.min.js"></script>
 	
 
 
