@@ -78,7 +78,7 @@ class CommentController extends AppController
 				case NodeType::Temple :$temple = Temple::model()->findByAttributes(array('node_id' => $comment->node_id));
 									  return $this->redirect(Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug)));
 									  break ;
-			  case NodeType::Recipe :$recipe = Recipe::model()->findByAttributes(array('node_id' => $comment->node_id));
+				case NodeType::Recipe :$recipe = Recipe::model()->findByAttributes(array('node_id' => $comment->node_id));
 									  return $this->redirect(Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug)));
 									  break ;
 				case NodeType::Vedic :$vedic = Vedic::model()->findByAttributes(array('node_id' => $comment->node_id));
@@ -86,6 +86,9 @@ class CommentController extends AppController
 									  break ;
 				case NodeType::Experience :$exp = Experience::model()->findByAttributes(array('node_id' => $comment->node_id));
 									  return $this->redirect(Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug)));
+									  break ;
+				case NodeType::Post : $post_id =  Yii::app()->session['post_id'];//Yii::app()->request->getQuery('post_id');
+									  return $this->redirect(get_permalink($post_id));
 									  break ;
 				}
 				

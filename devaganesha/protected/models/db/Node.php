@@ -110,4 +110,10 @@ class Node extends AppActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function loadModel($id)
+	{
+		$model= Node::model()->findByPk((int)$id);
+		return $model;
+	}
 }
