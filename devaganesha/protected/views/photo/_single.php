@@ -43,6 +43,10 @@
 				<?php } ?>
 		        <p>
 		          <a href="<?php echo Yii::app()->createUrl('site/myganesha',array('id'=>$photo->node->user_id));?>"><?php echo $photo->node->creator->name; ?></a>
-		        </p>
+				   <?php if($photo->node->user_id == Yii::app()->user->id){?>
+				
+				   <?php } ?>
+				</p>
+				
        		</div>
 		</div>
