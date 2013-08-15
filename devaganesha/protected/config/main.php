@@ -57,6 +57,9 @@ return array(
 				'edit-profile'=>'user/edit',
 				'logout'=>'user/logout',
 				'register'=>'user/register',
+				'aarti/<slug:[a-z0-9\-_\.]+>'=>'vedic/vedicview',
+				'pictures-and-wallpapers/<slug:[a-z0-9\-_\.]+>'=>'photo/view',
+				'pictures-and-wallpapers'=>'photo/index',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -70,6 +73,7 @@ return array(
 		
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=morya',
+			'initSQLs'=>array("set time_zone='+05:30';"), 
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
