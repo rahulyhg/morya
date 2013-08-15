@@ -37,12 +37,12 @@
 			<div class="convo">
       			
 				<?php if(!$photo->node->creator->ganpati_pic){ ?>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/prof.gif" alt="pp" />
+				<img src="<?php echo get_template_directory_uri(); ?>/img/profilepic.png" alt="pp" />
 				<?php }else{ ?>
 				<img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Profile].$photo->node->creator->id.".jpg"; ?>" alt="pp" width="40" height="40"/>
 				<?php } ?>
 		        <p>
-		          <a href=""><?php echo $photo->node->creator->name; ?></a>
+		          <a href="<?php echo Yii::app()->createUrl('site/myganesha',array('id'=>$photo->node->user_id));?>"><?php echo $photo->node->creator->name; ?></a>
 		        </p>
        		</div>
 		</div>

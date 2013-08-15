@@ -89,11 +89,11 @@
 	<div class="single-photo">
 		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>
 	</div>
-    <p class="caption"><?php echo $photo->original_name; ?></p>
+    <p class="caption"><?php echo $photo->caption; ?></p>
 	<?php if($photo->description){?>
 	<p><strong>Tags: </strong><?php echo $photo->description; ?></p>
 	<?php } ?>
-    <p><strong>Posted By: </strong><a class="photo_uploader_name"><?php echo $photo->node->creator->name ?></a></p>
+    <p><strong>Posted By: </strong><a class="photo_uploader_name" href="<?php echo Yii::app()->createUrl('site/myganesha',array('id'=>$photo->node->user_id));?>"><?php echo $photo->node->creator->name ?></a></p>
 	<p><strong>Posted on: </strong><?php echo $photo->node->created; ?></p>
 	
 
