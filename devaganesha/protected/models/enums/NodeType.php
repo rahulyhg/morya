@@ -5,7 +5,7 @@ class NodeType{
  const Temple = 2;
  const Experience = 3;
  const Recipe = 4;
- const Post = 4;
+ const Post = 5;
 
     public static $heading = array(
          self::Photo => 'Photo',

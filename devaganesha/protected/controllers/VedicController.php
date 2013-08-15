@@ -68,11 +68,11 @@ class VedicController extends AppController
 	
 
 	
-	public function actionVedicview()
+	public function actionVedicview($slug)
 	{
-		if($_REQUEST['ved_title'] != '')
+		if($slug != '')
 		{
-			$model=Vedic::model()->with('node')->findByAttributes(array('slug'=>$_REQUEST['ved_title']));
+			$model=Vedic::model()->with('node')->findByAttributes(array('slug'=>$slug));
             //$elements = Vedic::model()->findAll();
 			$newComment = new Comment() ;
         	$newComment->node_id = $model->node_id ;
