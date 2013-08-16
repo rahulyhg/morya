@@ -50,7 +50,7 @@ $this->menu=array(
 //$uname = User::model()->findByPk($model->user_id);
 ?>
 
-    <div class="title-bar">&nbsp;<?php echo $model->name_of_god;?>(<?php echo $model->title;?>)</div>
+    <div class="title-bar"><h2><?php echo $model->name_of_god;?>(<?php echo $model->title;?>)</h2></div>
 	<div class="mt10"><strong>Posted on : <?php echo $model->node->created; ?> | author : <?php echo $model->node->creator->name; ?></strong></div>
 	<div>
 	<?php if($model->node->user_id == Yii::app()->user->id){?>
