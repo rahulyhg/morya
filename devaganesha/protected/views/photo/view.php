@@ -93,7 +93,12 @@
 	<?php if($photo->description){?>
 	<p><strong>Tags: </strong><?php echo $photo->description; ?></p>
 	<?php } ?>
-    <p><strong>Posted By: </strong><a class="photo_uploader_name" href="<?php echo Yii::app()->createUrl('site/myganesha',array('id'=>$photo->node->user_id));?>"><?php echo $photo->node->creator->name ?></a></p>
+    <p><strong>Posted By: </strong><a class="photo_uploader_name" href="<?php echo Yii::app()->createUrl('site/myganesha',array('id'=>$photo->node->user_id));?>"><?php echo $photo->node->creator->name ?></a>
+	<?php if(Yii::app()->user->id == $photo->node->user_id){ ?>
+	<span class="fr"><a href="return fileUploadBegin();">Edit</a>&nbsp; | &nbsp; 
+	<a class="fr"><?php echo CHtml::link('Delete','#',array("submit"=>array('photo/delete','id'=>$photo->id),"confirm" => "Are you sure?"));?></a></span>
+	<?php } ?>
+	</p>
 	<p><strong>Posted on: </strong><?php echo $photo->node->created; ?></p>
 	
 
