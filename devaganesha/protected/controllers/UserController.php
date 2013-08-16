@@ -393,7 +393,7 @@ class UserController extends AppController
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
+		if(isset($_POST['ajax']) && ( $_POST['ajax']==='user-form' || $_POST['ajax']==='invite-user-form' ))
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
@@ -407,6 +407,10 @@ class UserController extends AppController
 	public function actionSendEmail()
 	{
 		$model=new SendEmailForm;
+
+		// Ajax Validation enabled
+		$this->performAjaxValidation($model);
+
 		// TODO: retrieve user email from user id
 		//$user=User::model()->findByPk($id);
 		if(isset($_POST['SendEmailForm']))
@@ -417,33 +421,36 @@ class UserController extends AppController
 				$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
 				$mail->IsSMTP();
 				$mail->IsHTML(true);
+				$mail->SMTPDebug  = 2;
 				$mail->SMTPAuth = true;
-				$mail->SMTPSecure = "ssl";
-				$mail->Host = "smtp.gmail.com";
-				$mail->Port = 465;
-				$mail->Username = "admin@gmail.com"; // Yii::app()->params['adminEmail']
-				$mail->Password = "****"; // adminEmail password
+				//$mail->SMTPSecure = "ssl";
+				$mail->Host = "smtp.javadotnettraining.com";
+				$mail->Port = 587;
+				$mail->Username = "noreply@devaganesha.com"; // Yii::app()->params['adminEmail']
+				$mail->Password = "Zeus123@"; // adminEmail password
 				$mail->CharSet = 'utf-8';
-				$mail->From = "morepranit@gmail.com"; //$user->email;
+				$mail->From = "noreply@devaganesha.com"; //$user->email;
 				$mail->FromName = $model->name;
 				$mail->Subject = $model->subject;
 				$template = $this->useTemplate($model->body);
 				$mail->MsgHTML($template); 
 				$email_arr = explode(",",$model->email);
 				foreach ($email_arr as $email) {
-					$mail->AddBCC($email); // "morepranit@gmail.com"
-					if($mail->Send()) {
-						//echo "Message sent successfully!";
-						Yii::app()->user->setFlash('contact',"Thank you for inviting your friends! Click <a href='sendemail'>here</a> to go back to the previous page.".Yii::app()->params['adminEmail']);
+					$mail2 = clone $mail;
+					$mail2->AddAddress(trim($email));
+					if($mail2->Send()) {
+						echo "Message sent successfully!";
 					}
 					else {
-						//echo "Fail to send your message!";
+						//error_log($mail->ErrorInfo);
+						echo $mail->ErrorInfo;
+						echo "Fail to send your message!";
 					}
 				}
-				$this->refresh();
 			}
 		}
-		$this->render('sendEmail',array('model'=>$model));
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+		$this->renderPartial('sendEmail',array('model'=>$model,),false,true);
 	}
 	
 	/**
@@ -452,9 +459,21 @@ class UserController extends AppController
 	 */
 	protected function useTemplate($body)
 	{
-		$body = "<p>$body</p>
-				<p>--<br>
-				www.ganeshpics.com</p>";
+		$body = str_replace("\n", "<br>", $body);
+		// TODO: Change below image
+		//http://farm1.staticflickr.com/142/399435540_e9d1fade4e.jpg
+		//http://imagesup.net/?di=713751244287
+		$body = "<table width='800px' height='566px;' border='0' cellspacing='0' cellpadding='20' background='http://www.imagesup.net/?di=813751254962'>
+					<tr>
+						<td>
+				   			<div style='color: yellow; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold;'>
+				   			$body
+				 			<br><br>
+				 			Thanks,<br>
+							<a href='http://www.devaganesha.com/' style='text-decoration:none;'>Devaganesha</a></div>
+				    	</td>
+				  	</tr>
+				</table>";
 		return $body;
 	}
 }

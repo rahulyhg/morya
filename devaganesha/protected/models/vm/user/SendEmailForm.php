@@ -9,9 +9,8 @@ class SendEmailForm extends CFormModel
 {
 	public $name;
 	public $email;
-	public $subject;
-	public $body;
-	public $default = "Welcome to www.ganeshpics.com";
+	public $subject = "Invitation to Ganesh Festival.";
+	public $body = "Hi, \n\nYou are invited to my home for this ganesh festival.";
 	public $verifyCode;
 
 	/**
