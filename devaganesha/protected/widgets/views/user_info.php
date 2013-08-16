@@ -41,7 +41,7 @@ if(Yii::app()->user->isGuest)
 <span class="user_space fr">
 	<div class="fl mr10">
 	<?php if(!$user->ganpati_pic && !$user->profile_pic){ ?>
-		<img src="<?php echo get_template_directory_uri(); ?>/img/prof.gif" alt="pp" />
+		<img src="<?php echo get_template_directory_uri(); ?>/img/profilepic.png" alt="pp" />
 		
 		<?php }else if($user->ganpati_pic){ ?>
 		<img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Profile].$user->id.".jpg"; ?>" alt="pp" width="40" height="40"/>

@@ -97,35 +97,42 @@ class SiteController extends Controller
 			$this->redirect(array('user/login'));
 		}
 		
+		if(empty($_GET['id']))
+		{
+			$chkid = Yii::app()->user->Id;
+		}else{
+			$chkid = $_GET['id'];
+		}
+
 		$criteria=new CDbCriteria;
 		$criteria->with = array('node');
 		$criteria->order = 'node.created DESC';
-		$criteria->compare('node.user_id',Yii::app()->user->Id);
+		$criteria->compare('node.user_id',$chkid);
 		$criteria->compare('t.type',PhotoUploadCategory::Normal,'AND');
 		$photos = Photo::model()->findAll($criteria);//->with('comments')
 		
 		$criteria1=new CDbCriteria;
 		$criteria1->with = array('node');
 		$criteria1->order = 'node.created DESC';
-		$criteria1->compare('node.user_id',Yii::app()->user->Id);
+		$criteria1->compare('node.user_id',$chkid);
 		$recipes = Recipe::model()->findAll($criteria1);//->with('comments')
 		
 		$criteria2=new CDbCriteria;
 		$criteria2->with = array('node');
 		$criteria2->order = 'node.created DESC';
-		$criteria2->compare('node.user_id',Yii::app()->user->Id);
+		$criteria2->compare('node.user_id',$chkid);
 		$temples = Temple::model()->findAll($criteria2);//->with('comments')
 		
 		$criteria3=new CDbCriteria;
 		$criteria3->with = array('node');
 		$criteria3->order = 'node.created DESC';
-		$criteria3->compare('node.user_id',Yii::app()->user->Id);
+		$criteria3->compare('node.user_id',$chkid);
 		$vedics = Vedic::model()->findAll($criteria3);//->with('comments')
 		
 		$criteria4=new CDbCriteria;
 		$criteria4->with = array('node');
 		$criteria4->order = 'node.created DESC';
-		$criteria4->compare('node.user_id',Yii::app()->user->Id);
+		$criteria4->compare('node.user_id',$chkid);
 		$experiences = Experience::model()->findAll($criteria3);//->with('comments')
 		
 	   $this->render('myganesha',array(
