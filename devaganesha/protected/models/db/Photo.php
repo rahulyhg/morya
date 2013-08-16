@@ -128,7 +128,7 @@ class Photo extends AppActiveRecord
 				'class' => 'application.models.behaviors.SlugBehavior',
 				'slug_col' => 'slug',
 				'title_col' => 'caption',
-				'overwrite' => false
+				'overwrite' => true
 			)
 		);
 	}

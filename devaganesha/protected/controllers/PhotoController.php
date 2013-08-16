@@ -19,11 +19,11 @@ class PhotoController extends AppController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('upload','postUpload','update','myganesha','rate'),
+				'actions'=>array('upload','postUpload','update','myganesha','rate','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -113,6 +113,7 @@ class PhotoController extends AppController
 		$photo = Photo::model()->findByPk((int)$_POST['id'])->with('node');
         if($photo->node->user_id === Yii::app()->user->id){
             $photo->caption = $_POST['caption'];
+			$photo->slug = $this->behaviors();
             $photo->description = $_POST['description'];
             if($photo->save()){
              return true;
@@ -253,7 +254,7 @@ class PhotoController extends AppController
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('photo/index'));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
