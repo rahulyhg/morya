@@ -204,6 +204,24 @@
 			$('#forpass').fancybox();
 		  });
 		  
+	
+			$('#inv-prev').click(function(){
+				var name = $('#inv-from-user').val();
+				var emails = $('#inv-to-email').val();
+				var body = $('#inv-body').val();
+				if(name == '' || emails == '' || body == '')
+				{
+					alert('Please Fill all the fields');
+				}else
+				{
+					$('#inv-from-user-fancy').html($('#inv-from-user').val());
+					$('#inv-sub-fancy').html("You are invited to my ganesha festival");
+					$('#inv-body-fancy').html($('#inv-body').val());
+					
+					$('#inv-prev').fancybox();
+				}
+			});
+		  
 		  $('.emailsub').click(function(){
 			var email = $('#emailadd').val();
 			if(email == ''){

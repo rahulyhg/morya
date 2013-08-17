@@ -115,34 +115,31 @@
 		<div class="span4">
 			<div class="title-bar"><strong>Invite Your friend and relatives for this festival</strong></div>
 			<div class="pl5">
-			<div><div class="fl pt5"><img src="<?php echo get_template_directory_uri(); ?>/img/fblack.png" width="36px" height="36px" /></div>
-				<div class="fl inv-cont"><div>Invite your friend from facebook.com</div><div class="conn-fb">Connect with facebook</div></div>
-				<div class="clear"></div>
-			</div>
-			<div><div class="fl pt5"><img src="<?php echo get_template_directory_uri(); ?>/img/gmail.png" /></div>
-				<div class="fl inv-cont"><div>Invite your friend from gmail.com</div><div class="conn-gm">Invite contact from gmail</div></div>
-				<div class="clear"></div>
-			</div>
-			<div><div class="fl pt5"><img src="<?php echo get_template_directory_uri(); ?>/img/gmail.png" /></div>
-				<!-- <div class="fl inv-cont"><div>Invite your friend from gmail.com</div><div class="conn-gm">Invite contact from gmail</div></div> -->
-				<div id="invite">
-				<?php echo CHtml::ajaxLink(Yii::t('invite','Invite user to your Ganesh Festival'),$this->createUrl('user/sendemail'),array(
-				        'onclick'=>'$("#invite-user").dialog("open"); return false;',
-				        'update'=>'#invite-user'
-				        ),array('id'=>'showInviteUserDialog'));
-				?>
-				<div id="invite-user"></div>
+				<div><div class="fl pt5"><img src="<?php echo get_template_directory_uri(); ?>/img/fblack.png" width="36px" height="36px" /></div>
+					<div class="fl inv-cont"><div>Invite your friend from facebook.com</div><div class="conn-fb">Connect with facebook</div></div>
+					<div class="clear"></div>
 				</div>
-				<div class="clear"></div>
-			</div>
-			<div class="inv-frm">
-				<table width="100%">
-				<tr><td style="width:30%;color:#666666;text-align:center;">Name</td><td><input type="text" id="inv-from-user" name="uname" placeholder="enter your full name"/></td></tr>
-				<tr><td style="width:30%;color:#666666;text-align:center;">Email</td><td><input type="text" id="inv-to-email" name="email" placeholder="enter comma seperated email address"/></td></tr>
-				<tr><td style="width:30%;color:#666666;text-align:center;">Message</td><td><textarea id="inv-body" name="message" row="4" cols="10"></textarea></td></tr>
-				<tr><td></td><td><span class="inv-but inv-prev" style="cursor: pointer;">Preview</span><span class="inv-but">clear</span></td></tr>
-				</table>
-			</div>
+				<div><div class="fl pt5"><img src="<?php echo get_template_directory_uri(); ?>/img/gmail.png" /></div>
+					<div class="fl inv-cont"><div>Invite your friend from gmail.com</div><div class="conn-gm">Invite contact from gmail</div></div>
+					<div class="clear"></div>
+				</div>
+				
+				<div class="inv-frm">
+					<table width="100%">
+					<tr><td style="width:30%;color:#666666;text-align:center;">Name</td><td><input type="text" id="inv-from-user" name="uname" placeholder="enter your full name"/></td></tr>
+					<tr><td style="width:30%;color:#666666;text-align:center;">Email</td><td><input type="text" id="inv-to-email" name="email" placeholder="enter comma seperated email address"/></td></tr>
+					<tr><td style="width:30%;color:#666666;text-align:center;">Message</td><td><textarea id="inv-body" name="message" row="4" cols="10"></textarea></td></tr>
+					<tr><td></td><td><a href="#inv-user-template" id="inv-prev"><span class="inv-but">Preview</span></a><span class="inv-but">clear</span></td></tr>
+					</table>
+				</div>
+				<div style="display:none;">
+					<div id="inv-user-template">
+						<div id="inv-from-user-fancy">Hello</div>
+						<div id="inv-to-user-fancy"></div>
+						<div id="inv-sub-fancy"></div>
+						<div id="inv-body-fancy"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="span4">
@@ -176,13 +173,6 @@
 			</div>
 		</div>
 		
-		<div id="inv-user-template" style="display:none;">
-			<div id="inv-from-user-fancy"></div>
-			<div id="inv-to-user-fancy"></div>
-			<div id="inv-sub-fancy"></div>
-			<div id="inv-body-fancy"></div>
-		</div>
-		
 		<div class="span4">
 			<div class="title-bar"><strong>Ads</strong></div>
 			<div>
@@ -195,19 +185,6 @@
 			google_ad_height = 400;
 			//-->
 			
-			$(document).ready(function(){
-				$('.inv-prev').click(function(){
-					$('#inv-from-user-fancy').html($('#inv-from-user').val());
-					console.log($('#inv-from-user-fancy').html());
-					$('#inv-to-user-fancy').html($('#inv-to-email').val());
-					console.log($('#inv-to-user-fancy').html());
-					$('#inv-sub-fancy').html("You are invited to my ganesha festival");
-					console.log($('#inv-sub-fancy').html());
-					$('#inv-body-fancy').html($('#inv-body').val());
-					console.log($('#inv-body-fancy').html());
-					$('#inv-user-template').fancybox();
-				});
-			});
 			</script>
 			<script type="text/javascript"
 			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
