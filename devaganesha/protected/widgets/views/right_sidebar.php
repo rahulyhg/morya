@@ -2,36 +2,18 @@
 	<div class="slider-wrapper">
 
 			<div class="slider" id="slider">
-
+		<?php foreach($sliderarr as $slide){
+				//echo "cap=".$slider->node->caption;
+			if($slide->type == 0){
+		?>
 				<section>
 
-					<img src="<?php echo get_template_directory_uri(); ?>/images/1.jpg" alt="Australian road sign picturing a kangaroo">
+					<img src="<?php //echo PhotoType::$relativeFolderName[PhotoType::Screen] . $slide->file_name; ?>" alt="Australian road sign picturing a kangaroo">
 					<p>
-						Let's image added!
+						<?php echo $slide->id;?>
 					</p>
 				</section>
-				<section>
-
-					<img src="<?php echo get_template_directory_uri(); ?>/images/2.jpg" alt="Australian road sign picturing a kangaroo">
-					<p>
-						Let's image added!
-					</p>
-				</section>
-				<section>
-
-					<img src="<?php echo get_template_directory_uri(); ?>/images/3.jpg" alt="Australian road sign picturing a kangaroo">
-					<p>
-						Let's image added!
-					</p>
-				</section>
-				<section>
-
-					<img src="<?php echo get_template_directory_uri(); ?>/images/4.jpg" alt="Australian road sign picturing a kangaroo">
-					<p>
-						Let's image added!
-					</p>
-				</section>
-
+			<?php }} ?>
 
 			</div>
 
