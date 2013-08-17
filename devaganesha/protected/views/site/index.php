@@ -134,11 +134,26 @@
 				</div>
 				<div style="display:none;">
 					<div id="inv-user-template">
-						<div id="inv-from-user-fancy">Hello</div>
-						<div id="inv-to-user-fancy"></div>
-						<div id="inv-sub-fancy"></div>
-						<div id="inv-body-fancy"></div>
+						<h4><i>Please select theme from below: </i><h4>
+						<div id="inv-templates">
+							<div id="inv-red" class="inv-templates" style="width: 100px; height: 100px; background-color: #FF0000; display: inline-block; float:left; margin-right: 10px;"></div>
+							<div id="inv-green" class="inv-templates" style="width: 100px; height: 100px; background-color: #00FF00; display: inline-block; float:left; margin-right: 10px;"></div>
+							<div id="inv-blue" class="inv-templates" style="width: 100px; height: 100px; background-color: #0000FF; display: inline-block; float:left; margin-right: 10px;"></div>
+						</div>
+						<div id="inv-from-user-fancy" style="display:none;"></div>
+						<div id="inv-to-user-fancy" style="display:none;"></div>
+						<div id="inv-sub-fancy" style="display:none;"></div>
+						<br/><br/><br/><br/><br/><br/>
+						<div id="inv-body-fancy" style="color: magenta; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;"></div>
+						<br/>
+						<div>
+							<input type="button" value="Send" id="send-invitation" />
+							<input type="button" value="Cancel" id="cancel-prev" />
+						</div>
 					</div>
+				</div>
+				<div style="display:none;">
+					<div id="send-inv-succ">Invitation has been sent to following users: <div id="send-inv-users"></div></div>
 				</div>
 			</div>
 		</div>

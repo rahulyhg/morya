@@ -205,20 +205,70 @@
 		  });
 		  
 	
-			$('#inv-prev').click(function(){
+			$('#inv-prev').click(function() {
 				var name = $('#inv-from-user').val();
 				var emails = $('#inv-to-email').val();
 				var body = $('#inv-body').val();
-				if(name == '' || emails == '' || body == '')
-				{
+				var sub = "You are invited to my ganesha festival";
+				var theme = 'default';
+				
+				if(name == '' || emails == '' || body == '') {
 					alert('Please Fill all the fields');
-				}else
-				{
+				} else {
 					$('#inv-from-user-fancy').html(name);
-					$('#inv-sub-fancy').html("You are invited to my ganesha festival");
+					$('#inv-to-user-fancy').html(emails);
+					$('#inv-sub-fancy').html(sub);
 					$('#inv-body-fancy').html(body);
 					
+					$('.inv-templates').click(function() {
+						if($(this).attr('id') == 'inv-red') {
+							theme = 'red';
+							$('#inv-body-fancy').css('background-color', '#FF0000');
+							$('#inv-body-fancy').css('color', '#00FF00');
+						}
+						else if($(this).attr('id') == 'inv-green') {
+							theme = 'green';
+							$('#inv-body-fancy').css('background-color', '#00FF00');
+							$('#inv-body-fancy').css('color', '#0000FF');
+						}
+						else if($(this).attr('id') == 'inv-blue') {
+							theme = 'blue';
+							$('#inv-body-fancy').css('background-color', '#0000FF');
+							$('#inv-body-fancy').css('color', '#FF0000');
+						}
+					});
+					
 					$('#inv-prev').fancybox();
+					
+					$('#send-invitation').click(function(){
+						$.ajax({
+							url: "<?php echo Yii::app()->createUrl("user/sendemail"); ?>",
+							type: 'POST',
+							data: {
+								'name': name,
+								'email': emails,
+								'subject': sub,
+								'body': body,
+								'type': 'invitation',
+								'theme': theme
+							},
+							success: function() {
+								$('#send-inv-users').html(emails);
+								$.fancybox.close();
+								$('#send-inv-succ').dialog({
+									modal: true,
+									title: 'Invitation Sent!',
+									Ok: function() {
+										$(this).dialog("close");
+									}
+								});
+							}
+						});
+					});
+					
+					$('#cancel-prev').click(function(){
+						$.fancybox.close();
+					});
 				}
 			});
 		  

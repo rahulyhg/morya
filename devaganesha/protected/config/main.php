@@ -136,5 +136,7 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'mail@itvedant.com',
+		'doNotReplyEmail'=>'noreply@devaganesha.com',
+		'doNotReplyPass'=>'Zeus123@',
 	),
 );

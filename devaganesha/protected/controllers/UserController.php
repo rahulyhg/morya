@@ -18,11 +18,11 @@ class UserController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpassword','changepassword'),
+				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpassword','changepassword','sendEmail'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('edit','logout','sendEmail'),
+				'actions'=>array('edit','logout'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -393,7 +393,7 @@ class UserController extends AppController
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && ( $_POST['ajax']==='user-form' || $_POST['ajax']==='invite-user-form' ))
+		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
@@ -411,89 +411,96 @@ class UserController extends AppController
 		$mail->IsHTML(true);
 		$mail->SMTPDebug  = 2;
 		$mail->SMTPAuth = true;
-		$mail->SMTPSecure = "ssl";
+		//$mail->SMTPSecure = "ssl";
 		$mail->Host = "smtp.javadotnettraining.com";
 		$mail->Port = 587;
-		$mail->Username = "noreply@devaganesha.com"; // Yii::app()->params['adminEmail']
-		$mail->Password = "Zeus123@"; // adminEmail password
+		$mail->Username = Yii::app()->params['doNotReplyEmail'];
+		$mail->Password = Yii::app()->params['doNotReplyPass'];
 		$mail->CharSet = 'utf-8';
 		$mail->From = "noreply@devaganesha.com";
 		
-		if(isset($_POST['SendEmailForm'])) {
-			$model=new SendEmailForm;
-			// Ajax Validation enabled
-			$this->performAjaxValidation($model);
-			
-			$model->attributes=$_POST['SendEmailForm'];
-			if($model->validate())
-			{
-				$mail->FromName = $model->name;
-				$mail->Subject = $model->subject;
-				$template = $this->useTemplate('invitation', $model->body);
-				$mail->MsgHTML($template);
-				$email_arr = explode(",",$model->email);
-			}
-		}
-		else {
-			// TODO: Need to generalise more...Temporary fix for forgot password
-			$user = User::model()->findByPk(Yii::app()->user->id);
-			$mail->FromName = $user->name;
-			$mail->Subject = "Forgot Password";
-			$template = $this->useTemplate('forgot_pass');
-			$mail->MsgHTML($template);
-			$email_arr = explode(",",$user->email);
-		}
-
-		foreach ($email_arr as $email) {
-			$mail2 = clone $mail;
-			$mail2->AddAddress(trim($email));
-			if($mail2->Send()) {
-				//echo "Message sent successfully!";
-			}
-			else {
-				//echo $mail->ErrorInfo;
-				//echo "Fail to send your message!";
-			}
-		}
+		$model = new SendEmailForm;
+		$model->name = $_POST['name'];
+		$model->email = $_POST['email'];
+		$model->subject = $_POST['subject'];
+		$model->body = $_POST['body'];
 		
-		if(isset($_POST['SendEmailForm'])) {
-			Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-			$this->renderPartial('sendEmail',array('model'=>$model,),false,true);
+		if($model->validate()) {
+			$mail->FromName = $model->name;
+			$mail->Subject = $model->subject;
+			$theme = isset($_POST['theme']) ? $_POST['theme'] : '';
+			$template = $this->useTemplate($_POST['type'], $model->body, $theme);
+			$mail->MsgHTML($template);
+			$email_arr = explode(",",$model->email);
+
+			foreach ($email_arr as $email) {
+				$mail2 = clone $mail;
+				$mail2->AddAddress(trim($email));
+				if($mail2->Send()) {
+					//echo "Message sent successfully!";
+				}
+				else {
+					//echo $mail->ErrorInfo;
+					//echo "Fail to send your message!";
+				}
+			}
 		}
 	}
 	
 	/**
 	 * Generates template.
-	 * @param CModel the model to be rendered
+	 * @param type the type of email template
+	 * @param body the body to be rendered
+	 * @param type the theme of email template
 	 */
-	protected function useTemplate($type, $body = '')
+	protected function useTemplate($type, $body = '', $theme = '')
 	{
-		$body = str_replace("\n", "<br>", $body);
+		$temp_body = str_replace("\n", "<br>", $body);
 		
 		switch ($type) {
 			case 'invitation':
-				$body = "<table width='800px' height='566px;' border='0' cellspacing='0' cellpadding='20' background='http://www.imagesup.net/?di=813751254962'>
+				$body = "<table width='100%' height='auto;' border='0' cellspacing='0' cellpadding='20'>
 							<tr>
 								<td>
-									<div style='color: yellow; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold;'>
-									$body
-									<br><br>
-									Thanks,<br>
-									<a href='http://www.devaganesha.com/' style='text-decoration:none;'>Devaganesha</a></div>
+									";
+				switch ($theme) {
+					case 'red':
+						$body .= "<div style='color:#00FF00; background-color: #FF0000; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;'>
+									$temp_body
+								</div>";
+						break;
+					case 'green':
+						$body .= "<div style='color:#0000FF; background-color: #00FF00; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;'>
+									$temp_body
+								</div>";
+						break;
+					case 'blue':
+						$body .= "<div style='color:#FF0000; background-color: #0000FF; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;'>
+									$temp_body
+								</div>";
+						break;
+					default:
+						$body .= "<div style='color:magenta; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;'>
+									$temp_body
+								</div>";
+						break;
+						break;
+				}
+				$body .= "
 								</td>
 							</tr>
 						</table>";
 				break;
 
 			case 'forgot_pass':
-				$body = "";
+				$body = $temp_body;
 				break;
 			
-			case default: 
+			default: 
 				break;
 		}
 		
-		$body .= "<br/><font color='#666666' face='arial' size='1'>©2013 <a href='http://www.devaganesha.com/' style='text-decoration:none;'>www.devaganesha.com</a> All Rights Reserved</font>";
+		$body .= "<br/><div style='text-align:center;'><font color='#666666' face='arial' size='1'>&#169; 2013 <a href='http://www.devaganesha.com/' style='text-decoration:none;'>www.devaganesha.com</a> All Rights Reserved</font>";
 		return $body;
 	}
 }
