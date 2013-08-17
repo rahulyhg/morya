@@ -214,9 +214,9 @@
 					alert('Please Fill all the fields');
 				}else
 				{
-					$('#inv-from-user-fancy').html($('#inv-from-user').val());
+					$('#inv-from-user-fancy').html(name);
 					$('#inv-sub-fancy').html("You are invited to my ganesha festival");
-					$('#inv-body-fancy').html($('#inv-body').val());
+					$('#inv-body-fancy').html(body);
 					
 					$('#inv-prev').fancybox();
 				}
