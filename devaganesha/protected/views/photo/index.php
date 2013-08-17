@@ -51,10 +51,19 @@ $this->breadcrumbs=array(
 	)) ?>
 	</div>
 
- 
+      <script type="text/javascript">
+      jQuery(document).ready(function($) {
+	
+		$('#container').masonry({
+		  itemSelector: '.pin',
+		  isFitWidth: true
+		});	
+	});
+    </script>
 
 <?php $this->beginClip('js-page-end'); ?>
 		<script type="text/javascript">
            
             </script>
  <?php $this->endClip(); ?>
+ 

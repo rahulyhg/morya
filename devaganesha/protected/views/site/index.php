@@ -208,3 +208,40 @@
 			</div>
 		</div>
 	</div>
+	
+	  <script type="text/javascript">
+			$(function() {
+			$('#am-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
+			  $.ajax({
+                        url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
+						
+                        success: function(data) {
+							$('#am-container').html(data);
+							var $container 	= $('#am-container'),
+                            $imgs		= $container.find('img').hide(),
+							totalImgs	= $imgs.length,
+							cnt			= 0;
+				
+							$imgs.each(function(i) {
+								var $img	= $(this);
+								$('<img/>').load(function() {
+									++cnt;
+									if( cnt === totalImgs ) {
+										$imgs.show();
+										$container.montage({
+											liquid 	: false,
+											minw : 100,
+											fixedHeight : 85,
+											margin:2,
+											//fillLastRow : true
+										});
+									
+										$('#overlay').fadeIn(500);
+								
+									}
+								}).attr('src',$img.attr('src'));
+							});	
+                        }
+                    });	
+			});
+		</script>

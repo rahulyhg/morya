@@ -62,7 +62,6 @@
 			}'
 	));?>
 	</div>
-	<!--<div class="visit-vw">View : <?php echo $novisit;?></div> -->
 	<div class="visit-vw"><span class="btn">View</span><span class="btn"><?php echo $novisit;?></span></div>
 	<!--<div class="visit-vw">
 	<span class="share32 fb"></span>
@@ -93,8 +92,7 @@
 </div>
 	<div class="single-photo">
 		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>
-	</div>
-    <p class="caption"><?php echo $photo->caption; ?></p>
+		<p class="caption"><?php echo $photo->caption; ?></p>
 	<?php if($photo->description){?>
 	<p><strong>Tags: </strong><?php echo $photo->description; ?></p>
 	<?php } ?>
@@ -105,6 +103,8 @@
 	<?php } ?>
 	</p>
 	<p><strong>Posted on: </strong><?php echo $photo->node->created; ?></p>
+</div>
+    
 	
 
 
@@ -114,7 +114,8 @@
 			</script>
 	<?php $this->endClip(); ?>
 
-</div>
+	</div>
+
 	<div class="span4">
 		<div id="comments">
 			<div id="accordion" style="margin-bottom:10px !important;">
@@ -138,7 +139,44 @@
 		<div class="mt10"><h4>Related bappa:</h4></div>
 		<div class="am-container mt10 photo-more" id="am-container">
 		
-			</div>
+		</div>
 	</div>
 
 </div>
+
+  <script type="text/javascript">
+			$(function() {
+			$('#am-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
+			  $.ajax({
+                        url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
+						
+                        success: function(data) {
+							$('#am-container').html(data);
+							var $container 	= $('#am-container'),
+                            $imgs		= $container.find('img').hide(),
+							totalImgs	= $imgs.length,
+							cnt			= 0;
+				
+							$imgs.each(function(i) {
+								var $img	= $(this);
+								$('<img/>').load(function() {
+									++cnt;
+									if( cnt === totalImgs ) {
+										$imgs.show();
+										$container.montage({
+											liquid 	: false,
+											minw : 100,
+											fixedHeight : 85,
+											margin:2,
+											//fillLastRow : true
+										});
+									
+										$('#overlay').fadeIn(500);
+								
+									}
+								}).attr('src',$img.attr('src'));
+							});	
+                        }
+                    });	
+			});
+		</script>
