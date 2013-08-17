@@ -74,7 +74,7 @@
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
 	</div> -->
 	<!-- AddThis Button BEGIN -->
-	<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+	<div class="addthis_toolbox addthis_default_style addthis_32x32_style fl">
 		<a class="addthis_button_facebook"></a>
 	<a class="addthis_button_twitter"></a>
 	<a class="addthis_button_pinterest_share"></a>
@@ -85,6 +85,11 @@
 	<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
 <!-- AddThis Button END -->
+	<div class="fl">
+
+	<div class="<?php echo $classname;?>" id="fav-block"></div>
+	</div>
+	<input type="hidden" id="photo-node" value="<?php echo $photo->node_id;?>"/>
 </div>
 	<div class="single-photo">
 		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>

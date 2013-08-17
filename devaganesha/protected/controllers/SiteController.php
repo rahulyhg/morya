@@ -148,6 +148,32 @@ class SiteController extends Controller
 	$this->render('showmap');
 	}
 	
+	public function actionAddtofav(){
+		$nodeid = $_POST['node_id'];
+		$userid = Yii::app()->user->id;
+		
+		if($fav = Favourite::model()->findByPk(array('node_id' => $nodeid , 'user_id' => $userid )))
+		{
+			$fav->delete();
+			echo "deleted";
+		}else
+		{
+			$fav = new Favourite;
+			$fav->node_id = $nodeid;
+			$fav->user_id = $userid;
+			if($fav->validate())
+			{
+				$fav->save();
+				echo "added";
+			}else{
+				echo "error";
+			}
+		}
+
+
+		
+	}
+	
 	public function actionTopwinner()
 	{
 		echo $resp = $this->renderPartial('_topwinner');

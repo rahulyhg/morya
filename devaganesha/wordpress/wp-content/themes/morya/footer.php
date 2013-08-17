@@ -247,6 +247,33 @@
 			}
 		  });
 		  
+		  $('#fav-block').click(function(){
+			if(app.user.isAuthenticated === false){
+                  $("a#signup").trigger('click');
+                  return false;
+              }else{
+					var nodeid;
+						nodeid = $('#photo-node').val();
+			$.ajax({
+                        url: "<?php echo Yii::app()->createUrl("site/addtofav"); ?>",
+                        type: 'POST',
+                        data: { 'node_id': nodeid},
+                        success: function(response){
+							if(response == "added")
+							{
+								$('#fav-block').removeClass('add-to-fav');
+								$('#fav-block').addClass('rem-frm-fav');
+							}else if(response == "deleted"){
+								$('#fav-block').removeClass('rem-frm-fav');
+								$('#fav-block').addClass('add-to-fav');
+							}else{
+								alert('something error occured');
+							}
+                        }
+                    });
+				}
+		  });
+		  
       });
   </script>
   <script type="text/javascript">

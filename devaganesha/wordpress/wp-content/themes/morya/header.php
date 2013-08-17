@@ -34,7 +34,7 @@
 
   </head>
 
-  <body onload="initMap()">
+  <body>
     <div class="container-fluid">
             <div class="row-fluid">
       <div class="span3 logo"><a href="<?php echo Yii::app()->createUrl('site/index');?>"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="height:70px;" alt="logo" /></a></div>
