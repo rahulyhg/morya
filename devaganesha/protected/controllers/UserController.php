@@ -406,74 +406,94 @@ class UserController extends AppController
 	 */
 	public function actionSendEmail()
 	{
-		$model=new SendEmailForm;
-
-		// Ajax Validation enabled
-		$this->performAjaxValidation($model);
-
-		// TODO: retrieve user email from user id
-		//$user=User::model()->findByPk($id);
-		if(isset($_POST['SendEmailForm']))
-		{
+		$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
+		$mail->IsSMTP();
+		$mail->IsHTML(true);
+		$mail->SMTPDebug  = 2;
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = "ssl";
+		$mail->Host = "smtp.javadotnettraining.com";
+		$mail->Port = 587;
+		$mail->Username = "noreply@devaganesha.com"; // Yii::app()->params['adminEmail']
+		$mail->Password = "Zeus123@"; // adminEmail password
+		$mail->CharSet = 'utf-8';
+		$mail->From = "noreply@devaganesha.com";
+		
+		if(isset($_POST['SendEmailForm'])) {
+			$model=new SendEmailForm;
+			// Ajax Validation enabled
+			$this->performAjaxValidation($model);
+			
 			$model->attributes=$_POST['SendEmailForm'];
 			if($model->validate())
 			{
-				$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
-				$mail->IsSMTP();
-				$mail->IsHTML(true);
-				$mail->SMTPDebug  = 2;
-				$mail->SMTPAuth = true;
-				//$mail->SMTPSecure = "ssl";
-				$mail->Host = "smtp.javadotnettraining.com";
-				$mail->Port = 587;
-				$mail->Username = "noreply@devaganesha.com"; // Yii::app()->params['adminEmail']
-				$mail->Password = "Zeus123@"; // adminEmail password
-				$mail->CharSet = 'utf-8';
-				$mail->From = "noreply@devaganesha.com"; //$user->email;
 				$mail->FromName = $model->name;
 				$mail->Subject = $model->subject;
-				$template = $this->useTemplate($model->body);
-				$mail->MsgHTML($template); 
+				$template = $this->useTemplate('invitation', $model->body);
+				$mail->MsgHTML($template);
 				$email_arr = explode(",",$model->email);
-				foreach ($email_arr as $email) {
-					$mail2 = clone $mail;
-					$mail2->AddAddress(trim($email));
-					if($mail2->Send()) {
-						echo "Message sent successfully!";
-					}
-					else {
-						//error_log($mail->ErrorInfo);
-						echo $mail->ErrorInfo;
-						echo "Fail to send your message!";
-					}
-				}
 			}
 		}
-        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-		$this->renderPartial('sendEmail',array('model'=>$model,),false,true);
+		else {
+			// TODO: Need to generalise more...Temporary fix for forgot password
+			$user = User::model()->findByPk(Yii::app()->user->id);
+			$mail->FromName = $user->name;
+			$mail->Subject = "Forgot Password";
+			$template = $this->useTemplate('forgot_pass');
+			$mail->MsgHTML($template);
+			$email_arr = explode(",",$user->email);
+		}
+
+		foreach ($email_arr as $email) {
+			$mail2 = clone $mail;
+			$mail2->AddAddress(trim($email));
+			if($mail2->Send()) {
+				//echo "Message sent successfully!";
+			}
+			else {
+				//echo $mail->ErrorInfo;
+				//echo "Fail to send your message!";
+			}
+		}
+		
+		if(isset($_POST['SendEmailForm'])) {
+			Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+			$this->renderPartial('sendEmail',array('model'=>$model,),false,true);
+		}
 	}
 	
 	/**
 	 * Generates template.
 	 * @param CModel the model to be rendered
 	 */
-	protected function useTemplate($body)
+	protected function useTemplate($type, $body = '')
 	{
 		$body = str_replace("\n", "<br>", $body);
-		// TODO: Change below image
-		//http://farm1.staticflickr.com/142/399435540_e9d1fade4e.jpg
-		//http://imagesup.net/?di=713751244287
-		$body = "<table width='800px' height='566px;' border='0' cellspacing='0' cellpadding='20' background='http://www.imagesup.net/?di=813751254962'>
-					<tr>
-						<td>
-				   			<div style='color: yellow; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold;'>
-				   			$body
-				 			<br><br>
-				 			Thanks,<br>
-							<a href='http://www.devaganesha.com/' style='text-decoration:none;'>Devaganesha</a></div>
-				    	</td>
-				  	</tr>
-				</table>";
+		
+		switch ($type) {
+			case 'invitation':
+				$body = "<table width='800px' height='566px;' border='0' cellspacing='0' cellpadding='20' background='http://www.imagesup.net/?di=813751254962'>
+							<tr>
+								<td>
+									<div style='color: yellow; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold;'>
+									$body
+									<br><br>
+									Thanks,<br>
+									<a href='http://www.devaganesha.com/' style='text-decoration:none;'>Devaganesha</a></div>
+								</td>
+							</tr>
+						</table>";
+				break;
+
+			case 'forgot_pass':
+				$body = "";
+				break;
+			
+			case default: 
+				break;
+		}
+		
+		$body .= "<br/><font color='#666666' face='arial' size='1'>©2013 <a href='http://www.devaganesha.com/' style='text-decoration:none;'>www.devaganesha.com</a> All Rights Reserved</font>";
 		return $body;
 	}
 }
