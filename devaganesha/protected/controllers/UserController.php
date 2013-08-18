@@ -312,13 +312,29 @@ class UserController extends AppController
 		{
 			$val = User::model()->randomPassword();
 			$val = md5($val);
-			$url = Yii::app()->createUrl('user/resetpassword',array('key'=>$val));
-			if($url){
+			$url = "http://www.devaganesha.com/".Yii::app()->createUrl('user/resetpassword',array('key'=>$val));
+			$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
+			$mail->IsSMTP();
+			$mail->IsHTML(true);
+			$mail->SMTPDebug  = 2;
+			$mail->SMTPAuth = true;
+			//$mail->SMTPSecure = "ssl";
+			$mail->Host = "smtp.javadotnettraining.com";
+			$mail->Port = 587;
+			$mail->Username = Yii::app()->params['doNotReplyEmail'];
+			$mail->Password = Yii::app()->params['doNotReplyPass'];
+			$mail->CharSet = 'utf-8';
+			$mail->From = "noreply@devaganesha.com";
+			$mail->FromName = "Devaganesha.com";
+			$mail->Subject = "Change Your Password - Devaganesha.com";
+			$mail->MsgHTML($url);
+			$mail->AddAddress($user->email);
+			if($mail->send()){
 				$user->key_reset = $val;
 				$user->key_status = 1;
 				$user->save();
 			}
-			echo $url;
+			echo "success";
 		}else{
 			echo "invalid";
 		}
