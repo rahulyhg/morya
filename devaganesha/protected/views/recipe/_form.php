@@ -69,7 +69,7 @@
     ?>
 
 	<div class="controls mt10">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'btn')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'btn btn-primary mt10')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -36,7 +36,7 @@
 	<?php } ?>
 	<?php echo $form->hiddenField($comment,'node_id',array('value'=>$comment->node_id)); ?>
     <div>
-        <?php echo CHtml::submitButton('Comment',array('class'=>'btn')); ?>
+        <?php echo CHtml::submitButton('Comment',array('class'=>'btn btn-primary')); ?>
     </div>
 
     <?php $this->endWidget(); ?>

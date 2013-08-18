@@ -71,7 +71,7 @@ class Experience extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Title',
 			'slug' => 'Slug',
-			'text' => 'Text',
+			'text' => 'Experience/wish',
 			'node_id' => 'Node',
 		);
 	}

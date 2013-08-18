@@ -82,7 +82,7 @@ Yii::app()->clientScript->registerScript(
 	
 	
     <div>
-        <?php echo CHtml::submitButton('Update',array('class'=>'btn')); ?>
+        <?php echo CHtml::submitButton('Update',array('class'=>'btn btn-primary mt10')); ?>
     </div>
 
     <?php $this->endWidget(); ?>

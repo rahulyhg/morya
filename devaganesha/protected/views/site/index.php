@@ -1,5 +1,4 @@
-
-<div class="row-fluid mt10">
+<div class="row-fluid">
       <div class="span9 grid-gal">
 			<div class="am-container home-grid" id="am-container">
 		
@@ -68,7 +67,7 @@
 				<li><a href="<?php echo Yii::app()->createUrl('site/topwinner');?>">competition<br/>winner</a></li>
 				<li><a href="<?php echo Yii::app()->createUrl('site/topmakhar');?>">ganesh<br/>Makhars</a></li>
 				</ul>
-				<div class="scroll-pane" style="height:310px">
+				<div class="scroll-pane" style="height:320px">
 					<div id="tabs-1">
 						<div class="each-ent">
 							<div class="fl"><img src="<?php echo get_template_directory_uri(); ?>/img/gan1.png" class="each-img"/></div>
@@ -190,20 +189,20 @@
 		
 		<div class="span4">
 			<div class="title-bar"><strong>Ads</strong></div>
-		<style>
-		.devaganesha { width: 320px; height: 50px; }
-		@media(min-width: 500px) { .devaganesha { width: 468px; height: 60px; } }
-		@media(min-width: 800px) { .devaganesha { width: 728px; height: 90px; } }
-		</style>
-		<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- devaganesha -->
-		<ins class="adsbygoogle devaganesha"
-			 style="display:inline-block"
-			 data-ad-client="ca-pub-5804770278813362"
-			 data-ad-slot="7112201459"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+			<div class="home-ads">
+				<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-5804770278813362";
+				/* Devaganesha Homepage */
+				google_ad_slot = "8728645858";
+				google_ad_width = 300;
+				google_ad_height = 380;
+				//-->
+				
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
 		</div>
 	</div>
 	
