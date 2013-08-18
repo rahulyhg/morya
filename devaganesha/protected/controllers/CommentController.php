@@ -64,7 +64,7 @@ class CommentController extends AppController
 					if($user->validate()){
 						if($user->save()){
 							//log-in the user
-							$identity=new UserIdentity($user->email,$user->password);
+							$identity=new UserIdentity($user->email,$plain_password);
 							$identity->authenticate();
 							Yii::app()->user->login($identity);
 						}

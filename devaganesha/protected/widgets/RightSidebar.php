@@ -18,7 +18,7 @@ class RightSidebar extends CPortlet
 		$criteria->order = 't.created DESC';
         $criteria->limit = 20;
 		
-		$sliderarr = Node::model()->findAll($criteria);
+		$sliderarr = Node::model()->findAll();
         $this->render('right_sidebar',array('sliderarr'=>$sliderarr));
     }
 }

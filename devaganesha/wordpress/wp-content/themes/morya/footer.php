@@ -13,18 +13,18 @@
 		<div class="span5">
 			<div class="foothead">Sitemap</div>
 			<div class="sitemap1">
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('recipe/index');?>">Recipes</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Top 10 ganesha</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>">Aarti sangrah in marathi, hindi</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('experience/index');?>">Ganesh mahima</a></div>
-				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Children's stories of Lord ganesha</a></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>">Recipes</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="#">Top 10 ganesha</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>">Aarti sangrah in marathi, hindi</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('experience/index');?>">Ganesh mahima</a></div><div class="clear"></div></div>
+				<div class="each-site-last"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="#">Stories of Lord ganesha</a></div><div class="clear"></div></div>
 			</div>
 			<div class="sitemap2">
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Wallpaper of ganesha</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">Blog</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">News</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('temple/index');?>">Temples</a></div>
-				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">Blog</a></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="#">Wallpaper of ganesha</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo get_page_link(19);?>">Blog</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo get_page_link(19);?>">News</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('temple/index');?>">Temples</a></div><div class="clear"></div></div>
+				<div class="each-site-last"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo get_page_link(19);?>">Blog</a></div><div class="clear"></div></div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -307,6 +307,12 @@
 						$.fancybox.close();
 					});
 				}
+			});
+			
+			$('#inv-clear').click(function(){
+					$('#inv-from-user').val('');
+					$('#inv-to-email').val('');
+					$('#inv-body').val('');
 			});
 		  
 		  $('.emailsub').click(function(){

@@ -129,7 +129,7 @@
 					<tr><td style="width:30%;color:#666666;text-align:center;">Name</td><td><input type="text" id="inv-from-user" name="uname" placeholder="enter your full name"/></td></tr>
 					<tr><td style="width:30%;color:#666666;text-align:center;">Email</td><td><input type="text" id="inv-to-email" name="email" placeholder="enter comma seperated email address"/></td></tr>
 					<tr><td style="width:30%;color:#666666;text-align:center;">Message</td><td><textarea id="inv-body" name="message" row="4" cols="10"></textarea></td></tr>
-					<tr><td></td><td><a href="#inv-user-template" id="inv-prev"><span class="inv-but">Preview</span></a><span class="inv-but">clear</span></td></tr>
+					<tr><td></td><td><a href="#inv-user-template" id="inv-prev"><span class="inv-but">Preview</span></a><span class="inv-but" id="inv-clear">clear</span></td></tr>
 					</table>
 				</div>
 				<div style="display:none;">
@@ -190,22 +190,20 @@
 		
 		<div class="span4">
 			<div class="title-bar"><strong>Ads</strong></div>
-			<div>
-			
-			<script type="text/javascript"><!--
-			google_ad_client = "ca-pub-5804770278813362";
-			/* Devaganesha Homepage */
-			google_ad_slot = "8728645858";
-			google_ad_width = 300;
-			google_ad_height = 400;
-			//-->
-			
-			</script>
-			<script type="text/javascript"
-			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
-			
-			</div>
+		<style>
+		.devaganesha { width: 320px; height: 50px; }
+		@media(min-width: 500px) { .devaganesha { width: 468px; height: 60px; } }
+		@media(min-width: 800px) { .devaganesha { width: 728px; height: 90px; } }
+		</style>
+		<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- devaganesha -->
+		<ins class="adsbygoogle devaganesha"
+			 style="display:inline-block"
+			 data-ad-client="ca-pub-5804770278813362"
+			 data-ad-slot="7112201459"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 		</div>
 	</div>
 	

@@ -72,9 +72,6 @@ class UserController extends AppController
 				//$filepath = PhotoType::$folderName[PhotoType::Profile];
 				//RegistrationForm Model variables bulk assigned to User
 				$user->attributes = $model->attributes ;
-				if(isset($model->password) && !empty($model->password)){
-					$user->password = md5($model->password);
-				}
 				if(CUploadedFile::getInstance($model,'ganpati_pic')){
 				$user->ganpati_pic=CUploadedFile::getInstance($model,'ganpati_pic');
 				}
@@ -111,9 +108,6 @@ class UserController extends AppController
                 $user = new User ;
                 //RegistrationForm Model variables bulk assigned to User
                 $user->attributes = $model->attributes ;
-				if(isset($model->password) && !empty($model->password)){
-					$user->password = md5($model->password);
-				}
                 if($user->save()){
                     //log-in the user
                     $identity=new UserIdentity($model->email,$model->password);
@@ -367,8 +361,7 @@ class UserController extends AppController
 		$confpass = $_POST['confpass'];
 		$key = $_POST['key'];
 		$result = User::model()->findByAttributes(array('key_reset'=>$key));
-		$pass = md5($newpass);
-		$result->password = $pass;
+		$result->password = $newpass;
 		$result->key_status = 0;
 		$result->save();
 		Yii::app()->user->setFlash('success','Password has been change successfully. Now login with new password.');

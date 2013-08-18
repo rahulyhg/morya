@@ -65,12 +65,12 @@ class Node extends AppActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'comments' => array(self::HAS_MANY, 'Comment', 'node_id'),
-			'experiences' => array(self::HAS_MANY, 'Experience', 'node_id'),
+			'exp' => array(self::HAS_ONE, 'Experience', 'node_id'),
 			'modaks' => array(self::HAS_MANY, 'Modak', 'node_id'),
 			'creator'=>array(self::BELONGS_TO, 'User', 'user_id'),
 			'photoes' => array(self::HAS_ONE, 'Photo', 'node_id'),
-			'recepies' => array(self::HAS_MANY, 'Recipe', 'node_id'),
-			'temples' => array(self::HAS_MANY, 'Temple', 'node_id'),
+			'recepies' => array(self::HAS_ONE, 'Recipe', 'node_id'),
+			'temples' => array(self::HAS_ONE, 'Temple', 'node_id'),
 			'vedics' => array(self::HAS_MANY, 'Vedic', 'node_id'),
 		);
 	}

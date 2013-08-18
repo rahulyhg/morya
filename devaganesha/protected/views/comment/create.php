@@ -3,7 +3,7 @@
     'id'=>'comment-form',
     'action'=>Yii::app()->createUrl('comment/create'),
     'method'=>'POST',
-    'enableAjaxValidation'=>true,
+    'enableAjaxValidation'=>false,
 ));
     ?>
     <?php
