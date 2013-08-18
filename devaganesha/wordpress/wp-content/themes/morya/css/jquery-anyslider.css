@@ -7,7 +7,7 @@
 
 /* AnySlider can be styled to your liking. This is just example styles */
 .slider {
-	border: 1px dotted #333;
+	border: 1px solid #CCCCCC;
 	height: 250px;
 	margin: 0 auto;
 	padding: 5px;
@@ -54,6 +54,10 @@
 	text-align: left;
 	width: 54px;
 	z-index: 1;
+}
+.slider-text{
+margin-top:5px;
+font-size:14px;
 }
 
 .as-nav a {

@@ -28,7 +28,7 @@
 	</div>
 	<?php echo $form->hiddenField($model,'type',array('value'=>$vedicType)); ?>
 	<div class="controls">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'btn')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'btn btn-primary mt10')); ?>
 	</div>
 	
 <?php $this->endWidget(); ?>

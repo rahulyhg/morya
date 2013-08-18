@@ -2,33 +2,6 @@
 $this->breadcrumbs=array(
     VedicType::$heading[$vedicType] => array('vedic/vedic',array('vedicType'=>$vedicType))
 );
-
-
-
-$this->menu=array(
-	array(
-        'label'=>'Aarti',
-        'url'=>array('vedic','vedicType'=>VedicType::Aarti),
-        'itemOptions'=>array(
-            'class'=>'aarti_sidemenu selected_menu',
-            'style'=>'height:220px;'
-        ),
-    ),
-	array(
-        'label'=>'Mantra Pushpanjali',
-        'url'=>array('vedic','vedicType'=>VedicType::Mantra),
-        'itemOptions'=>array('class'=>'mantrapushpanjali_menu'),
-    ),
-	array(
-        'label'=>'Atharva shirsha',
-        //'url'=>array('vedic','vedicType'=>VedicType::Atharva),
-		'url'=>$this->createAbsoluteUrl('page', array('view' => 'atharva')),
-        'itemOptions'=>array('class'=>'atharvashirsha_menu'),
-    ),
-	array('label'=>'Uttar Pooja', 'url'=>array('vedic/page','view'=>'pooja'),
-        'itemOptions'=>array('class'=>'uttarpooja_menu')
-    ),
-);
 ?>
 
     <div class="title-bar">&nbsp;<?php echo VedicType::$heading[$vedicType];?></div>
@@ -39,7 +12,7 @@ $this->menu=array(
 	
     ?>
 		<div class="cont-disp">
-            <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'slug'=>$vedic->slug))?>"><?php echo $vedic->name_of_god;?>(<?php echo $vedic->title;?>)</a>
+            <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'slug'=>$vedic->slug))?>"><?php echo $vedic->title;?>(<?php echo $vedic->name_of_god;?>)</a>
             </div>
 			
 			<div class="mt10"><strong>Posted on : <?php echo $vedic->node->created; ?> | author : <?php echo $vedic->node->creator->name; ?></strong></div>

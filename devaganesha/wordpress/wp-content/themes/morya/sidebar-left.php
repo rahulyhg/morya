@@ -9,8 +9,8 @@
 <div class="span3">
 
 	
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 
-
+<?php Yii::app()->controller->widget('LeftSidebar',array('option'=>Yii::app()->controller->getUniqueId())); ?>
 	
 </div>
