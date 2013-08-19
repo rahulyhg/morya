@@ -31,7 +31,8 @@
 		<div class="span4">
 			<div class="fl">
 				<div class="daily-text">Enter your email to get one daily<br/>ganesha in your inbox.</div>
-				<div><span><input type="text" name="getsub" style="width:65%"/></span><span class="getbox">Get !</span></div>
+				<div><input type="text" name="getsub" id="getsub"/></div>
+				<div class="getbox">Get !</div>
 				<div class="foot-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="width:220px;" alt="logo" /></div>
 				<div class="footer-link"><a href="">home</a> | <a href="">about</a> | <a href="">sitemap</a> | <a href="">rss</a></div>
 			</div>
@@ -63,6 +64,12 @@
 </div>
 	<div id="succmail" style="display: none;" title="Email sent">
 		<p>Link to reset your password has been sent on your email. Go and change the password.</p>
+	</div>
+	<div id="subsucc" style="display: none;" title="Subscription Done.">
+		<p>Your mail has been subscribed. You will now get daily picture of ganesha.</p>
+	</div>
+	<div id="subfail" style="display: none;" title="Error">
+		<p>You have already subscribed.</p>
 	</div>
     <!-- Le javascript
     ================================================== -->
@@ -139,6 +146,39 @@
 			animation: 'fade',
 			interval: 3000
 		});
+		
+		$('.getbox').click(function(){
+			var email = $('#getsub').val();
+			if(email == '')
+			{
+				alert("Please enter email address");
+			}else
+			{
+				$.ajax({
+                        url: "<?php echo Yii::app()->createUrl("user/subscribe"); ?>",
+                        type: 'POST',
+                        data: { 'email': email},
+                        success: function(response) {
+							if(response == "success")
+							{
+								$('#subsucc').dialog({
+								modal: true,
+								minWidth: 500,
+								});
+							}else{
+								$('#subfail').dialog({
+								modal: true,
+								minWidth: 500,
+								});
+							}
+							$('#getsub').val('');
+							//alert('succcess');
+							//window.location.reload();
+                        }
+                 });
+			}
+		});
+		
       });
 
   </script>

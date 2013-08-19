@@ -18,7 +18,7 @@ class UserController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpassword','changepassword','sendEmail'),
+				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpassword','changepassword','sendEmail','subscribe'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -375,6 +375,27 @@ class UserController extends AppController
 		$this->redirect(array('user/login'));
 	}
 	
+	
+	public function actionSubscribe()
+	{
+		$email = $_POST['email'];
+		$subuser = UserSubscription::model()->findByAttributes(array('email'=>$email));
+		if($subuser == '')
+		{
+			$newsub = new UserSubscription;
+			$newsub->email = $email;
+			$newsub->sub_status = 1;
+			$val = User::model()->randomPassword();
+			$val = md5($val);
+			
+			$newsub->sub_key = $val;
+			if($newsub->save()){
+				echo "success";
+			}
+		}else{
+		echo "error";
+		}
+	}
 	/**
 	 * Manages all models.
 	 */

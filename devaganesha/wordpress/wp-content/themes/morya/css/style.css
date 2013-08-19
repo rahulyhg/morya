@@ -103,7 +103,7 @@ width: 100%;
 .foot-logo{color:#ff6633;font-size:24px;font-weight:bold;}
 .footer-link{color:#b7b7b7;}
 .footer-link a{color:#ffffff;}
-.getbox{background-color:#b5b5b5;color:#ffffff;font-size:14px;font-weight:bold;padding:5px;margin-left:10px;}
+.getbox{background-color: #B5B5B5;color: #FFFFFF;font-size: 14px;font-weight: bold;margin: 0 auto;padding: 5px 20px;width: 45px;cursor:pointer}
 /*photgallery */
 #container{
 	margin:0 auto;
