@@ -44,7 +44,7 @@
       <li><div class="menu-single"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>" class="menu-item"><div class="aarti"></div><div class="tac">Aarti</div></a></div></li>
       <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('photo/index');?>" class="menu-item"><div class="photo"></div><div class="tac">photo</div></a></div></li>
       <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('temple/index');?>" class="menu-item"><div class="temple"></div><div class="tac">Temples</div></a></div></li>
-      <li><div  class="menu-single"><a href="" class="menu-item"><div class="compi"></div><div class="tac">Comeptition</div></a></div></li>
+      <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('competition/index');?>" class="menu-item"><div class="compi"></div><div class="tac">Comeptition</div></a></div></li>
       <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>" class="menu-item"><div class="recipe"></div><div class="tac">Recipe</div></a></div></li>
             <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('site/myganesha');?>" class="menu-item"><div class="myganesha"></div><div class="tac">My ganesha</div></a></div></li>
     </ul>
