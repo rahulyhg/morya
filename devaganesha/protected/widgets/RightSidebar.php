@@ -14,8 +14,8 @@ class RightSidebar extends CPortlet
         //$criteria->compare('type',$templeType);
     protected function renderContent(){
 		$criteria=new CDbCriteria;
-		//$criteria->with = array('node');
-		$criteria->order = 'created DESC';
+		//$criteria->with = array('photoes');
+		$criteria->order = 't.created DESC';
         $criteria->limit = 20;
 		
 		$sliderarr = Node::model()->findAll($criteria);

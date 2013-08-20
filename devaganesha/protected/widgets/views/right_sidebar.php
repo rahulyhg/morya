@@ -8,12 +8,13 @@
 		?>
 				<section>
 
-					<img src="<?php //echo PhotoType::$relativeFolderName[PhotoType::Screen] . $slide->file_name; ?>" alt="Australian road sign picturing a kangaroo">
+					<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$slide->photoes->slug)) ?>"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen] . $slide->photoes->file_name; ?>" alt="Australian road sign picturing a kangaroo" height="225px"></a>
 					<p>
-						<?php echo $slide->id;?>
+						<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$slide->photoes->slug)) ?>"><strong><?php echo $slide->photoes->caption;?></strong></a>
 					</p>
 				</section>
-			<?php }} ?>
+			<?php }
+			} ?>
 
 			</div>
 
