@@ -8,6 +8,9 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Devaganesha.com',
 	'theme'=>'morya',
+	//'subtitle'=>'Site for Entire Ganesh Utsav Coverage',
+	// preloading 'log' component
+	'preload'=>array('log'),
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -57,9 +60,13 @@ return array(
 				'edit-profile'=>'user/edit',
 				'logout'=>'user/logout',
 				'register'=>'user/register',
-				'aarti/<slug>'=>'vedic/vedicview',
+				'feed/aarti-shlokas-mantra'=>'site/page/view/vedic',
+				'feed/pictures-and-wallpapers'=>'site/page/view/photo',
+				'aarti-shlokas-mantra/<slug>'=>'vedic/vedicview',
 				'pictures-and-wallpapers/<slug>'=>'photo/view',
-				'pictures-and-wallpapers'=>'photo/index',
+				//'pictures-and-wallpapers/index'=>'photo/index',
+				'node' => 'site/node',
+				'<view>'=>array('site/page'),
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -86,22 +93,28 @@ return array(
 			// the above is unused for 404 errors, as those
         // are handled by Wordpress using our exception handler
 		),
-		'log'=>array(
+		'log'=>
+			array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
-				),
-				// uncomment the following to show log messages on web pages
-				/*
+				),/*
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				*/
-			),
-		),
-		
+				
+				array(
+			
+					'class'=>'CLogRouter',
+					'routes'=>array(
+						array(
+						'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+						'ipFilters'=>array('127.0.0.1'),
+						),*/
+					),
+				),
 		/********* Facebook Component **********/
 		'facebook'=>array(
 			'class' => 'ext.yii-facebook-opengraph.SFacebook',

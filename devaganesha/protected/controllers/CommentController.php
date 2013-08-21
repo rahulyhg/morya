@@ -71,29 +71,7 @@ class CommentController extends AppController
             $comment->attributes=$_POST['Comment'];
 			if($comment->validate()){
 				$comment->save(false);
-				switch($comment->node->type){
-				case NodeType::Photo :$photo = Photo::model()->findByAttributes(array('node_id' => $comment->node_id));
-									  return $this->redirect(Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)));
-									  break ;
-				case NodeType::Temple :$temple = Temple::model()->findByAttributes(array('node_id' => $comment->node_id));
-									  return $this->redirect(Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug)));
-									  break ;
-				case NodeType::Recipe :$recipe = Recipe::model()->findByAttributes(array('node_id' => $comment->node_id));
-									  return $this->redirect(Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug)));
-									  break ;
-				case NodeType::Vedic :$vedic = Vedic::model()->findByAttributes(array('node_id' => $comment->node_id));
-									  return $this->redirect(Yii::app()->createUrl('vedic/vedicview',array('ved_title'=>$vedic->slug)));
-									  break ;
-				case NodeType::Experience :$exp = Experience::model()->findByAttributes(array('node_id' => $comment->node_id));
-									  return $this->redirect(Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug)));
-									  break ;
-				case NodeType::Post : $post_id =  Yii::app()->session['post_id'];//Yii::app()->request->getQuery('post_id');
-									  return $this->redirect(get_permalink($post_id));
-									  break ;
-				}
-				
-			}else{
-			print_r($comment->getErrors());
+				return $this->redirect($this->getUrlByNode($comment->node_id));
 			}
 		}
 		$this->renderPartial('create',array(

@@ -6,10 +6,10 @@ define('THUMB_DIR',UPLOAD_DIR.'thumb/');
 define('USER_PROFILE_PIC_DIR',UPLOAD_DIR.'user/');
 
 define('ROOT_UPLOAD_DIR',Yii::app()->baseUrl .'/upload/');
-define('RELATIVE_ORIGINAL_DIR',ROOT_UPLOAD_DIR.'/original/');
-define('RELATIVE_SCREEN_DIR',ROOT_UPLOAD_DIR.'/screen/');
-define('RELATIVE_THUMB_DIR',ROOT_UPLOAD_DIR.'/thumb/');
-define('RELATIVE_USER_PROFILE_PIC_DIR',ROOT_UPLOAD_DIR.'/user/');
+define('RELATIVE_ORIGINAL_DIR',ROOT_UPLOAD_DIR.'original/');
+define('RELATIVE_SCREEN_DIR',ROOT_UPLOAD_DIR.'screen/');
+define('RELATIVE_THUMB_DIR',ROOT_UPLOAD_DIR.'thumb/');
+define('RELATIVE_USER_PROFILE_PIC_DIR',ROOT_UPLOAD_DIR.'user/');
 
 class PhotoType {
     const Original = 0;

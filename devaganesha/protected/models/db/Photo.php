@@ -13,8 +13,6 @@
  * @property string $file_type
  * @property string $file_size
  * @property string $node_id
- * @property string $created
- * @property string $modified
  *
  * The followings are the available model relations:
  * @property Nodes $node
@@ -47,7 +45,7 @@ class Photo extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('original_name, file_name, file_type, file_size, node_id, created, modified', 'required'),
+			array('original_name, file_name, file_type, file_size, node_id', 'required'),
 			array('type', 'numerical', 'integerOnly'=>true),
 			array('caption, original_name, file_name, file_type', 'length', 'max'=>255),
 			array('file_size', 'length', 'max'=>20),
@@ -55,7 +53,7 @@ class Photo extends AppActiveRecord
 			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, caption, description, original_name, file_name, file_type, file_size, node_id, created, modified', 'safe', 'on'=>'search'),
+			array('id, type, caption, description, original_name, file_name, file_type, file_size, node_id', 'safe', 'on'=>'search'),
 		);
 	}
 

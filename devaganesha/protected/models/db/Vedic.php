@@ -21,7 +21,7 @@
  * @property VedicComment[] $vedicComments
  * @property Users $user
  */
-class Vedic extends AppActiveRecord
+class Vedic extends Node
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -69,7 +69,6 @@ class Vedic extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'vedicComments' => array(self::HAS_MANY, 'VedicComment', 'vedic_id'),
 			'node' => array(self::BELONGS_TO, 'Node', 'node_id'),
 		);
 	}
@@ -123,7 +122,6 @@ class Vedic extends AppActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-	
 	
 	//slug behaviors function
 		public function behaviors(){

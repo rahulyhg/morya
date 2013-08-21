@@ -2,7 +2,7 @@
 
 class AppController extends Controller
 {
-	public $layout='//layouts/layout_2C';
+	//public $layout='//layouts/layout_2C';
 	
 	public function filters()
 	{
@@ -31,6 +31,7 @@ class AppController extends Controller
 			// ),
 		);
 	}
+	/*
 	protected function afterRender($view, &$output)
 	{
 		parent::afterRender($view,$output);
@@ -38,6 +39,31 @@ class AppController extends Controller
 		Yii::app()->facebook->initJs($output); // this initializes the Facebook JS SDK on all pages
 		Yii::app()->facebook->renderOGMetaTags(); // this renders the OG tags
 		return true;
+	}
+	*/
+	
+	public function getUrlByNode($id){
+		$node = Node::model()->findbyPk($id);
+		switch($node->type){
+					case NodeType::Photo :$photo = Photo::model()->findByAttributes(array('node_id' => $id));
+										  return (Yii::app()->createAbsoluteUrl('photo/view',array('slug'=>$photo->slug)));
+										  break ;
+					case NodeType::Temple :$temple = Temple::model()->findByAttributes(array('node_id' => $id));
+										  return (Yii::app()->createAbsoluteUrl('temple/templeview',array('temple_name'=>$temple->slug)));
+										  break ;
+					case NodeType::Recipe :$recipe = Recipe::model()->findByAttributes(array('node_id' => $id));
+										  return (Yii::app()->createAbsoluteUrl('recipe/recipeview',array('rec_title'=>$recipe->slug)));
+										  break ;
+					case NodeType::Vedic :$vedic = Vedic::model()->findByAttributes(array('node_id' => $id));
+										  return (Yii::app()->createAbsoluteUrl('vedic/vedicview',array('slug'=>$vedic->slug)));
+										  break ;
+					case NodeType::Experience :$exp = Experience::model()->findByAttributes(array('node_id' => $id));
+										  return (Yii::app()->createAbsoluteUrl('experience/expview',array('exp_title'=>$exp->slug)));
+										  break ;
+					case NodeType::Post : $post_id =  Yii::app()->session['post_id'];//Yii::app()->request->getQuery('post_id');
+										  return (get_permalink($post_id));
+										  break ;
+		}
 	}
 }
 	

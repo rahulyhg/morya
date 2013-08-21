@@ -1,6 +1,6 @@
 <?php
 
-class SiteController extends Controller
+class SiteController extends AppController
 {
 	/**
 	 * Declares class-based actions.
@@ -156,5 +156,9 @@ class SiteController extends Controller
 	public function actionTopmakhar()
 	{
 		echo $resp = $this->renderPartial('_topmakhar');
+	}
+	
+	public function actionNode($id){
+		return 	$this->redirect($this->getUrlByNode($id));
 	}
 }
