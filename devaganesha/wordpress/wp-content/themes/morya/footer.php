@@ -23,8 +23,8 @@
 				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="#">Wallpaper of ganesha</a></div><div class="clear"></div></div>
 				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo get_page_link(19);?>">Blog</a></div><div class="clear"></div></div>
 				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo get_page_link(19);?>">News</a></div><div class="clear"></div></div>
-				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('temple/index');?>">Temples</a></div><div class="clear"></div></div>
-				<div class="each-site-last"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo get_page_link(19);?>">Blog</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('site/page',array('view'=>'photo')); ?>">Photos feed</a></div><div class="clear"></div></div>
+				<div class="each-site-last"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('site/page',array('view'=>'vedic')); ?>">Vedic feed</a></div><div class="clear"></div></div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -34,7 +34,7 @@
 				<div><input type="text" name="getsub" id="getsub"/></div>
 				<div class="getbox">Get !</div>
 				<div class="foot-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="width:220px;" alt="logo" /></div>
-				<div class="footer-link"><a href="">home</a> | <a href="">about</a> | <a href="">sitemap</a> | <a href="">rss</a></div>
+				<div class="footer-link"><a href="<?php echo Yii::app()->createUrl('site/index'); ?>">home</a> | <a href="">about</a> | <a href="">sitemap</a> | <a href="<?php echo Yii::app()->createUrl('site/page',array('view'=>'photo')); ?>">rss</a></div>
 			</div>
 			<div class="fl footer-image visible-desktop"></div>
 			<div class="clear"></div>
