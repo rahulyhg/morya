@@ -31,8 +31,7 @@
 <div class="row-fluid mt10">
 <div class="span8">
 <div class="photo-opt">
-	<div class="btn feedmdk">Feed Modaks</div>
-    <div id="modak-rating">
+    <div id="modak-rating" title="Feed modak to ganpati">
 	<?php
 		$this->widget('CStarRating',array(
 		'model'=> $modaks,
@@ -62,7 +61,7 @@
 			}'
 	));?>
 	</div>
-	<div class="visit-vw"><span class="btn">View</span><span class="btn"><?php echo $novisit;?></span></div>
+	<div class="visit-vw"><span class="btn" title="Darshan"><i class="icon-eye-open"></i>&nbsp;<?php echo $novisit;?></span></div>
 	<!--<div class="visit-vw">
 	<span class="share32 fb"></span>
 	<span class="share32 tw"></span>
@@ -86,25 +85,26 @@
 <!-- AddThis Button END -->
 	<div class="fl">
 
-	<div class="<?php echo $classname;?>" id="fav-block"></div>
+	<div class="btn fav-main"><div class="<?php echo $classname;?>" id="fav-block" title="<?php echo $titlefav;?>"></div></div>
 	</div>
 	<input type="hidden" id="photo-node" value="<?php echo $photo->node_id;?>"/>
 </div>
 	<div class="single-photo">
 		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>
-		<p class="caption"><?php echo $photo->caption; ?></p>
-	<?php if($photo->description){?>
-	<p><strong>Tags: </strong><?php echo $photo->description; ?></p>
-	<?php } ?>
-    <p><strong>Posted By: </strong><a class="photo_uploader_name" href="<?php echo Yii::app()->createUrl('site/myganesha',array('id'=>$photo->node->user_id));?>"><?php echo $photo->node->creator->name ?></a>
-	<?php if(Yii::app()->user->id == $photo->node->user_id){ ?>
-	<span class="fr"><a href="return fileUploadBegin();">Edit</a>&nbsp; | &nbsp; 
-	<a class="fr"><?php echo CHtml::link('Delete','#',array("submit"=>array('photo/delete','id'=>$photo->id),"confirm" => "Are you sure?"));?></a></span>
-	<?php } ?>
-	</p>
-	<p><strong>Posted on: </strong><?php echo $photo->node->created; ?></p>
-</div>
-    
+	</div>
+    <div>
+				<p class="caption"><?php echo $photo->caption; ?></p>
+			<?php if($photo->description){?>
+			<p><strong>Tags: </strong><?php echo $photo->description; ?></p>
+			<?php } ?>
+			<p><strong>Posted By: </strong><a class="photo_uploader_name" href="<?php echo Yii::app()->createUrl('site/myganesha',array('id'=>$photo->node->user_id));?>"><?php echo $photo->node->creator->name ?></a>
+			<?php if(Yii::app()->user->id == $photo->node->user_id){ ?>
+			<span class="fr"><!--<a href="return fileUploadBegin();">Edit</a>&nbsp; | &nbsp; -->
+			<a class="fr"><?php echo CHtml::link('Delete','#',array("submit"=>array('photo/delete','id'=>$photo->id),"confirm" => "Are you sure?"));?></a></span>
+			<?php } ?>
+			</p>
+			<!-- <p><strong>Posted on: </strong><?php echo $photo->node->created; ?></p> -->
+	</div>
 	
 
 
@@ -137,7 +137,8 @@
 			
 		</div>
 		<div class="mt10"><h4>Related bappa:</h4></div>
-		<div class="am-container mt10 photo-more" id="am-container">
+		<div class="photo-more">
+		<div class="mt10" id="small-pin-container">
 		
 		</div>
 	</div>
@@ -146,35 +147,15 @@
 
   <script type="text/javascript">
 			$(function() {
-			$('#am-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
+			$('#small-pin-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
 			  $.ajax({
                         url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
 						
                         success: function(data) {
-							$('#am-container').html(data);
-							var $container 	= $('#am-container'),
-                            $imgs		= $container.find('img').hide(),
-							totalImgs	= $imgs.length,
-							cnt			= 0;
-				
-							$imgs.each(function(i) {
-								var $img	= $(this);
-								$('<img/>').load(function() {
-									++cnt;
-									if( cnt === totalImgs ) {
-										$imgs.show();
-										$container.montage({
-											liquid 	: false,
-											minw : 100,
-											fixedHeight : 85,
-											margin:2,
-											//fillLastRow : true
-										});
-									
-										$('#overlay').fadeIn(500);
-								
-									}
-								}).attr('src',$img.attr('src'));
+							$('#small-pin-container').html(data);
+							$('#small-pin-container').masonry({
+							  itemSelector: '.small-pin',
+							  isFitWidth: true
 							});	
                         }
                     });	

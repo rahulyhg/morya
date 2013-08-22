@@ -139,13 +139,26 @@
 		
 		 $( "#accordion" ).accordion({ active: false, collapsible: true });
 	
+		 $( document ).tooltip({
+			/*position: {
+			my: "center bottom-20",
+			at: "center top",
+			using: function( position, feedback ) {
+			$( this ).css( position );
+			$( "<div>" )
+			.addClass( "arrow" )
+			.addClass( feedback.vertical )
+			.addClass( feedback.horizontal )
+			.appendTo( this );
+			}
+			},*/
+			track: true
+			});
+	
 		$('.act-com').focus(function() {
 			$('.nact-com').show();
 		});
-		$('#slider').AnySlider({
-			animation: 'fade',
-			interval: 3000
-		});
+		
 		
 		$('.getbox').click(function(){
 			var email = $('#getsub').val();
@@ -356,9 +369,11 @@
 							{
 								$('#fav-block').removeClass('add-to-fav');
 								$('#fav-block').addClass('rem-frm-fav');
+								$('#fav-block').attr("title", "Remove from favourite");
 							}else if(response == "deleted"){
 								$('#fav-block').removeClass('rem-frm-fav');
 								$('#fav-block').addClass('add-to-fav');
+								$('#fav-block').attr("title", "Add to favourite");
 							}else{
 								alert('something error occured');
 							}

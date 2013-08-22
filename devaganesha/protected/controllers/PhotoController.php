@@ -224,11 +224,14 @@ class PhotoController extends AppController
 			if($fav = Favourite::model()->findByPk(array('node_id' => $photo->node_id , 'user_id' => Yii::app()->user->id)))
 			{
 				$classname = 'rem-frm-fav';
+				$titlefav = "Remove from favourite";
 			}else{
 				$classname = 'add-to-fav';
+				$titlefav = "Add to favourite";
 			}
 		}else{
 				$classname = 'add-to-fav';
+				$titlefav = "Add to favourite";
 		}
 	
 		$this->render('view',array(
@@ -237,12 +240,16 @@ class PhotoController extends AppController
 			'modaks' => $modaks,
 			'novisit'=>$novisit,
 			'classname'=>$classname,
+			'titlefav'=>$titlefav,
 		));
 	}
 
 	public function actionLoadRelated()
 	{
-	
+		$criteria=new CDbCriteria;
+		$criteria->compare('type',PhotoUploadCategory::Normal);
+		$criteria->order = 'id DESC';
+        $criteria->limit = 30;
 		$elementsList=Photo::model()->findAll($criteria);//->with('comments')
 		
 		

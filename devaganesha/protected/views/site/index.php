@@ -1,14 +1,21 @@
 <div class="row-fluid">
       <div class="span9 grid-gal">
-			<div class="am-container home-grid" id="am-container">
+			<div id="small-pin-container">
 		
 			</div>
       </div>  
       <div class="span3 fl visible-desktop">
-      	<div class="Flexible-container">
+      	<!--<div class="Flexible-container">
       <iframe width="425" height="253" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Mumbai,+Maharashtra&amp;aq=0&amp;oq=mumbai&amp;sll=20.98352,82.752628&amp;sspn=40.680227,84.902344&amp;ie=UTF8&amp;hq=&amp;hnear=Mumbai,+Maharashtra&amp;ll=19.075984,72.877656&amp;spn=0.655133,1.326599&amp;t=m&amp;z=10&amp;output=embed"></iframe><br /><small></small>
     	<a href="<?php echo Yii::app()->createUrl('site/showmap');?>">View Larger Map</a>
-		</div>
+		</div>-->
+			<div class="slider-wrapper">
+
+			<div class="slider" id="slider">
+
+			</div>
+
+	</div>
     </div>
     <div class="clear"></div>
     </div>
@@ -125,9 +132,9 @@
 				
 				<div class="inv-frm">
 					<table width="100%">
-					<tr><td style="width:30%;color:#666666;text-align:center;">Name</td><td><input type="text" id="inv-from-user" name="uname" placeholder="enter your full name"/></td></tr>
-					<tr><td style="width:30%;color:#666666;text-align:center;">Email</td><td><input type="text" id="inv-to-email" name="email" placeholder="enter comma seperated email address"/></td></tr>
-					<tr><td style="width:30%;color:#666666;text-align:center;">Message</td><td><textarea id="inv-body" name="message" row="4" cols="10"></textarea></td></tr>
+					<tr><td style="width:20%;color:#666666;text-align:center;">Name</td><td style="width:80%;"><input type="text" id="inv-from-user" name="uname" placeholder="enter your full name" class="span10"/></td></tr>
+					<tr><td style="width:20%;color:#666666;text-align:center;">Email</td><td style="width:80%;"><input type="text" id="inv-to-email" name="email" placeholder="enter comma seperated emails" class="span10"/></td></tr>
+					<tr><td style="width:20%;color:#666666;text-align:center;">Message</td><td style="width:80%;"><textarea id="inv-body" name="message" row="4" class="span10"></textarea></td></tr>
 					<tr><td></td><td><a href="#inv-user-template" id="inv-prev"><span class="inv-but">Preview</span></a><span class="inv-but" id="inv-clear">clear</span></td></tr>
 					</table>
 				</div>
@@ -208,7 +215,7 @@
 	
 	  <script type="text/javascript">
 			$(function() {
-			$('#am-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
+			/*$('#am-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
 			  $.ajax({
                         url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
 						
@@ -239,6 +246,33 @@
 								}).attr('src',$img.attr('src'));
 							});	
                         }
+                    });	 */
+					$('#small-pin-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:8% 45%;"/>');
+			  $.ajax({
+                        url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
+						
+                        success: function(data) {
+							$('#small-pin-container').html(data);
+							$('#small-pin-container').masonry({
+							  itemSelector: '.small-pin',
+							  isFitWidth: true
+							});	
+                        }
                     });	
+					
+						$(function() {
+			$('#slider').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 20%;"/>');
+			  $.ajax({
+                        url: "<?php echo Yii::app()->createUrl("site/LoadSlider"); ?>",
+						
+                        success: function(data) {
+							$('#slider').html(data);
+							$('#slider').AnySlider({
+								animation: 'fade',
+								interval: 3000
+							});
+                        }
+                    });	
+			});
 			});
 		</script>

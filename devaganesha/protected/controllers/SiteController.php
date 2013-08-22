@@ -174,6 +174,21 @@ class SiteController extends AppController
 		
 	}
 	
+	public function actionLoadSlider()
+	{
+		$criteria=new CDbCriteria;
+		//$criteria->with = array('photoes');
+		$criteria->order = 't.created DESC';
+        $criteria->limit = 20;
+		
+		$sliderarr = Node::model()->findAll();
+		
+		
+		echo $resp = $this->renderPartial('_slidercontent',array(
+		'sliderarr'=>$sliderarr,
+		));
+	}
+	
 	public function actionTopwinner()
 	{
 		echo $resp = $this->renderPartial('_topwinner');

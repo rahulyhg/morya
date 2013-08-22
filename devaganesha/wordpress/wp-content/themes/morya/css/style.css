@@ -48,7 +48,7 @@
 .head-cont{color:#444444;font-size:16px;}
 .addr-cont{color:#444444;font-size:12px;}
 .view-photo{font-size:12px;color:#444444 !important;}
-.grid-gal{background-color:#e1e1e1;}
+.grid-gal{background-color:#e1e1e1;width:100%;height:268px;overflow-y:scroll;}
 
 .am-wrapper{
 	float:left;
@@ -122,15 +122,15 @@ width: 100%;
 	margin:0px 10px 20px;
 }
 
-.pin-small{
-	width: 150px;
-	padding: 8px;
+.small-pin{
+	width: 96px;
+	padding: 5px;
 	font-size: 11px;
 	background-color: white;
 	box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 	-moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
 	-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
-	margin:0px 10px 20px;
+	margin:5px;
 }
 
 .description{
@@ -265,11 +265,15 @@ margin:10px;
 
 }
 
+#small-pin-container{
+margin:0 auto;
+}
+
 .photo-more{
-background:#FFFFFF;
-height:400px;
-overflow-y:scroll;
  border: 1px solid #CCCCCC;
+ width:100%;
+ height:400px;
+ overflow-y:scroll;
 }
 
 .home-grid{
@@ -279,8 +283,7 @@ height:268px;
 
 
 .caption {
-    border-left:2px solid #a0a0a0;
-    padding-left: 5px;
+	text-align:center;
     margin-top:10px;
     font-size: 18px;
     color: #A0A0A0;
@@ -583,20 +586,21 @@ color: #FFFFFF;
 
 background: none repeat scroll 0 0 #F9F9F9 !important;
 }
+.fav-main{
+margin:4px 20px;
+}
 
 .add-to-fav{
  background: url(../img/favourite-icon.png) no-repeat 0 0 transparent;
  width:22px;
  height:22px;
- margin:10px;
  cursor:pointer;
 }
 
 .rem-frm-fav{
- background: url(../img/favourite-icon.png) no-repeat -24px 0 transparent;
- width:70px;
+ background: url(../img/favourite-icon.png) no-repeat -23px 0 transparent;
+width:23px;
  height:22px;
- margin:10px;
  cursor:pointer;
 }
 
@@ -617,4 +621,51 @@ background: none repeat scroll 0 0 #F9F9F9 !important;
 }
 .home-ads {
     text-align: center;
+}
+
+ .ui-tooltip, .arrow:after {
+background: white;
+border: 2px solid black;
+}
+.ui-tooltip {
+padding: 10px 20px;
+color: white;
+border-radius: 20px;
+font: bold 14px "Helvetica Neue", Sans-Serif;
+text-transform: uppercase;
+box-shadow: 0 0 7px black;
+}
+.arrow {
+width: 70px;
+height: 16px;
+overflow: hidden;
+position: absolute;
+left: 50%;
+margin-left: -35px;
+bottom: -16px;
+}
+.arrow.top {
+top: -16px;
+bottom: auto;
+}
+.arrow.left {
+left: 20%;
+}
+.arrow:after {
+content: "";
+position: absolute;
+left: 20px;
+top: -20px;
+width: 25px;
+height: 25px;
+box-shadow: 6px 5px 9px -9px black;
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+tranform: rotate(45deg);
+}
+.arrow.top:after {
+bottom: -20px;
+top: auto;
 }
