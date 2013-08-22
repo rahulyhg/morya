@@ -72,7 +72,7 @@ class User extends AppActiveRecord
 		return array(
 			array('email, name, created, modified', 'required'),
 			array('email, name, add_line_1, add_line_2', 'length', 'max'=>255),
-			array('contact, ganpati_pic', 'length', 'max'=>11),
+			array('contact', 'length', 'max'=>11),
 			array('city', 'length', 'max'=>50),
 			array('password, ganpati_pic,contact, city,add_line_1, add_line_2, key_reset','default', 'setOnEmpty'=>true, 'value'=>null),
 			// The following rule is used by search().
