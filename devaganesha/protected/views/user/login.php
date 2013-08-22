@@ -38,7 +38,7 @@ $this->breadcrumbs=array(
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
 	
-	<div><span><a href="#forgot-pass" id="forpass">forgot password?</a> &nbsp; | &nbsp;</span><span><a href="">Change password</a></span></div>
+	<div><a href="#forgot-pass" id="forpass">forgot password?</a></div>
 
 	<div>
         <?php echo CHtml::submitButton('Login',array('class'=>'btn btn-primary')); ?>
