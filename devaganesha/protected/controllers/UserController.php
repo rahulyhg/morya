@@ -18,11 +18,11 @@ class UserController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpassword','changepassword'),
+				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpassword','changepassword','sendEmail','subscribe'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('edit','logout','sendEmail'),
+				'actions'=>array('edit','logout'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -72,9 +72,6 @@ class UserController extends AppController
 				//$filepath = PhotoType::$folderName[PhotoType::Profile];
 				//RegistrationForm Model variables bulk assigned to User
 				$user->attributes = $model->attributes ;
-				if(isset($model->password) && !empty($model->password)){
-					$user->password = md5($model->password);
-				}
 				if(CUploadedFile::getInstance($model,'ganpati_pic')){
 				$user->ganpati_pic=CUploadedFile::getInstance($model,'ganpati_pic');
 				}
@@ -111,9 +108,6 @@ class UserController extends AppController
                 $user = new User ;
                 //RegistrationForm Model variables bulk assigned to User
                 $user->attributes = $model->attributes ;
-				if(isset($model->password) && !empty($model->password)){
-					$user->password = md5($model->password);
-				}
                 if($user->save()){
                     //log-in the user
                     $identity=new UserIdentity($model->email,$model->password);
@@ -312,13 +306,29 @@ class UserController extends AppController
 		{
 			$val = User::model()->randomPassword();
 			$val = md5($val);
-			$url = Yii::app()->createUrl('user/resetpassword',array('key'=>$val));
-			if($url){
+			$url = "http://www.devaganesha.com/".Yii::app()->createUrl('user/resetpassword',array('key'=>$val));
+			$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
+			$mail->IsSMTP();
+			$mail->IsHTML(true);
+			$mail->SMTPDebug  = 2;
+			$mail->SMTPAuth = true;
+			//$mail->SMTPSecure = "ssl";
+			$mail->Host = "smtp.javadotnettraining.com";
+			$mail->Port = 587;
+			$mail->Username = Yii::app()->params['doNotReplyEmail'];
+			$mail->Password = Yii::app()->params['doNotReplyPass'];
+			$mail->CharSet = 'utf-8';
+			$mail->From = "noreply@devaganesha.com";
+			$mail->FromName = "Devaganesha.com";
+			$mail->Subject = "Change Your Password - Devaganesha.com";
+			$mail->MsgHTML($url);
+			$mail->AddAddress($user->email);
+			if($mail->send()){
 				$user->key_reset = $val;
 				$user->key_status = 1;
 				$user->save();
 			}
-			echo $url;
+			echo "success";
 		}else{
 			echo "invalid";
 		}
@@ -351,14 +361,34 @@ class UserController extends AppController
 		$confpass = $_POST['confpass'];
 		$key = $_POST['key'];
 		$result = User::model()->findByAttributes(array('key_reset'=>$key));
-		$pass = md5($newpass);
-		$result->password = $pass;
+		$result->password = $newpass;
 		$result->key_status = 0;
 		$result->save();
 		Yii::app()->user->setFlash('success','Password has been change successfully. Now login with new password.');
 		$this->redirect(array('user/login'));
 	}
 	
+	
+	public function actionSubscribe()
+	{
+		$email = $_POST['email'];
+		$subuser = UserSubscription::model()->findByAttributes(array('email'=>$email));
+		if($subuser == '')
+		{
+			$newsub = new UserSubscription;
+			$newsub->email = $email;
+			$newsub->sub_status = 1;
+			$val = User::model()->randomPassword();
+			$val = md5($val);
+			
+			$newsub->sub_key = $val;
+			if($newsub->save()){
+				echo "success";
+			}
+		}else{
+		echo "error";
+		}
+	}
 	/**
 	 * Manages all models.
 	 */
@@ -393,7 +423,7 @@ class UserController extends AppController
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && ( $_POST['ajax']==='user-form' || $_POST['ajax']==='invite-user-form' ))
+		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
@@ -406,74 +436,101 @@ class UserController extends AppController
 	 */
 	public function actionSendEmail()
 	{
-		$model=new SendEmailForm;
+		$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
+		$mail->IsSMTP();
+		$mail->IsHTML(true);
+		$mail->SMTPDebug  = 2;
+		$mail->SMTPAuth = true;
+		//$mail->SMTPSecure = "ssl";
+		$mail->Host = "smtp.javadotnettraining.com";
+		$mail->Port = 587;
+		$mail->Username = Yii::app()->params['doNotReplyEmail'];
+		$mail->Password = Yii::app()->params['doNotReplyPass'];
+		$mail->CharSet = 'utf-8';
+		$mail->From = "noreply@devaganesha.com";
+		
+		$model = new SendEmailForm;
+		$model->name = $_POST['name'];
+		$model->email = $_POST['email'];
+		$model->subject = $_POST['subject'];
+		$model->body = $_POST['body'];
+		
+		if($model->validate()) {
+			$mail->FromName = $model->name;
+			$mail->Subject = $model->subject;
+			$theme = isset($_POST['theme']) ? $_POST['theme'] : '';
+			$template = $this->useTemplate($_POST['type'], $model->body, $theme);
+			$mail->MsgHTML($template);
+			$email_arr = explode(",",$model->email);
 
-		// Ajax Validation enabled
-		$this->performAjaxValidation($model);
-
-		// TODO: retrieve user email from user id
-		//$user=User::model()->findByPk($id);
-		if(isset($_POST['SendEmailForm']))
-		{
-			$model->attributes=$_POST['SendEmailForm'];
-			if($model->validate())
-			{
-				$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
-				$mail->IsSMTP();
-				$mail->IsHTML(true);
-				$mail->SMTPDebug  = 2;
-				$mail->SMTPAuth = true;
-				//$mail->SMTPSecure = "ssl";
-				$mail->Host = "smtp.javadotnettraining.com";
-				$mail->Port = 587;
-				$mail->Username = "noreply@devaganesha.com"; // Yii::app()->params['adminEmail']
-				$mail->Password = "Zeus123@"; // adminEmail password
-				$mail->CharSet = 'utf-8';
-				$mail->From = "noreply@devaganesha.com"; //$user->email;
-				$mail->FromName = $model->name;
-				$mail->Subject = $model->subject;
-				$template = $this->useTemplate($model->body);
-				$mail->MsgHTML($template); 
-				$email_arr = explode(",",$model->email);
-				foreach ($email_arr as $email) {
-					$mail2 = clone $mail;
-					$mail2->AddAddress(trim($email));
-					if($mail2->Send()) {
-						echo "Message sent successfully!";
-					}
-					else {
-						//error_log($mail->ErrorInfo);
-						echo $mail->ErrorInfo;
-						echo "Fail to send your message!";
-					}
+			foreach ($email_arr as $email) {
+				$mail2 = clone $mail;
+				$mail2->AddAddress(trim($email));
+				if($mail2->Send()) {
+					//echo "Message sent successfully!";
+				}
+				else {
+					//echo $mail->ErrorInfo;
+					//echo "Fail to send your message!";
 				}
 			}
 		}
-        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-		$this->renderPartial('sendEmail',array('model'=>$model,),false,true);
 	}
 	
 	/**
 	 * Generates template.
-	 * @param CModel the model to be rendered
+	 * @param type the type of email template
+	 * @param body the body to be rendered
+	 * @param type the theme of email template
 	 */
-	protected function useTemplate($body)
+	protected function useTemplate($type, $body = '', $theme = '')
 	{
-		$body = str_replace("\n", "<br>", $body);
-		// TODO: Change below image
-		//http://farm1.staticflickr.com/142/399435540_e9d1fade4e.jpg
-		//http://imagesup.net/?di=713751244287
-		$body = "<table width='800px' height='566px;' border='0' cellspacing='0' cellpadding='20' background='http://www.imagesup.net/?di=813751254962'>
-					<tr>
-						<td>
-				   			<div style='color: yellow; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold;'>
-				   			$body
-				 			<br><br>
-				 			Thanks,<br>
-							<a href='http://www.devaganesha.com/' style='text-decoration:none;'>Devaganesha</a></div>
-				    	</td>
-				  	</tr>
-				</table>";
+		$temp_body = str_replace("\n", "<br>", $body);
+		
+		switch ($type) {
+			case 'invitation':
+				$body = "<table width='100%' height='auto;' border='0' cellspacing='0' cellpadding='20'>
+							<tr>
+								<td>
+									";
+				switch ($theme) {
+					case 'red':
+						$body .= "<div style='color:#00FF00; background-color: #FF0000; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;'>
+									$temp_body
+								</div>";
+						break;
+					case 'green':
+						$body .= "<div style='color:#0000FF; background-color: #00FF00; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;'>
+									$temp_body
+								</div>";
+						break;
+					case 'blue':
+						$body .= "<div style='color:#FF0000; background-color: #0000FF; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;'>
+									$temp_body
+								</div>";
+						break;
+					default:
+						$body .= "<div style='color:magenta; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;'>
+									$temp_body
+								</div>";
+						break;
+						break;
+				}
+				$body .= "
+								</td>
+							</tr>
+						</table>";
+				break;
+
+			case 'forgot_pass':
+				$body = $temp_body;
+				break;
+			
+			default: 
+				break;
+		}
+		
+		$body .= "<br/><div style='text-align:center;'><font color='#666666' face='arial' size='1'>&#169; 2013 <a href='http://www.devaganesha.com/' style='text-decoration:none;'>www.devaganesha.com</a> All Rights Reserved</font>";
 		return $body;
 	}
 }

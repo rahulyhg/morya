@@ -3,7 +3,7 @@
     'id'=>'comment-form',
     'action'=>Yii::app()->createUrl('comment/create'),
     'method'=>'POST',
-    'enableAjaxValidation'=>true,
+    'enableAjaxValidation'=>false,
 ));
     ?>
     <?php
@@ -22,6 +22,7 @@
             <?php echo $form->error(User::model(),'email'); ?>
         </div>
 	</div>
+	<?php echo $form->hiddenField($comment,'node_id',array('value'=>$comment->node_id)); ?>
 	<div>
         <?php echo $form->textArea($comment,'comment',array('maxlength'=>255,'placeholder'=>'comment here...','class'=>'span12 act-com')); ?>
     </div>

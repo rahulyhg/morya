@@ -1,30 +1,19 @@
 <?php
 
 /**
- * This is the model class for table "nodes".
+ * This is the model class for table "favourites".
  *
- * The followings are the available columns in table 'nodes':
- * @property string $id
- * @property integer $type
+ * The followings are the available columns in table 'favourites':
+ * @property string $node_id
  * @property string $user_id
  * @property string $created
- * @property string $modified
- *
- * The followings are the available model relations:
- * @property Comments[] $comments
- * @property Experiences[] $experiences
- * @property Users[] $users
- * @property Photoes[] $photoes
- * @property Recepies[] $recepies
- * @property Temples[] $temples
- * @property Vedics[] $vedics
  */
-class Node extends AppActiveRecord
+class Favourite extends AppActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Node the static model class
+	 * @return Favourite the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -36,7 +25,7 @@ class Node extends AppActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'nodes';
+		return 'favourites';
 	}
 
 	/**
@@ -47,12 +36,11 @@ class Node extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('type, user_id, created, modified', 'required'),
-			array('type', 'numerical', 'integerOnly'=>true),
-			array('user_id', 'length', 'max'=>11),
+			array('node_id, user_id, created', 'required'),
+			array('node_id, user_id', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, user_id, created, modified', 'safe', 'on'=>'search'),
+			array('node_id, user_id, created', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,14 +52,6 @@ class Node extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'comments' => array(self::HAS_MANY, 'Comment', 'node_id'),
-			'exp' => array(self::HAS_ONE, 'Experience', 'node_id'),
-			'modaks' => array(self::HAS_MANY, 'Modak', 'node_id'),
-			'creator'=>array(self::BELONGS_TO, 'User', 'user_id'),
-			'photoes' => array(self::HAS_ONE, 'Photo', 'node_id'),
-			'recepies' => array(self::HAS_ONE, 'Recipe', 'node_id'),
-			'temples' => array(self::HAS_ONE, 'Temple', 'node_id'),
-			'vedics' => array(self::HAS_MANY, 'Vedic', 'node_id'),
 		);
 	}
 
@@ -81,11 +61,9 @@ class Node extends AppActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'type' => 'Type',
+			'node_id' => 'Node',
 			'user_id' => 'User',
 			'created' => 'Created',
-			'modified' => 'Modified',
 		);
 	}
 
@@ -100,20 +78,12 @@ class Node extends AppActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('type',$this->type);
+		$criteria->compare('node_id',$this->node_id,true);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('created',$this->created,true);
-		$criteria->compare('modified',$this->modified,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
-	}
-	
-	public function loadModel($id)
-	{
-		$model= Node::model()->findByPk((int)$id);
-		return $model;
 	}
 }

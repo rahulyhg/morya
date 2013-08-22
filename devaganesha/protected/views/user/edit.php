@@ -36,10 +36,6 @@ Yii::app()->clientScript->registerScript(
         <?php echo $form->textField($model,'email',array('maxlength'=>255,'class'=>'span8')); ?>
         <?php echo $form->error($model,'email'); ?>
     </div>
-
-	 <div>
-        <?php echo $form->hiddenField($model,'password'); ?>
-    </div>
 	
     <div>
         <?php echo $form->labelEx($model,'contact'); ?>

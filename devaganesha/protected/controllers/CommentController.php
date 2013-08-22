@@ -61,12 +61,14 @@ class CommentController extends AppController
                     $user->attributes = $_POST['User'] ;
                     $plain_password = User::randomPassword();
                     $user->password = $plain_password;
-                    if($user->save()){
-                        //log-in the user
-                        $identity=new UserIdentity($user->email,$plain_password);
-                        $identity->authenticate();
-                        Yii::app()->user->login($identity);
-                    }
+					if($user->validate()){
+						if($user->save()){
+							//log-in the user
+							$identity=new UserIdentity($user->email,$plain_password);
+							$identity->authenticate();
+							Yii::app()->user->login($identity);
+						}
+					}
             }
             $comment->attributes=$_POST['Comment'];
 			if($comment->validate()){

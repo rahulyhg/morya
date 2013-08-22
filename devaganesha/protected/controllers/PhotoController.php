@@ -220,12 +220,23 @@ class PhotoController extends AppController
 		$criteria1->compare('node_id',$photo->node_id);
 		$novisit = Visit::model()->count($criteria1);
 		
+		if(isset(Yii::app()->user->id)){
+			if($fav = Favourite::model()->findByPk(array('node_id' => $photo->node_id , 'user_id' => Yii::app()->user->id)))
+			{
+				$classname = 'rem-frm-fav';
+			}else{
+				$classname = 'add-to-fav';
+			}
+		}else{
+				$classname = 'add-to-fav';
+		}
 	
 		$this->render('view',array(
 			'photo'=>$photo,
             'newComment'=>$newComment,
 			'modaks' => $modaks,
 			'novisit'=>$novisit,
+			'classname'=>$classname,
 		));
 	}
 

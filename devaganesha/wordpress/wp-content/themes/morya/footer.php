@@ -13,25 +13,26 @@
 		<div class="span5">
 			<div class="foothead">Sitemap</div>
 			<div class="sitemap1">
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('recipe/index');?>">Recipes</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Top 10 ganesha</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>">Aarti sangrah in marathi, hindi</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('experience/index');?>">Ganesh mahima</a></div>
-				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Children's stories of Lord ganesha</a></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>">Recipes</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="#">Top 10 ganesha</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>">Aarti sangrah in marathi, hindi</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('experience/index');?>">Ganesh mahima</a></div><div class="clear"></div></div>
+				<div class="each-site-last"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="#">Stories of Lord ganesha</a></div><div class="clear"></div></div>
 			</div>
 			<div class="sitemap2">
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="#">Wallpaper of ganesha</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">Blog</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">News</a></div>
-				<div class="each-site"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo Yii::app()->createUrl('temple/index');?>">Temples</a></div>
-				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/om.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>">Blog</a></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="#">Wallpaper of ganesha</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo get_page_link(19);?>">Blog</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo get_page_link(19);?>">News</a></div><div class="clear"></div></div>
+				<div class="each-site"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo Yii::app()->createUrl('temple/index');?>">Temples</a></div><div class="clear"></div></div>
+				<div class="each-site-last"><div class="ombg fl"></div><div style="margin-left:10px;" class="fl"><a href="<?php echo get_page_link(19);?>">Blog</a></div><div class="clear"></div></div>
 			</div>
 			<div class="clear"></div>
 		</div>
 		<div class="span4">
 			<div class="fl">
 				<div class="daily-text">Enter your email to get one daily<br/>ganesha in your inbox.</div>
-				<div><span><input type="text" name="getsub" style="width:65%"/></span><span class="getbox">Get !</span></div>
+				<div><input type="text" name="getsub" id="getsub"/></div>
+				<div class="getbox">Get !</div>
 				<div class="foot-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="width:220px;" alt="logo" /></div>
 				<div class="footer-link"><a href="">home</a> | <a href="">about</a> | <a href="">sitemap</a> | <a href="">rss</a></div>
 			</div>
@@ -64,6 +65,12 @@
 	<div id="succmail" style="display: none;" title="Email sent">
 		<p>Link to reset your password has been sent on your email. Go and change the password.</p>
 	</div>
+	<div id="subsucc" style="display: none;" title="Subscription Done.">
+		<p>Your mail has been subscribed. You will now get daily picture of ganesha.</p>
+	</div>
+	<div id="subfail" style="display: none;" title="Error">
+		<p>You have already subscribed.</p>
+	</div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -77,6 +84,7 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.masonry.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.mousewheel.js"></script>
 
+	
 
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.pack.js"></script>
 	<!-- our javascript code -->
@@ -86,6 +94,7 @@
 	<!-- the jScrollPane script -->
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.jscrollpane.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/tinymce/tinymce.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.anyslider.min.js"></script>
 	
 
 
@@ -133,19 +142,47 @@
 		$('.act-com').focus(function() {
 			$('.nact-com').show();
 		});
+		$('#slider').AnySlider({
+			animation: 'fade',
+			interval: 3000
+		});
+		
+		$('.getbox').click(function(){
+			var email = $('#getsub').val();
+			if(email == '')
+			{
+				alert("Please enter email address");
+			}else
+			{
+				$.ajax({
+                        url: "<?php echo Yii::app()->createUrl("user/subscribe"); ?>",
+                        type: 'POST',
+                        data: { 'email': email},
+                        success: function(response) {
+							if(response == "success")
+							{
+								$('#subsucc').dialog({
+								modal: true,
+								minWidth: 500,
+								});
+							}else{
+								$('#subfail').dialog({
+								modal: true,
+								minWidth: 500,
+								});
+							}
+							$('#getsub').val('');
+							//alert('succcess');
+							//window.location.reload();
+                        }
+                 });
+			}
+		});
+		
       });
 
   </script>
 
-    <script type="text/javascript">
-      jQuery(document).ready(function($) {
-	
-		$('#container').masonry({
-		  itemSelector: '.pin',
-		  isFitWidth: true
-		});	
-	});
-    </script>
 	 <script type="text/javascript">
       var app = {
           user : {
@@ -204,6 +241,80 @@
 			$('#forpass').fancybox();
 		  });
 		  
+	
+			$('#inv-prev').click(function() {
+				var name = $('#inv-from-user').val();
+				var emails = $('#inv-to-email').val();
+				var body = $('#inv-body').val();
+				var sub = "You are invited to my ganesha festival";
+				var theme = 'default';
+				
+				if(name == '' || emails == '' || body == '') {
+					alert('Please Fill all the fields');
+				} else {
+					$('#inv-from-user-fancy').html(name);
+					$('#inv-to-user-fancy').html(emails);
+					$('#inv-sub-fancy').html(sub);
+					$('#inv-body-fancy').html(body);
+					
+					$('.inv-templates').click(function() {
+						if($(this).attr('id') == 'inv-red') {
+							theme = 'red';
+							$('#inv-body-fancy').css('background-color', '#FF0000');
+							$('#inv-body-fancy').css('color', '#00FF00');
+						}
+						else if($(this).attr('id') == 'inv-green') {
+							theme = 'green';
+							$('#inv-body-fancy').css('background-color', '#00FF00');
+							$('#inv-body-fancy').css('color', '#0000FF');
+						}
+						else if($(this).attr('id') == 'inv-blue') {
+							theme = 'blue';
+							$('#inv-body-fancy').css('background-color', '#0000FF');
+							$('#inv-body-fancy').css('color', '#FF0000');
+						}
+					});
+					
+					$('#inv-prev').fancybox();
+					
+					$('#send-invitation').click(function(){
+						$.ajax({
+							url: "<?php echo Yii::app()->createUrl("user/sendemail"); ?>",
+							type: 'POST',
+							data: {
+								'name': name,
+								'email': emails,
+								'subject': sub,
+								'body': body,
+								'type': 'invitation',
+								'theme': theme
+							},
+							success: function() {
+								$('#send-inv-users').html(emails);
+								$.fancybox.close();
+								$('#send-inv-succ').dialog({
+									modal: true,
+									title: 'Invitation Sent!',
+									Ok: function() {
+										$(this).dialog("close");
+									}
+								});
+							}
+						});
+					});
+					
+					$('#cancel-prev').click(function(){
+						$.fancybox.close();
+					});
+				}
+			});
+			
+			$('#inv-clear').click(function(){
+					$('#inv-from-user').val('');
+					$('#inv-to-email').val('');
+					$('#inv-body').val('');
+			});
+		  
 		  $('.emailsub').click(function(){
 			var email = $('#emailadd').val();
 			if(email == ''){
@@ -229,44 +340,35 @@
 			}
 		  });
 		  
+		  $('#fav-block').click(function(){
+			if(app.user.isAuthenticated === false){
+                  $("a#signup").trigger('click');
+                  return false;
+              }else{
+					var nodeid;
+						nodeid = $('#photo-node').val();
+			$.ajax({
+                        url: "<?php echo Yii::app()->createUrl("site/addtofav"); ?>",
+                        type: 'POST',
+                        data: { 'node_id': nodeid},
+                        success: function(response){
+							if(response == "added")
+							{
+								$('#fav-block').removeClass('add-to-fav');
+								$('#fav-block').addClass('rem-frm-fav');
+							}else if(response == "deleted"){
+								$('#fav-block').removeClass('rem-frm-fav');
+								$('#fav-block').addClass('add-to-fav');
+							}else{
+								alert('something error occured');
+							}
+                        }
+                    });
+				}
+		  });
+		  
       });
   </script>
-  <script type="text/javascript">
-			$(function() {
-			$('#am-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
-			  $.ajax({
-                        url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
-						
-                        success: function(data) {
-							$('#am-container').html(data);
-							var $container 	= $('#am-container'),
-                            $imgs		= $container.find('img').hide(),
-							totalImgs	= $imgs.length,
-							cnt			= 0;
-				
-							$imgs.each(function(i) {
-								var $img	= $(this);
-								$('<img/>').load(function() {
-									++cnt;
-									if( cnt === totalImgs ) {
-										$imgs.show();
-										$container.montage({
-											liquid 	: false,
-											minw : 100,
-											fixedHeight : 85,
-											margin:2,
-											//fillLastRow : true
-										});
-									
-										$('#overlay').fadeIn(500);
-								
-									}
-								}).attr('src',$img.attr('src'));
-							});	
-                        }
-                    });	
-			});
-		</script>
 		<script type="text/javascript">
 		
 		 // $('.fancybox-thumb').attr('rel', 'gallery').fancybox();

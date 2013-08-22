@@ -9,9 +9,5 @@ $this->menu=array(
 );
 ?>
 
-<h1>Competitions</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<div class="title-bar"><strong>Competition</strong></div>
+<div><img src="<?php echo get_template_directory_uri(); ?>/img/coming-soon.jpg" alt="coming soon"/></div>

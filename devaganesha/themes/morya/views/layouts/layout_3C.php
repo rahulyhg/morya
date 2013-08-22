@@ -1,19 +1,7 @@
 <?php get_header(); ?>
 <div class="row-fluid mt10">
  <div class="span3">
-	<div class="top-widget">
-		<div class="title-bar">Categories</div>
-		<div class="side-menu">&raquo; <a href="">Aarti</a></div>
-		<div class="side-menu">&raquo; <a href="">Mantra</a></div>
-		<div class="side-menu">&raquo; <a href="">Atharva Shirsha in english</a></div>
-		<div class="side-menu">&raquo; <a href="">Atharva Shirsha in marathi</a></div>
-		<div class="side-menu">&raquo; <a href="">All 108 names of ganesha</a></div>
-	</div>
-	<div class="top-widget mt10">
-		<div class="title-bar">Ganesha Treat</div>
-		<div class="side-menu">&raquo; <a href="">Aarti</a></div>
-		<div class="side-menu">&raquo; <a href="">Mantra</a></div>
-	</div>
+	<?php Yii::app()->controller->widget('LeftSidebar',array('option'=>Yii::app()->controller->getUniqueId())); ?>
  </div>
  <div class="span6">
         <?php
@@ -21,10 +9,8 @@
              echo $content;
         ?>
  </div>
- <div class="span3 fl visible-desktop">
-      	<div class="Flexible-container">
-      <iframe width="425" height="253" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Mumbai,+Maharashtra&amp;aq=0&amp;oq=mumbai&amp;sll=20.98352,82.752628&amp;sspn=40.680227,84.902344&amp;ie=UTF8&amp;hq=&amp;hnear=Mumbai,+Maharashtra&amp;ll=19.075984,72.877656&amp;spn=0.655133,1.326599&amp;t=m&amp;z=10&amp;output=embed"></iframe><br /><small></small>
-    	</div>
-    </div>
+  <div class="span3">
+	<?php Yii::app()->controller->widget('RightSidebar'); ?>
+</div>
  </div>
 <?php get_footer(); ?>
