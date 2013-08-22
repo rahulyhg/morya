@@ -22,7 +22,7 @@ class UserController extends AppController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('edit','logout'),
+				'actions'=>array('edit','logout','chngoldpass'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -366,6 +366,29 @@ class UserController extends AppController
 		$result->save();
 		Yii::app()->user->setFlash('success','Password has been change successfully. Now login with new password.');
 		$this->redirect(array('user/login'));
+	}
+	
+	public function actionChngoldpass()
+	{
+		if(isset($_POST['submit'])){
+			$oldpass = $_POST['oldpass'];
+			$newpass = $_POST['newpass'];
+			$user = User::model()->findByPk(Yii::app()->user->id);
+			if($user->password == md5($oldpass))
+			{
+				$user->password = $newpass;
+				if($user->save())
+				{
+					Yii::app()->user->setFlash('success','Password has been change successfully.');
+					$this->redirect(array('chngoldpass'));
+				}
+			}else{
+				$this->redirect(array('chngoldpass','error'=>'wp'));
+			}
+		}
+		$this->render('chngoldpass',array(
+			'model'=>$model,
+		));
 	}
 	
 	

@@ -22,7 +22,7 @@
 	</div>
 
 	<div class="controls">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Share' : 'Save',array('class'=>'btn')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Share' : 'Save',array('class'=>'btn btn-primary mt10')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

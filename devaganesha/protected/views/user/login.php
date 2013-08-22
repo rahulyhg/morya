@@ -41,7 +41,7 @@ $this->breadcrumbs=array(
 	<div><a href="#forgot-pass" id="forpass">forgot password?</a></div>
 
 	<div>
-        <?php echo CHtml::submitButton('Login',array('class'=>'btn')); ?>
+        <?php echo CHtml::submitButton('Login',array('class'=>'btn btn-primary')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

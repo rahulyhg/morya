@@ -28,7 +28,7 @@
     </div>
 
     <div>
-        <?php echo CHtml::submitButton('Register',array('class'=>'btn')); ?>
+        <?php echo CHtml::submitButton('Register',array('class'=>'btn btn-primary')); ?>
     </div>
 
     <?php $this->endWidget(); ?>
