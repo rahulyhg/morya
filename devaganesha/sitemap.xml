@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>http://www.devaganesha.com/</loc>
+  <priority>1.00</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.devaganesha.com/aarti-shlokas-mantra/index</loc>
+  <priority>0.80</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.devaganesha.com/pictures-and-wallpapers/index</loc>
+  <priority>1</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.devaganesha.com/temple/index</loc>
+  <priority>0.80</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.devaganesha.com/recipe/index</loc>
+  <priority>0.80</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.devaganesha.com/myganesha</loc>
+  <priority>0.50</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.devaganesha.com/blog</loc>
+  <priority>0.80</priority>
+  <changefreq>daily</changefreq>
+</url>
+</urlset>
