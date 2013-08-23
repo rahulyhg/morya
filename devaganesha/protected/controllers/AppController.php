@@ -65,5 +65,28 @@ class AppController extends Controller
 										  break ;
 		}
 	}
+	
+	public function getNextOrPrevId($modelname, $currentId, $nextOrPrev)
+	{
+		$records=NULL;
+		if($nextOrPrev == "prev")
+		{
+		   $order="id DESC";
+		}
+		if($nextOrPrev == "next")
+		{
+		   $order="id ASC";
+		}
+		$records = $modelname::model()->findAll(
+		   array('select'=>'id,slug', 'order'=>$order)
+		   );
+		foreach($records as $i=>$r){
+		   if($r->id == $currentId){
+			  return $records[$i+1]->slug ? $records[$i+1]->slug : 'hide';
+			  
+			  }
+			}
+		return 'hide';
+	}
 }
 	

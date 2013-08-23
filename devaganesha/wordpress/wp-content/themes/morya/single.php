@@ -25,7 +25,7 @@ if(have_posts()) :
 		</div>
 		<div class="clear"></div>
 		<div class="blog-content">
-			<?php the_excerpt(); ?>
+			<?php the_content(); ?>
 		</div>
 		<div><span>posted in : <?php the_category(','); ?></span></div>
 		<?php comments_template( '', true ); ?>

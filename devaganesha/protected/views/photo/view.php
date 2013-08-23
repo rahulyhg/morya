@@ -87,8 +87,12 @@
 
 	<div class="btn fav-main"><div class="<?php echo $classname;?>" id="fav-block" title="<?php echo $titlefav;?>"></div></div>
 	</div>
-	<input type="hidden" id="photo-node" value="<?php echo $photo->node_id;?>"/>
-</div>
+	<div class="clear"></div>
+	
+ </div>
+ <input type="hidden" id="photo-node" value="<?php echo $photo->node_id;?>"/>
+<div class="nxtprev mt10"><a <?php if($prev != 'hide'){ ?> href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$prev)); ?>" <?php } ?> class="btn fl" <?php if($prev == 'hide'){ echo 'disabled';}?>><i class="icon-backward"></i> Prev</a>
+<a <?php if($nxt != 'hide'){ ?> href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$nxt)) ?>" <?php } ?> class="btn fr" <?php if($nxt == 'hide'){ echo 'disabled';};?>>Next <i class="icon-forward"></i></a><div class="clear"></div></div>
 	<div class="single-photo">
 		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>
 	</div>

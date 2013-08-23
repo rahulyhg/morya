@@ -234,6 +234,11 @@ class PhotoController extends AppController
 				$titlefav = "Add to favourite";
 		}
 	
+		$prev = $this->getNextOrPrevId("Photo",$photo->id, "next");
+		
+		$nxt = $this->getNextOrPrevId("Photo",$photo->id, "prev");
+		
+	
 		$this->render('view',array(
 			'photo'=>$photo,
             'newComment'=>$newComment,
@@ -241,6 +246,8 @@ class PhotoController extends AppController
 			'novisit'=>$novisit,
 			'classname'=>$classname,
 			'titlefav'=>$titlefav,
+			'prev'=>$prev,
+			'nxt'=>$nxt,
 		));
 	}
 
