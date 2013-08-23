@@ -72,6 +72,7 @@ class Node extends AppActiveRecord
 			'recepies' => array(self::HAS_ONE, 'Recipe', 'node_id'),
 			'temples' => array(self::HAS_ONE, 'Temple', 'node_id'),
 			'vedics' => array(self::HAS_MANY, 'Vedic', 'node_id'),
+			'visits'=>array(self::HAS_ONE, 'Visit', 'node_id'),
 		);
 	}
 

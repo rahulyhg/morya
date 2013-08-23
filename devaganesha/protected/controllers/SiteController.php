@@ -38,12 +38,19 @@ class SiteController extends AppController
 		 $criteria1=new CDbCriteria;
 		 $criteria1->with = array('node','main_pic');
 		 $criteria1->order = 'node.created DESC';
-		$elementsList1=Temple::model()->findAll($criteria);//->with('comments')
+		 $elementsList1=Temple::model()->findAll($criteria);//->with('comments')
 
+		$criteria=new CDbCriteria;
+		$criteria->with = array('node');
+		$criteria->order = 'node.created DESC';
+		$criteria->compare('t.type',PhotoUploadCategory::Normal);
+		$criteria->limit = 10;
+		$photos = Photo::model()->findAll($criteria);
 		
 		$this->render('index',array(
 			//'elementsList'=>$elementsList,
 			'elementsList1'=>$elementsList1,
+			'photos'=>$photos,
 		));
 	}
 
@@ -199,7 +206,22 @@ class SiteController extends AppController
 	
 	public function actionTopmakhar()
 	{
-		echo $resp = $this->renderPartial('_topmakhar');
+		/* $criteria=new CDbCriteria;
+		$criteria->select = "node_id, count( node_id ) AS cnt";
+		$criteria->group = "node_id";
+		$criteria->order = 'cnt DESC';
+		$criteria->limit = 10;
+		$photos = Visit::model()->findAll($criteria); */
+		$photos = Yii::app()->db->createCommand()
+			->select('a.node_id, count( a.node_id ) AS cnt, file_name, caption, slug,b.node_id')
+			->from('visits a')
+			->join('photoes b', 'a.node_id=b.node_id')
+			->group('a.node_id')
+			->order('cnt desc')
+			->limit(10)
+			->queryAll();
+			//print_r($user);
+		echo $resp = $this->renderPartial('_topmakhar',array('photos'=>$photos,));
 	}
 	
 	public function actionNode($id){

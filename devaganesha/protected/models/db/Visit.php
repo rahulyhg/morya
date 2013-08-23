@@ -62,7 +62,7 @@ class Visit extends AppActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
-			'node' => array(self::BELONGS_TO, 'Nodes', 'node_id'),
+			'node' => array(self::BELONGS_TO, 'Node', 'node_id'),
 		);
 	}
 
