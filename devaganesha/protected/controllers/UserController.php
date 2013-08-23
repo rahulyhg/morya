@@ -307,7 +307,7 @@ class UserController extends AppController
 			$val = User::model()->randomPassword();
 			$val = md5($val);
 			$url = "http://www.devaganesha.com/".Yii::app()->createUrl('user/resetpassword',array('key'=>$val));
-			$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
+			/*$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
 			$mail->IsSMTP();
 			$mail->IsHTML(true);
 			$mail->SMTPDebug  = 2;
@@ -322,8 +322,23 @@ class UserController extends AppController
 			$mail->FromName = "Devaganesha.com";
 			$mail->Subject = "Change Your Password - Devaganesha.com";
 			$mail->MsgHTML($url);
-			$mail->AddAddress($user->email);
-			if($mail->send()){
+			$mail->AddAddress($user->email);*/
+			$to = $user->email;
+			$subject = "Change Password - devaganesha.com";
+			$body_plain = "To change your password click the below url ".$url;
+			$body_html = "<table><tr><td>Hello $user->name,</td></tr><tr><td>To change your password click the below url</td></tr><tr><td>$url</td></tr></table>";
+			$priority = 10;
+			$sent = 0;
+			
+			$email = New Email;
+			$email->email_to = $to;
+			$email->subject = $subject;
+			$email->body_plain = $body_plain;
+			$email->body_html = $body_html;
+			$email->priority = $priority;
+			$email->sent = $sent;
+			
+			if($email->save()){
 				$user->key_reset = $val;
 				$user->key_status = 1;
 				$user->save();
@@ -394,12 +409,28 @@ class UserController extends AppController
 	
 	public function actionSubscribe()
 	{
-		$email = $_POST['email'];
+		$emailid = $_POST['email'];
 		$subuser = UserSubscription::model()->findByAttributes(array('email'=>$email));
 		if($subuser == '')
 		{
+			$to = $emailid;
+			$subject = "Subscription successfull - devaganesha.com";
+			$body_plain = "You have successfully subscribed to devaganesha. Now you will recieve ganesha's picture daily.";
+			$body_html = "<table><tr><td>Hello $emailid,</td></tr><tr><td>You have successfully subscribed to devaganesha. Now you will recieve ganesha's picture daily</td></tr></table>";
+			$priority = 8;
+			$sent = 0;
+			
+			$email = New Email;
+			$email->email_to = $to;
+			$email->subject = $subject;
+			$email->body_plain = $body_plain;
+			$email->body_html = $body_html;
+			$email->priority = $priority;
+			$email->sent = $sent;
+			$email->save();
+			
 			$newsub = new UserSubscription;
-			$newsub->email = $email;
+			$newsub->email = $emailid;
 			$newsub->sub_status = 1;
 			$val = User::model()->randomPassword();
 			$val = md5($val);
