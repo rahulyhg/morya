@@ -32,10 +32,7 @@ class SiteController extends AppController
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$criteria=new CDbCriteria;
-		$criteria->with = array('node');
-		$criteria->order = 'node.created DESC';
-		 $criteria->limit = 8;
+		
 		 //$elementsList=Photo::model()->findAll($criteria);//->with('comments')
 		 
 		 $criteria1=new CDbCriteria;
@@ -191,7 +188,13 @@ class SiteController extends AppController
 	
 	public function actionTopwinner()
 	{
-		echo $resp = $this->renderPartial('_topwinner');
+		$criteria=new CDbCriteria;
+		$criteria->with = array('node');
+		$criteria->order = 'node.created DESC';
+		$criteria->compare('t.type',PhotoUploadCategory::Normal);
+		$criteria->limit = 10;
+		$photos = Photo::model()->findAll($criteria);
+		echo $resp = $this->renderPartial('_topwinner',array('photos'=>$photos,));
 	}
 	
 	public function actionTopmakhar()

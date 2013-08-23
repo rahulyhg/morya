@@ -1,45 +1,11 @@
+<?php foreach($photos as $photo){?>
 <div class="each-ent">
-	<div class="fl"><img src="<?php echo get_template_directory_uri(); ?>/img/gan1.png" class="each-img"/></div>
-	<div class="fl">
-		<div class="head-cont">Parsik mitra Mandal</div>
-		<div class="addr-cont">Parsik nagar, kalwa</div>
-		<div><a href="#" class="view-photo">view photos &raquo;</a></div>
+	<div class="fl"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" class="each-img" height="65" width="65"/></div>
+	<div class="fl" style="width:180px;">
+		<div class="head-cont"><?php echo $photo->caption; ?></div>
+		<div class="addr-cont"></div>
+		<div><a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>" class="view-photo">view photos &raquo;</a></div>
 	</div>
 	<div class="clear"></div>
 </div>
-<div class="each-ent">
-	<div class="fl"><img src="<?php echo get_template_directory_uri(); ?>/img/gan1.png" class="each-img"/></div>
-	<div class="fl">
-		<div class="head-cont">Parsik mitra Mandal</div>
-		<div class="addr-cont">Parsik nagar, kalwa</div>
-		<div><a href="#" class="view-photo">view photos &raquo;</a></div>
-	</div>
-	<div class="clear"></div>
-</div>
-<div class="each-ent">
-	<div class="fl"><img src="<?php echo get_template_directory_uri(); ?>/img/gan1.png" class="each-img"/></div>
-	<div class="fl">
-		<div class="head-cont">Parsik mitra Mandal</div>
-		<div class="addr-cont">Parsik nagar, kalwa</div>
-		<div><a href="#" class="view-photo">view photos &raquo;</a></div>
-	</div>
-	<div class="clear"></div>
-</div>
-<div class="each-ent">
-	<div class="fl"><img src="<?php echo get_template_directory_uri(); ?>/img/gan1.png" class="each-img"/></div>
-	<div class="fl">
-		<div class="head-cont">Parsik mitra Mandal</div>
-		<div class="addr-cont">Parsik nagar, kalwa</div>
-		<div><a href="#" class="view-photo">view photos &raquo;</a></div>
-	</div>
-	<div class="clear"></div>
-</div>
-<div class="each-ent">
-	<div class="fl"><img src="<?php echo get_template_directory_uri(); ?>/img/gan1.png" class="each-img"/></div>
-	<div class="fl">
-		<div class="head-cont">Parsik mitra Mandal</div>
-		<div class="addr-cont">Parsik nagar, kalwa</div>
-		<div><a href="#" class="view-photo">view photos &raquo;</a></div>
-	</div>
-	<div class="clear"></div>
-</div>
+<?php } ?>

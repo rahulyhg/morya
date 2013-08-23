@@ -71,8 +71,8 @@
 			<div id="tabs">
 				<ul>
 				<li><a href="#tabs-1">Top 10 <br/>ganesh</a></li>
-				<li><a href="<?php echo Yii::app()->createUrl('site/topwinner');?>">competition<br/>winner</a></li>
-				<li><a href="<?php echo Yii::app()->createUrl('site/topmakhar');?>">ganesh<br/>Makhars</a></li>
+				<li><a href="<?php echo Yii::app()->createUrl('site/topwinner');?>">Most<br/>Recent</a></li>
+				<li><a href="<?php echo Yii::app()->createUrl('site/topmakhar');?>">Most<br/>Viewed</a></li>
 				</ul>
 				<div class="scroll-pane" style="height:320px">
 					<div id="tabs-1">

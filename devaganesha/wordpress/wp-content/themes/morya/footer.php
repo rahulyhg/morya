@@ -248,6 +248,8 @@
                   $(this).removeClass("active").stop(':animated').animate({height: "80px"}, {duration: 500, easing: "easeInOutQuad", complete: "callback"});
               }
           });
+		  
+		  //$.timeago.settings.allowFuture = true;
           $("abbr.timeago").timeago();
 		  
 		  $('a#forpass').click(function(){
