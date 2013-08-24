@@ -438,6 +438,7 @@ margin:0 auto;
 	font:12px;
 	color:#FFFFFF;
 	font-weight:bold;
+	display:none;
 }
 .modakcnt{
 background:url(../img/top_bar.png) no-repeat 0 0;

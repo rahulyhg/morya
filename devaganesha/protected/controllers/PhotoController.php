@@ -115,8 +115,11 @@ class PhotoController extends AppController
             $photo->caption = $_POST['caption'];
 			$photo->slug = $this->behaviors();
             $photo->description = $_POST['description'];
+			$photo->location = $_POST['location'];
             if($photo->save()){
-             return true;
+				$rurl = Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug));
+				echo $rurl;
+				return true;
             }else{
 			 echo $photo->getErrors();
 			}

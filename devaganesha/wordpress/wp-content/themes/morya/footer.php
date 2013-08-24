@@ -394,7 +394,7 @@
           function fileUploadComplete(id,filename,response){
                     $('#upload-list').html('');
                     $('#upload-wrapper').append('<div id="upload-success"><p class="photo_success">Image saved.<br /><em>Enter some details about it (optional)</em>'+'</p></div>');
-                    $('#upload-success').append('<img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" /><label>Tags:</label><input type="text" id="photo-description" /><br /><input type="submit" id="save-photo" class="btn" value="Save"/>');
+                    $('#upload-success').append('<img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/thumb/'+response.filename+'" /><label>Caption:</label><input type="text" id="photo-caption" value="'+filename.replace(/\.[^/.]+$/, "")+'" title="This will be the name of your ganesha" /><label>Location: (eg: mumbai/thane/pune/nashik)</label><input type="text" id="photo-location" /><label>Tags:</label><input type="text" id="photo-description" /><br /><input type="submit" id="save-photo" class="btn" value="Save"/>');
                     $.fancybox.update();
                     $('#save-photo').click(function(){
                         updateFile(response.id);
@@ -405,12 +405,12 @@
                     $.ajax({
                         url: "<?php echo Yii::app()->createUrl("photo/update"); ?>",
                         type: 'POST',
-                        data: { 'id': photoId , 'caption':$('#photo-caption').val() ,'description': $('#photo-description').val() },
-                        success: function() {
+                        data: { 'id': photoId , 'caption':$('#photo-caption').val() ,'description': $('#photo-description').val(),'location': $('#photo-location').val()},
+                        success: function(response) {
                             $.fancybox.close();
                             $('#upload-success').remove();
                             //$('#recent-uploads').load('<?php echo Yii::app()->createUrl('site/recent'); ?>');
-							window.location.reload();
+							window.location.href = response;
                         }
                     });
                 }
@@ -434,7 +434,6 @@
 </script>
 <!-- End Piwik Code -->
 	<?php Yii::app()->controller->renderClip('js-page-end'); ?>
-
   <div id="fb-root"></div>
   </body>
 </html>

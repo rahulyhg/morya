@@ -63,7 +63,13 @@ $this->breadcrumbs=array(
 
 <?php $this->beginClip('js-page-end'); ?>
 		<script type="text/javascript">
-           
-            </script>
+            $(function() {
+                $('.pin').hover(function(){
+							$(this).find('.black-mask').show();
+						},function(){
+							$(this).find('.black-mask').hide();
+						});
+            });
+        </script>
  <?php $this->endClip(); ?>
  
