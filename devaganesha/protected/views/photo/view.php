@@ -80,7 +80,7 @@
 	<a class="addthis_button_compact"></a>
 	<a class="addthis_counter addthis_bubble_style"></a>
 	</div>
-	<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+	<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
 <!-- AddThis Button END -->
 	<div class="fl">

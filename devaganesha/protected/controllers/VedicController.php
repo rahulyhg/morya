@@ -124,7 +124,7 @@ class VedicController extends AppController
 			$model->attributes=$_POST['Vedic'];
             $model->text = htmlentities($model->text, ENT_COMPAT, "UTF-8");
 			if($model->save())
-				$this->redirect(array('vedicview','ved_title'=>$model->slug));
+				$this->redirect(array('vedicview','slug'=>$model->slug));
 		}
 
 		$this->render('update',array(

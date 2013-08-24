@@ -15,7 +15,8 @@
 .logo{text-align:center;}
 .menu-item{text-decoration:none;color: #666666;}
 .menu{display:block;}
-.menu li{list-style-type:none;display:inline-block;}
+.menu li{list-style-type:none;display:inline-block;*display:inline;*zoom:1;}
+
 .aarti{ background: url("../img/menu-sprite.png") no-repeat scroll 0 0 transparent;height: 40px;width: 50px;}
 .photo{ background: url("../img/menu-sprite.png") no-repeat scroll -55px 0 transparent;height: 40px;width: 45px;}
 .temple{ background: url("../img/menu-sprite.png") no-repeat scroll -105px 0 transparent;height: 40px;width: 45px;}

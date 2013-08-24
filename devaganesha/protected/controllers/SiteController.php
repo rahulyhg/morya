@@ -96,13 +96,15 @@ class SiteController extends AppController
 	
 		public function actionMyganesha(){
 		
-		if(Yii::app()->user->isGuest)
-		{
-			$this->redirect(array('user/login'));
-		}
+		
+		
 		
 		if(empty($_GET['id']))
 		{
+			if(Yii::app()->user->isGuest)
+			{
+				$this->redirect(array('user/login'));
+			}
 			$chkid = Yii::app()->user->Id;
 		}else{
 			$chkid = $_GET['id'];

@@ -110,7 +110,7 @@
 		$('.conn-fb').click(function(){
 		FB.ui({
 		  method: 'send',
-		  link: 'http://www.itvedant.com/programming/php-training-classes-in-mumbai',
+		  link: 'http://www.devaganesha.com/'
 		});
 		});
 	});
@@ -121,7 +121,7 @@
       jQuery(document).ready(function() {
         jQuery('#mycarousel').jcarousel({
           wrap: 'circular',
-         scroll: 5,
+         scroll: 5
         });
 		
 		 jQuery( "#tabs" ).tabs({
@@ -134,7 +134,7 @@
 		}
 		});
 		
-		jQuery('.scroll-pane').jScrollPane();
+		$('.scroll-pane').jScrollPane();
 		
 		 $( "#accordion" ).accordion({ active: false, collapsible: true });
 	
@@ -175,12 +175,12 @@
 							{
 								$('#subsucc').dialog({
 								modal: true,
-								minWidth: 500,
+								minWidth: 500
 								});
 							}else{
 								$('#subfail').dialog({
 								modal: true,
-								minWidth: 500,
+								minWidth: 500
 								});
 							}
 							$('#getsub').val('');
@@ -343,7 +343,7 @@
                             $.fancybox.close();
 							$('#succmail').dialog({
 							modal: true,
-							minWidth: 500,
+							minWidth: 500
 							});
 							//alert('succcess');
 							//window.location.reload();
