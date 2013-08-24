@@ -17,7 +17,7 @@
 						</p>
 				</section>
 			<?php	}else if($slide->type == 4){
-				if(PhotoType::$relativeFolderName[PhotoType::Screen] . $slide->recepies->rec_pic->file_name != ''){
+				if($slide->recepies->rec_pic->file_name != ''){
 					$imgurl = PhotoType::$relativeFolderName[PhotoType::Screen] . $slide->recepies->rec_pic->file_name;
 				}else{
 					$imgurl = get_template_directory_uri()."/img/recipe_noimg.jpg";
