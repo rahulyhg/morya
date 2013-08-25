@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 ?>
 
     <div class="title-bar">&nbsp;<?php echo VedicType::$heading[$vedicType];?></div>
-    <div class="btn"><?php echo CHtml::link("Add New ".VedicType::$heading[$vedicType],array('addvedic','vedicType'=>$vedicType));?></div>
+    <div class="btn"><?php echo CHtml::link("Add New ".VedicType::$heading[$vedicType],array('addvedic','type'=>$vedicType));?></div>
 
         <?php foreach($elementsList as $vedic){
     //$uname = User::model()->findByPk($vedic->user_id);
@@ -18,19 +18,13 @@ $this->breadcrumbs=array(
 			<div class="mt10"><strong>Posted on : <?php echo $vedic->node->created; ?> | author : <?php echo $vedic->node->creator->name; ?></strong></div>
             <div class="blog-content"><?php echo html_entity_decode($vedic->text, ENT_COMPAT, "UTF-8");?></div>
            <div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'slug'=>$vedic->slug))?>">Leave reply </a></span>
-		   <?php if($vedic->node->user_id == Yii::app()->user->id){?>
-			<span>&nbsp;|&nbsp;<a href="">Edit</a></span>
-		   <?php } ?>
 		   </div>
             <div class="clear"></div>
           </div>
         <?php } ?>
-
-<!--
-<div>
-<h3>Find more <?php //echo VedicType::$heading[$vedicType] ?> here<h3>
-<?php //foreach($elementsList as $vedic){?>
-<div><?php //echo CHtml::link($vedic->title,array('vedicview','ved_title'=>$vedic->slug));?></div>
-<?php //} ?>
-</div>
--->
+		
+	<div class="mt10">
+	<?php $this->widget('CLinkPager', array(
+		'pages' => $pages,
+	)) ?>
+	</div>

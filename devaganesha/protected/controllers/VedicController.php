@@ -129,6 +129,7 @@ class VedicController extends AppController
 
 		$this->render('update',array(
 			'model'=>$model,
+			'vedicType'=>$model->type,
 		));
 	}
 
@@ -182,8 +183,8 @@ class VedicController extends AppController
 	
 	public function actionVedic($vedicType = VedicType::Aarti)
 	{	
-		if(isset($_REQUEST['vedicType'])){
-		$vedicType = $_REQUEST['vedicType'];
+		if(isset($_REQUEST['type'])){
+		$vedicType = $_REQUEST['type'];
 		}
 		$criteria=new CDbCriteria;
 		$criteria->limit = 10;
@@ -203,8 +204,11 @@ class VedicController extends AppController
 	   ));
 	}
 	
-	public function actionAddvedic($vedicType)
+	public function actionAddvedic($vedicType = VedicType::Aarti)
 	{
+		if(isset($_REQUEST['type'])){
+		$vedicType = $_REQUEST['type'];
+		}
 		$model=new Vedic;
 
 		// Uncomment the following line if AJAX validation is needed
