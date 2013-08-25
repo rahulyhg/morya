@@ -575,6 +575,10 @@ class UserController extends AppController
 							</tr>
 						</table>";
 				break;
+				
+			case 'gmail_invitation':
+				$body = $temp_body;
+				break;
 
 			case 'forgot_pass':
 				$body = $temp_body;
