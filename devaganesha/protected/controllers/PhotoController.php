@@ -98,7 +98,7 @@ class PhotoController extends AppController
 			Yii::import("ext.EAjaxUpload.qqFileUploader");
 			$folder = PhotoType::$folderName[PhotoType::Original];// folder for uploaded files
 			$allowedExtensions = array("jpg","jpeg","gif");//array("jpg","jpeg","gif","exe","mov" and etc...
-			$sizeLimit = 2 * 1024 * 1024;// maximum file size in bytes - 10mb
+			$sizeLimit = 10 * 1024 * 1024;// maximum file size in bytes - 10mb
 			$uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
 			$result = $uploader->handleUpload($folder);
 			$fileSize=filesize($folder.$result['filename']);//GETTING FILE SIZE
@@ -177,6 +177,9 @@ class PhotoController extends AppController
 			
 			$thumb->resize(PhotoType::$dimension[PhotoType::Thumb]['width']);
 			$thumb->save(PhotoType::$folderName[PhotoType::Thumb].$path_information['basename']);
+			
+			$thumb->resize(PhotoType::$dimension[PhotoType::Mini]['width']);
+			$thumb->save(PhotoType::$folderName[PhotoType::Mini].$path_information['basename']);
 	}
 	/**
 	 * Displays a particular model.
