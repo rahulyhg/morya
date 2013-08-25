@@ -105,7 +105,13 @@
 					<div class="clear"></div>
 				</div>
 				<div><div class="fl pt5"><img src="<?php echo get_template_directory_uri(); ?>/img/gmail.png" /></div>
-					<div class="fl inv-cont"><div>Invite your friend from gmail.com</div><div class="conn-gm">Invite contact from gmail</div></div>
+					<div class="fl inv-cont">
+						<div>Invite your friend from gmail.com</div>
+						<div class="conn-gm">
+							<?php $oauth_url = "https://accounts.google.com/o/oauth2/auth?client_id=".Yii::app()->params['OAuth2.0ClientId']."&redirect_uri=".Yii::app()->params['OAuth2.0RedirectURI']."&scope=https://www.google.com/m8/feeds/&response_type=code"; ?>
+							<a style="text-decoration:none; color: #FFFFFF;"  target="_blank" href="<?php echo $oauth_url; ?>">Invite contact from gmail</a>
+						</div>
+					</div>
 					<div class="clear"></div>
 				</div>
 				

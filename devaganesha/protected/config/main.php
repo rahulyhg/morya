@@ -57,6 +57,7 @@ return array(
 				''=>'site/index',
 				'login'=>'user/login',
 				'myganesha'=>'site/myganesha',
+				'oauth'=>'site/oauth',
 				'edit-profile'=>'user/edit',
 				'logout'=>'user/logout',
 				'register'=>'user/register',
@@ -151,5 +152,8 @@ return array(
 		'adminEmail'=>'mail@itvedant.com',
 		'doNotReplyEmail'=>'noreply@devaganesha.com',
 		'doNotReplyPass'=>'Zeus123@',
+		'OAuth2.0ClientId'=>'782990223644.apps.googleusercontent.com',
+		'OAuth2.0ClientSecret'=>'AbmIF3_1AEpZJL6fQHgNX_hH',
+		'OAuth2.0RedirectURI'=>'http://www.devaganesha.com/oauth',
 	),
 );

@@ -149,6 +149,10 @@ class SiteController extends AppController
 		 'experiences'=>$experiences,
 	   ));
 	}
+
+	public function actionOauth(){
+		$this->render('oauth');
+	}
 	
 	public function actionShowmap(){
 	$this->render('showmap');
