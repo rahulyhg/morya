@@ -1,4 +1,5 @@
 <div class="row-fluid">
+<?php if(!empty($vedics)){ ?>
 <div class="mt10">
 <div class="title-bar">Photos</div>
     <div id="container">
@@ -9,6 +10,7 @@
     ?>
      </div> 
 </div>
+<?php } ?>
 <div class="mt10">
 	<?php if(!empty($vedics)){ ?>
 <div class="title-bar">Aarti and mantra</div>
@@ -152,3 +154,25 @@
 	</div>
 </div>
 </div>
+
+      <script type="text/javascript">
+      jQuery(document).ready(function($) {
+	
+		$('#container').masonry({
+		  itemSelector: '.pin',
+		  isFitWidth: true
+		});	
+	});
+    </script>
+	
+	<?php $this->beginClip('js-page-end'); ?>
+		<script type="text/javascript">
+            $(function() {
+                $('.pin').hover(function(){
+							$(this).find('.black-mask').show();
+						},function(){
+							$(this).find('.black-mask').hide();
+						});
+            });
+        </script>
+ <?php $this->endClip(); ?>

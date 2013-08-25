@@ -47,6 +47,12 @@ $this->menu=array(
 
     </div>
     <?php }?>
+	
+	<div class="mt10">
+	<?php $this->widget('CLinkPager', array(
+		'pages' => $pages,
+	)) ?>
+	</div>
 
 
 

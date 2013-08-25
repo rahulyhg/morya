@@ -185,7 +185,7 @@ class RecipeController extends AppController
 	 */
 	public function actionIndex()
 	{
-		//$dataProvider=new CActiveDataProvider('Recipe');
+	
 		$criteria=new CDbCriteria;
 		$criteria->with = array('node','rec_pic');
 		$criteria->order = 'node.created DESC';
@@ -201,11 +201,6 @@ class RecipeController extends AppController
 		  'pages'=>$pages,
            'photo'=>$photo,
 	   ));
-		
-		
-		//$this->render('index',array(
-		//	'dataProvider'=>$dataProvider,
-		//));
 	}
 
 	/**

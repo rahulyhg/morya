@@ -71,7 +71,7 @@ class Node extends AppActiveRecord
 			'photoes' => array(self::HAS_ONE, 'Photo', 'node_id'),
 			'recepies' => array(self::HAS_ONE, 'Recipe', 'node_id'),
 			'temples' => array(self::HAS_ONE, 'Temple', 'node_id'),
-			'vedics' => array(self::HAS_MANY, 'Vedic', 'node_id'),
+			'vedics' => array(self::HAS_ONE, 'Vedic', 'node_id'),
 			'visits'=>array(self::HAS_ONE, 'Visit', 'node_id'),
 		);
 	}
@@ -90,6 +90,13 @@ class Node extends AppActiveRecord
 		);
 	}
 
+	public function defaultScope()
+    {
+        return array(
+            'condition'=>"status=1",
+        );
+    }
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
