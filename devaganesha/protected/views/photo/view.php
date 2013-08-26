@@ -87,6 +87,7 @@
 
 	<div class="btn fav-main"><div class="<?php echo $classname;?>" id="fav-block" title="<?php echo $titlefav;?>"></div></div>
 	</div>
+	
 	<div class="clear"></div>
 	
  </div>
@@ -110,6 +111,7 @@
 			</p>
 			<!-- <p><strong>Posted on: </strong><?php echo $photo->node->created; ?></p> -->
 	</div>
+	<div><a href="#" id="report-abuse" title="<?php echo $titlera;?>"><?php echo $rtext;?></a></div>
 	
 	<div style="display:none">
 		<div id="edit-photo-form">

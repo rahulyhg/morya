@@ -184,6 +184,48 @@ class SiteController extends AppController
 		
 	}
 	
+	public function actionReportabuse(){
+		$nodeid = $_POST['node_id'];
+		$userid = Yii::app()->user->id;
+		
+		if($ra = ReportAbuse::model()->findByPk(array('node_id' => $nodeid , 'user_id' => $userid )))
+		{
+			$ra->delete();
+			echo "undone";
+		}else
+		{
+			$ra = new ReportAbuse;
+			$ra->node_id = $nodeid;
+			$ra->user_id = $userid;
+			if($ra->validate())
+			{
+				$ra->save();
+				$cnt  = ReportAbuse::model()->count('node_id',$nodeid);
+				if($cnt == 3)
+				{
+								$to = "mayuresh@itvedant.com";
+								$subject = "Abuse report for node $nodeid";
+								$body_plain = "3 users are rporting the following node as abuse ".$nodeid;
+								$body_html = "<div>3 users are rporting the following node as abuse $nodeid;</div>";
+								$priority = 10;
+								$sent = 0;
+								
+								$email = New Email;
+								$email->email_to = $to;
+								$email->subject = $subject;
+								$email->body_plain = $body_plain;
+								$email->body_html = $body_html;
+								$email->priority = $priority;
+								$email->sent = $sent;
+								$email->save();
+				}
+				echo "done";
+			}else{
+				echo "error";
+			}
+		}
+ }
+	
 	public function actionLoadSlider()
 	{
 		$criteria=new CDbCriteria;

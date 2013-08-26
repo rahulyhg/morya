@@ -383,6 +383,32 @@
 				}
 		  });
 		  
+		  	  $('#report-abuse').click(function(){
+			if(app.user.isAuthenticated === false){
+                  $("a#signup").trigger('click');
+                  return false;
+              }else{
+					var nodeid;
+						nodeid = $('#photo-node').val();
+			$.ajax({
+                        url: "<?php echo Yii::app()->createUrl("site/reportabuse"); ?>",
+                        type: 'POST',
+                        data: { 'node_id': nodeid},
+                        success: function(response){
+							if(response == "done")
+							{
+								$('#report-abuse').html('Undo');
+								alert('Thank you for repoting. Admin will take respective action soon.');
+							}else if(response == "undone"){
+								$('#report-abuse').html('Report Abuse');
+							}else{
+								alert('something error occured');
+							}
+                        }
+                    });
+				}
+		  });
+		  
       });
   </script>
 		<script type="text/javascript">

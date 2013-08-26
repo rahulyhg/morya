@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'recepies':
  * @property string $id
+ * @property string $type
  * @property string $slug
  * @property string $title
  * @property string $cooking_time

@@ -239,6 +239,20 @@ class PhotoController extends AppController
 				$classname = 'add-to-fav';
 				$titlefav = "Add to favourite";
 		}
+		
+			if(isset(Yii::app()->user->id)){
+			if($ra = ReportAbuse::model()->findByPk(array('node_id' => $photo->node_id , 'user_id' => Yii::app()->user->id)))
+			{
+				$rtext = 'Undo';
+				$titlera = "undo your action";
+			}else{
+				$rtext = 'Abuse Report';
+				$titlera = "Report this as not a ganesh";
+			}
+		}else{
+				$rtext = 'Abuse Report';
+				$titlera = "Report this as not a ganesh";
+		}
 	
 		$prev = $this->getNextOrPrevId("Photo",$photo->id, "next");
 		
@@ -252,6 +266,8 @@ class PhotoController extends AppController
 			'novisit'=>$novisit,
 			'classname'=>$classname,
 			'titlefav'=>$titlefav,
+			'rtext'=>$rtext,
+			'titlera'=>$titlera,
 			'prev'=>$prev,
 			'nxt'=>$nxt,
 		));

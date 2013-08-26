@@ -672,3 +672,12 @@ tranform: rotate(45deg);
 bottom: -20px;
 top: auto;
 }
+
+.each-temple{
+border:1px solid #cccccc;
+padding:5px;
+margin:5px;
+width:45%;
+float:left;
+
+}

@@ -1,5 +1,11 @@
 <?php
 class TempleType{
- const Historic = 0;
- const Popular = 1;
+ const Temple = 0;
+ const Mandal = 1;
+ 
+ public static $heading = array(
+         self::Temple => 'Temple',
+         self::Mandal => 'Ganesh Mandal'
+     );
 }
+?>

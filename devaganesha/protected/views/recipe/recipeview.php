@@ -22,7 +22,7 @@ $this->menu=array(
 		<?php 
 		if(isset($model->rec_pic->file_name) && $model->rec_pic->file_name != '')
 		{
-			$recimg = PhotoType::$relativeFolderName[PhotoType::Screen].$model->rec_pic->file_name;
+			$recimg = PhotoType::$relativeFolderName[PhotoType::Thumb].$model->rec_pic->file_name;
 		}else{
 			$recimg = get_template_directory_uri()."/img/recipe_noimg.jpg";
 		}

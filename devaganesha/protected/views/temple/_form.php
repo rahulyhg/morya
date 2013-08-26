@@ -66,6 +66,7 @@ function templeUploadComplete(id, fileName, responseJSON){
 		<?php echo $form->textArea($model,'history',array('rows'=>6,'class'=>'span12','id'=>'temple-history')); ?>
 		<?php echo $form->error($model,'history'); ?>
 	</div>
+	<?php echo $form->hiddenField($model,'type',array('value'=>$templeType)); ?>
 	<div id="photo_id"></div>
 <?php
 $this->widget('ext.EAjaxUpload.EAjaxUpload',
