@@ -71,6 +71,9 @@
 	<div id="subfail" style="display: none;" title="Error">
 		<p>You have already subscribed.</p>
 	</div>
+	<div id="abusesucc" style="display: none;" title="Thank you">
+		<p>Thank you for reporting. Admin will take appropriate action soon.</p>
+	</div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -398,7 +401,10 @@
 							if(response == "done")
 							{
 								$('#report-abuse').html('Undo');
-								alert('Thank you for repoting. Admin will take respective action soon.');
+								$('#abusesucc').dialog({
+								modal: true,
+								minWidth: 500
+								});
 							}else if(response == "undone"){
 								$('#report-abuse').html('Report Abuse');
 							}else{
