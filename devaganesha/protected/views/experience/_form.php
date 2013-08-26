@@ -16,11 +16,11 @@
 	</div>
 
 	<div class="controls">
-		<?php echo $form->labelEx($model,'text'); ?>
+		<label><?php echo MahimaType::$heading[$type];?></label>
         <?php echo $form->textArea($model,'text',array('rows'=>10, 'cols'=>50,'class'=>'span12','id'=>'exp-editor')); ?>
 		<?php echo $form->error($model,'text'); ?>
 	</div>
-
+		<?php echo $form->hiddenField($model,'type',array('value'=>$type)); ?>
 	<div class="controls">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Share' : 'Save',array('class'=>'btn btn-primary mt10')); ?>
 	</div>

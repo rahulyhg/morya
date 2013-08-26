@@ -80,21 +80,23 @@
 	<a class="addthis_button_compact"></a>
 	<a class="addthis_counter addthis_bubble_style"></a>
 	</div>
-	<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+	<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
 <!-- AddThis Button END -->
 	<div class="fl">
 
 	<div class="btn fav-main"><div class="<?php echo $classname;?>" id="fav-block" title="<?php echo $titlefav;?>"></div></div>
 	</div>
+	
 	<div class="clear"></div>
 	
  </div>
  <input type="hidden" id="photo-node" value="<?php echo $photo->node_id;?>"/>
+ <input type="hidden" id="photo-id" value="<?php echo $photo->id;?>"/>
 <div class="nxtprev mt10"><a <?php if($prev != 'hide'){ ?> href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$prev)); ?>" <?php } ?> class="btn fl" <?php if($prev == 'hide'){ echo 'disabled';}?>><i class="icon-backward"></i> Prev</a>
 <a <?php if($nxt != 'hide'){ ?> href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$nxt)) ?>" <?php } ?> class="btn fr" <?php if($nxt == 'hide'){ echo 'disabled';};?>>Next <i class="icon-forward"></i></a><div class="clear"></div></div>
 	<div class="single-photo">
-		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name ?>" class="large-img"/>
+		<img style="width:<?php echo PhotoType::$dimension[PhotoType::Screen]['width'] ?>;" src="<?php echo PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name; ?>" class="large-img"/>
 	</div>
     <div>
 				<p class="caption"><?php echo $photo->caption; ?></p>
@@ -103,14 +105,27 @@
 			<?php } ?>
 			<p><strong>Posted By: </strong><a class="photo_uploader_name" href="<?php echo Yii::app()->createUrl('site/myganesha',array('id'=>$photo->node->user_id));?>"><?php echo $photo->node->creator->name ?></a>
 			<?php if(Yii::app()->user->id == $photo->node->user_id){ ?>
-			<span class="fr"><!--<a href="return fileUploadBegin();">Edit</a>&nbsp; | &nbsp; -->
+			<span class="fr"><a href="#edit-photo-form" id="edit-photo">Edit</a>&nbsp; | &nbsp;
 			<a class="fr"><?php echo CHtml::link('Delete','#',array("submit"=>array('photo/delete','id'=>$photo->id),"confirm" => "Are you sure?"));?></a></span>
 			<?php } ?>
 			</p>
 			<!-- <p><strong>Posted on: </strong><?php echo $photo->node->created; ?></p> -->
 	</div>
+	<div><a href="#" id="report-abuse" title="<?php echo $titlera;?>"><?php echo $rtext;?></a></div>
 	
-
+	<div style="display:none">
+		<div id="edit-photo-form">
+			<div>Edit your photo</div>
+			<div>
+			<img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$photo->file_name; ?>" />
+			<label>Caption:</label><input type="text" id="photo-caption-edit" value="<?php echo $photo->caption; ?>" title="This will be the name of your ganesha" />
+			<label>Location: (eg: mumbai/thane/pune/nashik)</label><input type="text" id="photo-location-edit" value="<?php echo $photo->location; ?>" />
+			<label>Tags:</label><input type="text" id="photo-description-edit" value="<?php echo $photo->description; ?>"/><br />
+			<input type="submit" id="edit-button" class="btn" value="Save"/>
+			</div>
+		</div>
+	</div>
+	
 
 	<?php $this->beginClip('js-page-end'); ?>
 	
@@ -163,5 +178,22 @@
 							});	
                         }
                     });	
+					
+					$('#edit-button').click(function(){
+						photoId = $('#photo-id').val();
+                          $.ajax({
+                        url: "<?php echo Yii::app()->createUrl("photo/update"); ?>",
+                        type: 'POST',
+                        data: { 'id': photoId , 'caption':$('#photo-caption-edit').val() ,'description': $('#photo-description-edit').val(),'location': $('#photo-location-edit').val()},
+                        success: function(response) {
+                            $.fancybox.close();
+                            $('#upload-success').remove();
+                            //$('#recent-uploads').load('<?php echo Yii::app()->createUrl('site/recent'); ?>');
+								window.location.href = response;
+							}
+						});
+                    });
+					
+					$('#edit-photo').fancybox();
 			});
 		</script>

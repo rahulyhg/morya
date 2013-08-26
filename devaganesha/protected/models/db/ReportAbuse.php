@@ -1,25 +1,19 @@
 <?php
 
 /**
- * This is the model class for table "experiences".
+ * This is the model class for table "report_abuse".
  *
- * The followings are the available columns in table 'experiences':
- * @property string $id
- * @property string $type
- * @property string $title
- * @property string $slug
- * @property string $text
+ * The followings are the available columns in table 'report_abuse':
  * @property string $node_id
- *
- * The followings are the available model relations:
- * @property Nodes $node
+ * @property string $user_id
+ * @property string $created
  */
-class Experience extends CActiveRecord
+class ReportAbuse extends AppActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Experience the static model class
+	 * @return ReportAbuse the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -31,7 +25,7 @@ class Experience extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'experiences';
+		return 'report_abuse';
 	}
 
 	/**
@@ -42,12 +36,11 @@ class Experience extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, slug, text, node_id', 'required'),
-			array('title, slug', 'length', 'max'=>255),
-			array('node_id', 'length', 'max'=>11),
+			array('node_id, user_id, created', 'required'),
+			array('node_id, user_id', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, slug, text, node_id', 'safe', 'on'=>'search'),
+			array('node_id, user_id, created', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +52,6 @@ class Experience extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'node' => array(self::BELONGS_TO, 'Node', 'node_id'),
 		);
 	}
 
@@ -69,11 +61,9 @@ class Experience extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'title' => 'Title',
-			'slug' => 'Slug',
-			'text' => 'Experience/wish',
 			'node_id' => 'Node',
+			'user_id' => 'User',
+			'created' => 'Created',
 		);
 	}
 
@@ -88,27 +78,12 @@ class Experience extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('slug',$this->slug,true);
-		$criteria->compare('text',$this->text,true);
 		$criteria->compare('node_id',$this->node_id,true);
+		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('created',$this->created,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-	
-	//slug behaviors function
-		public function behaviors(){
-		return array(
-			'SlugBehavior' => array(
-				'class' => 'application.models.behaviors.SlugBehavior',
-				'slug_col' => 'slug',
-				'title_col' => 'title',
-				'overwrite' => false
-			)
-		);
-	}
-	
 }

@@ -4,7 +4,9 @@
 	'id'=>'recipe-form',
 	'enableAjaxValidation'=>false,
     'htmlOptions'=>array('enctype'=>'multipart/form-data')
-)); ?>
+)); 
+
+?>
 
     <script type="text/javascript">
         function recipeUploadComplete(id, fileName, responseJSON){
@@ -25,6 +27,12 @@
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
+	<div>
+		<label>Recipe Category</label>
+		<?php echo $form->dropDownList($model,'type',RecipeType::$heading); ?>
+		<?php echo $form->error($model,'type'); ?>
+	</div>
+	
 	<div class="input-append">
 		<?php echo $form->labelEx($model,'cooking_time'); ?>
 		<?php echo $form->textField($model,'cooking_time',array('id'=>'appendedInput')); ?>

@@ -15,7 +15,8 @@
 .logo{text-align:center;}
 .menu-item{text-decoration:none;color: #666666;}
 .menu{display:block;}
-.menu li{list-style-type:none;display:inline-block;}
+.menu li{list-style-type:none;display:inline-block;*display:inline;*zoom:1;}
+
 .aarti{ background: url("../img/menu-sprite.png") no-repeat scroll 0 0 transparent;height: 40px;width: 50px;}
 .photo{ background: url("../img/menu-sprite.png") no-repeat scroll -55px 0 transparent;height: 40px;width: 45px;}
 .temple{ background: url("../img/menu-sprite.png") no-repeat scroll -105px 0 transparent;height: 40px;width: 45px;}
@@ -258,7 +259,8 @@ font-weight:bold;
 
 .cont-disp{
 border-bottom:1px solid #CCCCCC;
-margin:10px;
+margin:10px 0;
+padding:10px 0;
 }
 
 .am-container{
@@ -438,6 +440,7 @@ margin:0 auto;
 	font:12px;
 	color:#FFFFFF;
 	font-weight:bold;
+	display:none;
 }
 .modakcnt{
 background:url(../img/top_bar.png) no-repeat 0 0;
@@ -668,4 +671,13 @@ tranform: rotate(45deg);
 .arrow.top:after {
 bottom: -20px;
 top: auto;
+}
+
+.each-temple{
+border:1px solid #cccccc;
+padding:5px;
+margin:5px;
+width:45%;
+float:left;
+
 }

@@ -98,7 +98,7 @@ class PhotoController extends AppController
 			Yii::import("ext.EAjaxUpload.qqFileUploader");
 			$folder = PhotoType::$folderName[PhotoType::Original];// folder for uploaded files
 			$allowedExtensions = array("jpg","jpeg","gif");//array("jpg","jpeg","gif","exe","mov" and etc...
-			$sizeLimit = 2 * 1024 * 1024;// maximum file size in bytes - 10mb
+			$sizeLimit = 10 * 1024 * 1024;// maximum file size in bytes - 10mb
 			$uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
 			$result = $uploader->handleUpload($folder);
 			$fileSize=filesize($folder.$result['filename']);//GETTING FILE SIZE
@@ -115,8 +115,11 @@ class PhotoController extends AppController
             $photo->caption = $_POST['caption'];
 			$photo->slug = $this->behaviors();
             $photo->description = $_POST['description'];
+			$photo->location = $_POST['location'];
             if($photo->save()){
-             return true;
+				$rurl = Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug));
+				echo $rurl;
+				return true;
             }else{
 			 echo $photo->getErrors();
 			}
@@ -174,6 +177,9 @@ class PhotoController extends AppController
 			
 			$thumb->resize(PhotoType::$dimension[PhotoType::Thumb]['width']);
 			$thumb->save(PhotoType::$folderName[PhotoType::Thumb].$path_information['basename']);
+			
+			$thumb->resize(PhotoType::$dimension[PhotoType::Mini]['width']);
+			$thumb->save(PhotoType::$folderName[PhotoType::Mini].$path_information['basename']);
 	}
 	/**
 	 * Displays a particular model.
@@ -233,6 +239,20 @@ class PhotoController extends AppController
 				$classname = 'add-to-fav';
 				$titlefav = "Add to favourite";
 		}
+		
+			if(isset(Yii::app()->user->id)){
+			if($ra = ReportAbuse::model()->findByPk(array('node_id' => $photo->node_id , 'user_id' => Yii::app()->user->id)))
+			{
+				$rtext = 'Undo';
+				$titlera = "undo your action";
+			}else{
+				$rtext = 'Abuse Report';
+				$titlera = "Report this as not a ganesh";
+			}
+		}else{
+				$rtext = 'Abuse Report';
+				$titlera = "Report this as not a ganesh";
+		}
 	
 		$prev = $this->getNextOrPrevId("Photo",$photo->id, "next");
 		
@@ -246,6 +266,8 @@ class PhotoController extends AppController
 			'novisit'=>$novisit,
 			'classname'=>$classname,
 			'titlefav'=>$titlefav,
+			'rtext'=>$rtext,
+			'titlera'=>$titlera,
 			'prev'=>$prev,
 			'nxt'=>$nxt,
 		));
@@ -275,7 +297,14 @@ class PhotoController extends AppController
 		if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+			
+			$model = $this->loadModel($id);
+			$nodeid = $model->node_id;
+			$node = Node::model()->findByPk($nodeid);
+			$node->status = 0;
+			if($node->save()){
+				$model->delete();
+			}
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))

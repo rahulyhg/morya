@@ -124,11 +124,12 @@ class VedicController extends AppController
 			$model->attributes=$_POST['Vedic'];
             $model->text = htmlentities($model->text, ENT_COMPAT, "UTF-8");
 			if($model->save())
-				$this->redirect(array('vedicview','ved_title'=>$model->slug));
+				$this->redirect(array('vedicview','slug'=>$model->slug));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'vedicType'=>$model->type,
 		));
 	}
 
@@ -182,8 +183,8 @@ class VedicController extends AppController
 	
 	public function actionVedic($vedicType = VedicType::Aarti)
 	{	
-		if(isset($_REQUEST['vedicType'])){
-		$vedicType = $_REQUEST['vedicType'];
+		if(isset($_REQUEST['type'])){
+		$vedicType = $_REQUEST['type'];
 		}
 		$criteria=new CDbCriteria;
 		$criteria->limit = 10;
@@ -203,8 +204,11 @@ class VedicController extends AppController
 	   ));
 	}
 	
-	public function actionAddvedic($vedicType)
+	public function actionAddvedic($vedicType = VedicType::Aarti)
 	{
+		if(isset($_REQUEST['type'])){
+		$vedicType = $_REQUEST['type'];
+		}
 		$model=new Vedic;
 
 		// Uncomment the following line if AJAX validation is needed

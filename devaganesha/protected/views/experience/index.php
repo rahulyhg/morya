@@ -2,15 +2,12 @@
 $this->breadcrumbs=array(
 	'Experiences',
 );
-
-$this->menu=array(
-	array('label'=>'Create Experience', 'url'=>array('create')),
-);
+$linkhead = MahimaType::$heading[$type];
 ?>
 
 
-    <div class="title-bar">Experiences/Ganesh Mahima/Make a wish for ganesha</div>
-	<div class="btn"><?php echo CHtml::link("Share your experience / Make a wish",array('create'));?></div>
+    <div class="title-bar">Ganesh Mahima</div>
+	<div class="btn"><?php echo CHtml::link($linkhead,array('create','type'=>$type));?></div>
     <?php foreach($elementsList as $exp){
     //$user_name = User::model()->findByPk($recipe->user_id);
     //$pri_pic = Photo::model()->findByPk($recipe->primary_pic);

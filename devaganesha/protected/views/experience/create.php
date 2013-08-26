@@ -9,6 +9,6 @@ $this->menu=array(
 );
 ?>
 
-<div class="title-bar">Share your experience about lord ganesha</div>
+<div class="title-bar"><?php echo MahimaType::$heading[$type]; ?></div>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'type'=>$type)); ?>

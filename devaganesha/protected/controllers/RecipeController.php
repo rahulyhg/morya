@@ -115,7 +115,7 @@ class RecipeController extends AppController
 						'message' => 'Photo uploaded via the DevaGanesha.com'
 					  )
 					);*/
-					$this->redirect(array('index'));
+					$this->redirect(array('index','type'=>$model->type));
 				}
 				else
 				{
@@ -148,9 +148,11 @@ class RecipeController extends AppController
 
 		if(isset($_POST['Recipe']))
 		{
+			
 			$model->attributes=$_POST['Recipe'];
             $model->ingredients = htmlentities($model->ingredients, ENT_COMPAT, "UTF-8");
             $model->method = htmlentities($model->method, ENT_COMPAT, "UTF-8");
+			$model->type = $_POST['Recipe']['type'];
 			if($model->save())
 				$this->redirect(array('recipeview','rec_title'=>$model->slug));
 		}
@@ -185,11 +187,16 @@ class RecipeController extends AppController
 	 */
 	public function actionIndex()
 	{
-		//$dataProvider=new CActiveDataProvider('Recipe');
+		
 		$criteria=new CDbCriteria;
 		$criteria->with = array('node','rec_pic');
 		$criteria->order = 'node.created DESC';
 		$criteria->limit = 10;
+		if(isset($_REQUEST['type']))
+		{
+			$type = $_REQUEST['type'];
+			$criteria->compare('t.type',$type);
+		}
 
 	   $pages=new CPagination(Recipe::model()->count($criteria));
 	   $pages->applyLimit($criteria);
@@ -200,12 +207,8 @@ class RecipeController extends AppController
 		  'elementsList'=>$elementsList,
 		  'pages'=>$pages,
            'photo'=>$photo,
+		   'type'=>$type
 	   ));
-		
-		
-		//$this->render('index',array(
-		//	'dataProvider'=>$dataProvider,
-		//));
 	}
 
 	/**

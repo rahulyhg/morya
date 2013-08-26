@@ -91,10 +91,14 @@ class TempleController extends AppController
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate($templeType)
+	public function actionCreate($templeType=TempleType::Temple)
 	{
 		$model=new Temple;
 
+		if(isset($_REQUEST['type']))
+		{
+			$templeType  = $_REQUEST['type'];
+		}
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -130,7 +134,7 @@ class TempleController extends AppController
 						'message' => 'Photo uploaded via the DevaGanesha.com'
 					  )
 					);*/
-					$this->redirect(array('index','templeType'=>$templeType));
+					$this->redirect(array('index','type'=>$templeType));
 				}
 				else
 				{
@@ -143,6 +147,7 @@ class TempleController extends AppController
 
 		$this->render('create',array(
 			'model'=>$model,
+			'templeType'=>$templeType,
 
 		));
 	}
@@ -169,11 +174,12 @@ class TempleController extends AppController
 			$model->how_to_go = htmlentities($model->how_to_go, ENT_COMPAT, "UTF-8");
 			$model->history = htmlentities($model->history, ENT_COMPAT, "UTF-8");
 			if($model->save())
-				$this->redirect(array('index','id'=>$model->id));
+				$this->redirect(array('templeview','slug'=>$model->slug));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'templeType'=>$model->type,
 		));
 	}
 
@@ -200,14 +206,17 @@ class TempleController extends AppController
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex($templeType = TempleType::Historic)
+	public function actionIndex($type = TempleType::Temple)
 	{
-
+		if(isset($_REQUEST['type']))
+		{
+			$type  = $_REQUEST['type'];
+		}
         $criteria=new CDbCriteria;
 		$criteria->with = array('node','main_pic');
 		$criteria->order = 'node.created DESC';
-        $criteria->limit = 10;
-        //$criteria->compare('type',$templeType);
+        $criteria->compare('t.type',$type);
+		 $criteria->limit = 10;
 
         $pages=new CPagination(Temple::model()->count($criteria));
         $pages->applyLimit($criteria);
@@ -218,7 +227,7 @@ class TempleController extends AppController
 		$this->render('index',array(
 			'elementsList'=>$elementsList,
             'pages'=>$pages,
-			'templeType'=>$templeType,
+			'templeType'=>$type,
             'photo'=>$photo,
 		));
 	}

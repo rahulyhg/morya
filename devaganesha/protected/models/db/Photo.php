@@ -8,6 +8,7 @@
  * @property integer $type
  * @property string $caption
  * @property string $description
+  * @property string $location
  * @property string $original_name
  * @property string $file_name
  * @property string $file_type
@@ -47,7 +48,7 @@ class Photo extends AppActiveRecord
 		return array(
 			array('original_name, file_name, file_type, file_size, node_id', 'required'),
 			array('type', 'numerical', 'integerOnly'=>true),
-			array('caption, original_name, file_name, file_type', 'length', 'max'=>255),
+			array('caption, original_name, location ,file_name, file_type', 'length', 'max'=>255),
 			array('file_size', 'length', 'max'=>20),
 			array('node_id', 'length', 'max'=>11),
 			array('description', 'safe'),
@@ -81,6 +82,7 @@ class Photo extends AppActiveRecord
 			'type' => 'Type',
 			'caption' => 'Caption',
 			'description' => 'Description',
+			'location'=>'Location',
 			'original_name' => 'Original Name',
 			'file_name' => 'File Name',
 			'file_type' => 'File Type',

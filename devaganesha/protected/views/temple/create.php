@@ -4,12 +4,8 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-    array('label'=>'Historic', 'url'=>array('index','templeType'=>TempleType::Historic)),
-    array('label'=>'Most Popular', 'url'=>array('index','templeType'=>TempleType::Popular)),
-);
 ?>
 
-<div class="title-bar">Add Temple Information Here</div>
+<div class="title-bar">Add New <?php echo TempleType::$heading[$templeType];?> Here</div>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'templeType'=>$templeType)); ?>

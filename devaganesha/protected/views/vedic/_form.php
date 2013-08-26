@@ -16,13 +16,13 @@
 	</div>
 
 	<div class="controls">
-		<?php echo $form->labelEx($model,'title'); ?>
+		<label>Title for <?php echo  VedicType::$heading[$vedicType];?></label>
 		<?php echo $form->textField($model,'title',array('maxlength'=>255,'class'=>'span12 ')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="controls">
-		<?php echo $form->labelEx($model,'text'); ?>
+		<label><?php echo  VedicType::$heading[$vedicType];?></label>
 		<?php echo $form->textArea($model,'text',array('rows'=>10,'class'=>'span12 ','id'=>'vedic-editor')); ?>
 		<?php echo $form->error($model,'text'); ?>
 	</div>

@@ -21,7 +21,7 @@
  * @property VedicComment[] $vedicComments
  * @property Users $user
  */
-class Vedic extends Node
+class Vedic extends AppActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
