@@ -122,10 +122,7 @@
     <script type="text/javascript">
 
       jQuery(document).ready(function() {
-        jQuery('#mycarousel').jcarousel({
-          wrap: 'circular',
-         scroll: 5
-        });
+        
 		
 		 jQuery( "#tabs" ).tabs({
 		beforeLoad: function( event, ui ) {

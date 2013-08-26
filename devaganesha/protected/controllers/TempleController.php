@@ -72,9 +72,9 @@ class TempleController extends AppController
 
 	public function actionTempleview()
 	{
-		if($_REQUEST['temple_name'] != '')
+		if($_REQUEST['slug'] != '')
 		{
-			$model=Temple::model()->with('node','main_pic')->findByAttributes(array('slug'=>$_REQUEST['temple_name']));
+			$model=Temple::model()->with('node','main_pic')->findByAttributes(array('slug'=>$_REQUEST['slug']));
             //$elements=Temple::model()->findAll();
 			$newComment = new Comment() ;
         	$newComment->node_id = $model->node_id ;

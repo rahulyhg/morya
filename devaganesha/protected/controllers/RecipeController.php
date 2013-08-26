@@ -59,9 +59,9 @@ class RecipeController extends AppController
 	
 	public function actionRecipeview()
 	{
-		if($_REQUEST['rec_title'] != '')
+		if($_REQUEST['slug'] != '')
 		{
-			$model=Recipe::model()->with('node','rec_pic')->findByAttributes(array('slug'=>$_REQUEST['rec_title']));
+			$model=Recipe::model()->with('node','rec_pic')->findByAttributes(array('slug'=>$_REQUEST['slug']));
             $elements=Recipe::model()->findAll();
 			$newComment = new Comment() ;
         	$newComment->node_id = $model->node_id ;
@@ -154,7 +154,7 @@ class RecipeController extends AppController
             $model->method = htmlentities($model->method, ENT_COMPAT, "UTF-8");
 			$model->type = $_POST['Recipe']['type'];
 			if($model->save())
-				$this->redirect(array('recipeview','rec_title'=>$model->slug));
+				$this->redirect(array('recipeview','slug'=>$model->slug));
 		}
 
 		$this->render('update',array(

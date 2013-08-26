@@ -2,10 +2,7 @@
 $this->breadcrumbs=array(
 	'Recipes',
 );
-$this->menu=array(
-    array('label'=>'Add Your Recipes', 'url'=>array('create')),
-    array('label'=>'Ganesh Mahima / Experience', 'url'=>array('/experience/index')),
-);
+
 ?>
 
 
@@ -15,7 +12,7 @@ $this->menu=array(
     //$user_name = User::model()->findByPk($recipe->user_id);
     //$pri_pic = Photo::model()->findByPk($recipe->primary_pic);
 //echo $recipe->prime->file_name;
-	$singlepage = Yii::app()->createUrl('recipe/recipeview',array('rec_title'=>$recipe->slug));
+	$singlepage = Yii::app()->createUrl('recipe/recipeview',array('slug'=>$recipe->slug));
     ?>
 
     <div class="cont-disp">
