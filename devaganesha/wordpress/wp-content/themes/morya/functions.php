@@ -33,7 +33,8 @@ function morya_create_node( $post_id ) {
 	//verify post is not a revision
 		$node = new Node ;
 		$node->type = NodeType::Post ;
-		if(!$node->save())
-			file_put_contents(ABSPATH."../errors.txt",print_r($node->getErrors(),true));
-		add_post_meta($post_id, 'node_id',$node->id, true);
+		$node->user_id = 0 ;
+		if($node->save())
+			add_post_meta($post_id, 'node_id',$node->id, true);
+		
 }
