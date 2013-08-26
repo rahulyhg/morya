@@ -56,7 +56,9 @@ if(isset($_GET["code"])) {
 		echo "<h2>OOPS !! Something went wrong. Please try reloading the page.</h2>";
 		exit();
 	}
-	echo "<h3>Invite your friends to devaganesha:</h3>";
+	?>
+	<div class="title-bar">Invite your friends to devaganesha:</div>
+<?php	
 	$xml =  new SimpleXMLElement($xmlresponse);
 	$xml->registerXPathNamespace('gd', 'http://schemas.google.com/g/2005');
 	$result = $xml->xpath('//gd:email');
@@ -64,14 +66,14 @@ if(isset($_GET["code"])) {
 <div id="invite-gm-friends">
 <input type="checkbox" id="select-all" checked/> <b>Select/Deselect all</b><br /><br />
 <?php
-	foreach ($result as $title) {
-		echo "<input type='checkbox' class='email-addresses' value='".$title->attributes()->address."' checked /> " . $title->attributes()->address . "<br>";
-	}
+	foreach ($result as $title) { ?>
+		<div class="fl each-mail"><span><input type="checkbox" class="email-addresses" value="<?php echo $title->attributes()->address; ?>" checked /></span><span class="ml10"><?php echo $title->attributes()->address; ?></span></div>
+<?php	}
 }
 ?>
 </div>
-<br />
-<input type="button" value="Invite" id="send-gmail-invitation" />
+<div class="clear"></div>
+<input type="button" value="Invite" id="send-gmail-invitation" class="btn btn-primary mt10"/>
 
 <script type="text/javascript">
 $("#select-all").click(function () {
