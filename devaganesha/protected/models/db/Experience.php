@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'experiences':
  * @property string $id
+ * @property string $type
  * @property string $title
  * @property string $slug
  * @property string $text

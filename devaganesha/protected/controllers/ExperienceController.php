@@ -80,8 +80,13 @@ class ExperienceController extends AppController
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($type = MahimaType::Experience)
 	{
+		if(isset($_REQUEST['type']))
+		{
+			$type = $_REQUEST['type'];
+		}
+	
 		$model=new Experience;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -95,6 +100,7 @@ class ExperienceController extends AppController
 			$model->attributes=$_POST['Experience'];
             $model->text = htmlentities($model->text, ENT_COMPAT, "UTF-8");
             $model->slug = $this->behaviors();
+			$model->type=$_POST['Experience']['type'];
 
 			if($node->validate())
 			{
@@ -116,7 +122,7 @@ class ExperienceController extends AppController
 						'message' => 'Photo uploaded via the DevaGanesha.com'
 					  )
 					);*/
-					$this->redirect(array('index'));
+					$this->redirect(array('index','type'=>$model->type));
 				}else
 				{
 					$transaction->rollBack();
@@ -128,6 +134,7 @@ class ExperienceController extends AppController
 
 		$this->render('create',array(
 			'model'=>$model,
+			'type'=>$type,
 		));
 	}
 
@@ -179,12 +186,17 @@ class ExperienceController extends AppController
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex($type = MahimaType::Experience)
 	{
+		if(isset($_REQUEST['type']))
+		{
+			$type = $_REQUEST['type'];
+		}
 
         $criteria=new CDbCriteria;
 		$criteria->with = array('node');
 		$criteria->order = 'node.created DESC';
+		$criteria->compare('t.type',$type);
 		$criteria->limit = 20;
 
         $pages=new CPagination(Experience::model()->count($criteria));
@@ -194,6 +206,7 @@ class ExperienceController extends AppController
         $this->render('index',array(
             'elementsList'=>$elementsList,
             'pages'=>$pages,
+			'type'=>$type,
         ));
 	}
 

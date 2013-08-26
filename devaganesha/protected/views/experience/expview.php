@@ -22,7 +22,7 @@ $this->menu=array(
 
     </div>
 	
-	<div class="mt20"><a href="<?php echo Yii::app()->createUrl('experience/index');?>">Back to  All</a></div>
+	<div class="mt20"><a href="<?php echo Yii::app()->createUrl('experience/index',array('type'=>$model->type));?>">Back to  All</a></div>
 	<div id="comments">
 			<div id="accordion" style="margin-bottom:10px !important;">
 			
