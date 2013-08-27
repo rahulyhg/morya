@@ -5,6 +5,7 @@ class WpController extends Controller
     public function actionIndex()
     {
         $this->layout = false; // note that we disable the layout
+		$this->pageTitle = '';
         try {
             $this->render('index');
             Yii::app()->end();

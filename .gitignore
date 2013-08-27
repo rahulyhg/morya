@@ -2,10 +2,6 @@ morya/assets/*
 morya/upload/*
 morya/protected/runtime/*
 devaganesha/assets/*
-devaganesha/upload/original/*
-devaganesha/upload/thumb/*
-devaganesha/upload/screen/*
-devaganesha/upload/user/*
 devaganesha/protected/runtime/*
 devaganesha/wordpress/wp-content/uploads/*
 .idea
