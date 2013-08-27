@@ -3,11 +3,7 @@ $this->breadcrumbs=array(
 	'Recipes'=>array('index'),
 	$model->title,
 );
-$this->menu=array(
-    array('label'=>'Recipes', 'url'=>array('index')),
-    array('label'=>'Add Your Recipes', 'url'=>array('create')),
-    array('label'=>'Ganesh Mahima / Experience', 'url'=>array('/experience/index')),
-);
+
 ?>
 
     <div class="title-bar">&nbsp;Recipe of <?php echo $model->title;?></div>

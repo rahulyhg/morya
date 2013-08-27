@@ -34,11 +34,6 @@ class SiteController extends AppController
 		// using the default layout 'protected/views/layouts/main.php'
 		
 		 //$elementsList=Photo::model()->findAll($criteria);//->with('comments')
-		 
-		 $criteria1=new CDbCriteria;
-		 $criteria1->with = array('node','main_pic');
-		 $criteria1->order = 'node.created DESC';
-		 $elementsList1=Temple::model()->findAll($criteria);//->with('comments')
 
 		$criteria=new CDbCriteria;
 		$criteria->with = array('node');
@@ -49,7 +44,7 @@ class SiteController extends AppController
 		
 		$this->render('index',array(
 			//'elementsList'=>$elementsList,
-			'elementsList1'=>$elementsList1,
+			//'elementsList1'=>$elementsList1,
 			'photos'=>$photos,
 		));
 	}
@@ -250,6 +245,16 @@ class SiteController extends AppController
 		$criteria->limit = 10;
 		$photos = Photo::model()->findAll($criteria);
 		echo $resp = $this->renderPartial('_topwinner',array('photos'=>$photos,));
+	}
+	
+	public function actionGettemple()
+	{
+		 $criteria1=new CDbCriteria;
+		 $criteria1->with = array('node','main_pic');
+		 $criteria1->order = 'node.created DESC';
+		 $criteria1->compare('t.type',TempleType::Temple);
+		 $elementsList1=Temple::model()->findAll($criteria);//->with('comments')
+		echo $resp = $this->renderPartial('_templecor',array('elementsList1'=>$elementsList1,));
 	}
 	
 	public function actionTopmakhar()

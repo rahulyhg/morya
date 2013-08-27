@@ -243,7 +243,7 @@ class VedicController extends AppController
 					'message' => 'Photo uploaded via the DevaGanesha.com'
 				  )
 				);*/
-				$this->redirect($this->createAbsoluteUrl('vedic',array('vedicType'=>$model->type)));
+				$this->redirect($this->createAbsoluteUrl('vedic',array('type'=>$model->type)));
 			}else{
 			$transaction->rollBack();
 			}

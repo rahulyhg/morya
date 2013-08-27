@@ -9,17 +9,15 @@ $linkhead = MahimaType::$heading[$type];
     <div class="title-bar">Ganesh Mahima</div>
 	<div class="btn"><?php echo CHtml::link($linkhead,array('create','type'=>$type));?></div>
     <?php foreach($elementsList as $exp){
-    //$user_name = User::model()->findByPk($recipe->user_id);
-    //$pri_pic = Photo::model()->findByPk($recipe->primary_pic);
-//echo $recipe->prime->file_name;
+
     ?>
 
     <div class="cont-disp">
 
-         <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug));?>"><?php echo $exp->title; ?></a></div>
+         <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('experience/expview',array('slug'=>$exp->slug));?>"><?php echo $exp->title; ?></a></div>
          <div class="mt10"><strong>Posted on : <?php echo $exp->node->created; ?> | author : <?php echo $exp->node->creator->name; ?></strong></div>
 		<div class="blog-content"><?php echo html_entity_decode($exp->text, ENT_COMPAT, "UTF-8"); ?></div>
-		<div><span> <a href="<?php echo Yii::app()->createUrl('experience/expview',array('exp_title'=>$exp->slug));?>">Leave reply </a></span>
+		<div><span> <a href="<?php echo Yii::app()->createUrl('experience/expview',array('slug'=>$exp->slug));?>">Leave reply </a></span>
 		   <?php if($vedic->node->user_id == Yii::app()->user->id){?>
 			<span>&nbsp;|&nbsp;<a href="">Edit</a></span>
 		   <?php } ?>

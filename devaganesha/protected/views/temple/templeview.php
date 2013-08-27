@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Temples'=>array('index'),
+	TempleType::$heading[$model->type]=>array('index','type'=>$model->type),
 	$model->name,
 );
 ?>
 
 
-    <div class="title-bar"><?php echo $model->name;?></div>
+    <div class="title-head"><?php echo $model->name;?></div>
 
 		<div class="mt10"><strong>Posted on : <?php echo $model->node->created; ?> | author : <?php echo $model->node->creator->name; ?></strong></div>
 		 <div>

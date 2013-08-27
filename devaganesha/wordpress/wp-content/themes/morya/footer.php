@@ -6,7 +6,7 @@
 				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/fb-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/ohmyganesha" target="_blank">www.facebook.com/ohmyganesha</a></div>
 				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/twit-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/devaganeshacom" target="_blank">www.twitter.com/devaganeshacom</a></div>
 				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/pin-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="http://pinterest.com/devaganesha" target="_blank">www.pinterest.com/devaganesha</a></div>
-				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/gmail-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(19);?>" target="_blank">www.devaganesha.com/blog</a></div>
+				<div class="each-soc"><img src="<?php echo get_template_directory_uri(); ?>/img/gmail-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="<?php echo get_page_link(99);?>" target="_blank">www.devaganesha.com/blog</a></div>
 				<div class="each-site-last"><img src="<?php echo get_template_directory_uri(); ?>/img/reddit-bw.png"/>&nbsp;&nbsp;&nbsp;<a href="#" target="_blank">www.reddit.com</a></div>
 			</div>
 		</div>
@@ -122,10 +122,7 @@
     <script type="text/javascript">
 
       jQuery(document).ready(function() {
-        jQuery('#mycarousel').jcarousel({
-          wrap: 'circular',
-         scroll: 5
-        });
+        
 		
 		 jQuery( "#tabs" ).tabs({
 		beforeLoad: function( event, ui ) {

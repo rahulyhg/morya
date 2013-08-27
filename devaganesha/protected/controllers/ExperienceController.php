@@ -60,9 +60,9 @@ class ExperienceController extends AppController
 
     public function actionExpview()
     {
-        if($_REQUEST['exp_title'] != '')
+        if($_REQUEST['slug'] != '')
         {
-            $model=Experience::model()->with('node')->findByAttributes(array('slug'=>$_REQUEST['exp_title']));
+            $model=Experience::model()->with('node')->findByAttributes(array('slug'=>$_REQUEST['slug']));
            // $elements=Experience::model()->findAll();
 		   $newComment = new Comment() ;
         	$newComment->node_id = $model->node_id ;
@@ -155,7 +155,7 @@ class ExperienceController extends AppController
 			$model->attributes=$_POST['Experience'];
 			$model->text = htmlentities($model->text, ENT_COMPAT, "UTF-8");
 			if($model->save())
-				$this->redirect(array('expview','exp_title'=>$model->slug));
+				$this->redirect(array('expview','slug'=>$model->slug));
 		}
 
 		$this->render('update',array(

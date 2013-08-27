@@ -57,13 +57,7 @@
 				<div class="title-bar"><strong>Navasache Ganpati (Wish fulfilling ganesha)</strong></div>
                 <div>
                   <ul id="mycarousel" class="jcarousel-skin-tango">
-				  <?php foreach($elementsList1 as $temple){ ?>
-                    <li><a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>">
-					<img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Mini] . $temple->main_pic->file_name; ?>" width="75" height="75" alt="" /></a>
-					<a href="<?php echo Yii::app()->createUrl('temple/templeview',array('temple_name'=>$temple->slug))?>"><?php echo $temple->name;?></a>
-					</li>
-					<?php } ?>
-                 
+				 
 				 </ul>
                </div>
             </div>
@@ -235,31 +229,43 @@
                         }
                     });	 */
 					$('#small-pin-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:8% 45%;"/>');
-			  $.ajax({
-                        url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
-						
-                        success: function(data) {
-							$('#small-pin-container').html(data);
-							$('#small-pin-container').masonry({
-							  itemSelector: '.small-pin',
-							  isFitWidth: true
+					  $.ajax({
+								url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
+								
+								success: function(data) {
+									$('#small-pin-container').html(data);
+									$('#small-pin-container').masonry({
+									  itemSelector: '.small-pin',
+									  isFitWidth: true
+									});	
+								}
 							});	
-                        }
-                    });	
 					
-						$(function() {
-			$('#slider').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 20%;"/>');
-			  $.ajax({
-                        url: "<?php echo Yii::app()->createUrl("site/LoadSlider"); ?>",
-						
-                        success: function(data) {
-							$('#slider').html(data);
-							$('#slider').AnySlider({
-								animation: 'fade',
-								interval: 3000
-							});
-                        }
-                    });	
-			});
-			});
+					
+					$('#slider').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 20%;"/>');
+					  $.ajax({
+								url: "<?php echo Yii::app()->createUrl("site/LoadSlider"); ?>",
+								
+								success: function(data) {
+									$('#slider').html(data);
+									$('#slider').AnySlider({
+										animation: 'fade',
+										interval: 3000
+									});
+								}
+							});	
+					$('#mycarousel').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:2% 45%;"/>');
+					  $.ajax({
+								url: "<?php echo Yii::app()->createUrl("site/gettemple"); ?>",
+								
+								success: function(data) {
+									$('#mycarousel').html(data);
+									jQuery('#mycarousel').jcarousel({
+									  wrap: 'circular',
+									 scroll: 5
+									});
+								}
+							});	
+				
+					});
 		</script>

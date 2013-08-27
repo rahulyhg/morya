@@ -685,3 +685,10 @@ float:left;
 .each-mail{
 width:25%;
 }
+
+.title-head{
+text-align:center;
+color:#8BC9EE;
+font-size:36px;
+margin:10px;
+}

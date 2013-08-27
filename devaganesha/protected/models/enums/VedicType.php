@@ -11,5 +11,7 @@ class VedicType{
          self::Atharva => 'Atharva shirsha',
          self::Pooja => 'Uttar Pooja',
      );
+	 
+	 public static $godnames = array('ganesh'=>'Shree ganesh','Shiva'=>'Shiv Shankar','vitthal'=>'Shree Vitthal','krishna'=>'Shree krishna','vishnu'=>'Vishu','devi'=>'shree Devi','saibaba'=>'Saibaba','datta'=>'Shree Dutta');
 }
 ?>

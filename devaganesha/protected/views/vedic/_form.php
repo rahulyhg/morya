@@ -11,7 +11,7 @@
 
 	<div class="controls">
 		<?php echo $form->labelEx($model,'name_of_god'); ?>
-		<?php echo $form->textField($model,'name_of_god',array('maxlength'=>255,'class'=>'span12 ')); ?>
+		<?php echo $form->dropDownList($model,'name_of_god',VedicType::$godnames); ?>
 		<?php echo $form->error($model,'name_of_god'); ?>
 	</div>
 
