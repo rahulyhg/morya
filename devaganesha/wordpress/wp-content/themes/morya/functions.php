@@ -30,11 +30,14 @@ add_action( 'widgets_init', 'arphabet_widgets_init' );
 add_action( 'save_post', 'morya_create_node' );
 
 function morya_create_node( $post_id ) {
+   if ( 'page' == $_POST['post_type'] ||  'post' == $_POST['post_type']) 
+   {
 	//verify post is not a revision
 		$node = new Node ;
 		$node->type = NodeType::Post ;
 		$node->user_id = 0 ;
 		if($node->save())
 			add_post_meta($post_id, 'node_id',$node->id, true);
+	}
 		
 }

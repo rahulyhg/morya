@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Devaganesha.com</title>
+    <title><?php echo Yii::app()->controller->pageTitle != '' ? Yii::app()->controller->pageTitle :  Yii::app()->name . wp_title('-',false,'left') ; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">

@@ -2,6 +2,9 @@
 $this->breadcrumbs=array(
     VedicType::$heading[$vedicType] => array('vedic/vedic',array('vedicType'=>$vedicType))
 );
+
+$this->setPageTitle('All Aarti Mantra Shlokas for Lord Ganesha');
+Yii::app()->clientScript->registerMetaTag('Get all the Aarti Mantra Shlokas for Ganesh Utsav.', 'description');
 ?>
 
     <div class="title-bar">&nbsp;<?php echo VedicType::$heading[$vedicType];?></div>
