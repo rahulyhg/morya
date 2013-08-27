@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Temples'=>array('index'),
+	TempleType::$heading[$model->type]=>array('index','type'=>$model->type),
 	'Create',
 );
 

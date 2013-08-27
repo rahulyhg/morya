@@ -1,3 +1,10 @@
+<?php
+$this->breadcrumbs=array(
+	'Ganesh Photos'=>array('index'),
+	$photo->caption
+);
+?>
+
 		<?php 	if(Yii::app()->user->isGuest){ ?>
 				<div class="non-user-upld"><a href="<?php echo Yii::app()->createUrl('user/login',array('rurl'=>$_SERVER['REQUEST_URI'])); ?>"><div class="qq-upload-button">Upload Your ganesha</div></a></div>
 		<?php	}else{

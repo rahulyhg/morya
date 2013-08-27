@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Temples'=>array('index'),
-	$model->name=>array('view','id'=>$model->id),
+	TempleType::$heading[$model->type]=>array('index','type'=>$model->type),
+	$model->name=>array('templeview','slug'=>$model->slug),
 	'Update',
 );
 

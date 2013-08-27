@@ -2,6 +2,7 @@
 $this->breadcrumbs=array(
     VedicType::$heading[$vedicType] => array('vedic/vedic',array('vedicType'=>$vedicType))
 );
+
 ?>
 
     <div class="title-bar">&nbsp;<?php echo VedicType::$heading[$vedicType];?></div>
@@ -12,12 +13,12 @@ $this->breadcrumbs=array(
 	
     ?>
 		<div class="cont-disp">
-            <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'slug'=>$vedic->slug))?>"><?php echo $vedic->title;?>(<?php echo $vedic->name_of_god;?>)</a>
+            <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('slug'=>$vedic->slug))?>"><?php echo $vedic->title;?>(<?php echo $vedic->name_of_god;?>)</a>
             </div>
 			
 			<div class="mt10"><strong>Posted on : <?php echo $vedic->node->created; ?> | author : <?php echo $vedic->node->creator->name; ?></strong></div>
             <div class="blog-content"><?php echo html_entity_decode($vedic->text, ENT_COMPAT, "UTF-8");?></div>
-           <div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('type'=>$vedic->type,'slug'=>$vedic->slug))?>">Leave reply </a></span>
+           <div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('slug'=>$vedic->slug))?>">Leave reply </a></span>
 		   </div>
             <div class="clear"></div>
           </div>

@@ -1,13 +1,14 @@
 <?php
-$this->breadcrumbs=array(
-	'Temples',
-);
 $head = TempleType::$heading[$templeType];
+$this->breadcrumbs=array(
+	$head,
+);
+
 ?>
 
-    <div class="title-bar">&nbsp;<?php echo $head ;?></div>
+    <div class="title-head"><?php echo $head ;?></div>
 	<div class="btn"><?php echo CHtml::link("Add new $head ",array('create','type'=>$templeType));?></div>
-	<div class="clear"></div>
+	<div class="clear mt10"></div>
     <?php 
 	$i = 1;
 	foreach($elementsList as $temple){
