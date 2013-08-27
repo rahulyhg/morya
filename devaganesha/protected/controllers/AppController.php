@@ -3,7 +3,7 @@
 class AppController extends Controller
 {
 	//public $layout='//layouts/layout_2C';
-	
+	public $breadcrumbs ;
 	public function filters()
 	{
 		return array(
