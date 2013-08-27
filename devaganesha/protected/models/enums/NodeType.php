@@ -13,7 +13,7 @@ class NodeType{
          self::Temple => 'Temple',
          self::Experience => 'Experience',
 		 self::Recipe => 'Recipe',
-		 self::Post => 'Post',
+		 self::Post => 'News & Blog',
      );	
 }
 ?>

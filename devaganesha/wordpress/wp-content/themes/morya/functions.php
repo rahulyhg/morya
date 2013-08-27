@@ -41,3 +41,40 @@ function morya_create_node( $post_id ) {
 	}
 		
 }
+
+add_action( 'admin_init', 'morya_register_taxonomy_meta_boxes' );
+function morya_register_taxonomy_meta_boxes()
+{
+	if ( !class_exists( 'RW_Taxonomy_Meta' ) )
+		return;
+	$meta_sections = array();
+	$meta_section = array(
+		'title'      => 'Node',             // section title
+		'taxonomies' => array('category'), // list of taxonomies. Default is array('category', 'post_tag'). Optional
+		'id'         => 'node',                 // ID of each section, will be the option name
+
+		'fields' => array(                             // List of meta fields
+			array(
+				'name'    => 'Node Type',
+				'id'      => 'node_type',
+				'type'    => 'select',
+				'options' => NodeType::$heading,
+			),
+
+		),
+	);
+	new RW_Taxonomy_Meta($meta_section);
+}
+
+function get_cat_by_node($node_type){
+	$categories = get_categories();
+	foreach($categories as $cat)
+	{
+		$meta = get_option('node');
+		if (empty($meta)) $meta = array();
+		if (!is_array($meta)) $meta = (array) $meta;
+		$meta = isset($meta[$cat->term_id]) ? $meta[$cat->term_id] : array();
+		$value = $meta['node_type'];
+		if($value == $node_type) return $cat ; //returns the category object itself
+	}
+}
