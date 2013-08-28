@@ -12,18 +12,30 @@ get_sidebar('left');
 
 
 <div class="span6">
-	<div class="title-bar"><?php echo the_title() ; ?></div>
+	<div class="title-head"><?php echo the_title() ; ?></div>
 <?php
 if(have_posts()) :
 	while(have_posts()) : the_post();
 ?>	
 	<div class="blogs">
-		<div>
-			<img src="<?php echo get_template_directory_uri(); ?>/img/gan1.png" class="fl mr10" />
-					<p class="fnt24 mt5"><a href="<?php echo the_permalink() ; ?>"><b><?php echo the_title() ; ?></b></a></p>
-					<p>Posted on: <?php the_time(); ?> | author: <?php the_author();?></p>
+		<div style="border-bottom:1px solid #cccccc;">
+			<div class="addthis_toolbox addthis_default_style addthis_32x32_style fl">
+				<a class="addthis_button_facebook"></a>
+			<a class="addthis_button_twitter"></a>
+			<a class="addthis_button_pinterest_share"></a>
+			<a class="addthis_button_email"></a>
+			<a class="addthis_button_compact"></a>
+			<a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
+		<div class="fr">
+			<div><strong>Posted on : <?php the_date(); ?></strong></div>
+			<div><strong>author : <?php the_author();?></strong></div>
 		</div>
 		<div class="clear"></div>
+		</div>
+		
 		<div class="blog-content">
 			<?php the_content(); ?>
 		</div>

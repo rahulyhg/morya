@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 ?>
 
 
-    <div class="title-bar">Ganesh Mahima</div>
+    <div class="title-head">Ganesh Mahima</div>
 	<div class="btn"><?php echo CHtml::link($linkhead,array('create','type'=>$type));?></div>
     <?php foreach($elementsList as $exp){
 

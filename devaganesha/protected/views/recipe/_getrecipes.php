@@ -1,14 +1,4 @@
-<?php
-$this->breadcrumbs=array(
-	'Recipes',
-);
-
-?>
-
-
-    <div class="title-head">&nbsp;Recipe's</div>
-	<div class="btn"><?php echo CHtml::link("Add new recipe",array('create'));?></div>
-    <?php foreach($elementsList as $recipe){
+<?php foreach($recipes as $recipe){
     //$user_name = User::model()->findByPk($recipe->user_id);
     //$pri_pic = Photo::model()->findByPk($recipe->primary_pic);
 //echo $recipe->prime->file_name;
@@ -44,12 +34,3 @@ $this->breadcrumbs=array(
 
     </div>
     <?php }?>
-	
-	<div class="mt10">
-	<?php $this->widget('CLinkPager', array(
-		'pages' => $pages,
-	)) ?>
-	</div>
-
-
-

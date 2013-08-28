@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui-1.10.2.custom.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.jscrollpane.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery-anyslider.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.countdown.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen"  />
 	 <style>
       body {
@@ -37,7 +38,7 @@
     <div class="container-fluid">
             <div class="row-fluid">
       <div class="span3 logo"><a href="<?php echo Yii::app()->createUrl('site/index');?>"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="height:70px;" alt="logo" /></a></div>
-    <div class="span6 mt10">
+    <div class="fl mt10">
     <ul class="menu">
       <li><div class="menu-single"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>" class="menu-item"><div class="aarti"></div><div class="tac">Aarti</div></a></div></li>
       <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('photo/index');?>" class="menu-item"><div class="photo"></div><div class="tac">Photo</div></a></div></li>
@@ -46,8 +47,14 @@
       <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>" class="menu-item"><div class="recipe"></div><div class="tac">Recipe</div></a></div></li>
             <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('site/myganesha');?>" class="menu-item"><div class="myganesha"></div><div class="tac">My ganesha</div></a></div></li>
     </ul>
-    </div>  
-<div class="span3 mt10">
+    </div>
+	<div class="fl countdwn">
+	<div >Countdown begins ...</div>	
+		<div id="countdown">
+	
+		</div>
+	</div>
+<div class="fr mt10">
 	<?php Yii::app()->controller->widget('UserInfo'); ?>
        <div class="clear"></div>
       <div class="pt5 fr visible-desktop">

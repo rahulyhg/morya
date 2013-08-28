@@ -6,9 +6,9 @@
 
  <div class="span6">
   	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+		<div class="title-bar"><?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
+		)); ?></div><!-- breadcrumbs -->
 	<?php endif?>
         <?php
              // echos Yii content

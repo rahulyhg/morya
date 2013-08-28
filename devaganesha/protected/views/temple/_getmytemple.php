@@ -1,21 +1,6 @@
-<?php
-$head = TempleType::$heading[$templeType];
-$this->breadcrumbs=array(
-	$head,
-);
-
-?>
-	<div>
-		<div class="title-head"><?php echo $head ;?></div>
-		<div class="fr">
-		<div>You can add <?php echo $head;?> here.</div>
-		<div class="btn"><?php echo CHtml::link("Add new $head ",array('create','type'=>$templeType));?></div>
-		</div>
-		<div class="clear"></div>
-    </div>
-	<?php 
+    <?php 
 	$i = 1;
-	foreach($elementsList as $temple){
+	foreach($temples as $temple){
 	$singleurl = Yii::app()->createUrl('temple/templeview',array('slug'=>$temple->slug));
     ?>
     <div class="each-temple">
@@ -38,9 +23,3 @@ $this->breadcrumbs=array(
 	} ?>
 	
 	 <div class="clear"></div>
-	 
-	 <div class="mt10">
-	<?php $this->widget('CLinkPager', array(
-		'pages' => $pages,
-	)) ?>
-	</div>
