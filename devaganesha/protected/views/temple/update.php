@@ -7,6 +7,6 @@ $this->breadcrumbs=array(
 
 ?>
 
-<div class="title-bar">Edit <?php echo $model->name; ?></div>
-
+<div class="title-head">Edit <?php echo $model->name; ?></div>
+<hr/>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

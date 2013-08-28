@@ -38,6 +38,20 @@ $this->breadcrumbs=array(
 <div class="row-fluid mt10">
 <div class="span8">
 <div class="photo-opt">
+
+			<!-- AddThis Button BEGIN -->
+	<div class="addthis_toolbox addthis_default_style addthis_32x32_style fl">
+		<a class="addthis_button_facebook"></a>
+	<a class="addthis_button_twitter"></a>
+	<a class="addthis_button_pinterest_share"></a>
+	<a class="addthis_button_email"></a>
+	<a class="addthis_button_compact"></a>
+	<a class="addthis_counter addthis_bubble_style"></a>
+	</div>
+	<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
+<!-- AddThis Button END -->
+	
     <div id="modak-rating" title="Feed modak to ganpati">
 	<?php
 		$this->widget('CStarRating',array(
@@ -78,18 +92,7 @@ $this->breadcrumbs=array(
 	<span class="share32 st"></span>
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
 	</div> -->
-	<!-- AddThis Button BEGIN -->
-	<div class="addthis_toolbox addthis_default_style addthis_32x32_style fl">
-		<a class="addthis_button_facebook"></a>
-	<a class="addthis_button_twitter"></a>
-	<a class="addthis_button_pinterest_share"></a>
-	<a class="addthis_button_email"></a>
-	<a class="addthis_button_compact"></a>
-	<a class="addthis_counter addthis_bubble_style"></a>
-	</div>
-	<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
-<!-- AddThis Button END -->
+
 	<div class="fl">
 
 	<div class="btn fav-main"><div class="<?php echo $classname;?>" id="fav-block" title="<?php echo $titlefav;?>"></div></div>

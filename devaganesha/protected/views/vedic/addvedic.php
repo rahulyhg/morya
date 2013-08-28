@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-    VedicType::$heading[$vedicType] => array('vedic/vedic',array('vedicType'=>$vedicType)),
-	'add',
+    VedicType::$heading[$vedicType] => array('vedic','type'=>$vedicType),
+	'add'
 );
 
 ?>
 
-<div class="title-bar">Add your new <?php echo VedicType::$heading[$vedicType];?></div>
-
+<div class="title-head">Add <?php echo VedicType::$heading[$vedicType];?></div>
+<hr/>
 <?php echo $this->renderPartial('_form', array('model'=>$model ,'vedicType'=>$vedicType)); ?>

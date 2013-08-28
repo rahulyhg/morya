@@ -1,18 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Experiences'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
+	 MahimaType::$heading[$model->type]=>array('index','type'=>$model->type),
+	$model->title=>array('expview','slug'=>$model->slug),
 	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Experience', 'url'=>array('index')),
-	array('label'=>'Create Experience', 'url'=>array('create')),
-	array('label'=>'View Experience', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Experience', 'url'=>array('admin')),
 );
 ?>
 
-<div class="title-bar">Edit - <?php echo $model->title;?></div> 
-
+<div class="title-head">Edit - <?php echo $model->title;?></div> 
+<hr/>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

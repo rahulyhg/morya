@@ -6,14 +6,26 @@ $this->breadcrumbs=array(
 ?>
 
 
-    <div class="title-head"><?php echo $model->name;?></div>
-
-		<div class="mt10"><strong>Posted on : <?php echo $model->node->created; ?> | author : <?php echo $model->node->creator->name; ?></strong></div>
-		 <div>
-	<?php if($model->node->user_id == Yii::app()->user->id){?>
-			<span><a href="<?php echo Yii::app()->createUrl('temple/update',array('id'=>$model->id));?>">Edit</a></span>
-		   <?php } ?>
+    <div class="title-head" style="text-align:center;"><?php echo $model->name;?></div>
+	<div class="clear"></div>
+		<div class="mt10">
+		<div class="addthis_toolbox addthis_default_style addthis_32x32_style fl">
+			<a class="addthis_button_facebook"></a>
+		<a class="addthis_button_twitter"></a>
+		<a class="addthis_button_pinterest_share"></a>
+		<a class="addthis_button_email"></a>
+		<a class="addthis_button_compact"></a>
+		<a class="addthis_counter addthis_bubble_style"></a>
 		</div>
+	<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script>
+		<div class="fr">
+			<div><strong>Posted on : <?php echo  date('d M, Y',strtotime($model->node->created)); ?></strong></div>
+			<div><strong>author : <?php echo $model->node->creator->name; ?></strong></div>
+		</div>
+		<div class="clear"></div>
+		</div>
+		<hr/>
         <div class="mt10" style="text-align:center;">
             <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->main_pic->file_name; ?>" height="200px" width="200px"/>
          </div>

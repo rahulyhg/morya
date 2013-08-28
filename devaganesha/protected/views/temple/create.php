@@ -6,6 +6,6 @@ $this->breadcrumbs=array(
 
 ?>
 
-<div class="title-bar">Add New <?php echo TempleType::$heading[$templeType];?> Here</div>
-
+<div class="title-head">Add <?php echo TempleType::$heading[$templeType];?></div>
+<hr/>
 <?php echo $this->renderPartial('_form', array('model'=>$model,'templeType'=>$templeType)); ?>

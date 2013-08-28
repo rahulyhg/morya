@@ -744,7 +744,7 @@ button.ui-button::-moz-focus-inner {
 	border-bottom-width: 0;
 	padding: 0;
 	white-space: nowrap;
-	width: 31%;
+	/*width: 31%;*/
 }
 .ui-tabs .ui-tabs-nav li a {
 	float: left;
@@ -803,9 +803,10 @@ body .ui-tooltip {
 	/* background: #000000 url(images/ui-bg_loop_25_000000_21x21.png) 50% 50% repeat; */
 	color: #444444;
 }
+/*
 .ui-widget-content a {
 	color: #ffffff;
-}
+}*/
 .ui-widget-header {
 	border: 1px solid #e1e1e1;
 	/*background: #444444 url(images/ui-bg_highlight-soft_44_444444_1x100.png) 50% 50% repeat-x; */

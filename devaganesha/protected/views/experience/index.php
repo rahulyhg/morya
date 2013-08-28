@@ -1,13 +1,16 @@
 <?php
-$this->breadcrumbs=array(
-	'Experiences',
-);
 $linkhead = MahimaType::$heading[$type];
+$this->breadcrumbs=array(
+	$linkhead
+);
+
 ?>
 
 
-    <div class="title-bar">Ganesh Mahima</div>
-	<div class="btn"><?php echo CHtml::link($linkhead,array('create','type'=>$type));?></div>
+    <div class="title-head">Ganesh Mahima</div>
+	<div class="btn fr"><?php echo CHtml::link($linkhead,array('create','type'=>$type));?></div>
+	<div class="clear"></div>
+	<hr/>
     <?php foreach($elementsList as $exp){
 
     ?>

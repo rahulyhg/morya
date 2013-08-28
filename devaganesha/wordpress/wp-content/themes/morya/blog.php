@@ -12,7 +12,7 @@ get_sidebar('left');
 
 
 <div class="span6">
-	<div class="title-bar">Blogs</div>
+	<div class="title-head">Blogs</div>
 <?php
 query_posts('showposts=10');
 if(have_posts()) :

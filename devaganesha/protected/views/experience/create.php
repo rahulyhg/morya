@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Experiences'=>array('index'),
+	MahimaType::$heading[$type]=>array('index','type'=>$type),
 	'Create',
 );
 
@@ -9,6 +9,6 @@ $this->menu=array(
 );
 ?>
 
-<div class="title-bar"><?php echo MahimaType::$heading[$type]; ?></div>
-
+<div class="title-head"><?php echo MahimaType::$heading[$type]; ?></div>
+<hr/>
 <?php echo $this->renderPartial('_form', array('model'=>$model,'type'=>$type)); ?>

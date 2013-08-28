@@ -1,15 +1,16 @@
 <?php
 $this->breadcrumbs=array(
-    VedicType::$heading[$vedicType] => array('vedic/vedic',array('vedicType'=>$vedicType))
+    VedicType::$heading[$vedicType]
 );
 
 $this->setPageTitle('All Aarti Mantra Shlokas for Lord Ganesha');
 Yii::app()->clientScript->registerMetaTag('Get all the Aarti Mantra Shlokas for Ganesh Utsav.', 'description');
 ?>
 
-    <div class="title-bar">&nbsp;<?php echo VedicType::$heading[$vedicType];?></div>
-    <div class="btn"><?php echo CHtml::link("Add New ".VedicType::$heading[$vedicType],array('addvedic','type'=>$vedicType));?></div>
-
+    <div class="title-head">&nbsp;<?php echo VedicType::$heading[$vedicType];?></div>
+    <div class="btn fr"><?php echo CHtml::link("Add New ".VedicType::$heading[$vedicType],array('addvedic','type'=>$vedicType));?></div>
+	<div class="clear"></div>
+	<hr/>
         <?php foreach($elementsList as $vedic){
     //$uname = User::model()->findByPk($vedic->user_id);
 	

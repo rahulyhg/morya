@@ -90,10 +90,7 @@ class SiteController extends AppController
 	}
 	
 		public function actionMyganesha(){
-		
-		
-		
-		
+
 		if(empty($_GET['id']))
 		{
 			if(Yii::app()->user->isGuest)
@@ -104,44 +101,19 @@ class SiteController extends AppController
 		}else{
 			$chkid = $_GET['id'];
 		}
-
+		
+		$user = User::model()->findByPk($chkid);
+		//print_r($user);
 		$criteria=new CDbCriteria;
 		$criteria->with = array('node');
 		$criteria->order = 'node.created DESC';
 		$criteria->compare('node.user_id',$chkid);
 		$criteria->compare('t.type',PhotoUploadCategory::Normal,'AND');
 		$photos = Photo::model()->findAll($criteria);//->with('comments')
-		
-		$criteria1=new CDbCriteria;
-		$criteria1->with = array('node');
-		$criteria1->order = 'node.created DESC';
-		$criteria1->compare('node.user_id',$chkid);
-		$recipes = Recipe::model()->findAll($criteria1);//->with('comments')
-		
-		$criteria2=new CDbCriteria;
-		$criteria2->with = array('node');
-		$criteria2->order = 'node.created DESC';
-		$criteria2->compare('node.user_id',$chkid);
-		$temples = Temple::model()->findAll($criteria2);//->with('comments')
-		
-		$criteria3=new CDbCriteria;
-		$criteria3->with = array('node');
-		$criteria3->order = 'node.created DESC';
-		$criteria3->compare('node.user_id',$chkid);
-		$vedics = Vedic::model()->findAll($criteria3);//->with('comments')
-		
-		$criteria4=new CDbCriteria;
-		$criteria4->with = array('node');
-		$criteria4->order = 'node.created DESC';
-		$criteria4->compare('node.user_id',$chkid);
-		$experiences = Experience::model()->findAll($criteria3);//->with('comments')
-		
+				
 	   $this->render('myganesha',array(
 		  'photos'=>$photos,
-		  'recipes'=>$recipes,
-		  'temples'=>$temples,
-		 'vedics'=>$vedics,
-		 'experiences'=>$experiences,
+		  'user'=>$user,
 	   ));
 	}
 
@@ -253,8 +225,92 @@ class SiteController extends AppController
 		 $criteria1->with = array('node','main_pic');
 		 $criteria1->order = 'node.created DESC';
 		 $criteria1->compare('t.type',TempleType::Temple);
-		 $elementsList1=Temple::model()->findAll($criteria);//->with('comments')
-		echo $resp = $this->renderPartial('_templecor',array('elementsList1'=>$elementsList1,));
+		 $elementsList1=Temple::model()->findAll($criteria1);//->with('comments')
+		echo $resp = $this->renderPartial('_templecor',array('elementsList1'=>$elementsList1));
+	}
+	
+	public function actionGetvedic()
+	{
+		if(empty($_GET['id']))
+		{
+			if(Yii::app()->user->isGuest)
+			{
+				$this->redirect(array('user/login'));
+			}
+			$chkid = Yii::app()->user->Id;
+		}else{
+			$chkid = $_GET['id'];
+		}
+		$criteria3=new CDbCriteria;
+		$criteria3->with = array('node');
+		$criteria3->order = 'node.created DESC';
+		$criteria3->compare('node.user_id',$chkid);
+		$vedics = Vedic::model()->findAll($criteria3);//->with('comments')
+		echo $resp = $this->renderPartial('_getvedic',array('vedics'=>$vedics));
+		
+	}
+	
+	public function actionGetmytemple()
+	{
+		if(empty($_GET['id']))
+		{
+			if(Yii::app()->user->isGuest)
+			{
+				$this->redirect(array('user/login'));
+			}
+			$chkid = Yii::app()->user->Id;
+		}else{
+			$chkid = $_GET['id'];
+		}
+		$criteria2=new CDbCriteria;
+		$criteria2->with = array('node');
+		$criteria2->order = 'node.created DESC';
+		$criteria2->compare('node.user_id',$chkid);
+		$temples = Temple::model()->findAll($criteria2);//->with('comments')
+		echo $resp = $this->renderPartial('//temple/_getmytemple',array('temples'=>$temples));
+		
+	}
+	
+	public function actionGetrecipe()
+	{
+		if(empty($_GET['id']))
+		{
+			if(Yii::app()->user->isGuest)
+			{
+				$this->redirect(array('user/login'));
+			}
+			$chkid = Yii::app()->user->Id;
+		}else{
+			$chkid = $_GET['id'];
+		}
+		$criteria1=new CDbCriteria;
+		$criteria1->with = array('node');
+		$criteria1->order = 'node.created DESC';
+		$criteria1->compare('node.user_id',$chkid);
+		$recipes = Recipe::model()->findAll($criteria1);//->with('comments')
+		echo $resp = $this->renderPartial('//recipe/_getrecipes',array('recipes'=>$recipes));
+		
+	}
+	
+	public function actionGetexp()
+	{
+		if(empty($_GET['id']))
+		{
+			if(Yii::app()->user->isGuest)
+			{
+				$this->redirect(array('user/login'));
+			}
+			$chkid = Yii::app()->user->Id;
+		}else{
+			$chkid = $_GET['id'];
+		}
+		$criteria4=new CDbCriteria;
+		$criteria4->with = array('node');
+		$criteria4->order = 'node.created DESC';
+		$criteria4->compare('node.user_id',$chkid);
+		$experiences = Experience::model()->findAll($criteria4);//->with('comments')
+		echo $resp = $this->renderPartial('_getexp',array('experiences'=>$experiences));
+		
 	}
 	
 	public function actionTopmakhar()

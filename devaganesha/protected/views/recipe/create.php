@@ -8,6 +8,6 @@ $this->menu=array(
     );
 ?>
 
-<div class="title-bar">Add Your recipe</div>
-
+<div class="title-head">Add recipe</div>
+<hr/>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

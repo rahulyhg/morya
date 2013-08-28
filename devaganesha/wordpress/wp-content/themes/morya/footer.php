@@ -97,6 +97,7 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.jscrollpane.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/tinymce/tinymce.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.anyslider.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.countdown.min.js"></script>
 	
 
 
@@ -125,6 +126,16 @@
         
 		
 		 jQuery( "#tabs" ).tabs({
+		beforeLoad: function( event, ui ) {
+		ui.jqXHR.error(function() {
+		ui.panel.html(
+		"Couldn't load this tab. We'll try to fix this as soon as possible. " +
+		"If this wouldn't be a demo." );
+		});
+		}
+		});
+		
+		jQuery( "#newtabs" ).tabs({
 		beforeLoad: function( event, ui ) {
 		ui.jqXHR.error(function() {
 		ui.panel.html(
@@ -411,7 +422,8 @@
                     });
 				}
 		  });
-		  
+		  var cdate = new Date(2013, 8 , 9);//alert(cdate);
+		  $('#countdown').countdown({until: cdate}); 
       });
   </script>
 		<script type="text/javascript">
