@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Experiences'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
+	 MahimaType::$heading[$model->type]=>array('index','type'=>$model->type),
+	$model->title=>array('expview','slug'=>$model->slug),
 	'Update',
 );
 

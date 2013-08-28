@@ -191,6 +191,10 @@ class UserController extends AppController
 			}
 			
 		}
+		//$this->pageTitle=Yii::app()->name . ' - Login';
+	$this->breadcrumbs=array(
+	'Login',
+); 
 		// display the login form
 		$this->render('login',array('model'=>$model));
 	}

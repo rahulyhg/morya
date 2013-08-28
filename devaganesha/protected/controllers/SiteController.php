@@ -253,7 +253,7 @@ class SiteController extends AppController
 		 $criteria1->with = array('node','main_pic');
 		 $criteria1->order = 'node.created DESC';
 		 $criteria1->compare('t.type',TempleType::Temple);
-		 $elementsList1=Temple::model()->findAll($criteria);//->with('comments')
+		 $elementsList1=Temple::model()->findAll($criteria1);//->with('comments')
 		echo $resp = $this->renderPartial('_templecor',array('elementsList1'=>$elementsList1,));
 	}
 	

@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-    'Experiences'=>array('index'),
+    MahimaType::$heading[$model->type]=>array('index','type'=>$model->type),
     $model->title,
 );
 $this->menu=array(

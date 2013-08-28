@@ -1,9 +1,4 @@
-<?php
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
-?>
+
 <?php if(Yii::app()->user->hasFlash('success')):?>
     <div class="info">
         <?php echo Yii::app()->user->getFlash('success'); ?>

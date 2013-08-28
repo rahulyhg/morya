@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Experiences'=>array('index'),
+	MahimaType::$heading[$type]=>array('index','type'=>$type),
 	'Create',
 );
 

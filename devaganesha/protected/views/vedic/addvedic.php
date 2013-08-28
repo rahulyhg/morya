@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-    VedicType::$heading[$vedicType] => array('vedic/vedic',array('vedicType'=>$vedicType)),
-	'add',
+    VedicType::$heading[$vedicType] => array('vedic','type'=>$vedicType),
+	'add'
 );
 
 ?>

@@ -1,8 +1,9 @@
 <?php
-$this->breadcrumbs=array(
-	'Experiences',
-);
 $linkhead = MahimaType::$heading[$type];
+$this->breadcrumbs=array(
+	$linkhead
+);
+
 ?>
 
 

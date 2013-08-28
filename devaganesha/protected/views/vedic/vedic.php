@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-    VedicType::$heading[$vedicType] => array('vedic/vedic',array('vedicType'=>$vedicType))
+    VedicType::$heading[$vedicType]
 );
 
 $this->setPageTitle('All Aarti Mantra Shlokas for Lord Ganesha');
