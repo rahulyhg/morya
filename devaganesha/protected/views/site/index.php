@@ -32,12 +32,12 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 					<div>
 						<p><img src="<?php echo get_template_directory_uri(); ?>/img/ganesh-mahima.png" class="fl mr10"/>
 							Get all aartis of Lord Ganesha.<br/>Do your own pooja according as per our tradition.<br/><br/>
-							<a href="#">Download Aarti mp3 and pdf &raquo;</a>
+							<a href="">All aarti's of ganesha &raquo;</a>
 						</p>
 					
 					</div>
-					<div class="mt10"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>">Assure success with god ganeshji's mantras</a></div>
-					<div><a href="<?php echo get_page_link(4); ?>">108 names of Lord Ganesha</a></div>
+					<div class="mt10"><a href="<?php echo Yii::app()->createUrl('vedic/vedic',array('type'=>VedicType::Mantra));?>">Assure success with god ganeshji's mantras</a></div>
+					<div><a href="<?php echo Yii::app()->createUrl('temple/index',array('type'=>TempleType::Temple))?>">Popular temples of lord ganesha</a></div>
 					<div><a href="<?php echo Yii::app()->createUrl('experience/index');?>">Read how kimaya gave birth to son after 10years</a></div>
 					</div>
 				</div>
@@ -47,12 +47,12 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 					<div>
 						<p><img src="<?php echo get_template_directory_uri(); ?>/img/modaks.png" class="fl mr10"/>
 							Try all recipes this ganesha festival.<br/>Also fine the prasad and naivaidyas for ganpati for all days.<br/>
-							<a href="#">Recipe &raquo;</a>
+							<a href="<?php echo Yii::app()->createUrl('recipe/index');?>">Recipe &raquo;</a>
 						</p>
 					
 					</div>
-					<div class="mt10"><a href="<?php echo Yii::app()->createUrl('vedic/vedic');?>">Modak recipe's in marathi, english, hindi</a></div>
-					<div><a href="">Order modaks online</a></div>
+					<div class="mt10"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>">Modak recipe's in marathi, english, hindi</a></div>
+					<div><a href="<?php echo Yii::app()->createUrl('temple/index',array('type'=>TempleType::Mandal))?>">Popular mandals in mumbai</a></div>
 					</div>
 				</div>
 				<div class="clear"></div>

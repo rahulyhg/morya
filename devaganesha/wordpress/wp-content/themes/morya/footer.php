@@ -34,7 +34,7 @@
 				<div><input type="text" name="getsub" id="getsub" class="span11"/></div>
 				<div class="getbox">Get !</div>
 				<div class="foot-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="width:220px;" alt="logo" /></div>
-				<div class="footer-link"><a href="<?php echo Yii::app()->createUrl('site/index'); ?>">home</a> | <a href="">about</a> | <a href="">sitemap</a> | <a href="<?php echo Yii::app()->createUrl('site/page',array('view'=>'photo')); ?>">rss</a></div>
+				<div class="footer-link"><a href="<?php echo Yii::app()->createUrl('site/index'); ?>">home</a> | <a href="<?php echo Yii::app()->createUrl('site/page',array('view'=>'about')); ?>">about</a> | <a href="<?php echo Yii::app()->createUrl('site/page',array('view'=>'sitemap')); ?>">sitemap</a> | <a href="<?php echo Yii::app()->createUrl('site/page',array('view'=>'photo')); ?>">rss</a></div>
 			</div>
 			<div class="fl footer-image visible-desktop"></div>
 			<div class="clear"></div>
