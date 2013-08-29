@@ -211,11 +211,11 @@ class SiteController extends AppController
 	public function actionTopwinner()
 	{
 		$criteria=new CDbCriteria;
-		$criteria->with = array('node');
+		$criteria->with = array('node','main_pic');
 		$criteria->order = 'node.created DESC';
-		$criteria->compare('t.type',PhotoUploadCategory::Normal);
+		$criteria->compare('t.type',TempleType::Mandal);
 		$criteria->limit = 10;
-		$photos = Photo::model()->findAll($criteria);
+		$photos = Temple::model()->findAll($criteria);
 		echo $resp = $this->renderPartial('_topwinner',array('photos'=>$photos,));
 	}
 	

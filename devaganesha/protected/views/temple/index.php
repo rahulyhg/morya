@@ -3,7 +3,8 @@ $head = TempleType::$heading[$templeType];
 $this->breadcrumbs=array(
 	$head,
 );
-
+$this->setPageTitle('All the Temples and Mandals of Lord ganesh.');
+Yii::app()->clientScript->registerMetaTag('Get the information about all the popular Temples and Mandals of lord ganesha all over the world. Ganesh mandals in mumbai, pune and all over maharashtra. Navsache ganpati wish full filling ganesh', 'description');
 ?>
 	<div>
 		<div class="title-head"><?php echo $head ;?></div>
@@ -21,7 +22,7 @@ $this->breadcrumbs=array(
     <div class="each-temple">
         <div class="fnt24" style="text-align:center;"><a href="<?php echo $singleurl;?>"><?php echo $temple->name;?></a></div>
         <div class="mt10" style="text-align:center;">
-             <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$temple->main_pic->file_name; ?>" />
+             <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$temple->main_pic->file_name; ?>" class="img-polaroid"/>
 		</div>
 		<div class="mt10"><?php echo substr(strip_tags(html_entity_decode($temple->description, ENT_COMPAT, "UTF-8")),0,50)." ... ";?><a href="<?php echo $singleurl;?>">Read More</a></div>
         <div><b>Established In : </b>&nbsp;<?php echo $temple->established;?></div>

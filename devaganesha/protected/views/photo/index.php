@@ -4,6 +4,9 @@
 $this->breadcrumbs=array(
 	'Ganesh Photos',
 );
+$this->setPageTitle('Pictures and wallpapers of Lord ganesh');
+Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganesh-photos. upload your ganesh photos. See the ganesh pictures from mumbai pune and all over the maharshtra.', 'description');
+
 			if(Yii::app()->user->isGuest){ ?>
 				<div class="non-user-upld"><a href="<?php echo Yii::app()->createUrl('user/login',array('rurl'=>$_SERVER['REQUEST_URI'])); ?>"><div class="qq-upload-button">Upload Your ganesha</div></a></div>
 		<?php	}else{

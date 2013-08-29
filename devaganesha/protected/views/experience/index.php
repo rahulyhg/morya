@@ -3,7 +3,8 @@ $linkhead = MahimaType::$heading[$type];
 $this->breadcrumbs=array(
 	$linkhead
 );
-
+$this->setPageTitle('Experiences and wishes from ganesh bhakts');
+Yii::app()->clientScript->registerMetaTag('See what are the experiences of people with ganesha and share your experince also. Make a wish to ganesha.');
 ?>
 
 

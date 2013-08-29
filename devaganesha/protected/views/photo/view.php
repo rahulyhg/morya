@@ -3,6 +3,9 @@ $this->breadcrumbs=array(
 	'Ganesh Photos'=>array('index'),
 	$photo->caption
 );
+
+$this->setPageTitle($photo->caption);
+Yii::app()->clientScript->registerMetaTag('Get all the collection of pictures and wallpapers of ganesh from all over the india.', 'description');
 ?>
 
 		<?php 	if(Yii::app()->user->isGuest){ ?>

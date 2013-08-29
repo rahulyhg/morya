@@ -38,7 +38,7 @@ class PhotoController extends AppController
         $criteria->with = array('node');
 		$criteria->order = 'node.created DESC';
 		$criteria->compare('t.type',PhotoUploadCategory::Normal);
-        $criteria->limit = 30;
+        $criteria->limit = 20;
 	
         $pages=new CPagination(Photo::model()->count($criteria));
 		$pages->pageSize=20;

@@ -4,7 +4,8 @@ $this->breadcrumbs=array(
     VedicType::$heading[$model->type]=>array('vedic','type'=>$model->type),
 	$model->title,
 );
-
+$this->setPageTitle($model->title." - ".$model->name_of_god);
+Yii::app()->clientScript->registerMetaTag('Get all the Aarti Mantra Shlokas for Ganesh Utsav.', 'description');
 
 ?>
     <div class="title-head"><?php echo $model->title;?></div>

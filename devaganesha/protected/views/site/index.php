@@ -1,3 +1,7 @@
+<?php
+$this->setPageTitle('Welcome to devaganesha.com');
+Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganesh-photos upload your ganesh photo Get Aarti Mantra Shlokas temple mandals recipes prasad  for Ganesh Utsav.', 'description');
+?>
 <div class="row-fluid">
       <div class="span9 grid-gal">
 			<div id="small-pin-container">
@@ -66,7 +70,7 @@
 			<div id="tabs">
 				<ul>
 				<li><a href="#tabs-1">Top 10 <br/>ganesh</a></li>
-				<li><a href="<?php echo Yii::app()->createUrl('site/topwinner');?>">Most<br/>Recent</a></li>
+				<li><a href="<?php echo Yii::app()->createUrl('site/topwinner');?>">Ganesh<br/>Mandals</a></li>
 				<li><a href="<?php echo Yii::app()->createUrl('site/topmakhar');?>">Most<br/>Viewed</a></li>
 				</ul>
 				
@@ -75,9 +79,9 @@
 						<div style="padding:10px;">
 						<?php foreach($photos as $photo){?>
 						<div class="each-ent">
-							<div class="fl"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Mini] . $photo->file_name ;?>" class="each-img" height="65" width="65"/></div>
+							<div class="fl"><a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>" ><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Mini] . $photo->file_name ;?>" class="each-img" height="65" width="65" /></a></div>
 							<div class="fl" style="width:180px;">
-								<div class="head-cont"><?php echo $photo->caption; ?></div>
+								<div class="head-cont"><a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>"><?php echo $photo->caption; ?></a></div>
 								<div class="addr-cont"><?php echo $photo->node->creator->name;?></div>
 								<div><a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$photo->slug)) ?>" class="view-photo">view photos &raquo;</a></div>
 							</div>
@@ -234,12 +238,15 @@
 								
 								success: function(data) {
 									$('#small-pin-container').html(data);
+									$('img').load(function() {
 									$('#small-pin-container').masonry({
 									  itemSelector: '.small-pin',
 									  isFitWidth: true
-									});	
+									});
+									});
+																
 								}
-							});	
+							});
 					
 					
 					$('#slider').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 20%;"/>');
