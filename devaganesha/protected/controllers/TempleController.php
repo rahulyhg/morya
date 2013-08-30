@@ -112,6 +112,7 @@ class TempleController extends AppController
 			$model->description = htmlentities($model->description, ENT_COMPAT, "UTF-8");
 			$model->how_to_go = htmlentities($model->how_to_go, ENT_COMPAT, "UTF-8");
 			$model->history = htmlentities($model->history, ENT_COMPAT, "UTF-8");
+			$model->type=$_POST['Temple']['type'];
 			
 			
 			if($node->validate())

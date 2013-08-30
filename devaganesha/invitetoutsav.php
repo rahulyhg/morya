@@ -23,9 +23,7 @@
                         <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody">
                             <tr>
                                 <td valign="top">
-                                    Mayuresh Naik wants you to visit <a href="http://www.devaganesha.com" target="_blank">www.devaganesha.com</a><br/>
-									It is the biggest site ever made on Lord Ganesh.<br/>
-									Visit site to get online darshan of bappa, aarti, temples and recipes.
+                                    Mayuresh Naik invited you to ganesh festival
                                 </td>
                             </tr>
                         </table>

@@ -689,6 +689,7 @@ width:25%;
 .title-head{
 text-align:center;
 color:#8BC9EE;
-font-size:36px;
-margin:10px;
+font-size:34px;
+line-height:34px;
+padding:10px 0;
 }

@@ -23,9 +23,8 @@
                         <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody">
                             <tr>
                                 <td valign="top">
-                                    Mayuresh Naik wants you to visit <a href="http://www.devaganesha.com" target="_blank">www.devaganesha.com</a><br/>
-									It is the biggest site ever made on Lord Ganesh.<br/>
-									Visit site to get online darshan of bappa, aarti, temples and recipes.
+                                    Since you have forgot your password we are sending you the link where you can reset your password.<br/>
+									Click on below to reset your password.
                                 </td>
                             </tr>
                         </table>
@@ -33,7 +32,7 @@
 						<table border="0" cellpadding="0" cellspacing="0" style="background-color:#0088cc; border-radius:5px;">
     <tr>
         <td align="center" valign="middle" style="color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;">
-            <a href="http://www.devaganesha.com/" target="_blank" style="color:#FFFFFF; text-decoration:none;">Visit site</a>
+            <a href="http://www.devaganesha.com/" target="_blank" style="color:#FFFFFF; text-decoration:none;">Reset Password</a>
         </td>
     </tr>
 </table>
