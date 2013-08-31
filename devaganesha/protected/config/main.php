@@ -160,10 +160,14 @@ return array(
 			'class'=>'ext.EPhpThumb.EPhpThumb',
 			'options'=>array('ar'=>'p')
 		),
+		
+		'swiftMailer' => array(
+			'class' => 'ext.swiftMailer.SwiftMailer',
+		),
 	),
 
 	// application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
+	// using Yii::app()->params['paramName'] (--thanks for this documentation :D -swapnil)
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'mail@itvedant.com',
