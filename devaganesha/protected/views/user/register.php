@@ -75,8 +75,8 @@ $this->breadcrumbs=array(
         <?php echo $form->error($model,'city'); ?>
     </div>
 
-    <div>
-        <?php echo CHtml::submitButton('Register',array('class'=>'btn')); ?>
+    <div class="mt10">
+        <?php echo CHtml::submitButton('Register',array('class'=>'btn btn-primary')); ?>
     </div>
 
     <?php $this->endWidget(); ?>

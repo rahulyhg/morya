@@ -1,12 +1,16 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - About';
+$this->setPageTitle('About');
 $this->breadcrumbs=array(
 	'About',
 );
 ?>
-<h1>About</h1>
+<div class="row-fluid">
+<div class="title-head">About</div>
+<hr/>
+<div class="mt10">
+First of all thank you all for being here. We hope you liked all the photos of ganesha.
+</div>
+</div>
 
-<p>This is a "static" page. You may change the content of this page
-by updating the file <code><?php echo __FILE__; ?></code>.</p>

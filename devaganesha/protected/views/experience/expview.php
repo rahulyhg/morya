@@ -3,7 +3,8 @@ $this->breadcrumbs=array(
     MahimaType::$heading[$model->type]=>array('index','type'=>$model->type),
     $model->title,
 );
-
+$this->setPageTitle($model->title);
+Yii::app()->clientScript->registerMetaTag('See what are the experiences of people with ganesha and share your experince also. Make a wish to ganesha and make your wish come true');
 ?>
 
 

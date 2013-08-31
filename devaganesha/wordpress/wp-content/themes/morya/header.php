@@ -49,7 +49,7 @@
     </ul>
     </div>
 	<div class="fl countdwn">
-	<div >Countdown begins ...</div>	
+	<div class="count-text">Ganesh chaturthi in</div>	
 		<div id="countdown">
 	
 		</div>

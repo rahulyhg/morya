@@ -4,9 +4,8 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'Experience', 'url'=>array('index')),
-);
+$this->setPageTitle('Add '.MahimaType::$heading[$type]);
+Yii::app()->clientScript->registerMetaTag('Share your experinces about ganesha. Make a wish to ganesha. Gansha fullfills your wish');
 ?>
 
 <div class="title-head"><?php echo MahimaType::$heading[$type]; ?></div>

@@ -105,16 +105,18 @@ class RecipeController extends AppController
 				 if ($success)
 				 {
 					$transaction->commit();
-					//Yii::app()->facebook->setFileUploadSupport(true);
-					//$img = PhotoType::$relativeFolderName[PhotoType::Screen].$photo->file_name;
-					/*Yii::app()->facebook->api(
-					  '/me/photos',
+					$url = $this->getUrlByNode($model->node_id);
+					$img = "www.";
+					Yii::app()->facebook->api(
+					  '/514147705313075/feed',
 					  'POST',
 					  array(
-						'source' => '@' . $img,
-						'message' => 'Photo uploaded via the DevaGanesha.com'
+						//'picture' => $img,
+						'message' => 'Get all the aartis, mantra, photos and wallpapers of Lord ganesha. Also upload your ganesha pic. Upload your recipe for prasad.',
+						'link'=>$url,
+						'access_token'=>urlencode('CAACEdEose0cBAKZAc7NxpvenkvAjtKWyiMZCgc2O1w7zytqPEiBULCulazwvmY8sWUsmmvNDBiE0MXgFWgwhdxJTNkG6Y2J5LQftSTf9GYaZBPrew4DjOJH4N2zZB6tTbwlfWgQTli4rMZBeNBqD2sz2iAXI7rBaJIdCCf54poduhRaP2dy1AqnQHSl8BDid5gEX79FalYQZDZD'),
 					  )
-					);*/
+					);
 					$this->redirect(array('index','type'=>$model->type));
 				}
 				else

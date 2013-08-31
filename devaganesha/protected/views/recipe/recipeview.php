@@ -3,7 +3,8 @@ $this->breadcrumbs=array(
 	'Recipes'=>array('index'),
 	$model->title,
 );
-
+$this->setPageTitle($model->title);
+Yii::app()->clientScript->registerMetaTag('Get all the Recipes for ganesh Utsav. Recipes for prasad Naivaidya. Ganeshas favourites. Sugerless recipes.', 'description');
 ?>
 
     <div class="title-head"><?php echo $model->title;?></div>
@@ -36,7 +37,7 @@ $this->breadcrumbs=array(
 		}
 		
 		?>
-			<img src="<?php echo $recimg; ?>" height="200px" width="200px" style="margin:0 auto;"/>
+			<img src="<?php echo $recimg; ?>" style="margin:0 auto;" class="img-polaroid"/>
         </div>
 		<div class="mt10">
 			<p><strong>Ingradients :</strong></p>

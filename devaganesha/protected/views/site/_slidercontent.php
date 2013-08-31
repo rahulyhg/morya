@@ -4,7 +4,7 @@
 		?>
 				<section>
 
-					<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$slide->photoes->slug)) ?>"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $slide->photoes->file_name; ?>" alt="<?php echo $slide->photoes->caption;?>" height="225px"></a>
+					<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$slide->photoes->slug)) ?>"><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $slide->photoes->file_name; ?>" alt="<?php echo $slide->photoes->caption;?>" height="225px" /></a>
 					<p class="slider-text">
 						<a href="<?php echo Yii::app()->createUrl('photo/view',array('slug'=>$slide->photoes->slug)) ?>"><strong><?php echo $slide->photoes->caption;?></strong></a>
 					</p>

@@ -3,6 +3,8 @@ $this->breadcrumbs=array(
 	TempleType::$heading[$model->type]=>array('index','type'=>$model->type),
 	$model->name,
 );
+$this->setPageTitle($model->name);
+Yii::app()->clientScript->registerMetaTag('Get the information about all the popular Temples and Mandals of lord ganesha all over the world. Ganesh mandals in mumbai, pune and all over maharashtra. Navsache ganpati wish full filling ganesh', 'description');
 ?>
 
 
@@ -27,7 +29,7 @@ $this->breadcrumbs=array(
 		</div>
 		<hr/>
         <div class="mt10" style="text-align:center;">
-            <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->main_pic->file_name; ?>" height="200px" width="200px"/>
+            <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->main_pic->file_name; ?>" class="img-polaroid"/>
          </div>
 		 <div class="mt10"><?php echo html_entity_decode($model->description, ENT_COMPAT, "UTF-8");?></div>
         <div class="mt10"><strong>Established In  : </strong> <?php echo $model->established ?></div>
@@ -36,15 +38,15 @@ $this->breadcrumbs=array(
      
         <div class="mt10"><?php
             if(isset($model->pic1->file_name)){
-                ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->pic1->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
+                ?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->pic1->file_name; ?>" height="100px" width="100px" style="padding: 5px" class="img-polaroid"/>
                 <?php }
             if(isset($model->pic2->file_name)){?>
-                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->pic2->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
+                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->pic2->file_name; ?>" height="100px" width="100px" style="padding: 5px" class="img-polaroid"/>
                 <?php } ?>
             <?php if(isset($model->pic3->file_name)){?>
-                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->pic3->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
+                <img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->pic3->file_name; ?>" height="100px" width="100px" style="padding: 5px" class="img-polaroid"/>
                 <?php }
-            if(isset($model->pic4->file_name)){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->pic4->file_name; ?>" height="100px" width="100px" style="padding: 5px" border="1px #000000"/>
+            if(isset($model->pic4->file_name)){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->pic4->file_name; ?>" height="100px" width="100px" class="img-polaroid"/>
                 <?php } ?>
 		</div>
 				
