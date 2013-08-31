@@ -336,4 +336,10 @@ class SiteController extends AppController
 	public function actionNode($id){
 		return 	$this->redirect($this->getUrlByNode($id));
 	}
+	
+	public function actionEmail(){
+		Yii::import('application.commands.*');
+		$command = new EmailCommand("","");
+		$command->run(null);
+	}
 }

@@ -179,6 +179,8 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'mail@itvedant.com',
+		'smtp'=> 'smtp.devaganesha.com',
+		'smtpPort'=> '587',
 		'doNotReplyEmail'=>'noreply@devaganesha.com',
 		'doNotReplyPass'=>'Zeus123@',
 		'OAuth2.0ClientId'=>'782990223644.apps.googleusercontent.com',
