@@ -122,7 +122,26 @@ class SiteController extends AppController
 	}
 	
 	public function actionShowmap(){
-	$this->render('showmap');
+	$temples = Temple::model()->findAll();
+	$map = Map::model()->findAll();
+	foreach($map as $cord){
+		$maparr[] = "(".$cord->lat.",".$cord->long.")";
+	}
+
+	$this->render('showmap',array('temples'=>$temples,'maparr'=>$maparr));
+	}
+	
+	public function actionSavecord(){
+
+			$map = new Map;
+			$map->lat = $_POST['lat'];
+			$map->long = $_POST['long'];
+			$map->temp_id = $_POST['place'];
+			if($map->save())
+			{
+				echo "success";
+			}
+				
 	}
 	
 	public function actionAddtofav(){

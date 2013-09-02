@@ -24,7 +24,53 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
     <div class="clear"></div>
 </div>
     <div class="row-fluid mt10">
-        <div class="span3 visible-desktop"><div class="fb-like-box" data-href="https://www.facebook.com/ohmyganesha" data-width="292" data-height="389" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div></div>
+        <div class="span3">
+			<div style="border:1px solid #cccccc;padding:5px;height:160px;text-align:center;" class="mt10">
+				<div>Get all the pictures and wallpapers of lord ganesh uploaded from all over the world. Upload your ganesh photo and make your ganesha global.</div>
+				<div class="mt10">
+					<?php		if(Yii::app()->user->isGuest){ ?>
+				<div class="non-user-upld"><a href="<?php echo Yii::app()->createUrl('user/login',array('rurl'=>$_SERVER['REQUEST_URI'])); ?>"><div class="qq-upload-button">Upload Your ganesha</div></a></div>
+		<?php	}else{
+			
+          $this->widget('ext.EAjaxUpload.EAjaxUpload',
+        array(
+            'id'=>'uploadFile',
+            'config'=>array(
+                'action'=>Yii::app()->createUrl('photo/postUpload',array('type'=>PhotoUploadCategory::Normal)),
+                'allowedExtensions'=>array("jpg","jpeg","gif"),//array("jpg","jpeg","gif","exe","mov" and etc...
+                'sizeLimit'=>10*1024*1024,// maximum file size in bytes
+                'minSizeLimit'=>10,// minimum file size in bytes
+                    'onComplete'=>"js:function(id,filename,response){
+                                    fileUploadComplete(id,filename,response);
+                            }",
+                    'onUpload'=>"js:function(id,fileName){
+                                fileUploadBegin(id,fileName);
+                            }",
+                'uploadButtonText'=>'Upload Your ganesha. ',
+                'messages'=>array(
+                    'typeError'=>"{file} has invalid extension. Only {extensions} are allowed.",
+                    'sizeError'=>"{file} is too large, maximum file size is {sizeLimit}.",
+                    'minSizeError'=>"{file} is too small, minimum file size is {minSizeLimit}.",
+                    'emptyError'=>"{file} is empty, please select files again without it.",
+                    'onLeave'=>"The files are being uploaded, if you leave now the upload will be cancelled."
+                ),
+                'showMessage'=>"js:function(message){ alert(message); }"
+            )
+        )); 
+		
+		} ?>
+				</div>
+				<div class="mt10"><a href="<?php echo Yii::app()->createUrl('photo/index');?>">Get all the pictures of lord ganesha &raquo;</a></div>
+			</div>
+			<div style="border:1px solid #cccccc;padding:5px;height:160px;text-align:center;" class="mt10">
+			<div>Get all the mandals of from all over the india. Add your own mandal and make it global.</div>
+			<div class="btn btn-large mt10"><?php echo CHtml::link("Add Your Mandal ",array('temple/create','type'=>TempleType::Mandal));?></div>
+			<div class="mt10">
+				<p><a href="<?php echo Yii::app()->createUrl('temple/index',array('type'=>TempleType::Mandal));?>">Popular Mandals of india</a></p>
+				<p><a href="<?php echo Yii::app()->createUrl('temple/index',array('type'=>TempleType::Mandal));?>">Ganesh Mandals</a></p>
+			</div>
+			</div>
+		</div>
         <div class="span6">
             <div><div class="span6">
 					<div class="title-bar"><strong>Ganesh Mahima</strong></div>
@@ -32,13 +78,13 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 					<div>
 						<p><img src="<?php echo get_template_directory_uri(); ?>/img/ganesh-mahima.png" class="fl mr10"/>
 							Get all aartis of Lord Ganesha.<br/>Do your own pooja according as per our tradition.<br/><br/>
-							<a href="">All aarti's of ganesha &raquo;</a>
+							<a href="<?php echo Yii::app()->createUrl('vedic/vedic',array('type'=>VedicType::Aarti));?>">All aarti's of ganesha &raquo;</a>
 						</p>
 					
 					</div>
 					<div class="mt10"><a href="<?php echo Yii::app()->createUrl('vedic/vedic',array('type'=>VedicType::Mantra));?>">Assure success with god ganeshji's mantras</a></div>
-					<div><a href="<?php echo Yii::app()->createUrl('temple/index',array('type'=>TempleType::Temple))?>">Popular temples of lord ganesha</a></div>
-					<div><a href="<?php echo Yii::app()->createUrl('experience/index');?>">Read how kimaya gave birth to son after 10years</a></div>
+					<div><a href="<?php echo Yii::app()->createUrl('vedic/addvedic',array('type'=>VedicType::Aarti))?>">Add your Aarti</a></div>
+					<div><a href="<?php echo Yii::app()->createUrl('experience/index');?>">Read how ganesha helps people in thier own words</a></div>
 					</div>
 				</div>
 				<div class="span6">
@@ -52,7 +98,9 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 					
 					</div>
 					<div class="mt10"><a href="<?php echo Yii::app()->createUrl('recipe/index');?>">Modak recipe's in marathi, english, hindi</a></div>
-					<div><a href="<?php echo Yii::app()->createUrl('temple/index',array('type'=>TempleType::Mandal))?>">Popular mandals in mumbai</a></div>
+					<div><a href="<?php echo Yii::app()->createUrl('recipe/create')?>">Add your recipe here</a></div>
+					<div><a href="<?php echo Yii::app()->createUrl('experience/create',array('type'=>MahimaType::Experience))?>">Share your experience about ganesha</a></div>
+					<div><a href="<?php echo Yii::app()->createUrl('experience/create',array('type'=>MahimaType::Wish))?>">Make a wish to ganesha</a></div>
 					</div>
 				</div>
 				<div class="clear"></div>
@@ -179,21 +227,8 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 		</div>
 		
 		<div class="span4">
-			<div class="title-bar"><strong>Ads</strong></div>
-			<div class="home-ads">
-				<script type="text/javascript"><!--
-				google_ad_client = "ca-pub-5804770278813362";
-				/* Devaganesha Homepage */
-				google_ad_slot = "8728645858";
-				google_ad_width = 300;
-				google_ad_height = 380;
-				//-->
-				
-				</script>
-				<script type="text/javascript"
-				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-				</script>
-			</div>
+			<div class="title-bar"><strong>Find us on facebook</strong></div>
+			        <div class="fb-like-box" data-href="https://www.facebook.com/ohmyganesha" data-width="292" data-height="389" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>
 		</div>
 		 <div class="clear"></div>
 	</div>
