@@ -41,10 +41,13 @@ class SiteController extends AppController
 		$criteria->compare('t.type',PhotoUploadCategory::Normal);
 		$criteria->limit = 10;
 		$photos = Photo::model()->findAll($criteria);
-		
+		$map = Map::model()->findAll();
+		foreach($map as $cord){
+			$maparr[] = array('lat'=>$cord->lat,'lng'=>$cord->long,'temple'=>array('name'=>$cord->temp->name,'photo'=>PhotoType::$relativeFolderName[PhotoType::Mini].$cord->temp->main_pic->file_name,'desc'=>html_entity_decode($cord->temp->description),'url'=>Yii::app()->createAbsoluteUrl('temple/templeview',array($cord->temp->slug))));
+		}
+		$maparr = json_encode($maparr);
 		$this->render('index',array(
-			//'elementsList'=>$elementsList,
-			//'elementsList1'=>$elementsList1,
+			'maparr'=>$maparr,
 			'photos'=>$photos,
 		));
 	}
@@ -122,7 +125,26 @@ class SiteController extends AppController
 	}
 	
 	public function actionShowmap(){
-	$this->render('showmap');
+		$temples = Temple::model()->findAll();
+		$map = Map::model()->findAll();
+		foreach($map as $cord){
+			$maparr[] = array('lat'=>$cord->lat,'lng'=>$cord->long,'temple'=>array('name'=>$cord->temp->name,'photo'=>PhotoType::$relativeFolderName[PhotoType::Mini].$cord->temp->main_pic->file_name,'desc'=>html_entity_decode($cord->temp->description),'url'=>Yii::app()->createAbsoluteUrl('temple/templeview',array($cord->temp->slug))));
+		}
+		$maparr = json_encode($maparr);
+		$this->render('showmap',array('temples'=>$temples,'maparr'=>$maparr));
+	}
+	
+	public function actionSavecord(){
+
+			$map = new Map;
+			$map->lat = $_POST['lat'];
+			$map->long = $_POST['long'];
+			$map->temp_id = $_POST['place'];
+			if($map->save())
+			{
+				echo "success";
+			}
+				
 	}
 	
 	public function actionAddtofav(){
@@ -335,5 +357,11 @@ class SiteController extends AppController
 	
 	public function actionNode($id){
 		return 	$this->redirect($this->getUrlByNode($id));
+	}
+	
+	public function actionEmail(){
+		Yii::import('application.commands.*');
+		$command = new EmailCommand("","");
+		$command->run(null);
 	}
 }

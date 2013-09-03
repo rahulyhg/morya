@@ -7,17 +7,17 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo $form->textField($model,'id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'slug'); ?>
-		<?php echo $form->textField($model,'slug',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'slug',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
@@ -37,32 +37,42 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'prizes'); ?>
-		<?php echo $form->textArea($model,'prizes',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textField($model,'prizes',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'organiser_name'); ?>
-		<?php echo $form->textField($model,'organiser_name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'organiser'); ?>
+		<?php echo $form->textField($model,'organiser',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'contact_number'); ?>
-		<?php echo $form->textField($model,'contact_number',array('size'=>12,'maxlength'=>12)); ?>
+		<?php echo $form->label($model,'contact'); ?>
+		<?php echo $form->textField($model,'contact',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'address'); ?>
-		<?php echo $form->textArea($model,'address',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textField($model,'address',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'start_date'); ?>
+		<?php echo $form->textField($model,'start_date',array('size'=>30,'maxlength'=>30)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'end_date'); ?>
+		<?php echo $form->textField($model,'end_date',array('size'=>30,'maxlength'=>30)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo $form->textField($model,'user_id'); ?>
 	</div>
 
 	<div class="row">
@@ -73,6 +83,16 @@
 	<div class="row">
 		<?php echo $form->label($model,'modified'); ?>
 		<?php echo $form->textField($model,'modified'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'status'); ?>
+		<?php echo $form->textField($model,'status'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'winner_ann_date'); ?>
+		<?php echo $form->textField($model,'winner_ann_date'); ?>
 	</div>
 
 	<div class="row buttons">

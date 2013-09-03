@@ -701,3 +701,48 @@ font-weight:600;
 text-align:center;
 text-shadow:1px 1px 1px #333333;
 }
+
+.page-head{
+text-align:center;
+border-top:5px solid #ee692f;
+border-bottom:5px solid #ee692f;
+padding:5px;
+display:inline-block;
+margin-bottom:3px;
+}
+
+.btm-border{
+border-bottom:5px solid #ee692f;
+/*width:100px;*/
+display:inline-block;
+padding:0 20px;
+}
+
+.each-comp{
+border:1px solid #707070;
+padding:5px 10px;
+background-color:#ebebeb;
+}
+
+.comp-head{
+border-bottom:1px solid #7d7d7d;
+font-size:20px;
+display:inline-block;
+padding:5px;
+
+}
+
+.parti-but{
+background-color:#707070;
+color:#ffffff;
+padding:5px 10px;
+margin:30px  10px 0 0;
+}
+
+.homebox{
+background-color:#ebebeb;
+border:1px solid #000000;
+padding:5px;
+height:160px;
+text-align:center;
+}

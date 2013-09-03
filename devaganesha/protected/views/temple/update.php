@@ -10,4 +10,4 @@ Yii::app()->clientScript->registerMetaTag('Get all the Temples Mandals informati
 
 <div class="title-head">Edit <?php echo $model->name; ?></div>
 <hr/>
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'maparr'=>$maparr)); ?>

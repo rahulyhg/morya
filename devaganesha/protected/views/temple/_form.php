@@ -67,6 +67,11 @@ function templeUploadComplete(id, fileName, responseJSON){
 		<?php echo $form->error($model,'history'); ?>
 	</div>
 	<?php echo $form->hiddenField($model,'type',array('value'=>$templeType)); ?>
+	
+	
+	<?php echo $form->hiddenField(Map::model(),'lat',array('id'=>'latFld')); ?>
+	<?php echo $form->hiddenField(Map::model(),'long',array('id'=>'lngFld')); ?>
+	
 	<div id="photo_id"></div>
 <?php
 $this->widget('ext.EAjaxUpload.EAjaxUpload',
@@ -89,8 +94,94 @@ array(
                'showMessage'=>"js:function(message){ alert(message); }"
               )
 ));
-?>
 	
+	
+	/* Code to add Location */
+	?>
+	  <style type="text/css">
+        #map_canvas {height:300px;width:100%;}
+    </style>
+   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+
+    <script type="text/javascript">
+        var map;
+        var markersArray = [];
+        function initMap()
+        {
+            var latlng = new google.maps.LatLng(19, 73);
+            var myOptions = {
+                zoom: 10,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+			
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+			map.setOptions({ draggableCursor: 'url(https://maps.google.com/mapfiles/kml/shapes/schools_maps.png), move' });
+            // add a click event handler to the map object
+            google.maps.event.addListener(map, "click", function(event)
+            {
+                // place a marker
+				if(map.getZoom() < 16){
+					alert("Please zoom more and then place the temple...") ;
+				}else{
+				//alert(event.latLng);
+					placeMarker(event.latLng);
+					//alert("you have place the ganesha at " + event.latLng.lat() + "lat and " + event.latLng.lng() + " longt :) ");
+					// display the lat/lng in your form's lat/lng fields
+					document.getElementById("latFld").value = event.latLng.lat();
+					document.getElementById("lngFld").value = event.latLng.lng();
+				}
+            });
+			
+			var maparr = eval(<?php echo $maparr;?>);
+			  //document.write(maparr[0].lat);
+			  var cord;
+			 for(var i=0;i<maparr.length;i++){
+				cord = new google.maps.LatLng(maparr[i].lat, maparr[i].lng);
+				placeMarker(cord, maparr[i].temple);
+				//alert(maparr[i].temple);
+			}   
+			
+			  
+        }
+        function placeMarker(location,temple=null) {
+            // first remove all markers if there are any
+            //deleteOverlays();
+
+            var marker = new google.maps.Marker({
+                position: location, 
+                map: map,
+				icon: 'https://maps.google.com/mapfiles/kml/shapes/schools_maps.png'
+
+            });
+			if(temple != null){
+				var infowindow = new google.maps.InfoWindow({
+					  content: '<h3>'+temple.name+'</h3>'+temple.desc+'<img src="'+temple.photo+'" alt="no image" />'
+				  });
+
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.open(map,marker);
+				});
+			}
+            // add marker in markers array
+            markersArray.push(marker);
+
+            //map.setCenter(location);
+        }
+
+        // Deletes all markers in the array by removing references to them
+        function deleteOverlays() {
+            if (markersArray) {
+                for (i in markersArray) {
+                    markersArray[i].setMap(null);
+                }
+            markersArray.length = 0;
+            }
+        }
+    </script>
+	<p>Please zoom 6 times more to add temple or photo</p>
+	 <div id="map_canvas"></div>
 	<div class="controls mt10">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'btn btn-primary mt10')); ?>
 	</div>

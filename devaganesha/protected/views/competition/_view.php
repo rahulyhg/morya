@@ -29,12 +29,12 @@
 	<br />
 
 	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('organiser_name')); ?>:</b>
-	<?php echo CHtml::encode($data->organiser_name); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('organiser')); ?>:</b>
+	<?php echo CHtml::encode($data->organiser); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('contact_number')); ?>:</b>
-	<?php echo CHtml::encode($data->contact_number); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('contact')); ?>:</b>
+	<?php echo CHtml::encode($data->contact); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
@@ -43,6 +43,14 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('address')); ?>:</b>
 	<?php echo CHtml::encode($data->address); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('start_date')); ?>:</b>
+	<?php echo CHtml::encode($data->start_date); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('end_date')); ?>:</b>
+	<?php echo CHtml::encode($data->end_date); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
@@ -55,6 +63,14 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('modified')); ?>:</b>
 	<?php echo CHtml::encode($data->modified); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
+	<?php echo CHtml::encode($data->status); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('winner_ann_date')); ?>:</b>
+	<?php echo CHtml::encode($data->winner_ann_date); ?>
 	<br />
 
 	*/ ?>

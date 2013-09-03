@@ -13,7 +13,7 @@
         <div class="mt10"><b>How to reach : </b>&nbsp;<?php echo html_entity_decode($temple->how_to_go, ENT_COMPAT, "UTF-8");?></div>
         <div class="mt10"><b>History : </b><?php echo substr(strip_tags(html_entity_decode($temple->history, ENT_COMPAT, "UTF-8")),0,50)." ... ";?><a href="<?php echo $singleurl;?>">Read More</a></div>
 		<div class="mt10"><strong>Posted on : <?php echo $temple->node->created; ?> | author : <a href="<?php echo Yii::app()->createUrl('site/myganesha',array('id'=>$temple->node->user_id));?>"><?php echo $temple->node->creator->name; ?></a></strong></div>
-		<div class="mb10"><a href="<?php echo $singleurl;?>">Leave reply </a></div>
+		<div class="mb10"><a href="<?php echo $singleurl;?>">Leave reply </a> <?php if(Yii::app()->user->id == $temple->node->user_id){?> | <a href="<?php echo Yii::app()->createUrl('temple/update',array('id'=>$temple->id));?>">Edit</a><?php } ?></div>
     </div>
 	<?php if($i%2 == 0){ ?>
 	 <div class="clear"></div>

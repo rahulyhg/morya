@@ -124,10 +124,17 @@ class TempleController extends AppController
 				$success = $success ? $model->save(false) : $success;
 				 if ($success)
 				 {
+					$map = new Map ;
+					$map->attributes = $_POST['Map'] ;
+					$map->temp_id = $model->id;
+					if($map->validate()){
+						$map->save();
+					}
 					$transaction->commit();
 					$url = $this->getUrlByNode($model->node_id);
 					$img = "www.";
-					/*Yii::app()->facebook->api(
+
+					/* Yii::app()->facebook->api(
 					  '/514147705313075/feed',
 					  'POST',
 					  array(
@@ -147,11 +154,15 @@ class TempleController extends AppController
 			}
 			
 		}
-
+		$map = Map::model()->findAll();
+		foreach($map as $cord){
+			$maparr[] = array('lat'=>$cord->lat,'lng'=>$cord->long,'temple'=>array('name'=>$cord->temp->name,'photo'=>PhotoType::$relativeFolderName[PhotoType::Mini].$cord->temp->main_pic->file_name,'desc'=>html_entity_decode($cord->temp->description),'url'=>Yii::app()->createAbsoluteUrl('temple/templeview',array($cord->temp->slug))));
+		}
+		$maparr = json_encode($maparr);
 		$this->render('create',array(
 			'model'=>$model,
 			'templeType'=>$templeType,
-
+			'maparr' => $maparr
 		));
 	}
 
@@ -179,10 +190,15 @@ class TempleController extends AppController
 			if($model->save())
 				$this->redirect(array('templeview','slug'=>$model->slug));
 		}
-
+		$map = Map::model()->findAll();
+		foreach($map as $cord){
+			$maparr[] = array('lat'=>$cord->lat,'lng'=>$cord->long,'temple'=>array('name'=>$cord->temp->name,'photo'=>PhotoType::$relativeFolderName[PhotoType::Mini].$cord->temp->main_pic->file_name,'desc'=>html_entity_decode($cord->temp->description),'url'=>Yii::app()->createAbsoluteUrl('temple/templeview',array($cord->temp->slug))));
+		}
+		$maparr = json_encode($maparr);
 		$this->render('update',array(
 			'model'=>$model,
 			'templeType'=>$model->type,
+			'maparr'=>$maparr,
 		));
 	}
 
