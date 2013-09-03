@@ -9,4 +9,4 @@ Yii::app()->clientScript->registerMetaTag('Get all the Temples Mandals informati
 
 <div class="title-head">Add <?php echo TempleType::$heading[$templeType];?></div>
 <hr/>
-<?php echo $this->renderPartial('_form', array('model'=>$model,'templeType'=>$templeType)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'templeType'=>$templeType,'maparr'=>$maparr)); ?>

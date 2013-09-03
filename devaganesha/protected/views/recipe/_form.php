@@ -23,7 +23,7 @@
 
 	<div class="controls">
 		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>50,'maxlength'=>50,'class'=>'span12')); ?>
+		<?php echo $form->textField($model,'title',array('size'=>50,'class'=>'span12')); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 

@@ -227,8 +227,13 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 		</div>
 		
 		<div class="span4">
-			<div class="title-bar"><strong>Find us on facebook</strong></div>
-			        <div class="fb-like-box" data-href="https://www.facebook.com/ohmyganesha" data-width="292" data-height="389" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>
+			<div class="title-bar"><strong>Find Temples and Ganesh Mandals Near You</strong></div>
+			        <div><?php 
+					$mapDesign = array('height'=>'350px','zoom'=>7); 
+					$this->renderPartial('showmap',array('maparr'=>$maparr,'map_design'=>$mapDesign)); 
+					?>
+					<div class="mt10"><a href="<?php echo Yii::app()->createUrl('site/showmap');?>">View Larger Map</a><a href="<?php echo Yii::app()->createUrl('temple/create',array('type'=>templeType::Mandal));?>" style="margin-left:20px;">Show your Mandal on map</a></div>
+					</div>
 		</div>
 		 <div class="clear"></div>
 	</div>

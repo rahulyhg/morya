@@ -41,10 +41,13 @@ class SiteController extends AppController
 		$criteria->compare('t.type',PhotoUploadCategory::Normal);
 		$criteria->limit = 10;
 		$photos = Photo::model()->findAll($criteria);
-		
+		$map = Map::model()->findAll();
+		foreach($map as $cord){
+			$maparr[] = array('lat'=>$cord->lat,'lng'=>$cord->long,'temple'=>array('name'=>$cord->temp->name,'photo'=>PhotoType::$relativeFolderName[PhotoType::Mini].$cord->temp->main_pic->file_name,'desc'=>html_entity_decode($cord->temp->description),'url'=>Yii::app()->createAbsoluteUrl('temple/templeview',array($cord->temp->slug))));
+		}
+		$maparr = json_encode($maparr);
 		$this->render('index',array(
-			//'elementsList'=>$elementsList,
-			//'elementsList1'=>$elementsList1,
+			'maparr'=>$maparr,
 			'photos'=>$photos,
 		));
 	}
@@ -122,13 +125,13 @@ class SiteController extends AppController
 	}
 	
 	public function actionShowmap(){
-	$temples = Temple::model()->findAll();
-	$map = Map::model()->findAll();
-	foreach($map as $cord){
-		$maparr[] = "(".$cord->lat.",".$cord->long.")";
-	}
-
-	$this->render('showmap',array('temples'=>$temples,'maparr'=>$maparr));
+		$temples = Temple::model()->findAll();
+		$map = Map::model()->findAll();
+		foreach($map as $cord){
+			$maparr[] = array('lat'=>$cord->lat,'lng'=>$cord->long,'temple'=>array('name'=>$cord->temp->name,'photo'=>PhotoType::$relativeFolderName[PhotoType::Mini].$cord->temp->main_pic->file_name,'desc'=>html_entity_decode($cord->temp->description),'url'=>Yii::app()->createAbsoluteUrl('temple/templeview',array($cord->temp->slug))));
+		}
+		$maparr = json_encode($maparr);
+		$this->render('showmap',array('temples'=>$temples,'maparr'=>$maparr));
 	}
 	
 	public function actionSavecord(){

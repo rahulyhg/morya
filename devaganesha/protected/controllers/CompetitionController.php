@@ -1,12 +1,12 @@
 <?php
 
-class CompetitionController extends Controller
+class CompetitionController extends AppController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='layout_3C';
+	public $layout='//layouts/main';
 
 	/**
 	 * @return array action filters
@@ -69,6 +69,7 @@ class CompetitionController extends Controller
 		if(isset($_POST['Competition']))
 		{
 			$model->attributes=$_POST['Competition'];
+			$model->slug = $this->behaviors();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -127,8 +128,10 @@ class CompetitionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		//$dataProvider=new CActiveDataProvider('Competition');
-		$this->render('index');
+		$dataProvider=Competition::model()->findAll();
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
 	}
 
 	/**

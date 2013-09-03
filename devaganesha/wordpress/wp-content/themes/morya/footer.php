@@ -424,6 +424,8 @@
 		  });
 		  var cdate = new Date(2013, 8 , 9);//alert(cdate);
 		  $('#countdown').countdown({until: cdate}); 
+		  
+		  $('.datepicker').datepicker();
       });
   </script>
 		<script type="text/javascript">
