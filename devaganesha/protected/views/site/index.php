@@ -232,7 +232,7 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 					$mapDesign = array('height'=>'350px','zoom'=>7); 
 					$this->renderPartial('showmap',array('maparr'=>$maparr,'map_design'=>$mapDesign)); 
 					?>
-					<div class="mt10"><a href="<?php echo Yii::app()->createUrl('site/showmap');?>">View Larger Map</a><a href="<?php echo Yii::app()->createUrl('temple/create',array('type'=>templeType::Mandal));?>" style="margin-left:20px;">Show your Mandal on map</a></div>
+					<div class="mt10"><a href="<?php echo Yii::app()->createUrl('site/showmap');?>">View Larger Map</a><a href="<?php echo Yii::app()->createUrl('temple/create',array('type'=>templeType::Mandal));?>" style="margin-left:20px;" class="btn">Show your Mandal on map</a></div>
 					</div>
 		</div>
 		 <div class="clear"></div>
