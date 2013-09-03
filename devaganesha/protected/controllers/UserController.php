@@ -18,7 +18,7 @@ class UserController extends AppController
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpassword','changepassword','sendEmail','subscribe'),
+				'actions'=>array('authPopup','register','shortRegister','login','fbLogin','forgotpass','resetpassword','changepassword','sendEmail','subscribe','gmailinvite'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -311,26 +311,71 @@ class UserController extends AppController
 			$val = User::model()->randomPassword();
 			$val = md5($val);
 			$url = "http://www.devaganesha.com/".Yii::app()->createUrl('user/resetpassword',array('key'=>$val));
-			/*$mail = Yii::createComponent('application.extensions.phpmailer.JPhpMailer');
-			$mail->IsSMTP();
-			$mail->IsHTML(true);
-			$mail->SMTPDebug  = 2;
-			$mail->SMTPAuth = true;
-			//$mail->SMTPSecure = "ssl";
-			$mail->Host = "smtp.javadotnettraining.com";
-			$mail->Port = 587;
-			$mail->Username = Yii::app()->params['doNotReplyEmail'];
-			$mail->Password = Yii::app()->params['doNotReplyPass'];
-			$mail->CharSet = 'utf-8';
-			$mail->From = "noreply@devaganesha.com";
-			$mail->FromName = "Devaganesha.com";
-			$mail->Subject = "Change Your Password - Devaganesha.com";
-			$mail->MsgHTML($url);
-			$mail->AddAddress($user->email);*/
+
 			$to = $user->email;
 			$subject = "Change Password - devaganesha.com";
 			$body_plain = "To change your password click the below url ".$url;
-			$body_html = "<table><tr><td>Hello $user->name,</td></tr><tr><td>To change your password click the below url</td></tr><tr><td>$url</td></tr></table>";
+			$body_html = '<table cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" >
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="20" cellspacing="0" width="600" id="emailContainer" style="border:1px solid #0088cc;">
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="10" cellspacing="0" width="100%" id="emailHeader">
+                            <tr>
+                                <td align="center" valign="top">
+                                   <img src="http://www.devaganesha.com/wordpress/wp-content/themes/morya/img/ganesha-logo.png" />
+                                </td>
+                            </tr>
+							<tr>
+                                <td valign="top">
+                                   Hello '.$user->name.',
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody">
+                            <tr>
+                                <td valign="top">
+                                    Since you have forgot your password we are sending you the link where you can reset your password.<br/>
+									Click on below to reset your password.
+                                </td>
+                            </tr>
+                        </table>
+						
+						<table border="0" cellpadding="0" cellspacing="0" style="background-color:#0088cc; border-radius:5px;">
+						<tr>
+							<td align="center" valign="middle" style="color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;">
+								<a href="'.$url.'" target="_blank" style="color:#FFFFFF; text-decoration:none;">Reset Password</a>
+							</td>
+						</tr>
+					</table>
+										</td>
+									</tr>
+									<tr>
+										<td align="center" valign="top">
+											<table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailFooter">
+												<tr>
+													<td valign="top">
+														Thanks<br/>
+														Devaganesha.com
+													</td>
+												</tr>
+												<tr>
+													<td align="center" valign="top">
+														copyrights &copy; devaganesha.com 2013
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>';
 			$priority = 10;
 			$sent = 0;
 			
@@ -420,7 +465,60 @@ class UserController extends AppController
 			$to = $emailid;
 			$subject = "Subscription successfull - devaganesha.com";
 			$body_plain = "You have successfully subscribed to devaganesha. Now you will recieve ganesha's picture daily.";
-			$body_html = "<table><tr><td>Hello $emailid,</td></tr><tr><td>You have successfully subscribed to devaganesha. Now you will recieve ganesha's picture daily</td></tr></table>";
+			$body_html = '<table cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" >
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="20" cellspacing="0" width="600" id="emailContainer" style="border:1px solid #0088cc;">
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="10" cellspacing="0" width="100%" id="emailHeader">
+                            <tr>
+                                <td align="center" valign="top">
+                                   <img src="http://www.devaganesha.com/wordpress/wp-content/themes/morya/img/ganesha-logo.png" />
+                                </td>
+                            </tr>
+							<tr>
+                                <td valign="top">
+                                   Hello there,
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody">
+                            <tr>
+                                <td valign="top">
+                                    You have successfully subscribed to <a href="http://www.devaganesha.com">www.devaganesha.com</a><br/>
+									Now you will recieve ganeshas picture daily
+                                </td>
+                            </tr>
+                        </table>
+					
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailFooter">
+                            <tr>
+                                <td valign="top">
+                                    Thanks<br/>
+									Devaganesha.com
+                                </td>
+                            </tr>
+							<tr>
+                                <td align="center" valign="top">
+                                    copyrights &copy; devaganesha.com 2013
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>';
 			$priority = 8;
 			$sent = 0;
 			
@@ -488,6 +586,92 @@ class UserController extends AppController
 		}
 	}
 	
+	public function actionGmailinvite()
+	{
+		$name = $_POST['name'];
+		$emails = $_POST['email'];
+		$subject = "Invitation from ".$name;
+		
+		$body_plain = $name.' wants you to visit <a href="http://www.devaganesha.com" target="_blank">www.devaganesha.com</a><br/>It is the biggest site ever made on Lord Ganesh.<br/>
+									Visit site to get online darshan of bappa, aarti, temples and recipes';
+		$body_html = '<table cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" >
+					<tr><td align="center" valign="top"><table border="0" cellpadding="20" cellspacing="0" width="600" id="emailContainer" style="border:1px solid #0088cc;">
+					<tr><td align="center" valign="top">
+                        <table border="0" cellpadding="10" cellspacing="0" width="100%" id="emailHeader">
+                            <tr>
+                                <td align="center" valign="top">
+                                   <img src="http://www.devaganesha.com/wordpress/wp-content/themes/morya/img/ganesha-logo.png" />
+                                </td>
+                            </tr>
+							<tr>
+                                <td valign="top">
+                                   Hello there,
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody">
+                            <tr>
+                                <td valign="top">
+                                    '.$name.' wants you to visit <a href="http://www.devaganesha.com" target="_blank">www.devaganesha.com</a><br/>
+									It is the biggest site ever made on Lord Ganesh.<br/>
+									Visit site to get online darshan of bappa, aarti, temples and recipes.
+                                </td>
+                            </tr>
+                        </table>
+						
+						<table border="0" cellpadding="0" cellspacing="0" style="background-color:#0088cc; border-radius:5px;">
+    <tr>
+        <td align="center" valign="middle" style="color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; letter-spacing:-.5px; line-height:150%; padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;">
+            <a href="http://www.devaganesha.com/" target="_blank" style="color:#FFFFFF; text-decoration:none;">Visit site</a>
+        </td>
+    </tr>
+</table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailFooter">
+                            <tr>
+                                <td valign="top">
+                                    Thanks<br/>
+									Devaganesha.com
+                                </td>
+                            </tr>
+							<tr>
+                                <td align="center" valign="top">
+                                    copyrights &copy; devaganesha.com 2013
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>';
+		$priority = 8;
+		$sent = 0;
+			
+			$emailarr = explode(',',$emails);
+			
+			 foreach($emailarr as $to)
+			{
+				$email = New Email;
+				$email->email_to = $to;
+				$email->subject = $subject;
+				$email->body_plain = $body_plain;
+				$email->body_html = $body_html;
+				$email->priority = $priority;
+				$email->sent = $sent;
+				$email->save();
+			}
+			echo "success";
+		
+	}
 	
 	/**
 	 * This is the action to send emails.

@@ -12,6 +12,22 @@ class VedicType{
          self::Pooja => 'Uttar Pooja',
      );
 	 
-	 public static $godnames = array('ganesh'=>'Shree ganesh','Shiva'=>'Shiv Shankar','vitthal'=>'Shree Vitthal','krishna'=>'Shree krishna','vishnu'=>'Vishu','devi'=>'shree Devi','saibaba'=>'Saibaba','datta'=>'Shree Dutta');
+	 public static $godnames = array('ganesh'=>'Shree ganesh',
+									 'Shiva'=>'Shiv Shankar',
+									 'vitthal'=>'Shree Vitthal',
+									 'krishna'=>'Shree krishna',
+									 'vishnu'=>'Shree Vishu',
+									 'devi'=>'Devi',
+									 'saibaba'=>'Saibaba',
+									 'datta'=>'Shree Dutta',
+									 'saibaba'=>'Saibaba',
+									 'satyanarayan'=>'Satyanarayan',
+									 'hanumaan'=>'Hanumaan',
+									 'gyaneshwar'=>'Saint Gyaneshwar',
+									 'tukaram'=>'Saint Tukaram',
+									 'ramdas'=>'Saint Ramdas',
+									 'swami'=>'Swami samarth'
+									 
+							);
 }
 ?>

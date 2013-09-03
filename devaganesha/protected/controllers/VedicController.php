@@ -187,14 +187,14 @@ class VedicController extends AppController
 		$vedicType = $_REQUEST['type'];
 		}
 		$criteria=new CDbCriteria;
-		$criteria->limit = 10;
+		$criteria->limit = 25;
 		$criteria->with = array('node');
 		$criteria->order = 'node.created DESC';
 		$criteria->compare('t.type',$vedicType); 
 
 	   $pages=new CPagination(Vedic::model()->count($criteria));
 	   $pages->applyLimit($criteria);
-	   $pages->pageSize=10;
+	   $pages->pageSize=25;
 
 	   $elementsList=Vedic::model()->findAll($criteria);//->with('comments')
 	   $this->render('vedic',array(
@@ -235,17 +235,18 @@ class VedicController extends AppController
 				$transaction->commit();
 				//Yii::app()->facebook->setFileUploadSupport(true);
 				$url = $this->getUrlByNode($model->node_id);
-				$img = "www.";
-				Yii::app()->facebook->api(
+				//$img = "www.";
+			/*	Yii::app()->facebook->api(
 				  '/514147705313075/feed',
 				  'POST',
 				  array(
 					//'picture' => $img,
-					'message' => 'Get all the aartis, mantra, photos and wallpapers of Lord ganesha. Also upload your ganesha pic. Upload your recipe for prasad.',
+					'message' => $url,
+					'description'=>'Get all the Aarti Mantra Shlokas for Ganesh Utsav. get the various pictures and wallpapers of Lord ganesh.',
 					'link'=>$url,
 					'access_token'=>urlencode('CAACEdEose0cBAKZAc7NxpvenkvAjtKWyiMZCgc2O1w7zytqPEiBULCulazwvmY8sWUsmmvNDBiE0MXgFWgwhdxJTNkG6Y2J5LQftSTf9GYaZBPrew4DjOJH4N2zZB6tTbwlfWgQTli4rMZBeNBqD2sz2iAXI7rBaJIdCCf54poduhRaP2dy1AqnQHSl8BDid5gEX79FalYQZDZD'),
 				  )
-				);
+				); */
 				$this->redirect($this->createAbsoluteUrl('vedic',array('type'=>$model->type)));
 			}else{
 			$transaction->rollBack();

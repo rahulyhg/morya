@@ -15,15 +15,12 @@ Yii::app()->clientScript->registerMetaTag('Get all the Aarti Mantra Shlokas for 
     //$uname = User::model()->findByPk($vedic->user_id);
 	
     ?>
-		<div class="cont-disp">
-            <div class="fnt24"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('slug'=>$vedic->slug))?>"><?php echo $vedic->title;?>(<?php echo $vedic->name_of_god;?>)</a>
+		<div>
+            <div class="fnt24 fl"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('slug'=>$vedic->slug))?>"><?php echo $vedic->title;?> - <?php echo VedicType::$godnames[$vedic->name_of_god];?></a>
             </div>
-			
-			<div class="mt10"><strong>Posted on : <?php echo $vedic->node->created; ?> | author : <?php echo $vedic->node->creator->name; ?></strong></div>
-            <div class="blog-content"><?php echo html_entity_decode($vedic->text, ENT_COMPAT, "UTF-8");?></div>
-           <div class="mb10"><span> <a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('slug'=>$vedic->slug))?>">Leave reply </a></span>
-		   </div>
+			<!--<div class="fr" style="margin-top:-5px;"><a href="<?php echo Yii::app()->createUrl('vedic/vedicview',array('slug'=>$vedic->slug))?>"><span class="btn" title="view"><i class="icon-eye-open"></i>&nbsp;View</span></a></div>-->
             <div class="clear"></div>
+			<hr/>
           </div>
         <?php } ?>
 		

@@ -62,9 +62,11 @@ if(isset($_GET["code"])) {
 	$xml =  new SimpleXMLElement($xmlresponse);
 	$xml->registerXPathNamespace('gd', 'http://schemas.google.com/g/2005');
 	$result = $xml->xpath('//gd:email');
+	
 ?>
 <div id="invite-gm-friends">
-<input type="checkbox" id="select-all" checked/> <b>Select/Deselect all</b><br /><br />
+<div><b>Enter your name :</b> <input type="text" name="gmail-name" id="gmail-name" class="span6"/></div>
+<div><input type="checkbox" id="select-all" checked/> <b>Select/Deselect all</b></div>
 <?php
 	foreach ($result as $title) { ?>
 		<div class="fl each-mail"><span><input type="checkbox" class="email-addresses" value="<?php echo $title->attributes()->address; ?>" checked /></span><span class="ml10"><?php echo $title->attributes()->address; ?></span></div>
@@ -89,32 +91,24 @@ $("#select-all").click(function () {
 });
 
 $('#send-gmail-invitation').click(function() {
-	var name = 'Devaganesha';
+	var name = $('#gmail-name').val();
 	var emails = [];
 	$('#invite-gm-friends input:checked').each(function() {
 		emails.push($(this).val());
 	});
 	var emails = emails.toString();
-	var body = "<div style='color:magenta; font-family: garamond; font-size: 28px; font-style: italic; font-weight: bold; padding: 8px;'>"+
-					"You are invited to devaganesha!<br />"+
-					"Please click on the following link to go to devaganesha <br />"+
-					"http://www.devaganesha.com/"+
-				"</div>";
-	var sub = "Invitation to join devaganesha!";
 	
 	$.ajax({
-		url: "<?php echo Yii::app()->createUrl("user/sendemail"); ?>",
+		url: "<?php echo Yii::app()->createUrl("user/gmailinvite"); ?>",
 		type: 'POST',
 		data: {
 			'name': name,
-			'email': emails,
-			'subject': sub,
-			'body': body,
-			'type': 'gmail_invitation'
+			'email': emails
+		},
+		success: function(response) {
+		alert(response);
 		}
 	});
-	setTimeout(function() {
-		window.close();
-	}, 1000);
+
 });
 </script>

@@ -107,7 +107,7 @@ class RecipeController extends AppController
 					$transaction->commit();
 					$url = $this->getUrlByNode($model->node_id);
 					$img = "www.";
-					Yii::app()->facebook->api(
+					/*Yii::app()->facebook->api(
 					  '/514147705313075/feed',
 					  'POST',
 					  array(
@@ -116,7 +116,7 @@ class RecipeController extends AppController
 						'link'=>$url,
 						'access_token'=>urlencode('CAACEdEose0cBAKZAc7NxpvenkvAjtKWyiMZCgc2O1w7zytqPEiBULCulazwvmY8sWUsmmvNDBiE0MXgFWgwhdxJTNkG6Y2J5LQftSTf9GYaZBPrew4DjOJH4N2zZB6tTbwlfWgQTli4rMZBeNBqD2sz2iAXI7rBaJIdCCf54poduhRaP2dy1AqnQHSl8BDid5gEX79FalYQZDZD'),
 					  )
-					);
+					);*/
 					$this->redirect(array('index','type'=>$model->type));
 				}
 				else
