@@ -31,7 +31,7 @@ class CompetitionController extends AppController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','Uploadpic'),
+				'actions'=>array('create','update','Uploadpic','setpic'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -52,8 +52,10 @@ class CompetitionController extends AppController
 	{
 		$slug = $_REQUEST['slug'];
 		$model = Competition::model()->findByAttributes(array('slug'=>$slug));
+		$compphotoes = CompetitionPhoto::model()->with('photo','user')->findByAttributes(array('comp_id'=>$model->id));
 		$this->render('view',array(
 			'model'=>$model,
+			'compphotoes'=>$compphotoes
 		));
 	}
 
@@ -150,6 +152,28 @@ class CompetitionController extends AppController
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+	}
+	
+	
+	public function actionSetpic()
+	{
+		if(isset($_POST['submitcomp']))
+		{
+			$compid = $_POST['compid'];
+			$photoid = $_POST['selectedpic'];
+			$userid = Yii::app()->user->id;
+			
+			$model = new CompetitionPhoto;
+			$model->comp_id = $compid;
+			$model->user_id = $userid;
+			$model->photo_id = $photoid;
+			if($model->validate()){
+				$model->save();
+			}
+			$comp = Competition::model()->findByPk($compid);
+			$this->redirect(array('view','slug'=>$comp->slug));
+		}
+	
 	}
 
 	/**

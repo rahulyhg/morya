@@ -221,6 +221,7 @@
                   return false;
               }
           });
+		  
           $('.fblogina').click(function() {
                   FB.login(function (response) {
                       if (response.authResponse) {
@@ -453,7 +454,8 @@
                             $.fancybox.close();
                             $('#upload-success').remove();
                             //$('#recent-uploads').load('<?php echo Yii::app()->createUrl('site/recent'); ?>');
-							window.location.href = response;
+							//window.location.href = response;
+							window.location.reload();
                         }
                     });
                 }

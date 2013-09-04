@@ -34,7 +34,7 @@
 		 ?>
 		<!-- <a class="btn"><i class="icon-thumbs-up"></i>&nbsp;Vote</a> --> 
 <div class="row-fluid" style="margin:10 auto 0;">
-<form>
+<form method="POST" action="<?php echo Yii::app()->createUrl('competition/setpic');?>">
 <?php 
 $i = 0;
 foreach($photos as $photo) {?>
@@ -49,8 +49,14 @@ foreach($photos as $photo) {?>
 <?php 
 $i++;
 } ?>
-</form>
 <div class="clear"></div>
+<input type="hidden" name="compid" value="<?php echo $model->id;?>" />
+<div>
+<input type="submit" name="submitcomp" class="btn btn-primary btn-large fl" value="Submit"/>
+<a href="<?php echo Yii::app()->createUrl('competition/view',array('slug'=>$model->slug));?>" class="fl btn btn-large ml40">Go back</a>
+<div class="clear"></div>
+</div>
+</form>
 </div>
 
 <script>

@@ -31,3 +31,14 @@ $this->breadcrumbs=array(
 <div class="clear"></div>
 </div>
 
+<div class="row-fluid">
+	<?php foreach($compphotoes as $photo){
+	//var_dump($photo);
+	?>
+	<div class="fl spics" style="margin:10px;">
+	<div><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" alt="" width="200px" height="150px"/></div>
+	<div><?php echo $photo->caption;?></div>
+	</div>
+	<?php } ?>
+</div>
+
