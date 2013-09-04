@@ -31,7 +31,7 @@ class CompetitionController extends AppController
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','Uploadpic'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -57,6 +57,22 @@ class CompetitionController extends AppController
 		));
 	}
 
+		public function actionUploadpic()
+	{
+		$slug = $_REQUEST['slug'];
+		$model = Competition::model()->findByAttributes(array('slug'=>$slug));
+		$criteria=new CDbCriteria;
+		$criteria->with = array('node');
+		$criteria->order = 'node.created DESC';
+		$criteria->compare('node.user_id',Yii::app()->user->id);
+		$criteria->compare('t.type',PhotoUploadCategory::Normal,'AND');
+		$photos = Photo::model()->findAll($criteria);//->with('comments')
+		$this->render('uploadpic',array(
+			'model'=>$model,
+			'photos'=>$photos
+		));
+	}
+	
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

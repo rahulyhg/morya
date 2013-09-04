@@ -24,4 +24,10 @@ $this->breadcrumbs=array(
 <div class="comp-img span4"></div>
 </div>
 </div>
+<div class="mt10 row-fluid">
+<div class="span4 bb"></div>
+<div class="span4"><a href="<?php echo Yii::app()->createUrl('competition/uploadpic',array('slug'=>$model->slug));?>" style="text-decoration:none;"><div class="upld-comp">Upload / submit your Ganesha</div></a></div>
+<div class="span4 bb"></div>
+<div class="clear"></div>
+</div>
 
