@@ -78,10 +78,14 @@ class TempleController extends AppController
             //$elements=Temple::model()->findAll();
 			$newComment = new Comment() ;
         	$newComment->node_id = $model->node_id ;
+			
+			$cord = Map::model()->findByAttributes(array('temp_id'=>$model->id));
+			$maparr[] = array('lat'=>$cord->lat,'lng'=>$cord->long,'temple'=>array('name'=>$cord->temp->name,'photo'=>PhotoType::$relativeFolderName[PhotoType::Mini].$cord->temp->main_pic->file_name,'desc'=>html_entity_decode($cord->temp->description),'url'=>Yii::app()->createAbsoluteUrl('temple/templeview',array($cord->temp->slug))));
+			$maparr = json_encode($maparr);
 			$this->render('templeview',array(
 			'model'=>$model,
 			'newComment'=>$newComment,
-            //'elements'=>$elements,
+            'maparr'=>$maparr,
 			));
 		
 		}
@@ -124,11 +128,14 @@ class TempleController extends AppController
 				$success = $success ? $model->save(false) : $success;
 				 if ($success)
 				 {
-					$map = new Map ;
-					$map->attributes = $_POST['Map'] ;
-					$map->temp_id = $model->id;
-					if($map->validate()){
-						$map->save();
+					if(isset($_POST['Map']))
+					{
+						$map = new Map ;
+						$map->attributes = $_POST['Map'] ;
+						$map->temp_id = $model->id;
+						if($map->validate()){
+							$map->save();
+						}
 					}
 					$transaction->commit();
 					$url = $this->getUrlByNode($model->node_id);
@@ -178,6 +185,8 @@ class TempleController extends AppController
 			$model->description = html_entity_decode($model->description, ENT_COMPAT, "UTF-8");
 			$model->how_to_go = html_entity_decode($model->how_to_go, ENT_COMPAT, "UTF-8");
 			$model->history = html_entity_decode($model->history, ENT_COMPAT, "UTF-8");
+			
+			$cord = Map::model()->findByAttributes(array('temp_id'=>$model->id));
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -188,12 +197,28 @@ class TempleController extends AppController
 			$model->how_to_go = htmlentities($model->how_to_go, ENT_COMPAT, "UTF-8");
 			$model->history = htmlentities($model->history, ENT_COMPAT, "UTF-8");
 			if($model->save())
+			{
+				if(isset($_POST['Map']))
+				{
+					if($cord === null){
+						$map = new Map ;
+						$map->attributes = $_POST['Map'] ;
+						$map->temp_id = $model->id;
+						if($map->validate()){
+							$map->save();
+						}
+					}else{
+						$cord->lat = $_POST['Map']['lat'];
+						$cord->long = $_POST['Map']['long'];
+						$cord->save();
+					}
+				
+				}
 				$this->redirect(array('templeview','slug'=>$model->slug));
+			}
 		}
-		$map = Map::model()->findAll();
-		foreach($map as $cord){
+		
 			$maparr[] = array('lat'=>$cord->lat,'lng'=>$cord->long,'temple'=>array('name'=>$cord->temp->name,'photo'=>PhotoType::$relativeFolderName[PhotoType::Mini].$cord->temp->main_pic->file_name,'desc'=>html_entity_decode($cord->temp->description),'url'=>Yii::app()->createAbsoluteUrl('temple/templeview',array($cord->temp->slug))));
-		}
 		$maparr = json_encode($maparr);
 		$this->render('update',array(
 			'model'=>$model,

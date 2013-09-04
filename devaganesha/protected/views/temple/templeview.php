@@ -49,6 +49,13 @@ Yii::app()->clientScript->registerMetaTag('Get the information about all the pop
             if(isset($model->pic4->file_name)){?><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb].$model->pic4->file_name; ?>" height="100px" width="100px" class="img-polaroid"/>
                 <?php } ?>
 		</div>
+		
+		<div class="mt10">
+			<?php 
+					$mapDesign = array('height'=>'350px','zoom'=>7); 
+					$this->renderPartial('//site/showmap',array('maparr'=>$maparr,'map_design'=>$mapDesign)); 
+					?>
+		</div>
 				
 				<div class="mt20"><a href="<?php echo Yii::app()->createUrl('temple/index',array('type'=>$model->type));?>">Back to  All</a></div>
 		<div id="comments">

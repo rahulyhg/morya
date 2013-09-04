@@ -4,37 +4,24 @@ $this->breadcrumbs=array(
 	$model->title,
 );
 
-$this->menu=array(
-	array('label'=>'List Competition', 'url'=>array('index')),
-	array('label'=>'Create Competition', 'url'=>array('create')),
-	array('label'=>'Update Competition', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Competition', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Competition', 'url'=>array('admin')),
-);
 ?>
+<div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head"><?php echo $model->title;?></h2>
+</div>
+</div>
+<div class="row-fluid mt10">
+<div class="span12 each-comp">
+<div class="span8">
+<div><?php echo $model->description;?></div>
+<div class="mt10"><strong>Instructions :</strong></div>
+<div><?php echo $model->instructions;?></div>
+<div class="mt10"><strong>Prizes :</strong></div>
+<div><?php echo $model->prizes;?></div>
+<div class="mt10"><strong>Last Date Of Submission :</strong></div>
+<div class="lastdate"><?php echo date('d\<\s\u\p\>S\<\/\s\u\p\> M, Y',strtotime($model->end_date));?></div>
+</div>
+<div class="comp-img span4"></div>
+</div>
+</div>
 
-<h1>View Competition #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'slug',
-		'title',
-		'type',
-		'description',
-		'instructions',
-		'prizes',
-		'organiser',
-		'contact',
-		'email',
-		'address',
-		'start_date',
-		'end_date',
-		'user_id',
-		'created',
-		'modified',
-		'status',
-		'winner_ann_date',
-	),
-)); ?>

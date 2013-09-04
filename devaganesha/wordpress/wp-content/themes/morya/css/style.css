@@ -741,8 +741,22 @@ margin:30px  10px 0 0;
 
 .homebox{
 background-color:#ebebeb;
-border:1px solid #000000;
+border:1px solid #cccccc;
 padding:5px;
 height:160px;
 text-align:center;
+}
+
+.lastdate{
+background-color:#000000;
+color:#fa0707;
+padding:5px;
+width:100px;
+}
+
+.comp-img{
+ background: url(../img/comp-winner.png) no-repeat 0 0 transparent;
+ width:362px;
+ height:371px;
+
 }

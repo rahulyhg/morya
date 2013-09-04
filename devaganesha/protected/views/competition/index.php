@@ -3,10 +3,8 @@ $this->breadcrumbs=array(
 	'Competitions',
 );
 
-$this->menu=array(
-	array('label'=>'Create Competition', 'url'=>array('create')),
-	array('label'=>'Manage Competition', 'url'=>array('admin')),
-);
+$this->setPageTitle('Competitions');
+Yii::app()->clientScript->registerMetaTag('Competition on photos, houshold ganesha, best Mandals and decoration.', 'description');
 ?>
 
 <div style="text-align:center;">
@@ -26,7 +24,7 @@ $this->menu=array(
 		<p><?php echo $data->prizes;?></p>
 		
 	</div>
-	<a href="<?php echo Yii::app()->createUrl('competition/view',array('id'=>$data->slug));?>"><div class="fr parti-but">Participate &nbsp;&gt;&gt;</div></a>
+	<a href="<?php echo Yii::app()->createUrl('competition/view',array('slug'=>$data->slug));?>"><div class="fr parti-but">Participate &nbsp;&gt;&gt;</div></a>
 	<div class="clear"></div>
 </div>
 </div>
