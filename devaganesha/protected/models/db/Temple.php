@@ -47,10 +47,11 @@ class Temple extends AppActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, description, how_to_go, history,primary_pic', 'required'),
-			array('slug', 'length', 'max'=>30),
-			array('name', 'length', 'max'=>255),
-			array('established', 'length', 'max'=>4),
+			array('name, description, how_to_go	, history,primary_pic', 'required'),
+			array('slug', 'length', 'max'=>255),
+			array('name', 'length', 'max'=>255, 'allowEmpty'=>false),
+			array('established', 'length', 'min'=>3,'max'=>4,'tooShort' => 'Establishment Year needed in YYYY format eg: 1947 ','tooLong' => 'Establishment Year needed in YYYY format eg: 1947 '),
+			array('established', 'numerical', 'integerOnly'=>true),
 			array('node_id', 'length', 'max'=>11),
             array('secondary_pic1, secondary_pic2,secondary_pic3, secondary_pic4','default', 'setOnEmpty'=>true, 'value'=>null),
 			// The following rule is used by search().
@@ -89,9 +90,9 @@ class Temple extends AppActiveRecord
 			'name' => 'Name',
 			'description' => 'Description',
 			'established' => 'Established In',
-			'how_to_go' => 'How To Go',
+			'how_to_go' => 'How to reach',
 			'history' => 'History',
-            'primary_pic' =>'Primary Ganesh Picture',
+            'primary_pic' =>'Ganesh Idol Photo',
 
 		);
 	}

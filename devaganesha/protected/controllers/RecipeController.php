@@ -98,10 +98,10 @@ class RecipeController extends AppController
 			if($node->validate())
 			{
 				$transaction = Yii::app()->db->beginTransaction();
-				$success = $node->save(false);
+				$success = $node->save();
 				$model->node_id = $node->id;
 			
-				$success = $success ? $model->save(false) : $success;
+				$success = $success ? $model->save() : $success;
 				 if ($success)
 				 {
 					$transaction->commit();

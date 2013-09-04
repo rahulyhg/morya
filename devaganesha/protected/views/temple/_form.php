@@ -183,7 +183,7 @@ array(
 	<p>Please zoom 6 times more to add temple or photo</p>
 	 <div id="map_canvas"></div>
 	<div class="controls mt10">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'btn btn-primary mt10')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Submit '.TempleType::$heading[$templeType] :'Update '.TempleType::$heading[$templeType],array('class'=>'btn btn-primary mt10')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
@@ -194,31 +194,22 @@ array(
 
 $(document).ready(function(){
 	tinymce.init({
+		menubar:false,
+		statusbar: false,
 		selector: "#temple-desc",
-		plugins: [
-			"advlist autolink lists link image charmap print preview anchor",
-			"searchreplace visualblocks code fullscreen",
-			"insertdatetime media table contextmenu paste"
-		],
-		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+		toolbar: "bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | styleselect "
 	});
 	tinymce.init({
+		menubar:false,
+		statusbar: false,
 		selector: "#how-to-go",
-		plugins: [
-			"advlist autolink lists link image charmap print preview anchor",
-			"searchreplace visualblocks code fullscreen",
-			"insertdatetime media table contextmenu paste"
-		],
-		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+		toolbar: "bold italic | bullist numlist outdent indent | styleselect"
 	});
 	tinymce.init({
+		menubar:false,
+		statusbar: false,
 		selector: "#temple-history",
-		plugins: [
-			"advlist autolink lists link image charmap print preview anchor",
-			"searchreplace visualblocks code fullscreen",
-			"insertdatetime media table contextmenu paste"
-		],
-		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+		toolbar: "bold italic | bullist numlist outdent indent | styleselect"
 	});
 });
 

@@ -77,7 +77,7 @@ class Recipe extends AppActiveRecord
 			'title' => 'Title',
 			'cooking_time' => 'Cooking Time',
 			'ingredients' => 'Ingredients',
-			'method' => 'Method',
+			'method' => 'Method to Prepare',
 		);
 	}
 

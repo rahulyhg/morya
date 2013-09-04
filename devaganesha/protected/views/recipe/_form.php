@@ -77,7 +77,7 @@
     ?>
 
 	<div class="controls mt10">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'btn btn-primary mt10')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add Recipie' : 'Update Recipie',array('class'=>'btn btn-primary mt10')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
@@ -89,21 +89,15 @@
 $(document).ready(function(){
 	tinymce.init({
 		selector: "#ingredients-editor",
-		plugins: [
-			"advlist autolink lists link image charmap print preview anchor",
-			"searchreplace visualblocks code fullscreen",
-			"insertdatetime media table contextmenu paste"
-		],
-		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+		menubar:false,
+		statusbar: false,
+		toolbar: "bold italic | alignleft aligncenter alignright | bullist numlist outdent indent "
 	});
 	tinymce.init({
 		selector: "#method-editor",
-		plugins: [
-			"advlist autolink lists link image charmap print preview anchor",
-			"searchreplace visualblocks code fullscreen",
-			"insertdatetime media table contextmenu paste"
-		],
-		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+		menubar:false,
+		statusbar: false,
+		toolbar: "bold italic | alignleft aligncenter alignright | bullist numlist outdent indent "
 	});
 });
 

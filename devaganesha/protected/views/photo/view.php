@@ -85,7 +85,7 @@ Yii::app()->clientScript->registerMetaTag('Get all the collection of pictures an
 			}'
 	));?>
 	</div>
-	<div class="visit-vw"><span class="btn" title="Darshan"><i class="icon-eye-open"></i>&nbsp;<?php echo $novisit;?></span></div>
+	<div class="visit-vw"><span class="btn" title="Darshan"><i class="icon-eye-open"></i>&nbsp;<?php echo $photo->counter;?></span></div>
 	<!--<div class="visit-vw">
 	<span class="share32 fb"></span>
 	<span class="share32 tw"></span>

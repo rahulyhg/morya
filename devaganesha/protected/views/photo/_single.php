@@ -20,10 +20,7 @@
 				}
 				?>
 			</span></span>
-			<span class="darshancnt"><span class="cnt"><?php 
-			$criteria1=new CDbCriteria;
-			$criteria1->compare('node_id',$photo->node_id); 
-			echo Visit::model()->count($criteria1);?></span></span>
+			<span class="darshancnt"><span class="cnt"><?php echo $photo->counter ;?></span></span>
 			<span class="multishare">
 			<a class="addthis_button_compact"></a>
 			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-517d3bd171dee465"></script></span>

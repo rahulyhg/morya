@@ -189,6 +189,7 @@ class PhotoController extends AppController
 	{
         //photoes with comments
         $photo = Photo::model()->findByAttributes(array('slug'=>$slug));
+		
 		if(isset(Yii::app()->user->id))
 		{
 			$modaks = Modak::model()->findByPk(array('node_id' => $photo->node_id,'user_id' => Yii::app()->user->id ));
@@ -258,7 +259,8 @@ class PhotoController extends AppController
 		
 		$nxt = $this->getNextOrPrevId("Photo",$photo->id, "prev");
 		
-	
+		$photo->counter = $photo->counter + 1 ;
+		$photo->save();
 		$this->render('view',array(
 			'photo'=>$photo,
             'newComment'=>$newComment,

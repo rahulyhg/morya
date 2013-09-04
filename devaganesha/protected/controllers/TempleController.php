@@ -122,10 +122,10 @@ class TempleController extends AppController
 			if($node->validate())
 			{
 				$transaction = Yii::app()->db->beginTransaction();
-				$success = $node->save(false);
+				$success = $node->save();
 				$model->node_id = $node->id;
 			
-				$success = $success ? $model->save(false) : $success;
+				$success = $success ? $model->save() : $success;
 				 if ($success)
 				 {
 					if(isset($_POST['Map']))
@@ -155,6 +155,11 @@ class TempleController extends AppController
 				}
 				else
 				{
+				// if not valid decode the rich form and show to user again
+							
+			$model->description = html_entity_decode($model->description, ENT_COMPAT, "UTF-8");
+			$model->how_to_go = html_entity_decode($model->how_to_go, ENT_COMPAT, "UTF-8");
+			$model->history = html_entity_decode($model->history, ENT_COMPAT, "UTF-8");
 					$transaction->rollBack();
 				}
 				
