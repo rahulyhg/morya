@@ -37,6 +37,7 @@
   <body onload="initMap()">
     <div class="container-fluid">
             <div class="row-fluid">
+			<div class="span9">
       <div class="span3 logo"><a href="<?php echo Yii::app()->createUrl('site/index');?>"><img src="<?php echo get_template_directory_uri(); ?>/img/ganesha-logo.png" style="height:70px;" alt="logo" /></a></div>
     <div class="fl mt10">
     <ul class="menu">
@@ -48,16 +49,19 @@
             <li><div  class="menu-single"><a href="<?php echo Yii::app()->createUrl('site/myganesha');?>" class="menu-item"><div class="myganesha"></div><div class="tac">My ganesha</div></a></div></li>
     </ul>
     </div>
-	<div class="fl countdwn">
+	</div>
+	<!-- <div class="fl countdwn">
 	<div class="count-text">Ganesh chaturthi in</div>	
 		<div id="countdown">
 	
 		</div>
-	</div>
-<div class="fr mt10">
+	</div> -->
+	<div class="span3">
+	
+<div class="mt10">
 	<?php Yii::app()->controller->widget('UserInfo'); ?>
        <div class="clear"></div>
-      <div class="pt5 fr visible-desktop">
+      <div class="pt5 visible-desktop">
 	  		<a href="http://facebook.com/ohmyganesha" target="_blank"><div class="fbsoc fl"></div></a>
 			<a href="https://twitter.com/devaganeshacom" target="_blank"><div class="twitsoc fl"></div></a>
 			<a href="http://pinterest.com/devaganesha" target="_blank"><div class="pinsoc fl"></div></a>
@@ -76,5 +80,7 @@
 			<a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><div class="rsssoc fl"></div></a>
       </div>
     </div>
+	
+	</div>
     <div class="clear"></div>
   </div>
