@@ -58,16 +58,6 @@
 
             //map.setCenter(location);
         }
-
-        // Deletes all markers in the array by removing references to them
-        function deleteOverlays() {
-            if (markersArray) {
-                for (i in markersArray) {
-                    markersArray[i].setMap(null);
-                }
-            markersArray.length = 0;
-            }
-        }
 		
     </script>
 	 <div id="map_canvas"></div>
