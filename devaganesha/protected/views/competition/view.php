@@ -24,7 +24,7 @@ $this->breadcrumbs=array(
 <div class="comp-img span4"></div>
 </div>
 </div>
-<div class="mt10 row-fluid">
+<div class="mt40 row-fluid">
 <div class="span4 bb"></div>
 <div class="span4"><a href="<?php echo Yii::app()->createUrl('competition/uploadpic',array('slug'=>$model->slug));?>" style="text-decoration:none;"><div class="upld-comp">Upload / submit your Ganesha</div></a></div>
 <div class="span4 bb"></div>
@@ -44,8 +44,9 @@ $this->breadcrumbs=array(
 	}
 	?>
 	<div class="fl <?php echo $class;?>" style="margin:10px;">
-	<div><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $entry->photo->file_name ;?>" alt="" width="200px" height="150px"/></div>
-	<div><?php echo $entry->photo->caption;?></div><?php echo $entry->user->name ?>
+		<div><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $entry->photo->file_name ;?>" alt="" width="200px" height="150px"/></div>
+		<div><?php echo $entry->photo->caption;?></div>
+		<div><?php echo $entry->user->name; ?></div>
 	</div>
 	<?php  } ?>
 </div>

@@ -722,6 +722,13 @@ padding:0 20px;
 border:1px solid #707070;
 padding:5px 10px;
 background-color:#ebebeb;
+min-height:350px !important;
+}
+
+.each-compit{
+border:1px solid #707070;
+padding:5px 10px;
+background-color:#ebebeb;
 }
 
 .comp-head{
@@ -758,7 +765,8 @@ width:100px;
  background: url(../img/comp-winner.png) no-repeat 0 0 transparent;
  width:362px;
  height:371px;
-
+position:absolute;
+right:0;
 }
 
 .upld-comp{
@@ -801,3 +809,7 @@ width:42px;
 .allpics{border: 5px solid white;padding:10px;background-color:#ffffff;border-radius:2px ;}
 .firstpics{border: 5px solid white;padding:10px;background-color:#B23F22;border-radius:2px ;}
 .userpics{border: 5px solid white;padding:10px;background-color:#8dc63f;border-radius:2px ;}
+
+.mt40{
+margin-top:40px;
+}

@@ -15,7 +15,7 @@ Yii::app()->clientScript->registerMetaTag('Competition on photos, houshold ganes
 
 <div class="row-fluid mt10">
 <?php foreach($dataProvider as $data){ ?>
-<div class="span3 each-comp">
+<div class="span3 each-compit">
 <div style="text-align:center;"><p class="comp-head"><?php echo $data->title;?></p></div>
 <div><?php echo $data->description;?></div>
 <div class="mt10">
