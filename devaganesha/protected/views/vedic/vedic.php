@@ -7,8 +7,12 @@ $this->setPageTitle('All Aarti Mantra Shlokas for Lord Ganesha');
 Yii::app()->clientScript->registerMetaTag('Get all the Aarti Mantra Shlokas for Ganesh Utsav.', 'description');
 ?>
 
-    <div class="title-head">&nbsp;<?php echo VedicType::$heading[$vedicType];?></div>
-    <div class="btn fr"><?php echo CHtml::link("Add New ".VedicType::$heading[$vedicType],array('addvedic','type'=>$vedicType));?></div>
+	<div style="text-align:center;">
+		<div class="btm-border">
+			<h2 class="page-head"><?php echo VedicType::$heading[$vedicType];?></h2>
+		</div>
+	</div>
+    <div class="btn fr mt10"><?php echo CHtml::link("Add New ".VedicType::$heading[$vedicType],array('addvedic','type'=>$vedicType));?></div>
 	<div class="clear"></div>
 	<hr/>
         <?php foreach($elementsList as $vedic){

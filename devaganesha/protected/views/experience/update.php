@@ -8,6 +8,10 @@ $this->setPageTitle('Edit - '.$model->name);
 Yii::app()->clientScript->registerMetaTag('See what are the experiences of people with ganesha and share your experince also. Make a wish to ganesha.');
 ?>
 
-<div class="title-head">Edit - <?php echo $model->title;?></div> 
+	<div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head">Edit - <?php echo $model->title; ?></h2>
+</div>
+</div>
 <hr/>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -8,8 +8,13 @@ Yii::app()->clientScript->registerMetaTag('See what are the experiences of peopl
 ?>
 
 
-    <div class="title-head">Ganesh Mahima</div>
-	<div class="btn fr"><?php echo CHtml::link($linkhead,array('create','type'=>$type));?></div>
+
+<div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head">Ganesh Mahima</h2>
+</div>
+</div>
+	<div class="btn fr mt10"><?php echo CHtml::link($linkhead,array('create','type'=>$type));?></div>
 	<div class="clear"></div>
 	<hr/>
     <?php foreach($elementsList as $exp){

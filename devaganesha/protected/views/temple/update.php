@@ -8,6 +8,10 @@ $this->setPageTitle('Edit - '.$model->name);
 Yii::app()->clientScript->registerMetaTag('Get all the Temples Mandals information.', 'description');
 ?>
 
-<div class="title-head">Edit <?php echo $model->name; ?></div>
+<div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head">Edit <?php echo $model->name;?></h2>
+</div>
+</div>
 <hr/>
 <?php echo $this->renderPartial('_form', array('model'=>$model,'maparr'=>$maparr)); ?>

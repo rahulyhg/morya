@@ -7,8 +7,12 @@ Yii::app()->clientScript->registerMetaTag('Get all the Recipes for ganesh Utsav.
 ?>
 
 
-    <div class="title-head">&nbsp;Recipe's</div>
-	<div class="btn fr"><?php echo CHtml::link("Add new recipe",array('create'));?></div>
+    <div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head">Recipe's</h2>
+</div>
+</div>
+	<div class="btn fr mt10"><?php echo CHtml::link("Add new recipe",array('create'));?></div>
 	<div class="clear"></div>
 	<hr/>
     <?php foreach($elementsList as $recipe){

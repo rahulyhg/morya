@@ -7,8 +7,12 @@ $this->setPageTitle('All the Temples and Mandals of Lord ganesh.');
 Yii::app()->clientScript->registerMetaTag('Get the information about all the popular Temples and Mandals of lord ganesha all over the world. Ganesh mandals in mumbai, pune and all over maharashtra. Navsache ganpati wish full filling ganesh', 'description');
 ?>
 	<div>
-		<div class="title-head"><?php echo $head ;?></div>
-		<div class="fr">
+			<div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head"><?php echo $head ;?></h2>
+</div>
+</div>
+		<div class="fr mt10">
 		<div class="btn"><?php echo CHtml::link("Add new $head ",array('create','type'=>$templeType));?></div>
 		</div>
 		<div class="clear"></div>

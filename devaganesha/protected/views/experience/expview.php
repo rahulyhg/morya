@@ -8,7 +8,11 @@ Yii::app()->clientScript->registerMetaTag('See what are the experiences of peopl
 ?>
 
 
-   <div class="title-head"><?php echo $model->title;?></div>
+   <div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head"><?php echo $model->title;?></h2>
+</div>
+</div>
 	<div class="mt10">
 		<div class="addthis_toolbox addthis_default_style addthis_32x32_style fl">
 			<a class="addthis_button_facebook"></a>

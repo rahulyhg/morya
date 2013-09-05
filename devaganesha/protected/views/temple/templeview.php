@@ -8,7 +8,12 @@ Yii::app()->clientScript->registerMetaTag('Get the information about all the pop
 ?>
 
 
-    <div class="title-head" style="text-align:center;"><?php echo $model->name;?></div>
+	<div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head"><?php echo $model->name;?></h2>
+</div>
+</div>
+	
 	<div class="clear"></div>
 		<div class="mt10">
 		<div class="addthis_toolbox addthis_default_style addthis_32x32_style fl">
