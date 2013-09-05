@@ -16,14 +16,14 @@
         {
             var latlng = new google.maps.LatLng(19, 74);
             var myOptions = {
-                zoom: <?php echo( isset($map_design) ? $map_design['zoom']: 7) ?>,
+                zoom: <?php echo( isset($map_design) ? $map_design['zoom']: 7); ?>,
                 center: latlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
 			
             map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
             
-			var maparr = eval(<?php echo $maparr;?>);
+			var maparr = eval(<?php echo $maparr; ?>);
 			  //document.write(maparr[0].lat);
 			  var cord;
 			 for(var i=0;i<maparr.length;i++){
