@@ -52,10 +52,8 @@ class CompetitionController extends AppController
 	{
 		$slug = $_REQUEST['slug'];
 		$model = Competition::model()->findByAttributes(array('slug'=>$slug));
-		$compphotoes = CompetitionPhoto::model()->with('photo','user')->findByAttributes(array('comp_id'=>$model->id));
 		$this->render('view',array(
-			'model'=>$model,
-			'compphotoes'=>$compphotoes
+			'model'=>$model
 		));
 	}
 

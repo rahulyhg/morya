@@ -56,6 +56,9 @@ class CompetitionPhoto extends AppActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		'competition'=>array(self::BELONGS_TO, 'Competition', 'comp_id'),
+		'photo'=>array(self::BELONGS_TO, 'Photo', 'photo_id'),
+		'user'=>array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 

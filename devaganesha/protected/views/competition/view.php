@@ -32,13 +32,21 @@ $this->breadcrumbs=array(
 </div>
 
 <div class="row-fluid">
-	<?php foreach($compphotoes as $photo){
-	//var_dump($photo);
+	<?php 
+	foreach($model->entries as $entry){
+	if($entry->user->id == Yii::app()->user->id)
+	{
+		$class = "userpics";
+	}
+	else
+	{
+		$class = "allpics";
+	}
 	?>
-	<div class="fl spics" style="margin:10px;">
-	<div><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $photo->file_name ;?>" alt="" width="200px" height="150px"/></div>
-	<div><?php echo $photo->caption;?></div>
+	<div class="fl <?php echo $class;?>" style="margin:10px;">
+	<div><img src="<?php echo PhotoType::$relativeFolderName[PhotoType::Thumb] . $entry->photo->file_name ;?>" alt="" width="200px" height="150px"/></div>
+	<div><?php echo $entry->photo->caption;?></div><?php echo $entry->user->name ?>
 	</div>
-	<?php } ?>
+	<?php  } ?>
 </div>
 
