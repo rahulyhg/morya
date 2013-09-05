@@ -30,6 +30,7 @@ then on client side ajaxValidation takes place.
  * @property string $add_line_2
  * @property string $city
  * @property string $key_reset
+ * @property string $points
  * @property string $created
  * @property string $modified
  *
@@ -170,5 +171,14 @@ class User extends AppActiveRecord
 			$this->password = md5($this->password);
 		}
 		return true;
+	}
+	
+	public function addPoints($points){
+		if(isset($this->id)){
+			$this->points = $this->points + $points;
+			$this->save();
+			return $this->points ;
+		}
+		return 0;
 	}
 }

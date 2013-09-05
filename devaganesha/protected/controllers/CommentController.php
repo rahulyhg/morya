@@ -73,6 +73,9 @@ class CommentController extends AppController
             $comment->attributes=$_POST['Comment'];
 			if($comment->validate()){
 				$comment->save(false);
+				//add points to his account for adding comment
+				$user = User::model()->findByPk(Yii::app()->user->id);
+				$user->addPoints(PointsType::CommentAdd);
 				return $this->redirect($this->getUrlByNode($comment->node_id));
 			}
 		}

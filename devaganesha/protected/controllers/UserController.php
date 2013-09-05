@@ -109,6 +109,8 @@ class UserController extends AppController
                 //RegistrationForm Model variables bulk assigned to User
                 $user->attributes = $model->attributes ;
                 if($user->save()){
+					//add registration points to his account
+					$user->addPoints(PointsType::Register) ;
                     //log-in the user
                     $identity=new UserIdentity($model->email,$model->password);
                     $identity->authenticate();

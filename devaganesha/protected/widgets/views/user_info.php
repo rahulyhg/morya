@@ -50,7 +50,7 @@ if(Yii::app()->user->isGuest)
 		<?php }?>
 	</div>
 	<div class="fl">
-    <div><a href="" class="us_logged"><?php $splitIndex = strpos($user->name,' '); echo($splitIndex > 0 ? substr($user->name,0,$splitIndex) : $user->name) ; ?></a></div>
+    <div><a href="" class="us_logged"><?php $splitIndex = strpos($user->name,' '); echo($splitIndex > 0 ? substr($user->name,0,$splitIndex) : $user->name) ; ?><?php echo ' ('.$user->points.')' ?></a></div>
     <div class="us_details">
         <?php //echo CHtml::link('My Ganesha',Yii::app()->createUrl('photo/myganesha')); ?>
         <?php echo CHtml::link('Edit Profile',Yii::app()->createUrl('user/edit')); ?> &nbsp;|&nbsp; 

@@ -107,6 +107,8 @@ class PhotoController extends AppController
 			$lastId =$this->updateDb($type,$fileName,$uploader->file->getName(),$uploader->file->getSize());
 			$result['id']=$lastId;
 			$return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+			$user = User::model()->findByPk(Yii::app()->user->id);
+			$user->addPoints(PointsType::PhotoAdd);			
 			echo $return;// it's array
 	}
 	public function actionUpdate(){

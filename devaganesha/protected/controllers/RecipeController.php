@@ -105,6 +105,11 @@ class RecipeController extends AppController
 				 if ($success)
 				 {
 					$transaction->commit();
+					
+					//add points to his account for adding temple
+					$user = User::model()->findByPk(Yii::app()->user->id);
+					$user->addPoints(PointsType::RecipeAdd);
+					
 					$url = $this->getUrlByNode($model->node_id);
 					$img = "www.";
 					/*Yii::app()->facebook->api(

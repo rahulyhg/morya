@@ -85,28 +85,6 @@ class VedicController extends AppController
 		}
 	
 	}
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$model=new Vedic;
-
-		// Uncomment the following line if AJAX validation is needed
-		 //$this->performAjaxValidation($model);
-
-		if(isset($_POST['Vedic']))
-		{
-			$model->attributes=$_POST['Vedic'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
 
 	/**
 	 * Updates a particular model.
@@ -233,6 +211,17 @@ class VedicController extends AppController
 			 if ($success)
 			 {
 				$transaction->commit();
+				//add points for adding new aarti/mantra
+				$user = User::model()->findByPk(Yii::app()->user->id);
+				$points = 0;
+				if($vedicType == VedicType::Aarti)
+					$points = PointsType::AartiAdd ;
+				elseif($vedicType == VedicType::Mantra)
+					$points =  PointsType::MantraAdd ;
+					
+				$user->addPoints($points);	
+				
+				
 				//Yii::app()->facebook->setFileUploadSupport(true);
 				$url = $this->getUrlByNode($model->node_id);
 				//$img = "www.";
