@@ -806,6 +806,14 @@ width:42px;
 
 }
 
+.pointstbl{
+background-color:#ebebeb;
+border:1px solid #cccccc;
+color:#0088CC;
+padding:5px;
+margin:-10px 0 0 10px;
+}
+
 .allpics{border: 5px solid white;padding:10px;background-color:#ffffff;border-radius:2px ;}
 .firstpics{border: 5px solid white;padding:10px;background-color:#B23F22;border-radius:2px ;}
 .userpics{border: 5px solid white;padding:10px;background-color:#8dc63f;border-radius:2px ;}
