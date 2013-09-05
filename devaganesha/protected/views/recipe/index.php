@@ -2,7 +2,7 @@
 $this->breadcrumbs=array(
 	'Recipes',
 );
-$this->setPageTitle('All the Rcipes of prasad Naivaidya for ganesha utsav');
+$this->setPageTitle('All the Recipes of prasad Naivaidya for ganesha utsav');
 Yii::app()->clientScript->registerMetaTag('Get all the Recipes for ganesh Utsav. Recipes for prasad Naivaidya. Ganeshas favourites. Sugarless recipes.', 'description');
 ?>
 
