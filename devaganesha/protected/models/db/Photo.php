@@ -70,6 +70,8 @@ class Photo extends AppActiveRecord
 			'node' => array(self::BELONGS_TO, 'Node', 'node_id',
 			 'order'=>'node.created DESC'
 			 ),
+			 
+			'competitions' => array(self::MANY_MANY, 'Competition', 'competition_photo(comp_id, photo_id)'),
 		);
 	}
 

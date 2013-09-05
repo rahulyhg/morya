@@ -60,6 +60,7 @@ return array(
 				'edit-profile'=>'user/edit',
 				'logout'=>'user/logout',
 				'register'=>'user/register',
+				//'http://<slug>.localhost.morya/' => 'competition/view', 
 				'feed/aarti-shlokas-mantra'=>'site/page/view/vedic',
 				'feed/pictures-and-wallpapers'=>'site/page/view/photo',
 				'pictures-and-wallpapers'=>'photo/index',

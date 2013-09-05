@@ -97,6 +97,8 @@ class User extends AppActiveRecord
 			'temples' => array(self::HAS_MANY, 'Temples', 'user_id'),
 			'vedics' => array(self::HAS_MANY, 'Vedics', 'user_id'),
 			'node' => array(self::HAS_MANY, 'Node', 'user_id'),
+			
+			'participated' => array(self::MANY_MANY, 'User', 'competition_photo(comp_id, user_id)'),
 		);
 	}
 
