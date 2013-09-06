@@ -238,6 +238,7 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 		 <div class="clear"></div>
 	</div>
 	
+	<?php $this->beginClip('js-page-end'); ?>
 	  <script type="text/javascript">
 			$(function() {
 			/*$('#am-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
@@ -313,6 +314,8 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 									});
 								}
 							});	
-				
-					});
+				initMap();
+					});//document ready
 		</script>
+		
+	<?php $this->endClip('js-page-end'); ?>

@@ -26,7 +26,8 @@
 			var maparr = eval(<?php echo $maparr;?>);
 			  //document.write(maparr[0].lat);
 			  var cord;
-			 for(var i=0;i<maparr.length;i++){
+			  markersLength = maparr == null ? 0 : maparr.length ;
+			 for(var i=0;i<markersLength;i++){
 				cord = new google.maps.LatLng(maparr[i].lat, maparr[i].lng);
 				placeMarker(cord, maparr[i].temple);
 				//alert(maparr[i].temple);
@@ -34,10 +35,10 @@
 			
 			  
         }
-        function placeMarker(location,temple=null) {
+        function placeMarker(location,temple) {
             // first remove all markers if there are any
             //deleteOverlays();
-
+			//typeof(temple	)==='undefined'
             var marker = new google.maps.Marker({
                 position: location, 
                 map: map,
