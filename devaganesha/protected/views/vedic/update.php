@@ -8,6 +8,10 @@ $this->setPageTitle('Edit - '.$model->title);
 Yii::app()->clientScript->registerMetaTag('Get all the Aarti Mantra Shlokas for Ganesh Utsav.', 'description');
 ?>
 
-<div class="title-head">Edit <?php echo $model->title;?></div>
+<div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head">Edit <?php echo $model->title;?></h2>
+</div>
+</div>
 <hr/>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

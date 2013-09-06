@@ -8,7 +8,12 @@ $this->setPageTitle($model->title." - ".$model->name_of_god);
 Yii::app()->clientScript->registerMetaTag('Get all the Aarti Mantra Shlokas for Ganesh Utsav.', 'description');
 
 ?>
-    <div class="title-head"><?php echo $model->title;?></div>
+
+	<div style="text-align:center;">
+		<div class="btm-border">
+			<h2 class="page-head"><?php echo $model->title;?></h2>
+		</div>
+	</div>
 	<div class="clear"></div>
 	<div class="mt10">
 		<div class="addthis_toolbox addthis_default_style addthis_32x32_style fl">

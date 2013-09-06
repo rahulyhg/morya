@@ -16,14 +16,14 @@
         {
             var latlng = new google.maps.LatLng(19, 74);
             var myOptions = {
-                zoom: <?php echo( isset($map_design) ? $map_design['zoom']: 7) ?>,
+                zoom: <?php echo( isset($map_design) ? $map_design['zoom']: 7); ?>,
                 center: latlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
 			
             map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
             
-			var maparr = eval(<?php echo $maparr;?>);
+			var maparr = eval(<?php echo $maparr; ?>);
 			  //document.write(maparr[0].lat);
 			  var cord;
 			  markersLength = maparr == null ? 0 : maparr.length ;
@@ -58,16 +58,6 @@
             markersArray.push(marker);
 
             //map.setCenter(location);
-        }
-
-        // Deletes all markers in the array by removing references to them
-        function deleteOverlays() {
-            if (markersArray) {
-                for (i in markersArray) {
-                    markersArray[i].setMap(null);
-                }
-            markersArray.length = 0;
-            }
         }
 		
     </script>

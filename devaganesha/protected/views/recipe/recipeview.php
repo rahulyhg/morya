@@ -7,7 +7,11 @@ $this->setPageTitle($model->title);
 Yii::app()->clientScript->registerMetaTag('Get all the Recipes for ganesh Utsav. Recipes for prasad Naivaidya. Ganeshas favourites. Sugerless recipes.', 'description');
 ?>
 
-    <div class="title-head"><?php echo $model->title;?></div>
+	<div style="text-align:center;">
+<div class="btm-border">
+	<h2 class="page-head"><?php echo $model->title;?></h2>
+</div>
+</div>
 
 	<div class="mt10">
 		<div class="addthis_toolbox addthis_default_style addthis_32x32_style fl">
