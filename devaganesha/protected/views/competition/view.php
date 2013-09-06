@@ -19,7 +19,7 @@ $this->breadcrumbs=array(
 <div class="mt10"><strong>Prizes :</strong></div>
 <div><?php echo $model->prizes;?></div>
 <div class="mt10"><strong>Last Date Of Submission :</strong></div>
-<div class="lastdate"><?php echo date('d\<\s\u\p\>S\<\/\s\u\p\> M, Y',strtotime($model->end_date));?></div>
+<div class="lastdate"><?php //echo date('d\<\s\u\p\>S\<\/\s\u\p\> M, Y',strtotime($model->end_date));?> 16<sup>th</sup>, Sept. 2013.</div>
 </div>
 <div class="comp-img span4"></div>
 </div>

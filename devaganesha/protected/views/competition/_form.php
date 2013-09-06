@@ -16,6 +16,12 @@
 	</div>
 
 	<div>
+		<?php echo $form->labelEx($model,'slug'); ?>
+		<?php echo $form->textField($model,'slug',array('size'=>10,'class'=>'span12')); ?>
+		<?php echo $form->error($model,'slug'); ?>
+	</div>
+	
+	<div>
 		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo $form->dropDownList($model,'type',array(0=>'Photo',1=>'recipe')); ?>
 		<?php echo $form->error($model,'type'); ?>
@@ -35,7 +41,7 @@
 
 	<div>
 		<?php echo $form->labelEx($model,'prizes'); ?>
-		<?php echo $form->textField($model,'prizes',array('size'=>60,'class'=>'span12')); ?>
+		<?php echo $form->textArea($model,'prizes',array('rows'=>3,'class'=>'span12')); ?>
 		<?php echo $form->error($model,'prizes'); ?>
 	</div>
 

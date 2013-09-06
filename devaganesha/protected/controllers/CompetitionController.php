@@ -87,7 +87,10 @@ class CompetitionController extends AppController
 		if(isset($_POST['Competition']))
 		{
 			$model->attributes=$_POST['Competition'];
-			$model->slug = $this->behaviors();
+			//$model->slug = $this->behaviors();
+			$model->description = nl2br($model->description);
+			$model->instructions = nl2br($model->instructions);
+			$model->prizes = nl2br($model->prizes);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

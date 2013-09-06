@@ -139,7 +139,7 @@ class Competition extends AppActiveRecord
 	}
 	
 		//slug behaviors function
-		public function behaviors(){
+	/* 	public function behaviors(){
 		return array(
 			'SlugBehavior' => array(
 				'class' => 'application.models.behaviors.SlugBehavior',
@@ -148,5 +148,5 @@ class Competition extends AppActiveRecord
 				'overwrite' => false
 			)
 		);
-	}
+	} */
 }
