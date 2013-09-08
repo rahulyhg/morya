@@ -217,9 +217,9 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 					<div class="fl newscont">
 						<div class="newshead"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></div>
 						<div><?php the_excerpt(); ?></div>
-						<a href="<?php the_permalink(); ?>"><div class="altmore hidden-desktop">Read More</div></a>
+						<a href="<?php the_permalink(); ?>"><div class="altmore">Read More</div></a>
 					</div>
-					<a href="<?php the_permalink(); ?>"><div class="fl newsmore visible-desktop">&raquo;</div></a>
+				<!--	<a href="<?php the_permalink(); ?>"><div class="fl newsmore visible-desktop">&raquo;</div></a> -->
 					<div class="clear"></div>
 				</div>
 				<?php endwhile;wp_reset_query(); ?>
@@ -241,38 +241,6 @@ Yii::app()->clientScript->registerMetaTag('Get all the Pictures wallpapers ganes
 	<?php $this->beginClip('js-page-end'); ?>
 	  <script type="text/javascript">
 			$(function() {
-			/*$('#am-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:20% 40%;"/>');
-			  $.ajax({
-                        url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
-						
-                        success: function(data) {
-							$('#am-container').html(data);
-							var $container 	= $('#am-container'),
-                            $imgs		= $container.find('img').hide(),
-							totalImgs	= $imgs.length,
-							cnt			= 0;
-				
-							$imgs.each(function(i) {
-								var $img	= $(this);
-								$('<img/>').load(function() {
-									++cnt;
-									if( cnt === totalImgs ) {
-										$imgs.show();
-										$container.montage({
-											liquid 	: false,
-											minw : 100,
-											fixedHeight : 85,
-											margin:2,
-											//fillLastRow : true
-										});
-									
-										$('#overlay').fadeIn(500);
-								
-									}
-								}).attr('src',$img.attr('src'));
-							});	
-                        }
-                    });	 */
 					$('#small-pin-container').html('<img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" style="margin:8% 45%;"/>');
 					  $.ajax({
 								url: "<?php echo Yii::app()->createUrl("photo/loadRelated"); ?>",
