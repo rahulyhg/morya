@@ -87,6 +87,13 @@ class Email extends AppActiveRecord
 			'created' => 'Created',
 		);
 	}
+	
+	public function defaultScope()
+    {
+        return array(
+            'condition'=>"sent=0",
+        );
+    }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2013 Devaganesha
+-->
+
+<resources>
+
+    <string name="app_name">HD wallpaper - Devaganesha</string>
+    <string name="app_description">This is an application to view &quot;Devaganesha pics&quot;.</string>
+    <string name="clear_cache_menu">Clear Caches</string>
+    <string name="clear_cache_complete_toast">Caches have been cleared</string>
+    <string name="set_as_wallpaper_menu">Set As Wallpaper</string>
+    <string name="set_as_wallpaper_complete_toast">Wallpaper Set Successfully!!</string>
+    <string name="set_as_wallpaper_failed_toast">Setting WallPaper Failed!!</string>
+    <string name="imageview_description">Image Thumbnail</string>
+    <string name="no_network_connection_toast">No network connection found</string>
+    <string name="splash_screen_image">Devaganesha Image</string>
+    <string name="devaganesha_link">Powered by www.devaganesha.com</string>
+
+</resources>

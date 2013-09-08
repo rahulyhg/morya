@@ -26,12 +26,14 @@ class EmailCommand extends CConsoleCommand
 		$Message = $SM
 			->newMessage($email->subject)
 			->setFrom(array(Yii::app()->params['doNotReplyEmail']))
-			->setTo(array(Yii::app()->params['email_to']))
+			->setTo(array($email->email_to))
 			->addPart($email->body_html, 'text/html')
 			->setBody($email->body_plain);
 	
 		// Send mail
 		$result = $Mailer->send($Message);
+		$email->sent = 1;
+		$email->save();
 		}
 	}
 }
