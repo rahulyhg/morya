@@ -426,7 +426,9 @@
 		  var cdate = new Date(2013, 8 , 9);//alert(cdate);
 		  $('#countdown').countdown({until: cdate}); 
 		  
-		  $('.datepicker').datepicker();
+		  $('.datepicker').datepicker({
+			dateFormat: 'yy-mm-dd'
+		  });
       });
   </script>
 		<script type="text/javascript">
