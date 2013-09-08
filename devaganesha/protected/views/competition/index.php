@@ -14,7 +14,9 @@ Yii::app()->clientScript->registerMetaTag('Competition on photos, houshold ganes
 </div>
 
 <div class="row-fluid mt10">
-<?php foreach($dataProvider as $data){ ?>
+<?php 
+if(!empty($dataProvider)){
+foreach($dataProvider as $data){ ?>
 <div class="span3 each-compit">
 <div style="text-align:center;"><p class="comp-head"><?php echo $data->title;?></p></div>
 <div><?php echo $data->description;?></div>
@@ -28,5 +30,8 @@ Yii::app()->clientScript->registerMetaTag('Competition on photos, houshold ganes
 	<div class="clear"></div>
 </div>
 </div>
+<?php } 
+}else{?>
+<h2>Competitions will start from 9<sup>th</sup>, sept. 2013.</h2>
 <?php } ?>
 </div>
